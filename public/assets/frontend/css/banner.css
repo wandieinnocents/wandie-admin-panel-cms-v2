@@ -1,0 +1,7 @@
+#bannerimage {
+    width: 100%;
+    background-image: url(/assets/images/banner/bottom-shape.png);
+    height: 20px;
+    /* background-color: purple; */
+    background-position: center;
+  }
