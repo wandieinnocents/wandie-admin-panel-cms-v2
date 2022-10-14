@@ -1,14 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\BackEnd;
+namespace App\Http\Controllers\Api\v1\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Feedback;
-use App\Models\FrontEndContact;
 
-
-class FeedbackController extends Controller
+class AdminApiPhotoCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,12 +14,7 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-
-        
-        $feedbacks =  FrontEndContact::all();
-        $count_feedbacks = FrontEndContact::count();
-        // dd($feedbacks);
-        return view('backend.pages_backend.feedbacks.index',compact('feedbacks','count_feedbacks'));
+        dd("photo categories index");
     }
 
     /**

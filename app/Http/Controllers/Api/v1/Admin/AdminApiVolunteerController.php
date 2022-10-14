@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Api\v1\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\FrontEndContact;
+use App\Models\Volunteer;
 
-class AdminApiFeedbackController extends Controller
+class AdminApiVolunteerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,26 +15,26 @@ class AdminApiFeedbackController extends Controller
      */
     public function index()
     {
-        // feedbacks
-
-        if(FrontEndContact::count() > 0){
-            $feedbacks =  FrontEndContact::all();
-            $count_feedbacks = FrontEndContact::count();
+        // dd("admin voluntter index");
+        if(Volunteer::count() > 0){
+            $volunteers = Volunteer::all();
+            $count_volunteers= Volunteer::count();
     
-             // return
-             return [
+            // return
+            return [
                 "status" => 200,
-                "Number of Feedbacks" =>   $count_feedbacks,
-                "message" => "Feedbacks Retrieved successfully",
-                "data" => $feedbacks
+                "Number of Volunteers" =>   $count_volunteers,
+                "message" => "Volunteers Retrieved successfully",
+                "data" => $volunteers
             ];
         }
     
+        // if no record
         else { 
             //response
             return [
                 "status" => 404,
-                "message" => "Oops!, No Feedbacks Found in Database ",
+                "message" => "Oops!, No Volunteer Found in Database ",
                
             ];
         
@@ -72,14 +72,14 @@ class AdminApiFeedbackController extends Controller
     {
         
         // find post id
-        if(FrontEndContact::where("id", $id)->exists()){
-            $feedback = FrontEndContact::find($id);
+        if(Volunteer::where("id", $id)->exists()){
+            $post = Volunteer::find($id);
     
             // return response
             return [
                 "status" => 200,
-                "message" => "Feedback Retrieved successfully",
-                "data" =>$feedback
+                "message" => "Single Volunteer Retrieved successfully",
+                "data" =>$post
             ];
         }
     
@@ -88,7 +88,7 @@ class AdminApiFeedbackController extends Controller
     
             return [
                 "status" => 404,
-                "message" => "Oops!, No Feedback Found ",
+                "message" => "Oops!, No Volunteer Found ",
                
             ];
         
@@ -126,15 +126,16 @@ class AdminApiFeedbackController extends Controller
      */
     public function destroy($id)
     {
+        
         // find id
-        if(FrontEndContact::where("id", $id)->exists()){
-            $feedback = FrontEndContact::find($id);
-            $feedback->delete();
+        if(Volunteer::where("id", $id)->exists()){
+            $volunteer = Volunteer::find($id);
+            $volunteer->delete();
             // response for success
             return [
                 "status" => 200,
-                "message" => "Feedback Deleted successfully",
-                "data" => $feedback,
+                "message" => "Post Deleted successfully",
+                "data" => $volunteer,
             ];
         }  
         
@@ -143,7 +144,7 @@ class AdminApiFeedbackController extends Controller
             // response for success
             return [
                 "status" => 404,
-                "message" => "Oops!, No Feedback Found to Delete "
+                "message" => "Oops!, No Volunteer Found to Delete "
                 
                
             ];

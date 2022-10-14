@@ -7,6 +7,8 @@ use App\Http\Controllers\Api\v1\Customer\CustomerApiFeedbackController;
 // admin
 use App\Http\Controllers\Api\v1\Admin\AdminApiPostController;
 use App\Http\Controllers\Api\v1\Admin\AdminApiFeedbackController;
+use App\Http\Controllers\Api\v1\Admin\AdminApiVolunteerController;
+use App\Http\Controllers\Api\v1\Admin\AdminApiPhotoCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +33,12 @@ Route::group(['prefix'=> "v1"], function(){
 Route::resource('posts', AdminApiPostController::class);
 // feedbacks
 Route::resource('feedbacks', AdminApiFeedbackController::class);
+// volunteer
+Route::resource('volunteers', AdminApiVolunteerController::class);
+// photo category
+Route::resource('photo_categories', AdminApiPhotoCategoryController::class);
+
+
 
 
 
