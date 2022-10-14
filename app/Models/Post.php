@@ -9,10 +9,11 @@ use App\Models\PostCategory;
 class Post extends Model
 {
     use HasFactory;
-    protected $fillables = [
+    protected $fillable = [
         'post_category_id',
         'post_title',
         'post_photo',
+        'post_created_by',
         'post_description'
     ];
 
