@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\FrontEnd;
+namespace App\Http\Controllers\Api\v1\Customer;
 
 use App\Http\Controllers\Controller;
-use App\Models\FrontEndContact;
 use Illuminate\Http\Request;
+use App\Models\FrontEndContact;
 
-class FrontEndContactController extends Controller
+class CustomerApiFeedbackController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class FrontEndContactController extends Controller
      */
     public function index()
     {
-        
+        //
     }
 
     /**
@@ -25,8 +25,7 @@ class FrontEndContactController extends Controller
      */
     public function create()
     {
-        return view('frontend.pages_frontend.contact.create'); 
-
+        //
     }
 
     /**
@@ -37,6 +36,17 @@ class FrontEndContactController extends Controller
      */
     public function store(Request $request)
     {
+        // validate data fields
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'nullable',
+            'subject' => 'nullable',
+            'description' => 'nullable',
+            
+        ]);
+
+        // dd("storing dataa");
         $contact = new FrontEndContact();
         $contact->name         = $request->name;
         $contact->email        = $request->email;
@@ -50,8 +60,13 @@ class FrontEndContactController extends Controller
        
         // save to DB
         $contact->save();
-        // dd($contact);
-        return redirect()->back()->with('message', 'Thank you for Contacting us!');
+
+         // response
+         return [
+            "status" => 200,
+            "message" => "Feedback Added successfully",
+            "data" => $contact
+        ];
     }
 
     /**
@@ -96,11 +111,6 @@ class FrontEndContactController extends Controller
      */
     public function destroy($id)
     {
-        $contact_del = FrontEndContact::findOrFail($id);
-        $contact_del->delete();
-
-        return redirect('/feedbacks')->with('success', 'Feedback is successfully deleted');
-
-
+        //
     }
 }

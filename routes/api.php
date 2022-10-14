@@ -2,7 +2,11 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ApiController\PostController;
+// customer
+use App\Http\Controllers\Api\v1\Customer\CustomerApiFeedbackController;
+// admin
+use App\Http\Controllers\Api\v1\Admin\AdminApiPostController;
+use App\Http\Controllers\Api\v1\Admin\AdminApiFeedbackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +23,27 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// post controller
-Route::resource('posts', PostController::class);
+// prefix-group //v1-prefix
+Route::group(['prefix'=> "v1"], function(){
+
+// BACKEND APIS
+// posts
+Route::resource('posts', AdminApiPostController::class);
+// feedbacks
+Route::resource('feedbacks', AdminApiFeedbackController::class);
+
+
+
+// FRONTEND APIS
+// contact
+Route::resource('contact', CustomerApiFeedbackController::class);
+
+
+
+
+
+
+
+});
+
 

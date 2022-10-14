@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\ApiController;
+namespace App\Http\Controllers\Api\v1\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -8,8 +8,9 @@ use App\Models\Post;
 use App\Models\PostCategory;
 use Auth;
 
-class PostController extends Controller
+class AdminApiPostController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -29,6 +30,7 @@ class PostController extends Controller
         // return
         return [
             "status" => 200,
+            "Number of Posts" =>   $count_posts,
             "message" => "Posts Retrieved successfully",
             "data" => $posts
         ];
@@ -40,7 +42,6 @@ class PostController extends Controller
         return [
             "status" => 404,
             "message" => "Oops!, No Posts Found in Database ",
-            // "data" => $post
            
         ];
     
@@ -71,17 +72,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        // validation
-        $request->validate([
-            'post_title' => 'required',
-            'post_created_by' => 'required',
-            'post_description' => 'required',
-            'post_photo' => 'nullable|mimes:doc,pdf,docx,zip,jpeg,jpg,csv,txt,xlx,xls,png',
-
-        ]);
-
+      
+ 
+        // validate data fields
         $validatedData = $request->validate([
-            
+            'post_title' => 'required',
+            'post_description' => 'required',
             'post_photo' => 'required|mimes:doc,pdf,docx,zip,jpeg,jpg,csv,txt,xlx,xls,png',
             
         ]);
@@ -140,7 +136,6 @@ class PostController extends Controller
         return [
             "status" => 404,
             "message" => "Oops!, No Post Found ",
-            // "data" => $post
            
         ];
     
@@ -221,23 +216,23 @@ class PostController extends Controller
     {
         // find id
         if(Post::where("id", $id)->exists()){
-        $post = Post::find($id)->delete();
+        $post = Post::find($id);
+        $post->delete();
         // response for success
         return [
             "status" => 200,
             "message" => "Post Deleted successfully",
-           
+            "data" => $post,
         ];
     }  
     
     // if no record
     else { 
-
         // response for success
         return [
             "status" => 404,
             "message" => "Oops!, No Post Found to Delete "
-            // "data" => $post
+            
            
         ];
     

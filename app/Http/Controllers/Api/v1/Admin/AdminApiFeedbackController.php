@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\FrontEnd;
+namespace App\Http\Controllers\Api\v1\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\FrontEndContact;
 use Illuminate\Http\Request;
+use App\Models\FrontEndContact;
 
-class FrontEndContactController extends Controller
+class AdminApiFeedbackController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,30 @@ class FrontEndContactController extends Controller
      */
     public function index()
     {
+        // feedbacks
+
+        if(FrontEndContact::count() > 0){
+            $feedbacks =  FrontEndContact::all();
+            $count_feedbacks = FrontEndContact::count();
+    
+             // return
+             return [
+                "status" => 200,
+                "Number of Feedbacks" =>   $count_feedbacks,
+                "message" => "Feedbacks Retrieved successfully",
+                "data" => $feedbacks
+            ];
+        }
+    
+        else { 
+            //response
+            return [
+                "status" => 404,
+                "message" => "Oops!, No Feedbacks Found in Database ",
+               
+            ];
         
+        }
     }
 
     /**
@@ -25,8 +48,7 @@ class FrontEndContactController extends Controller
      */
     public function create()
     {
-        return view('frontend.pages_frontend.contact.create'); 
-
+        //
     }
 
     /**
@@ -37,21 +59,7 @@ class FrontEndContactController extends Controller
      */
     public function store(Request $request)
     {
-        $contact = new FrontEndContact();
-        $contact->name         = $request->name;
-        $contact->email        = $request->email;
-        $contact->phone        = $request->phone;
-        $contact->subject      = $request->subject;
-        $contact->description  = $request->description;
-
-        // send copy to email
-       
-        // \Mail::to('wandieinnocent2@gmail.com')->send(new \App\Mail\SupportMail($contact));
-       
-        // save to DB
-        $contact->save();
-        // dd($contact);
-        return redirect()->back()->with('message', 'Thank you for Contacting us!');
+        //
     }
 
     /**
@@ -96,11 +104,6 @@ class FrontEndContactController extends Controller
      */
     public function destroy($id)
     {
-        $contact_del = FrontEndContact::findOrFail($id);
-        $contact_del->delete();
-
-        return redirect('/feedbacks')->with('success', 'Feedback is successfully deleted');
-
-
+        //
     }
 }
