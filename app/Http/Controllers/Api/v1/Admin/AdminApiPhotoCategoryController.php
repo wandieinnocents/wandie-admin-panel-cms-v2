@@ -124,7 +124,36 @@ class AdminApiPhotoCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if(GalleryCategory::where("id", $id)->exists()){
+            $photo_category   = GalleryCategory::find($id);
+            $photo_category->gallery_category_name = !empty($request->gallery_category_name)? $request->gallery_category_name: $photo_category->gallery_category_name;
+            $photo_category->gallery_category_description = !empty($request->gallery_category_description)? $request->gallery_category_description: $photo_category->gallery_category_description;
+    
+           
+    
+            // save post 
+            $photo_category->save();
+    
+            // response for success
+            return [
+                "status" => 200,
+                "message" => "Photo Category updated successfully",
+                "data" => $photo_category
+               
+            ];
+        }
+        // if no record by id found
+        else { 
+    
+            // response for success
+            return [
+                "status" => 404,
+                "message" => "Oops!, No Photo Category Found ",
+                // "data" => $post
+               
+            ];
+        
+        }
     }
 
     /**
@@ -135,6 +164,30 @@ class AdminApiPhotoCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+       // find id
+       if(GalleryCategory::where("id", $id)->exists()){
+        $photo_category = GalleryCategory::find($id);
+        $photo_category->delete();
+        // response for success
+        return [
+            "status" => 200,
+            "message" => "Photo Category Deleted successfully",
+            "data" => $photo_category,
+        ];
+    }  
+    
+    // if no record
+    else { 
+        // response for success
+        return [
+            "status" => 404,
+            "message" => "Oops!, No Photo Category Found to Delete "
+            
+           
+        ];
+    
+    }
+
+    
     }
 }
