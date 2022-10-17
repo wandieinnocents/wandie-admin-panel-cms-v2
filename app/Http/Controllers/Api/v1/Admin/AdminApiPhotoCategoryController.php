@@ -22,7 +22,7 @@ class AdminApiPhotoCategoryController extends Controller
         return [
             "status" => 200,
             "Number of Posts" =>   $photo_categories_count,
-            "message" => "Posts Retrieved successfully",
+            "message" => "Photo Categories Retrieved successfully",
             "data" => $photo_categories
         ];
     }
@@ -32,7 +32,7 @@ class AdminApiPhotoCategoryController extends Controller
         //response
         return [
             "status" => 404,
-            "message" => "Oops!, No Posts Found in Database ",
+            "message" => "Oops!, No Photo Categories Found in Database ",
            
         ];
     
@@ -80,7 +80,28 @@ class AdminApiPhotoCategoryController extends Controller
      */
     public function show($id)
     {
-        //
+         // find post id
+         if(GalleryCategory::where("id", $id)->exists()){
+            $photo_category = GalleryCategory::find($id);
+    
+            // return response
+            return [
+                "status" => 200,
+                "message" => "Photo Category Retrieved successfully",
+                "data" =>$photo_category
+            ];
+        }
+    
+         // if no record
+         else { 
+    
+            return [
+                "status" => 404,
+                "message" => "Oops!, No Photo Category Found ",
+               
+            ];
+        
+        }
     }
 
     /**
