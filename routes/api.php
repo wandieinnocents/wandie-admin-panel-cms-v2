@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\v1\Admin\AdminApiPostController;
 use App\Http\Controllers\Api\v1\Admin\AdminApiFeedbackController;
 use App\Http\Controllers\Api\v1\Admin\AdminApiVolunteerController;
 use App\Http\Controllers\Api\v1\Admin\AdminApiPhotoCategoryController;
+use App\Http\Controllers\Api\v1\Admin\AdminApiPhotoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,8 @@ Route::resource('feedbacks', AdminApiFeedbackController::class);
 Route::resource('volunteers', AdminApiVolunteerController::class);
 // photo category
 Route::resource('photo_categories', AdminApiPhotoCategoryController::class);
+// photos
+Route::resource('photos', AdminApiPhotoController::class);
 
 
 

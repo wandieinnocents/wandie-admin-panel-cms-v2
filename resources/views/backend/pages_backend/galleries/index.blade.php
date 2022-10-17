@@ -84,7 +84,14 @@
 
                                 <td>
                                     <a href="#"
-                                        class="text-body">{{ $gallery->gallery_category_r->gallery_category_name }} </a>
+                                        class="text-body">
+                                        @if(!empty($gallery->gallery_category_r->gallery_category_name))
+                                        {{ $gallery->gallery_category_r->gallery_category_name }} 
+                                        @else
+                                        <p class="text-danger">No Category</p>
+                                        @endif
+
+                                    </a>
                                 </td>
                                 <td>{{ $gallery->gallery_name }}</td>
                                 <td>
@@ -166,7 +173,15 @@
                                             <p>Photo : {{ $gallery->gallery_name }}</p>
                                             <hr>
 
-                                            <p>Category : {{ $gallery->gallery_category_r->gallery_category_name }}</p>
+                                            <p>Category : 
+                                            @if(!empty($gallery->gallery_category_r->gallery_category_name))
+                                            {{ $gallery->gallery_category_r->gallery_category_name }} 
+                                            @else
+                                            <p class="text-danger">No Category</p>
+                                            @endif
+
+
+                                            </p>
                                             <hr>
                                             <p>Description : {{ $gallery->gallery_description }}</p>
 
