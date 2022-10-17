@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\v1\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\GalleryCategory;
 
 class AdminApiPhotoCategoryController extends Controller
 {
@@ -14,7 +15,29 @@ class AdminApiPhotoCategoryController extends Controller
      */
     public function index()
     {
-        dd("photo categories index");
+        if(GalleryCategory::count() > 0){
+        $photo_categories = GalleryCategory::all();
+        $photo_categories_count   = GalleryCategory::count();
+        // return
+        return [
+            "status" => 200,
+            "Number of Posts" =>   $photo_categories_count,
+            "message" => "Posts Retrieved successfully",
+            "data" => $photo_categories
+        ];
+    }
+
+    // if no record
+    else { 
+        //response
+        return [
+            "status" => 404,
+            "message" => "Oops!, No Posts Found in Database ",
+           
+        ];
+    
+    }
+
     }
 
     /**
@@ -35,7 +58,18 @@ class AdminApiPhotoCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $gallery_category = new GalleryCategory();
+        $gallery_category->gallery_category_name = $request->gallery_category_name;
+        $gallery_category->gallery_category_description = $request->gallery_category_description;
+        $gallery_category->save();
+
+         // response
+         return [
+            "status" => 200,
+            "message" => "Photo Category Added successfully",
+            "data" => $gallery_category
+        ];
+
     }
 
     /**
