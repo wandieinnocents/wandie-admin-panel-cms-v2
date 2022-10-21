@@ -108,7 +108,28 @@ class AdminApiPhotoController extends Controller
      */
     public function show($id)
     {
-        //
+         // find  id
+         if(Gallery::where("id", $id)->exists()){
+            $photo = Gallery::find($id);
+    
+            // return response
+            return [
+                "status" => 200,
+                "message" => "Photo Retrieved successfully",
+                "data" =>$photo
+            ];
+        }
+    
+         // if no record
+         else { 
+    
+            return [
+                "status" => 404,
+                "message" => "Oops!, No Photo Found ",
+               
+            ];
+        
+        }
     }
 
     /**
