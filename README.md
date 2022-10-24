@@ -6,6 +6,12 @@ Wandie Admin Panel is a master admin panel that gives you a fully fledged back-e
 How to add an admin api controller 
 - php artisan make:controller Api/v1/Admin/AdminApiPostController -r
 
+## ADMIN ENDPOINTS
+### Feedback 
+- All Feedbacks    : http://127.0.0.1:8000/api/v1/feedbacks
+- Feedback Details : http://127.0.0.1:8000/api/v1/feedbacks/2
+- Delete Feedback  : http://127.0.0.1:8000/api/v1/feedbacks/2
+
 ## Customer/Client Api Controller
 How to add an customer/client api controller 
 - php artisan make:controller Api/v1/Customer/CustomerApiPostController -r
