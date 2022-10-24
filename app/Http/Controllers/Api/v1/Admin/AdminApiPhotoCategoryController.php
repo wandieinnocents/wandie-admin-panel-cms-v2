@@ -128,9 +128,7 @@ class AdminApiPhotoCategoryController extends Controller
             $photo_category   = GalleryCategory::find($id);
             $photo_category->gallery_category_name = !empty($request->gallery_category_name)? $request->gallery_category_name: $photo_category->gallery_category_name;
             $photo_category->gallery_category_description = !empty($request->gallery_category_description)? $request->gallery_category_description: $photo_category->gallery_category_description;
-    
-           
-    
+        
             // save post 
             $photo_category->save();
     
