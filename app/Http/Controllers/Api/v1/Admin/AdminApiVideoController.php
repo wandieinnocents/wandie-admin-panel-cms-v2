@@ -81,7 +81,7 @@ class AdminApiVideoController extends Controller
      */
     public function show($id)
     {
-        // find post id
+        // find video id
         if(VideoGallery::where("id", $id)->exists()){
         $video = VideoGallery::find($id);
 
@@ -130,7 +130,7 @@ class AdminApiVideoController extends Controller
             $video->video_title = !empty($request->video_title)? $request->video_title: $video->video_title;
             $video->video_url = !empty($request->video_url)? $request->video_url: $video->video_url;
             $video->video_description = !empty($request->video_description)? $request->video_description: $video->video_description;
-            
+
             // video thumbnail
             if($request->hasfile('video_thumbnail')){
                 $file               = $request->file('video_thumbnail');
@@ -140,7 +140,7 @@ class AdminApiVideoController extends Controller
                 $video_update->video_thumbnail   = url('uploads' . '/video_thumbnails/'  . $filename);
             }
 
-            // save post 
+            // save video 
             $video->save();
     
             // response for success
@@ -172,6 +172,30 @@ class AdminApiVideoController extends Controller
      */
     public function destroy($id)
     {
-        //
+         // find id
+        if(VideoGallery::where("id", $id)->exists()){
+        $video = VideoGallery::find($id);
+        $video->delete();
+        // response for success
+        return [
+            "status" => 200,
+            "message" => "Video Deleted successfully",
+            "data" => $video,
+        ];
+    }  
+    
+    // if no record
+    else { 
+        // response for success
+        return [
+            "status" => 404,
+            "message" => "Oops!, No Video Found to Delete "
+            
+           
+        ];
+    
+    }
+
+    
     }
 }
