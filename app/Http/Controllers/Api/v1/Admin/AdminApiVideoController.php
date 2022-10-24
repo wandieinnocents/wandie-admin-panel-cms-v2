@@ -50,7 +50,27 @@ class AdminApiVideoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $video = new VideoGallery();
+        $video->video_title = $request->video_title;
+        $video->video_url = $request->video_url;
+        $video->video_description = $request->video_description;
+        // photo
+        if($request->hasfile('video_thumbnail')){
+            $file               = $request->file('video_thumbnail');
+            $extension          = $file->getClientOriginalExtension();  //get image extension
+            $filename           = time() . '.' .$extension;
+            $file->move('uploads/video_thumbnails/',$filename);
+            $video->video_thumbnail   = url('uploads' . '/video_thumbnails/'  . $filename);
+        }
+
+        $video->save();
+
+         // response
+         return [
+            "status" => 200,
+            "message" => "Video Added successfully",
+            "data" => $video
+        ];
     }
 
     /**
@@ -61,7 +81,28 @@ class AdminApiVideoController extends Controller
      */
     public function show($id)
     {
-        //
+        // find post id
+        if(VideoGallery::where("id", $id)->exists()){
+        $video = VideoGallery::find($id);
+
+        // return response
+        return [
+            "status" => 200,
+            "message" => "Video Retrieved successfully",
+            "data" =>$video
+        ];
+    }
+
+     // if no record
+     else { 
+
+        return [
+            "status" => 404,
+            "message" => "Oops!, No video Found ",
+           
+        ];
+    
+    }
     }
 
     /**
@@ -84,7 +125,43 @@ class AdminApiVideoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if(VideoGallery::where("id", $id)->exists()){
+            $video   = VideoGallery::find($id);
+            $video->video_title = !empty($request->video_title)? $request->video_title: $video->video_title;
+            $video->video_url = !empty($request->video_url)? $request->video_url: $video->video_url;
+            $video->video_description = !empty($request->video_description)? $request->video_description: $video->video_description;
+            
+            // video thumbnail
+            if($request->hasfile('video_thumbnail')){
+                $file               = $request->file('video_thumbnail');
+                $extension          = $file->getClientOriginalExtension();  //get image extension
+                $filename           = time() . '.' .$extension;
+                $file->move('uploads/video_thumbnails/',$filename);
+                $video_update->video_thumbnail   = url('uploads' . '/video_thumbnails/'  . $filename);
+            }
+
+            // save post 
+            $video->save();
+    
+            // response for success
+            return [
+                "status" => 200,
+                "message" => "Video updated successfully",
+                "data" => $video
+               
+            ];
+        }
+        // if no record by id found
+        else { 
+    
+            // response for success
+            return [
+                "status" => 404,
+                "message" => "Oops!, No Video Found ",
+               
+            ];
+        
+        }
     }
 
     /**
