@@ -10,6 +10,8 @@ use App\Http\Controllers\Api\v1\Admin\AdminApiFeedbackController;
 use App\Http\Controllers\Api\v1\Admin\AdminApiVolunteerController;
 use App\Http\Controllers\Api\v1\Admin\AdminApiPhotoCategoryController;
 use App\Http\Controllers\Api\v1\Admin\AdminApiPhotoController;
+use App\Http\Controllers\Api\v1\Admin\AdminApiVideoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +42,8 @@ Route::resource('volunteers', AdminApiVolunteerController::class);
 Route::resource('photo_categories', AdminApiPhotoCategoryController::class);
 // photos
 Route::resource('photos', AdminApiPhotoController::class);
+// videos
+Route::resource('videos', AdminApiVideoController::class);
 
 
 
