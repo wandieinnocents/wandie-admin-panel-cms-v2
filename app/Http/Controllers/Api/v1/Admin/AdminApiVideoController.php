@@ -109,6 +109,7 @@ class AdminApiVideoController extends Controller
     public function update(Request $request, $id)
     {
         if(VideoGallery::where("id", $id)->exists()){
+            // update video
             $video   = VideoGallery::find($id);
             $video->video_title = !empty($request->video_title)? $request->video_title: $video->video_title;
             $video->video_url = !empty($request->video_url)? $request->video_url: $video->video_url;
