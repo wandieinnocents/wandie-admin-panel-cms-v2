@@ -167,6 +167,14 @@ Posts
                                     <hr>
                                     <p>Description : {{ $post->post_description }}</p>
 
+                                    <!-- post comment box here -->
+                                    <form>
+                                    <div class="mb-3">
+                                                <label for="message-text" class="col-form-label">Add Comment:</label>
+                                                <textarea class="form-control" name="post_description" value="" id="message-text">{{  $post->post_description }}</textarea>
+                                      </div>
+                                    </form>
+
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close </button>
