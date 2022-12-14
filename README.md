@@ -5,6 +5,11 @@ Wandie Admin Panel is a master admin panel that gives you a fully fledged back-e
 ## COMMENTS SYSTEM FOR BLOGS INTEGRATION
 - Disqus comments : https://disqus.com/
 
+## Flutterwave Integration 
+- Docs : https://laravelrave.netlify.app
+
+
+
 ## API 
 ## Admin/Server_Side Api Controller
 How to add an admin api controller 
@@ -19,7 +24,3 @@ How to add an admin api controller
 ## Customer/Client Api Controller
 How to add an customer/client api controller 
 - php artisan make:controller Api/v1/Customer/CustomerApiPostController -r
-
-## Flutterwave Integration 
-- Docs : https://laravelrave.netlify.app
-
