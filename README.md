@@ -6,6 +6,9 @@ Wandie Admin Panel is a master admin panel that gives you a fully fledged back-e
 How to add an admin api controller 
 - php artisan make:controller Api/v1/Admin/AdminApiPostController -r
 
+## COMMENTS SYSTEM FOR BLOGS INTEGRATION
+- Disqus comments : https://disqus.com/
+
 ## ADMIN ENDPOINTS
 ### Feedback Endpoints
 - All Feedbacks    : http://127.0.0.1:8000/api/v1/feedbacks
