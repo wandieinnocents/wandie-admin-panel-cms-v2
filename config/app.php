@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'PARAMEDIC INSTITUTE'),
+    'name' => env('APP_NAME', 'WANDIE ADMINv2'),
 
     /*
     |--------------------------------------------------------------------------
