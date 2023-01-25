@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/wanrlnwf/api.wanraninc.com
+    - /bin/cp -r * $DEPLOYPATH
