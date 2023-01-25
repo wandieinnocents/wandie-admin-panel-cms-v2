@@ -9,7 +9,7 @@
 <body>
 
 <h1 style="margin-top:340px;"><center>WANRAN ADMIN PANEL</center></h1>
-<p><center>Never worry about backend again</center></p>
+<p><center>Never ever worry about backend again</center></p>
     
 </body>
 </html>
