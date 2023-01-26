@@ -19,7 +19,30 @@
                         <span data-key="t-dashboard">Analytics</span>
                     </a>
                 </li> --}}
-                <!-- Feedback -->
+                <!-- sliders -->
+
+                  <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i class="fas fa-university"></i>
+                        <span data-key="t-apps">Slideshow</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="/project_categories/create">
+                                <span data-key="t-calendar">Add Slider</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/project_categories">
+                                <span data-key="t-calendar">View Sliders</span>
+                            </a>
+                        </li>
+                       
+                    </ul>
+                </li>
+
+                {{-- feedback --}}
+
                 <li>
                     <a href="/feedbacks">
                         <i class="fas fa-comment-alt "></i>
@@ -64,6 +87,39 @@
                         </li>
                     </ul>
                 </li> --}}
+
+                {{-- products --}}
+
+                  <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i class="fas fa-university"></i>
+                        <span data-key="t-apps">Products</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="/project_categories/create">
+                                <span data-key="t-calendar">Add Category</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/project_categories">
+                                <span data-key="t-calendar">View Categories</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/projects/create">
+                                <span data-key="t-chat">Add Product</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/projects">
+                                <span data-key="t-chat">View Products</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
                 <!-- Gallery -->
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
@@ -171,6 +227,9 @@
                         </li>
                     </ul>
                 </li>
+
+
+
                 {{-- courses --}}
                  <!-- <li>
                     <a href="javascript: void(0);" class="has-arrow">

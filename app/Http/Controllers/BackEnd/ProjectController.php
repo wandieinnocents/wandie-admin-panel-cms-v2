@@ -43,11 +43,11 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-         
+
         $validatedData = $request->validate([
-            
+
             'project_photo' => 'required|mimes:doc,pdf,docx,zip,jpeg,jpg,csv,txt,xlx,xls,png',
-            
+
         ]);
 
     $project = new Project();
@@ -93,7 +93,7 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        
+
     }
 
     /**
@@ -123,7 +123,7 @@ class ProjectController extends Controller
         // dd($foodmenu);
         $project_update->save();
 
-        return redirect('/projects');
+        return redirect('/projects'); 
     }
 
     /**
