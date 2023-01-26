@@ -5,6 +5,8 @@ namespace App\Http\Controllers\BackEnd;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProductCategoryFormRequest;
+use App\Models\ProductCategory;
+use Illuminate\Support\Str;
 
 
 class ProductCategoryController extends Controller
@@ -39,7 +41,7 @@ class ProductCategoryController extends Controller
     {
         // pick validations from category form request
         $validatedData = $request->validated();
-        $category = new Category();
+        $category = new ProductCategory();
         $category->name = $validatedData['name'];
         $category->slug = Str::slug($validatedData['slug']);
         $category->description = $validatedData['description'];
@@ -66,7 +68,7 @@ class ProductCategoryController extends Controller
 
         $category->save();
         // redirect
-        return redirect('admin/categories')->with('message','Category added successfuly');
+        return redirect('/product_categories')->with('message','Category added successfuly');
 
     }
 
