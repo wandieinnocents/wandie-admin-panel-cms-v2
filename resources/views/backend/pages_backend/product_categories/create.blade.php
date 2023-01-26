@@ -37,7 +37,7 @@
                                         <!-- <p class="card-title-desc">Add Category</p> -->
                                     </div>
                                     <div class="card-body">
-                                    <form  action="{{ url('admin/categories') }}"  method="POST" enctype="multipart/form-data">
+                                    <form  action="{{ route('product_categories.store') }}"  method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-md-6">
