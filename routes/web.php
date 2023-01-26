@@ -117,7 +117,6 @@ Route::group(['middleware' => ['auth']], function() {
 
 // users
 Route::resource('/users', 'App\Http\Controllers\UserController');
-
 // analytics
  Route::get('/analytics', 'App\Http\Controllers\BackEnd\AnalyticsController@analytics');
 // Roles
@@ -144,13 +143,8 @@ Route::resource('/resource_categories', 'App\Http\Controllers\BackEnd\ResourceCa
 Route::resource('/teams', 'App\Http\Controllers\BackEnd\TeamController');
 // faq
 Route::resource('/faqs', 'App\Http\Controllers\BackEnd\FaqController');
-
-
-
 // Orders
 Route::resource('/orders', 'App\Http\Controllers\BackEnd\OrderController');
-
-
 // Gallery  category
 Route::resource('/gallery_categories', 'App\Http\Controllers\BackEnd\GalleryCategoryController');
 // Gallery 
@@ -175,6 +169,10 @@ Route::resource('/courses', 'App\Http\Controllers\BackEnd\CourseController');
 
 // events
 Route::resource('/events', 'App\Http\Controllers\BackEnd\EventController');
+// product categories
+Route::resource('/product_categories', 'App\Http\Controllers\BackEnd\ProductCategoryController');
+
+
 
 });
 

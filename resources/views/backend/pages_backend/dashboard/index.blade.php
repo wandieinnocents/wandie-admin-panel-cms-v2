@@ -117,6 +117,100 @@ Dashboard
                             </div><!-- end col -->    
                         </div>
                         <!-- END OF DASHBOARD ROW 1 -->
+
+                        {{-- DASHBOARD ROW 2 --}}
+
+                         <div class="row">
+                            <div class="col-xl-3 col-md-6">
+                                <!-- card -->
+                                <div class="card card-h-100">
+                                    <!-- card body -->
+                                    <div class="card-body bg-gradient bg-success">
+                                        <div class="row align-items-center">
+                                            <div class="col-6">
+                                            <span class="text-light mb-3 lh-1 d-block ">Photo Categories</span>                                                <h4 class="mb-3 text-light">
+                                                    <span class="counter-value" data-target="{{ $resource_categories }}"></span>
+                                                </h4>
+                                            </div>
+        
+                                            
+                                        </div>
+                                        <div class="text-nowrap">
+                                            <span class="badge bg-soft-primary text-success">{{ $resource_categories }}</span>
+                                            <span class="ms-1 text-muted font-size-13">Details</span>
+                                        </div>
+                                    </div><!-- end card body -->
+                                </div><!-- end card -->
+                            </div><!-- end col -->
+        
+                            <div class="col-xl-3 col-md-6">
+                                <!-- card -->
+                                <div class="card card-h-100">
+                                    <!-- card body -->
+                                    <div class="card-body bg-gradient bg-primary">
+                                        <div class="row align-items-center">
+                                            <div class="col-6">
+                                                <span class="text-light mb-3 lh-1 d-block text-truncate">Photos</span>
+                                                <h4 class="mb-3 text-light">
+                                                    <span class="counter-value" data-target="{{ $resources }}"></span>
+                                                </h4>
+                                            </div>
+                                          
+                                        </div>
+                                        <div class="text-nowrap">
+                                            <span class="badge bg-soft-danger text-light">{{ $resources }}</span>
+                                            <span class="ms-1 text-light font-size-13">Details</span>
+                                        </div>
+                                    </div><!-- end card body -->
+                                </div><!-- end card -->
+                            </div><!-- end col-->
+        
+                            <div class="col-xl-3 col-md-6">
+                                <!-- card -->
+                                <div class="card card-h-100">
+                                    <!-- card body -->
+                                    <div class="card-body bg-gradient bg-warning">
+                                        <div class="row align-items-center">
+                                            <div class="col-6">
+                                                <span class="text-muted mb-3 lh-1 d-block text-truncate">News Articles</span>
+                                                <h4 class="mb-3">
+                                                    <span class="counter-value" data-target="{{ $users }}"></span>
+                                                </h4>
+                                            </div>
+                                           
+                                        </div>
+                                        <div class="text-nowrap">
+                                            <span class="badge bg-soft-success text-success">{{ $users }}</span>
+                                            <span class="ms-1 text-muted font-size-13">Details</span>
+                                        </div>
+                                    </div><!-- end card body -->
+                                </div><!-- end card -->
+                            </div><!-- end col -->
+        
+                            <div class="col-xl-3 col-md-6">
+                                <!-- card -->
+                                <div class="card card-h-100">
+                                    <!-- card body -->
+                                    <div class="card-body bg-gradient bg-danger">
+                                        <div class="row align-items-center">
+                                            <div class="col-6">
+                                                <span class="text-muted mb-3 lh-1 d-block text-truncate">Staff</span>
+                                                <h4 class="mb-3">
+                                                    <span class="counter-value" data-target="{{ $roles }}"></span>
+                                                </h4>
+                                            </div>
+                                           
+                                        </div>
+                                        <div class="text-nowrap">
+                                            <span class="badge bg-soft-primary text-success">{{ $roles }}</span>
+                                            <span class="ms-1 text-light font-size-13">Details</span>
+                                        </div>
+                                    </div><!-- end card body -->
+                                </div><!-- end card -->
+                            </div><!-- end col -->    
+                        </div>
+
+                        {{-- END OF DASHBOARD ROW 2 --}}
                         
 
 
