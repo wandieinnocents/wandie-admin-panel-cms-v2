@@ -22,7 +22,7 @@ Product Categories
                     <div class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
 
                         <div>
-                            <a href="{{ route('project_categories.create') }}" class="btn bg-primary text-light"><i
+                            <a href="{{ route('product_categories.create') }}" class="btn bg-primary text-light"><i
                                     class="bx bx-plus me-1"></i> Add Category</a>
                         </div>
 
@@ -47,7 +47,12 @@ Product Categories
                             </th>
                             <th scope="col"> #ID</th>
                             <th scope="col"> Name</th>
+                            <th scope="col"> Slug</th>
+                            <th scope="col"> Image</th>
                             <th scope="col">Description</th>
+                            <th scope="col"> Meta Title</th>
+                            <th scope="col"> Meta Keywords</th>
+                            <th scope="col"> Meta Description</th>
                             <th style="width: 150px; min-width: 80px;">Action</th>
                         </tr>
                     </thead>
@@ -62,11 +67,13 @@ Product Categories
                                     </div>
                                 </th>
                                 <td>{{ $product_category->id }}</td>
-                                <td>
-                                    <a href="#" class="text-body">{{ $product_category->name }}</a>
-                                </td>
-
+                                <td><a href="#" class="text-body">{{ $product_category->name }}</a> </td>
+                                <td><a href="#" class="text-body">{{ $product_category->slug }}</a> </td>
+                                <td><a href="#" class="text-body">{{ $product_category->image }}</a> </td>
                                 <td>{{ $product_category->description }}</td>
+                                 <td><a href="#" class="text-body">{{ $product_category->meta_keywords }}</a> </td>
+                                  <td><a href="#" class="text-body">{{ $product_category->meta_title }}</a> </td>
+                                   <td><a href="#" class="text-body">{{ $product_category->meta_description }}</a> </td>
 
                                 <td colspan="6">
                                     <div class="row">
@@ -115,14 +122,28 @@ Product Categories
 
 
                                         <div class="modal-body">
+                                            @if (($product_category->image))
+                                               <img src={{ asset('uploads/product_category/'.$product_category->image) }}  width="100%" height="auto" />
+
+                                            @else
+                                                <p class="text-danger">No Photo</p>
+                                            @endif
 
 
-                                            <p>Category Name : {{ $product_category->product_category_name }}</p>
                                             <hr>
-
-
-                                            <p>Description : {{ $product_category->product_category_description }}</p>
-
+                                            <p>Category Name : {{ $product_category->name }}</p>
+                                            <hr>
+                                            <p>Slug : {{ $product_category->slug }}</p>
+                                            <hr>
+                                             <p>Meta Title : {{ $product_category->meta_title }}</p>
+                                            <hr>
+                                            <p>Meta Keywords : {{ $product_category->meta_keywords }}</p>
+                                            <hr>
+                                             <p> Description : {{ $product_category->description }}</p>
+                                            <hr>
+                                             <p>Meta Description : {{ $product_category->meta_description }}</p>
+                                            <hr>
+                                            <p>Description : {{ $product_category->description }}</p>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close
