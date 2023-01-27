@@ -33,6 +33,14 @@ Product Categories
             <!-- end row -->
 
             <!-- FETCH FEEDBACKS -->
+             @if(session('message'))
+             <div class="alert alert-success" > {{ session('message')}} </div>
+             @endif
+              
+              @if(session('messagedelete')) 
+              <div class="alert alert-danger" > {{ session('messagedelete')}} </div>
+             @endif
+
 
             <div class="table-responsive mb-4">
                 <table class="table align-middle datatable dt-responsive table-check nowrap"

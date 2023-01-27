@@ -156,6 +156,6 @@ class ProductCategoryController extends Controller
         $category = ProductCategory::findOrFail($id);
         $category->delete();
 
-        return redirect('/product_categories')->with('success', 'Product Category is successfully deleted');
+        return redirect('/product_categories')->with('messagedelete', 'Product Category is successfully deleted');
     }
 }
