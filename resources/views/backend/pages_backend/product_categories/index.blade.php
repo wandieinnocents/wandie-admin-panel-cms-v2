@@ -106,7 +106,7 @@ Product Categories
 
 
 
-                            <!-- VIEW DETAILS MODEL -->
+                            <!-- VIEW PRODUCT CATEGORIES MODAL -->
                             <div class="modal fade" id="viewProjectCategoryDetails{{ $product_category->id }}"
                                 tabindex="-1" aria-labelledby="viewProjectCategoryDetailsLabel" style="display: none;"
                                 aria-hidden="true">
@@ -158,7 +158,7 @@ Product Categories
                             <!-- END OF VIEW DETAILS MODEL -->
 
 
-                            {{-- UPDATE Project CATEGORY --}}
+                            {{-- UPDATE PRODUCT  CATEGORY --}}
                             <div class="modal fade" id="editProjectCategory{{ $product_category->id }}" tabindex="-1"
                                 aria-labelledby="editProjectCategoryLabel" style="display: none;" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
@@ -174,34 +174,96 @@ Product Categories
 
                                             <!-- UPDATE Project CATEGORIES -->
 
-                                            <form
-                                                action="{{ route('project_categories.update', $product_category->id) }}"
+                                             <form  action="{{ route('product_categories.update', $product_category->id) }}"
                                                 method="post" enctype="multipart/form-data">
                                                 @csrf
                                                 @method('PATCH')
-                                                <div class="mb-3">
-                                                    <label for="recipient-name" class="col-form-label">Name:</label>
-                                                    <input type="text" class="form-control"
-                                                        name="product_category_name"
-                                                        value="{{ $product_category->product_category_name }}"
-                                                        id="recipient-name">
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="validationCustom01">Name</label>
+                                                        <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Ennter Category Name" value="{{ $product_category->name}}">
+                                                         @error('name') 
+                                                            <small class="text-danger"> {{ $message }}</small>
+                                                          @enderror
+                                                        
+                                                    </div>
                                                 </div>
 
-                                                <div class="mb-3">
-                                                    <label for="message-text" class="col-form-label">Description:</label>
-                                                    <textarea class="form-control" name="product_category_description" value="" id="message-text">{{ $product_category->product_category_description }}</textarea>
-                                                </div>
-
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">Close</button>
-                                                    <!-- <button  type="submit" class="btn btn-primary">Submit</button> -->
-                                                    <button class="btn btn-primary" type="submit">Update
-                                                        Category</button>
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="validationCustom01">Slug</label>
+                                                        <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Ennter slug" value="{{ $product_category->slug }}" >
+                                                         @error('slug') 
+                                                            <small class="text-danger"> {{ $message }}</small>
+                                                          @enderror
+                                                    </div>
                                                 </div>
 
 
-                                            </form>
+
+
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" >Description</label>
+                                                        <textarea class="form-control"  name="description" placeholder="Enter Category Description" rows="3">{{ $product_category->description }}</textarea>
+                                                         @error('description') 
+                                                            <small class="text-danger"> {{ $message }}</small>
+                                                          @enderror
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="validationCustom01">image</label>
+                                                        <input type="file" class="form-control" id="validationCustom01"  name="image"  value="" >
+                                                       @error('image') 
+                                                            <small class="text-danger"> {{ $message }}</small>
+                                                       @enderror
+                                                    </div>
+                                                </div>
+
+                                              
+                                                <h3>SEO TAGS </H3>
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="validationCustom01">Meta title</label>
+                                                        <input type="text" class="form-control" id="validationCustom01"  name="meta_title" placeholder="Ennter Category Name" value="{{ $product_category->meta_title }}" >
+                                                         @error('meta_title') 
+                                                            <small class="text-danger"> {{ $message }}</small>
+                                                          @enderror
+                                                    </div>
+                                                </div>
+
+                                                
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" >Meta Keywords</label>
+                                                        <textarea class="form-control"  name="meta_keywords" placeholder="Enter Category Description" rows="3">{{ $product_category->meta_keywords }}</textarea>
+                                                         @error('meta_keywords') 
+                                                            <small class="text-danger"> {{ $message }}</small>
+                                                          @enderror
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" >Meta Description</label>
+                                                        <textarea class="form-control"  name="meta_description" placeholder="Enter Category Description" rows="3">{{ $product_category->meta_description }}</textarea>
+                                                         @error('meta_description') 
+                                                            <small class="text-danger"> {{ $message }}</small>
+                                                          @enderror
+                                                    </div>
+                                                </div>
+
+                                                
+                                            </div>
+
+                                            <!-- Editor -->
+                                            <button class="btn btn-primary" type="submit">Update Product Category</button>
+                                        </form>
                                         </div>
 
 
