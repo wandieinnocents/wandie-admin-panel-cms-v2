@@ -123,10 +123,10 @@ Projects
                                             <!-- delete food menu -->
                                             <div class="col-md-4">
                                             <form action="{{ route('projects.destroy', $project->id) }}" method="post">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <a >  <button class="btn btn-danger shadow btn-xs sharp"> <span class="fa fa-trash"> </button> </a>  
-                                                        
+                                            @csrf
+                                            @method('DELETE')
+                                            <a >  <button class="btn btn-danger shadow btn-xs sharp"> <span class="fa fa-trash"> </button> </a>  
+                                            
                                             </form>
 
 

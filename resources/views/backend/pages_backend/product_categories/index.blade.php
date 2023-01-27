@@ -93,7 +93,7 @@ Product Categories
                                         </div>
                                         <!-- delete food menu -->
                                         <div class="col-md-4">
-                                            <form action="{{ route('project_categories.update', $product_category->id) }}"
+                                            <form action="{{ route('product_categories.destroy', $product_category->id) }}"
                                                 method="post">
                                                 @csrf
                                                 @method('DELETE')
