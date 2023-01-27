@@ -18,7 +18,9 @@ class ProductCategoryController extends Controller
      */
     public function index()
     {
-        return "product categories";
+        $product_categories = ProductCategory::all();
+        // dd($product_categories);
+        return view('backend.pages_backend.product_categories.index',compact('product_categories'));
     }
 
     /**

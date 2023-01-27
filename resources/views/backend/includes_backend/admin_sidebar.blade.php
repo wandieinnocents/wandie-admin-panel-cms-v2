@@ -98,6 +98,19 @@
                     <ul class="sub-menu" aria-expanded="false">
                         <li>
                             <a href="/product_categories/create">
+                                <span data-key="t-calendar">Add Brand</span>
+                            </a>
+                        </li>
+
+                         <li>
+                            <a href="/product_categories/create">
+                                <span data-key="t-calendar">View Brands</span>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="/product_categories/create">
                                 <span data-key="t-calendar">Add Category</span>
                             </a>
                         </li>

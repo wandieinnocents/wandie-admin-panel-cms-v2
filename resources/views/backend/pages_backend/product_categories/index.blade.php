@@ -1,7 +1,7 @@
 @extends('backend.layouts_backend.master')
 
 @section('title')
-Project Categories
+Product Categories
 @endsection
 
 @section('content')
@@ -14,7 +14,7 @@ Project Categories
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <h5 class="card-title">Project Category <span class="text-muted fw-normal ms-2">(1)</span></h5>
+                        <h5 class="card-title">Product Category <span class="text-muted fw-normal ms-2">(1)</span></h5>
                     </div>
                 </div>
 
@@ -53,7 +53,7 @@ Project Categories
                     </thead>
                     <tbody>
 
-                        @foreach ($project_categories as $project_category)
+                        @foreach ($product_categories as $product_category)
                             <tr>
                                 <th scope="row">
                                     <div class="form-check font-size-16">
@@ -61,30 +61,30 @@ Project Categories
                                         <label class="form-check-label" for="contacusercheck11"></label>
                                     </div>
                                 </th>
-                                <td>{{ $project_category->id }}</td>
+                                <td>{{ $product_category->id }}</td>
                                 <td>
-                                    <a href="#" class="text-body">{{ $project_category->project_category_name }}</a>
+                                    <a href="#" class="text-body">{{ $product_category->name }}</a>
                                 </td>
 
-                                <td>{{ $project_category->project_category_description }}</td>
+                                <td>{{ $product_category->description }}</td>
 
                                 <td colspan="6">
                                     <div class="row">
                                         <div class="col-md-4">
                                             <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                                data-bs-target="#viewProjectCategoryDetails{{ $project_category->id }}"
+                                                data-bs-target="#viewProjectCategoryDetails{{ $product_category->id }}"
                                                 data-bs-whatever="@getbootstrap"><i class=" far fa-eye  "></i></button>
                                         </div>
 
                                         <div class="col-md-4">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#editProjectCategory{{ $project_category->id }}"
+                                                data-bs-target="#editProjectCategory{{ $product_category->id }}"
                                                 data-bs-whatever="@getbootstrap"><i class="fas fa-pencil-alt "></i></button>
 
                                         </div>
                                         <!-- delete food menu -->
                                         <div class="col-md-4">
-                                            <form action="{{ route('project_categories.update', $project_category->id) }}"
+                                            <form action="{{ route('project_categories.update', $product_category->id) }}"
                                                 method="post">
                                                 @csrf
                                                 @method('DELETE')
@@ -97,8 +97,10 @@ Project Categories
                                 </td>
                             </tr>
 
+
+
                             <!-- VIEW DETAILS MODEL -->
-                            <div class="modal fade" id="viewProjectCategoryDetails{{ $project_category->id }}"
+                            <div class="modal fade" id="viewProjectCategoryDetails{{ $product_category->id }}"
                                 tabindex="-1" aria-labelledby="viewProjectCategoryDetailsLabel" style="display: none;"
                                 aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
@@ -115,18 +117,18 @@ Project Categories
                                         <div class="modal-body">
 
 
-                                            <p>Category Name : {{ $project_category->project_category_name }}</p>
+                                            <p>Category Name : {{ $product_category->product_category_name }}</p>
                                             <hr>
 
 
-                                            <p>Description : {{ $project_category->project_category_description }}</p>
+                                            <p>Description : {{ $product_category->product_category_description }}</p>
 
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close
                                             </button>
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#editProjectCategory{{ $project_category->id }}"
+                                                data-bs-target="#editProjectCategory{{ $product_category->id }}"
                                                 data-bs-whatever="@getbootstrap">Edit Category</button>
                                         </div>
                                     </div>
@@ -136,7 +138,7 @@ Project Categories
 
 
                             {{-- UPDATE Project CATEGORY --}}
-                            <div class="modal fade" id="editProjectCategory{{ $project_category->id }}" tabindex="-1"
+                            <div class="modal fade" id="editProjectCategory{{ $product_category->id }}" tabindex="-1"
                                 aria-labelledby="editProjectCategoryLabel" style="display: none;" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
                                     <div class="modal-content">
@@ -152,21 +154,21 @@ Project Categories
                                             <!-- UPDATE Project CATEGORIES -->
 
                                             <form
-                                                action="{{ route('project_categories.update', $project_category->id) }}"
+                                                action="{{ route('project_categories.update', $product_category->id) }}"
                                                 method="post" enctype="multipart/form-data">
                                                 @csrf
                                                 @method('PATCH')
                                                 <div class="mb-3">
                                                     <label for="recipient-name" class="col-form-label">Name:</label>
                                                     <input type="text" class="form-control"
-                                                        name="project_category_name"
-                                                        value="{{ $project_category->project_category_name }}"
+                                                        name="product_category_name"
+                                                        value="{{ $product_category->product_category_name }}"
                                                         id="recipient-name">
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label for="message-text" class="col-form-label">Description:</label>
-                                                    <textarea class="form-control" name="project_category_description" value="" id="message-text">{{ $project_category->project_category_description }}</textarea>
+                                                    <textarea class="form-control" name="product_category_description" value="" id="message-text">{{ $product_category->product_category_description }}</textarea>
                                                 </div>
 
                                                 <div class="modal-footer">
