@@ -69,7 +69,9 @@ Product Categories
                                 <td>{{ $product_category->id }}</td>
                                 <td><a href="#" class="text-body">{{ $product_category->name }}</a> </td>
                                 <td><a href="#" class="text-body">{{ $product_category->slug }}</a> </td>
-                                <td><a href="#" class="text-body">{{ $product_category->image }}</a> </td>
+                                <td><a href="#" class="text-body">
+                                 <img src={{ asset('uploads/product_category/'.$product_category->image) }}  width="60px" height="60px" />
+                                 </a> </td>
                                 <td>{{ $product_category->description }}</td>
                                  <td><a href="#" class="text-body">{{ $product_category->meta_keywords }}</a> </td>
                                   <td><a href="#" class="text-body">{{ $product_category->meta_title }}</a> </td>
@@ -218,6 +220,7 @@ Product Categories
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">image</label>
                                                         <input type="file" class="form-control" id="validationCustom01"  name="image"  value="" >
+                                                        <img src={{ asset('uploads/product_category/'.$product_category->image) }}  width="60px" height="60px" />
                                                        @error('image') 
                                                             <small class="text-danger"> {{ $message }}</small>
                                                        @enderror

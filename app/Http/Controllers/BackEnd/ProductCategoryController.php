@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ProductCategoryFormRequest;
 use App\Models\ProductCategory;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 
 class ProductCategoryController extends Controller
