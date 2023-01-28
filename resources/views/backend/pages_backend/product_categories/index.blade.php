@@ -78,7 +78,13 @@ Product Categories
                                 <td><a href="#" class="text-body">{{ $product_category->name }}</a> </td>
                                 <td><a href="#" class="text-body">{{ $product_category->slug }}</a> </td>
                                 <td><a href="#" class="text-body">
-                                 <img src={{ asset('uploads/product_category/'.$product_category->image) }}  width="60px" height="60px" />
+
+                                  @if ($product_category->image)
+                                       <img src={{ asset('uploads/product_category/'.$product_category->image) }}   width="60px" height="60px" />
+                                  @else
+                                       <span class="badge bg-soft-danger text-danger" style="padding:10px;">No Photo</span>
+                                  @endif
+
                                  </a> </td>
                                 <td>{{ $product_category->description }}</td>
                                  <td><a href="#" class="text-body">{{ $product_category->meta_keywords }}</a> </td>
@@ -89,13 +95,13 @@ Product Categories
                                     <div class="row">
                                         <div class="col-md-4">
                                             <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                                data-bs-target="#viewProjectCategoryDetails{{ $product_category->id }}"
+                                                data-bs-target="#viewProductCategoryDetails{{ $product_category->id }}"
                                                 data-bs-whatever="@getbootstrap"><i class=" far fa-eye  "></i></button>
                                         </div>
 
                                         <div class="col-md-4">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#editProjectCategory{{ $product_category->id }}"
+                                                data-bs-target="#editProductCategory{{ $product_category->id }}"
                                                 data-bs-whatever="@getbootstrap"><i class="fas fa-pencil-alt "></i></button>
 
                                         </div>
@@ -117,13 +123,13 @@ Product Categories
 
 
                             <!-- VIEW PRODUCT CATEGORIES MODAL -->
-                            <div class="modal fade" id="viewProjectCategoryDetails{{ $product_category->id }}"
-                                tabindex="-1" aria-labelledby="viewProjectCategoryDetailsLabel" style="display: none;"
+                            <div class="modal fade" id="viewProductCategoryDetails{{ $product_category->id }}"
+                                tabindex="-1" aria-labelledby="viewProductCategoryDetailsLabel" style="display: none;"
                                 aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="viewProjectCategoryDetailsLabel">Project Category
+                                            <h5 class="modal-title" id="viewProductCategoryDetailsLabel">Product Category
                                                 Details</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
@@ -132,7 +138,7 @@ Product Categories
 
 
                                         <div class="modal-body">
-                                            @if (($product_category->image))
+                                            @if ($product_category->image)
                                                <img src={{ asset('uploads/product_category/'.$product_category->image) }}  width="100%" height="auto" />
 
                                             @else
@@ -159,7 +165,7 @@ Product Categories
                                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close
                                             </button>
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#editProjectCategory{{ $product_category->id }}"
+                                                data-bs-target="#editProductCategory{{ $product_category->id }}"
                                                 data-bs-whatever="@getbootstrap">Edit Category</button>
                                         </div>
                                     </div>
@@ -169,12 +175,12 @@ Product Categories
 
 
                             {{-- UPDATE PRODUCT  CATEGORY --}}
-                            <div class="modal fade" id="editProjectCategory{{ $product_category->id }}" tabindex="-1"
-                                aria-labelledby="editProjectCategoryLabel" style="display: none;" aria-hidden="true">
+                            <div class="modal fade" id="editProductCategory{{ $product_category->id }}" tabindex="-1"
+                                aria-labelledby="editProductCategoryLabel" style="display: none;" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="viewProjectCategoryDetailsLabel">Edit Category
+                                            <h5 class="modal-title" id="viewProductCategoryDetailsLabel">Edit Category
                                                 Details</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
@@ -182,7 +188,7 @@ Product Categories
                                         <div class="modal-body">
 
 
-                                            <!-- UPDATE Project CATEGORIES -->
+                                            <!-- UPDATE Product CATEGORIES -->
 
                                              <form  action="{{ route('product_categories.update', $product_category->id) }}"
                                                 method="post" enctype="multipart/form-data">
@@ -194,7 +200,7 @@ Product Categories
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Name</label>
                                                         <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Ennter Category Name" value="{{ $product_category->name}}">
-                                                         @error('name') 
+                                           @error('name') 
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
                                                         
@@ -281,7 +287,7 @@ Product Categories
                                     </div>
                                 </div>
                             </div>
-                            {{-- END UPDATE PROJECT CATEGORY --}}
+                            {{-- END UPDATE Product CATEGORY --}}
                         @endforeach
 
 
