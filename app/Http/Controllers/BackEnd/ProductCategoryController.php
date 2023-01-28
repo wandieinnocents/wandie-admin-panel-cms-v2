@@ -142,7 +142,7 @@ class ProductCategoryController extends Controller
         // dd($category);
 
         $category->update();
-        return redirect('/product_categories')->with('message','Category Updated successfuly');
+        return redirect('/product_categories')->with('messageupdate','Category Updated successfuly');
     }
 
     /**

@@ -33,13 +33,33 @@ Product Categories
             <!-- end row -->
 
             <!-- FETCH FEEDBACKS -->
+            {{-- alert add item --}}
              @if(session('message'))
-             <div class="alert alert-success" > {{ session('message')}} </div>
+             {{-- <div class="alert alert-success" > {{ session('message')}} </div> --}}
+             <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="mdi mdi-check-all me-2"></i>
+                 {{ session('message')}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
              @endif
-              
+
+             {{-- alert delete item --}}
               @if(session('messagedelete')) 
-              <div class="alert alert-danger" > {{ session('messagedelete')}} </div>
+             <div class="alert alert-danger alert-border-left alert-dismissible fade show" role="alert">
+                <i class="mdi mdi-block-helper me-3 align-middle"></i>{{ session('messagedelete')}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+              {{-- <div class="alert alert-danger" > {{ session('messagedelete')}} </div> --}}
              @endif
+
+             {{-- alert update item --}}
+              @if(session('messageupdate')) 
+             <div class="alert alert-info alert-dismissible fade show mb-0" role="alert">
+               <i class="mdi mdi-check-all me-2"></i>
+                {{ session('messageupdate')}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
 
 
             <div class="table-responsive mb-4">
