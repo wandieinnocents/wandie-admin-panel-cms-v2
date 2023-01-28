@@ -138,12 +138,12 @@ Product Categories
 
 
                                         <div class="modal-body">
-                                            @if ($product_category->image)
-                                               <img src={{ asset('uploads/product_category/'.$product_category->image) }}  width="100%" height="auto" />
-
+                                           @if ($product_category->image)
+                                       <img src={{ asset('uploads/product_category/'.$product_category->image) }}   width="60px" height="60px" />
                                             @else
-                                                <p class="text-danger">No Photo</p>
+                                                <span class="badge bg-soft-danger text-danger" style="padding:10px;">No Photo</span>
                                             @endif
+
 
 
                                             <hr>
@@ -234,7 +234,12 @@ Product Categories
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">image</label>
                                                         <input type="file" class="form-control" id="validationCustom01"  name="image"  value="" >
-                                                        <img src={{ asset('uploads/product_category/'.$product_category->image) }}  width="60px" height="60px" />
+                                                        @if ($product_category->image)
+                                                            <img src={{ asset('uploads/product_category/'.$product_category->image) }}   width="60px" height="60px" />
+                                                        @else
+                                                            <span class="badge bg-soft-danger text-danger" style="padding:10px;">No Photo</span>
+                                                        @endif
+
                                                        @error('image') 
                                                             <small class="text-danger"> {{ $message }}</small>
                                                        @enderror
