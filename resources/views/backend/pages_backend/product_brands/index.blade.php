@@ -1,7 +1,7 @@
 @extends('backend.layouts_backend.master')
 
 @section('title')
-Product Categories
+Product Brands
 @endsection
 
 @section('content')
@@ -14,7 +14,7 @@ Product Categories
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <h5 class="card-title">Product Category <span class="text-muted fw-normal ms-2">(1)</span></h5>
+                        <h5 class="card-title">Product Brands <span class="text-muted fw-normal ms-2">(1)</span></h5>
                     </div>
                 </div>
 
@@ -22,7 +22,7 @@ Product Categories
                     <div class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
 
                         <div>
-                            <a href="{{ route('product_categories.create') }}" class="btn bg-primary text-light"><i
+                            <a href="{{ route('product_brands.create') }}" class="btn bg-primary text-light"><i
                                     class="bx bx-plus me-1"></i> Add Category</a>
                         </div>
 
@@ -77,17 +77,14 @@ Product Categories
                             <th scope="col"> #ID</th>
                             <th scope="col"> Name</th>
                             <th scope="col"> Slug</th>
-                            <th scope="col"> Image</th>
-                            <th scope="col">Description</th>
-                            <th scope="col"> Meta Title</th>
-                            <th scope="col"> Meta Keywords</th>
-                            <th scope="col"> Meta Description</th>
+                            <th scope="col"> Status</th>
+                           
                             <th style="width: 150px; min-width: 80px;">Action</th>
                         </tr>
                     </thead>
                     <tbody>
 
-                        @foreach ($product_categories as $product_category)
+                        @foreach ($product_brands as $product_brand)
                             <tr>
                                 <th scope="row">
                                     <div class="form-check font-size-16">
@@ -95,40 +92,37 @@ Product Categories
                                         <label class="form-check-label" for="contacusercheck11"></label>
                                     </div>
                                 </th>
-                                <td>{{ $product_category->id }}</td>
-                                <td><a href="#" class="text-body">{{ $product_category->name }}</a> </td>
-                                <td><a href="#" class="text-body">{{ $product_category->slug }}</a> </td>
-                                <td><a href="#" class="text-body">
+                                <td>{{ $product_brand->id }}</td>
+                                <td><a href="#" class="text-body">{{ $product_brand->name }}</a> </td>
+                                <td><a href="#" class="text-body">{{ $product_brand->slug }}</a> </td>
+                                <td>
 
-                                  @if ($product_category->image)
-                                       <img src={{ asset('uploads/product_category/'.$product_category->image) }}   width="60px" height="60px" />
-                                  @else
-                                       <span class="badge bg-soft-danger text-danger" style="padding:10px;">No Photo</span>
-                                  @endif
+                                    @if($product_brand->status == '0')
+                                    <span class="badge bg-soft-danger text-danger" style="padding:10px;">Hidden</span>
+                                    @else
+                                    <span class="badge bg-soft-success text-success" style="padding:10px;">Visible</span>
 
-                                 </a> </td>
-                                <td>{{ $product_category->description }}</td>
-                                 <td><a href="#" class="text-body">{{ $product_category->meta_keywords }}</a> </td>
-                                  <td><a href="#" class="text-body">{{ $product_category->meta_title }}</a> </td>
-                                   <td><a href="#" class="text-body">{{ $product_category->meta_description }}</a> </td>
-
+                                    @endif
+                                   
+                                  </td>
+                                
                                 <td colspan="6">
                                     <div class="row">
                                         <div class="col-md-4">
                                             <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                                data-bs-target="#viewProductCategoryDetails{{ $product_category->id }}"
+                                                data-bs-target="#viewProductCategoryDetails{{ $product_brand->id }}"
                                                 data-bs-whatever="@getbootstrap"><i class=" far fa-eye  "></i></button>
                                         </div>
 
                                         <div class="col-md-4">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#editProductCategory{{ $product_category->id }}"
+                                                data-bs-target="#editProductCategory{{ $product_brand->id }}"
                                                 data-bs-whatever="@getbootstrap"><i class="fas fa-pencil-alt "></i></button>
 
                                         </div>
                                         <!-- delete food menu -->
                                         <div class="col-md-4">
-                                            <form action="{{ route('product_categories.destroy', $product_category->id) }}"
+                                            <form action="{{ route('product_brands.destroy', $product_brand->id) }}"
                                                 method="post">
                                                 @csrf
                                                 @method('DELETE')
@@ -144,7 +138,7 @@ Product Categories
 
 
                             <!-- VIEW PRODUCT CATEGORIES MODAL -->
-                            <div class="modal fade" id="viewProductCategoryDetails{{ $product_category->id }}"
+                            <div class="modal fade" id="viewProductCategoryDetails{{ $product_brand->id }}"
                                 tabindex="-1" aria-labelledby="viewProductCategoryDetailsLabel" style="display: none;"
                                 aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
@@ -159,8 +153,8 @@ Product Categories
 
 
                                         <div class="modal-body">
-                                           @if ($product_category->image)
-                                       <img src={{ asset('uploads/product_category/'.$product_category->image) }}   width="60px" height="60px" />
+                                           @if ($product_brand->image)
+                                       <img src={{ asset('uploads/product_brand/'.$product_brand->image) }}   width="60px" height="60px" />
                                             @else
                                                 <span class="badge bg-soft-danger text-danger" style="padding:10px;">No Photo</span>
                                             @endif
@@ -168,25 +162,25 @@ Product Categories
 
 
                                             <hr>
-                                            <p>Category Name : {{ $product_category->name }}</p>
+                                            <p>Category Name : {{ $product_brand->name }}</p>
                                             <hr>
-                                            <p>Slug : {{ $product_category->slug }}</p>
+                                            <p>Slug : {{ $product_brand->slug }}</p>
                                             <hr>
-                                             <p>Meta Title : {{ $product_category->meta_title }}</p>
+                                             <p>Meta Title : {{ $product_brand->meta_title }}</p>
                                             <hr>
-                                            <p>Meta Keywords : {{ $product_category->meta_keywords }}</p>
+                                            <p>Meta Keywords : {{ $product_brand->meta_keywords }}</p>
                                             <hr>
-                                             <p> Description : {{ $product_category->description }}</p>
+                                             <p> Description : {{ $product_brand->description }}</p>
                                             <hr>
-                                             <p>Meta Description : {{ $product_category->meta_description }}</p>
+                                             <p>Meta Description : {{ $product_brand->meta_description }}</p>
                                             <hr>
-                                            <p>Description : {{ $product_category->description }}</p>
+                                            <p>Description : {{ $product_brand->description }}</p>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close
                                             </button>
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#editProductCategory{{ $product_category->id }}"
+                                                data-bs-target="#editProductCategory{{ $product_brand->id }}"
                                                 data-bs-whatever="@getbootstrap">Edit Category</button>
                                         </div>
                                     </div>
@@ -196,7 +190,7 @@ Product Categories
 
 
                             {{-- UPDATE PRODUCT  CATEGORY --}}
-                            <div class="modal fade" id="editProductCategory{{ $product_category->id }}" tabindex="-1"
+                            <div class="modal fade" id="editProductCategory{{ $product_brand->id }}" tabindex="-1"
                                 aria-labelledby="editProductCategoryLabel" style="display: none;" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
                                     <div class="modal-content">
@@ -211,7 +205,7 @@ Product Categories
 
                                             <!-- UPDATE Product CATEGORIES -->
 
-                                             <form  action="{{ route('product_categories.update', $product_category->id) }}"
+                                             <form  action="{{ route('product_brands.update', $product_brand->id) }}"
                                                 method="post" enctype="multipart/form-data">
                                                 @csrf
                                                 @method('PATCH')
@@ -220,7 +214,7 @@ Product Categories
                                                 <div class="col-md-6">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Name</label>
-                                                        <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Ennter Category Name" value="{{ $product_category->name}}">
+                                                        <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Ennter Category Name" value="{{ $product_brand->name}}">
                                            @error('name') 
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
@@ -231,7 +225,7 @@ Product Categories
                                                 <div class="col-md-6">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Slug</label>
-                                                        <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Ennter slug" value="{{ $product_category->slug }}" >
+                                                        <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Ennter slug" value="{{ $product_brand->slug }}" >
                                                          @error('slug') 
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
@@ -244,7 +238,7 @@ Product Categories
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" >Description</label>
-                                                        <textarea class="form-control"  name="description" placeholder="Enter Category Description" rows="3">{{ $product_category->description }}</textarea>
+                                                        <textarea class="form-control"  name="description" placeholder="Enter Category Description" rows="3">{{ $product_brand->description }}</textarea>
                                                          @error('description') 
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
@@ -255,8 +249,8 @@ Product Categories
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">image</label>
                                                         <input type="file" class="form-control" id="validationCustom01"  name="image"  value="" >
-                                                        @if ($product_category->image)
-                                                            <img src={{ asset('uploads/product_category/'.$product_category->image) }}   width="60px" height="60px" />
+                                                        @if ($product_brand->image)
+                                                            <img src={{ asset('uploads/product_brand/'.$product_brand->image) }}   width="60px" height="60px" />
                                                         @else
                                                             <span class="badge bg-soft-danger text-danger" style="padding:10px;">No Photo</span>
                                                         @endif
@@ -272,7 +266,7 @@ Product Categories
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Meta title</label>
-                                                        <input type="text" class="form-control" id="validationCustom01"  name="meta_title" placeholder="Ennter Category Name" value="{{ $product_category->meta_title }}" >
+                                                        <input type="text" class="form-control" id="validationCustom01"  name="meta_title" placeholder="Ennter Category Name" value="{{ $product_brand->meta_title }}" >
                                                          @error('meta_title') 
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
@@ -283,7 +277,7 @@ Product Categories
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" >Meta Keywords</label>
-                                                        <textarea class="form-control"  name="meta_keywords" placeholder="Enter Category Description" rows="3">{{ $product_category->meta_keywords }}</textarea>
+                                                        <textarea class="form-control"  name="meta_keywords" placeholder="Enter Category Description" rows="3">{{ $product_brand->meta_keywords }}</textarea>
                                                          @error('meta_keywords') 
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
@@ -294,7 +288,7 @@ Product Categories
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" >Meta Description</label>
-                                                        <textarea class="form-control"  name="meta_description" placeholder="Enter Category Description" rows="3">{{ $product_category->meta_description }}</textarea>
+                                                        <textarea class="form-control"  name="meta_description" placeholder="Enter Category Description" rows="3">{{ $product_brand->meta_description }}</textarea>
                                                          @error('meta_description') 
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
