@@ -107,6 +107,9 @@ class ProductBrandsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $brand = ProductBrands::findOrFail($id);
+        $brand->delete();
+
+        return redirect('/product_brands')->with('messagedelete', 'Product Brand is successfully deleted');
     }
 }
