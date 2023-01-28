@@ -34,7 +34,7 @@
                                 <div class="card">
                                     <div class="card-header">
                                         <h4 class="card-title">Add Product  Brand</h4>
-                                        <!-- <p class="card-title-desc">Add Category</p> -->
+                                        <!-- <p class="card-title-desc">Add Brand</p> -->
                                     </div>
                                     <div class="card-body">
                                     <form  action="{{ route('product_brands.store') }}"  method="POST" enctype="multipart/form-data">
@@ -43,7 +43,7 @@
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Name</label>
-                                                        <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Ennter Category Name" value="">
+                                                        <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Ennter Brand Name" value="">
                                                          @error('name') 
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
@@ -81,7 +81,7 @@
                                             </div>
 
                                             <!-- Editor -->
-                                            <button class="btn btn-primary" type="submit">Add Product Category</button>
+                                            <button class="btn btn-primary" type="submit">Add Product Brand</button>
                                         </form>
                                     </div>
                                 </div>

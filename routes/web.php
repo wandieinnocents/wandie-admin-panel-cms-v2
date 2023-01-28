@@ -173,6 +173,9 @@ Route::resource('/events', 'App\Http\Controllers\BackEnd\EventController');
 Route::resource('/product_categories', 'App\Http\Controllers\BackEnd\ProductCategoryController');
 // product brands
 Route::resource('/product_brands', 'App\Http\Controllers\BackEnd\ProductBrandsController');
+// products
+Route::resource('/products', 'App\Http\Controllers\BackEnd\ProductController');
+
 
 
 
