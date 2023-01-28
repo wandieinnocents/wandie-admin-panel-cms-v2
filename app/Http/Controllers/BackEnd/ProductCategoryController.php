@@ -137,6 +137,7 @@ class ProductCategoryController extends Controller
         $category->meta_keywords = $validatedData['meta_keywords'];
         $category->meta_description = $validatedData['meta_description'];
         $category->status = $request->status == true ? '1':'0';
+        
 
         // save
         // dd($category);

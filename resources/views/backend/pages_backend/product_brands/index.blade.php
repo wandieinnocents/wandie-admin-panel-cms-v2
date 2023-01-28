@@ -78,7 +78,6 @@ Product Categories
                             <th scope="col"> Name</th>
                             <th scope="col"> Slug</th>
                             <th scope="col"> Image</th>
-                            <th scope="col"> Status</th>
                             <th scope="col">Description</th>
                             <th scope="col"> Meta Title</th>
                             <th scope="col"> Meta Keywords</th>
@@ -108,8 +107,6 @@ Product Categories
                                   @endif
 
                                  </a> </td>
-                                  <td><a href="#" class="text-body">{{ $product_category->status == '0' ? 'Hidden':'Visible' }}</a> </td>
-                                  
                                 <td>{{ $product_category->description }}</td>
                                  <td><a href="#" class="text-body">{{ $product_category->meta_keywords }}</a> </td>
                                   <td><a href="#" class="text-body">{{ $product_category->meta_title }}</a> </td>
@@ -174,8 +171,6 @@ Product Categories
                                             <p>Category Name : {{ $product_category->name }}</p>
                                             <hr>
                                             <p>Slug : {{ $product_category->slug }}</p>
-                                            <hr>
-                                            <p>status : {{ $product_category->status == '0' ? 'Hidden':'Visible' }} </p>
                                             <hr>
                                              <p>Meta Title : {{ $product_category->meta_title }}</p>
                                             <hr>
@@ -271,28 +266,6 @@ Product Categories
                                                        @enderror
                                                     </div>
                                                 </div>
-
-                                                {{-- <div class="col-md-12">
-                                                    <div class="mb-3">
-                                                        <label class="form-label" for="validationCustom01">Status</label>
-                                                        <input type="checkbox"    name="status" value={{ $product_category->status == '1' ? 'checked' : ''}}  >
-                                                         @error('status') 
-                                                            <small class="text-danger"> {{ $message }}</small>
-                                                          @enderror
-                                                    </div>
-                                                </div> --}}
-
-                                                 <div class="col-md-12">
-                                                    <div class="mb-3">
-                                                        <label class="form-label" for="validationCustom01">Status</label>
-                                                        <input type="checkbox"    name="status" {{ $product_category->status == '1' ? 'checked' : ''}} >
-
-                                                         @error('status') 
-                                                            <small class="text-danger"> {{ $message }}</small>
-                                                          @enderror
-                                                    </div>
-                                                </div>
-
 
                                               
                                                 <h3>SEO TAGS </H3>

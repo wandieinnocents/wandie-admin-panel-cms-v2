@@ -24,7 +24,7 @@ class ProductBrandsController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.pages_backend.product_brands.create');
     }
 
     /**
