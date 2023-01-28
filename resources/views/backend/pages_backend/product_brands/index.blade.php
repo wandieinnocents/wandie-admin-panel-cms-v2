@@ -137,14 +137,14 @@ Product Brands
 
 
 
-                            <!-- VIEW PRODUCT CATEGORIES MODAL -->
+                            <!-- VIEW PRODUCT BRANDS MODAL -->
                             <div class="modal fade" id="viewProductCategoryDetails{{ $product_brand->id }}"
                                 tabindex="-1" aria-labelledby="viewProductCategoryDetailsLabel" style="display: none;"
                                 aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="viewProductCategoryDetailsLabel">Product Category
+                                            <h5 class="modal-title" id="viewProductCategoryDetailsLabel">Product Brand
                                                 Details</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
@@ -153,28 +153,21 @@ Product Brands
 
 
                                         <div class="modal-body">
-                                           @if ($product_brand->image)
-                                       <img src={{ asset('uploads/product_brand/'.$product_brand->image) }}   width="60px" height="60px" />
-                                            @else
-                                                <span class="badge bg-soft-danger text-danger" style="padding:10px;">No Photo</span>
-                                            @endif
+                                         
 
-
-
-                                            <hr>
-                                            <p>Category Name : {{ $product_brand->name }}</p>
+                                            <p>Brand Name : {{ $product_brand->name }}</p>
                                             <hr>
                                             <p>Slug : {{ $product_brand->slug }}</p>
                                             <hr>
-                                             <p>Meta Title : {{ $product_brand->meta_title }}</p>
-                                            <hr>
-                                            <p>Meta Keywords : {{ $product_brand->meta_keywords }}</p>
-                                            <hr>
-                                             <p> Description : {{ $product_brand->description }}</p>
-                                            <hr>
-                                             <p>Meta Description : {{ $product_brand->meta_description }}</p>
-                                            <hr>
-                                            <p>Description : {{ $product_brand->description }}</p>
+                                            <p>status :
+                                            @if($product_brand->status == '0')
+                                    <span class="badge bg-soft-danger text-danger" style="padding:10px;">Hidden</span>
+                                    @else
+                                    <span class="badge bg-soft-success text-success" style="padding:10px;">Visible</span>
+
+                                    @endif
+                                     </p>
+                                            
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close
@@ -189,7 +182,7 @@ Product Brands
                             <!-- END OF VIEW DETAILS MODEL -->
 
 
-                            {{-- UPDATE PRODUCT  CATEGORY --}}
+                            {{-- UPDATE PRODUCT  BRAND --}}
                             <div class="modal fade" id="editProductCategory{{ $product_brand->id }}" tabindex="-1"
                                 aria-labelledby="editProductCategoryLabel" style="display: none;" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
@@ -203,29 +196,29 @@ Product Brands
                                         <div class="modal-body">
 
 
-                                            <!-- UPDATE Product CATEGORIES -->
+                                            <!-- UPDATE Product BRAND -->
 
                                              <form  action="{{ route('product_brands.update', $product_brand->id) }}"
                                                 method="post" enctype="multipart/form-data">
                                                 @csrf
                                                 @method('PATCH')
 
-                                            <div class="row">
-                                                <div class="col-md-6">
+                                             <div class="row">
+                                                <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Name</label>
-                                                        <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Ennter Category Name" value="{{ $product_brand->name}}">
-                                           @error('name') 
+                                                        <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Ennter Brand Name" value="{{ $product_brand->name}}">
+                                                         @error('name') 
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
                                                         
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-6">
+                                                <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Slug</label>
-                                                        <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Ennter slug" value="{{ $product_brand->slug }}" >
+                                                        <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Ennter slug" value="{{ $product_brand->slug}}" >
                                                          @error('slug') 
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
@@ -233,67 +226,20 @@ Product Brands
                                                 </div>
 
 
-
-
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
-                                                        <label class="form-label" >Description</label>
-                                                        <textarea class="form-control"  name="description" placeholder="Enter Category Description" rows="3">{{ $product_brand->description }}</textarea>
-                                                         @error('description') 
-                                                            <small class="text-danger"> {{ $message }}</small>
-                                                          @enderror
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-12">
-                                                    <div class="mb-3">
-                                                        <label class="form-label" for="validationCustom01">image</label>
-                                                        <input type="file" class="form-control" id="validationCustom01"  name="image"  value="" >
-                                                        @if ($product_brand->image)
-                                                            <img src={{ asset('uploads/product_brand/'.$product_brand->image) }}   width="60px" height="60px" />
-                                                        @else
-                                                            <span class="badge bg-soft-danger text-danger" style="padding:10px;">No Photo</span>
-                                                        @endif
-
-                                                       @error('image') 
-                                                            <small class="text-danger"> {{ $message }}</small>
-                                                       @enderror
-                                                    </div>
-                                                </div>
-
-                                              
-                                                <h3>SEO TAGS </H3>
-                                                <div class="col-md-12">
-                                                    <div class="mb-3">
-                                                        <label class="form-label" for="validationCustom01">Meta title</label>
-                                                        <input type="text" class="form-control" id="validationCustom01"  name="meta_title" placeholder="Ennter Category Name" value="{{ $product_brand->meta_title }}" >
-                                                         @error('meta_title') 
-                                                            <small class="text-danger"> {{ $message }}</small>
-                                                          @enderror
-                                                    </div>
-                                                </div>
-
-                                                
-                                                <div class="col-md-12">
-                                                    <div class="mb-3">
-                                                        <label class="form-label" >Meta Keywords</label>
-                                                        <textarea class="form-control"  name="meta_keywords" placeholder="Enter Category Description" rows="3">{{ $product_brand->meta_keywords }}</textarea>
-                                                         @error('meta_keywords') 
+                                                        <label class="form-label" for="validationCustom01">Status</label>
+                                                        <input type="checkbox"    name="status" {{ $product_brand->status == '1' ? 'checked':''}} >
+                                                         @error('status') 
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
                                                     </div>
                                                 </div>
 
 
-                                                <div class="col-md-12">
-                                                    <div class="mb-3">
-                                                        <label class="form-label" >Meta Description</label>
-                                                        <textarea class="form-control"  name="meta_description" placeholder="Enter Category Description" rows="3">{{ $product_brand->meta_description }}</textarea>
-                                                         @error('meta_description') 
-                                                            <small class="text-danger"> {{ $message }}</small>
-                                                          @enderror
-                                                    </div>
-                                                </div>
+
+
+
 
                                                 
                                             </div>
