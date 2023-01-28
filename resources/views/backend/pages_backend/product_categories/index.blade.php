@@ -108,7 +108,17 @@ Product Categories
                                   @endif
 
                                  </a> </td>
-                                  <td><a href="#" class="text-body">{{ $product_category->status == '0' ? 'Hidden':'Visible' }}</a> </td>
+                                  <td>
+                                    {{-- <a href="#" class="text-body">{{ $product_category->status == '0' ? 'Hidden':'Visible' }} --}}
+
+                                    @if($product_category->status == '0')
+                                    <span class="badge bg-soft-danger text-danger" style="padding:10px;">Hidden</span>
+                                    @else
+                                    <span class="badge bg-soft-success text-success" style="padding:10px;">Visible</span>
+
+                                    @endif
+                                    </a>
+                                  </td>
                                   
                                 <td>{{ $product_category->description }}</td>
                                  <td><a href="#" class="text-body">{{ $product_category->meta_keywords }}</a> </td>
@@ -285,7 +295,8 @@ Product Categories
                                                  <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Status</label>
-                                                        <input type="checkbox"    name="status" {{ $product_category->status == '1' ? 'checked' : ''}} >
+                                                        <input type="checkbox"    name="status" {{ $product_category->status == '1' ? 
+                                                        'checked' : ''}} >
 
                                                          @error('status') 
                                                             <small class="text-danger"> {{ $message }}</small>
