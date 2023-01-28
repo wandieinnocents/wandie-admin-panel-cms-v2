@@ -120,12 +120,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/projects/create">
+                            <a href="/products/create">
                                 <span data-key="t-chat">Add Product</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/projects">
+                            <a href="/products">
                                 <span data-key="t-chat">View Products</span>
                             </a>
                         </li>
