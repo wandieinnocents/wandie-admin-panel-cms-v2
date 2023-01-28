@@ -83,9 +83,20 @@ class ProductBrandsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductBrandFormRequest $request, $id)
     {
-        //
+       // pick validations from category form request
+       $validatedData = $request->validated();
+       $brand = ProductBrands::findOrFail($id);
+       $brand->name = $validatedData['name'];
+       $brand->slug = Str::slug($validatedData['slug']);
+       $brand->status = $request->status == true ? '1':'0';
+
+       // save
+    //    dd($brand);
+       $brand->update();
+       // redirect
+       return redirect('/product_brands')->with('messageupdate','Brand Updated successfuly');
     }
 
     /**

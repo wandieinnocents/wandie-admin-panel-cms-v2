@@ -23,7 +23,7 @@ Product Brands
 
                         <div>
                             <a href="{{ route('product_brands.create') }}" class="btn bg-primary text-light"><i
-                                    class="bx bx-plus me-1"></i> Add Category</a>
+                                    class="bx bx-plus me-1"></i> Add Brand</a>
                         </div>
 
                     </div>
@@ -110,13 +110,13 @@ Product Brands
                                     <div class="row">
                                         <div class="col-md-4">
                                             <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                                data-bs-target="#viewProductCategoryDetails{{ $product_brand->id }}"
+                                                data-bs-target="#viewProductBrandDetails{{ $product_brand->id }}"
                                                 data-bs-whatever="@getbootstrap"><i class=" far fa-eye  "></i></button>
                                         </div>
 
                                         <div class="col-md-4">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#editProductCategory{{ $product_brand->id }}"
+                                                data-bs-target="#editProductBrand{{ $product_brand->id }}"
                                                 data-bs-whatever="@getbootstrap"><i class="fas fa-pencil-alt "></i></button>
 
                                         </div>
@@ -138,13 +138,13 @@ Product Brands
 
 
                             <!-- VIEW PRODUCT BRANDS MODAL -->
-                            <div class="modal fade" id="viewProductCategoryDetails{{ $product_brand->id }}"
-                                tabindex="-1" aria-labelledby="viewProductCategoryDetailsLabel" style="display: none;"
+                            <div class="modal fade" id="viewProductBrandDetails{{ $product_brand->id }}"
+                                tabindex="-1" aria-labelledby="viewProductBrandDetailsLabel" style="display: none;"
                                 aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="viewProductCategoryDetailsLabel">Product Brand
+                                            <h5 class="modal-title" id="viewProductBrandDetailsLabel">Product Brand
                                                 Details</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
@@ -173,8 +173,8 @@ Product Brands
                                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close
                                             </button>
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#editProductCategory{{ $product_brand->id }}"
-                                                data-bs-whatever="@getbootstrap">Edit Category</button>
+                                                data-bs-target="#editProductBrand{{ $product_brand->id }}"
+                                                data-bs-whatever="@getbootstrap">Edit Brand</button>
                                         </div>
                                     </div>
                                 </div>
@@ -183,12 +183,12 @@ Product Brands
 
 
                             {{-- UPDATE PRODUCT  BRAND --}}
-                            <div class="modal fade" id="editProductCategory{{ $product_brand->id }}" tabindex="-1"
-                                aria-labelledby="editProductCategoryLabel" style="display: none;" aria-hidden="true">
+                            <div class="modal fade" id="editProductBrand{{ $product_brand->id }}" tabindex="-1"
+                                aria-labelledby="editProductBrandLabel" style="display: none;" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="viewProductCategoryDetailsLabel">Edit Category
+                                            <h5 class="modal-title" id="viewProductBrandDetailsLabel">Edit Brand
                                                 Details</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
@@ -245,7 +245,7 @@ Product Brands
                                             </div>
 
                                             <!-- Editor -->
-                                            <button class="btn btn-primary" type="submit">Update Product Category</button>
+                                            <button class="btn btn-primary" type="submit">Update Product Brand</button>
                                         </form>
                                         </div>
 
@@ -253,7 +253,7 @@ Product Brands
                                     </div>
                                 </div>
                             </div>
-                            {{-- END UPDATE Product CATEGORY --}}
+                            {{-- END UPDATE Product Brand --}}
                         @endforeach
 
 
