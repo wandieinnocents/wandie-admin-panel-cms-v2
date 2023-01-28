@@ -117,7 +117,7 @@ Product Categories
                                     <span class="badge bg-soft-success text-success" style="padding:10px;">Visible</span>
 
                                     @endif
-                                    </a>
+                                   
                                   </td>
                                   
                                 <td>{{ $product_category->description }}</td>
@@ -185,7 +185,14 @@ Product Categories
                                             <hr>
                                             <p>Slug : {{ $product_category->slug }}</p>
                                             <hr>
-                                            <p>status : {{ $product_category->status == '0' ? 'Hidden':'Visible' }} </p>
+                                            <p>status : 
+                                             @if($product_category->status == '0')
+                                                <span class="badge bg-soft-danger text-danger" style="padding:10px;">Hidden</span>
+                                                @else
+                                                <span class="badge bg-soft-success text-success" style="padding:10px;">Visible</span>
+
+                                                @endif
+                                                </p>
                                             <hr>
                                              <p>Meta Title : {{ $product_category->meta_title }}</p>
                                             <hr>
