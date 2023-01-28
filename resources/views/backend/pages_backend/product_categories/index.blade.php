@@ -36,17 +36,18 @@ Product Categories
             {{-- alert add item --}}
              @if(session('message'))
              {{-- <div class="alert alert-success" > {{ session('message')}} </div> --}}
-             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <i class="mdi mdi-check-all me-2"></i>
-                 {{ session('message')}}
+             <div class="alert alert-success alert-dismissible alert-label-icon label-arrow fade show" role="alert">
+                <i class="mdi mdi-check-all label-icon"></i>
+                {{ session('message')}}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-             @endif
+            @endif
 
              {{-- alert delete item --}}
               @if(session('messagedelete')) 
-             <div class="alert alert-danger alert-border-left alert-dismissible fade show" role="alert">
-                <i class="mdi mdi-block-helper me-3 align-middle"></i>{{ session('messagedelete')}}
+             <div class="alert alert-danger alert-dismissible alert-label-icon label-arrow fade show" role="alert">
+                <i class="mdi mdi-block-helper label-icon"></i>
+                {{ session('messagedelete')}}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
               {{-- <div class="alert alert-danger" > {{ session('messagedelete')}} </div> --}}
@@ -54,8 +55,8 @@ Product Categories
 
              {{-- alert update item --}}
               @if(session('messageupdate')) 
-             <div class="alert alert-info alert-dismissible fade show mb-0" role="alert">
-               <i class="mdi mdi-check-all me-2"></i>
+             <div class="alert alert-info alert-dismissible alert-label-icon label-arrow fade show mb-0" role="alert">
+                <i class="mdi mdi-check-all label-icon"></i>
                 {{ session('messageupdate')}}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
