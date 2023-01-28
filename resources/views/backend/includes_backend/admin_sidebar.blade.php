@@ -97,13 +97,13 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li>
-                            <a href="/product_categories/create">
+                            <a href="/product_brands/create">
                                 <span data-key="t-calendar">Add Brand</span>
                             </a>
                         </li>
 
                          <li>
-                            <a href="/product_categories/create">
+                            <a href="/product_brands">
                                 <span data-key="t-calendar">View Brands</span>
                             </a>
                         </li>
