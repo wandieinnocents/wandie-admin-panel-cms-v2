@@ -26,9 +26,16 @@ class CreateProductsTable extends Migration
             $table->integer('quantity');
             $table->tinyInteger('trending')->default('0')->comment('0=not-trending,1=trending');
             $table->tinyInteger('status')->default('0')->comment('0=visible,1=hidden');
+            $table->string('meta_title')->nullable();
+            $table->mediumText('meta_keywords')->nullable();
+            $table->mediumText('meta_description')->nullable();
+
+
+
 
 
             $table->string('meta_title');
+            $table->string('meta_keywords');
             $table->string('meta_keywords');
           
             $table->tinyInteger('status')->default('0')->comment('0=visible,1=hidden');
