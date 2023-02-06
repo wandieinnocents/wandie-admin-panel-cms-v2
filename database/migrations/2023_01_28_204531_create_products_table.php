@@ -18,11 +18,19 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('product_category_id');
             $table->string('name');
             $table->string('slug');
-            $table->string('brand');
-            
+            $table->string('brand')->nullable();
+            $table->mediumText('small_description')->nullable();
+            $table->longText('meta_description');
+            $table->integer('original_price');
+            $table->integer('selling_price');
+            $table->integer('quantity');
+            $table->tinyInteger('trending')->default('0')->comment('0=not-trending,1=trending');
+            $table->tinyInteger('status')->default('0')->comment('0=visible,1=hidden');
+
+
             $table->string('meta_title');
             $table->string('meta_keywords');
-            $table->mediumText('meta_description');
+          
             $table->tinyInteger('status')->default('0')->comment('0=visible,1=hidden');
 
 
