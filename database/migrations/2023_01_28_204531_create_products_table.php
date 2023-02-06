@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('slug');
             $table->string('brand')->nullable();
             $table->mediumText('small_description')->nullable();
+            $table->longText('description')->nullable();
             $table->integer('original_price');
             $table->integer('selling_price');
             $table->integer('quantity');
