@@ -2,12 +2,6 @@
 Wandie Admin Panel is a master admin panel that gives you a fully fledged back-end for your web based applications. It allows you to quickly spin up your web application , website , bloging platform, management systems and more. You only have to worry about the front-end and leave the backend to wandie admin.
 
 
-## COMMENTS SYSTEM FOR BLOGS INTEGRATION
-- Disqus comments : https://disqus.com/
-
-## Flutterwave Integration 
-- Docs : https://laravelrave.netlify.app
-
 ## MODULES IN THE APPLICATION 
 ## -------------------------------------------------------------------------------
 ## -------------------------------------------------------------------------------
@@ -25,6 +19,14 @@ Wandie Admin Panel is a master admin panel that gives you a fully fledged back-e
 
 ## -------------------------------------------------------------------------------
 ## -------------------------------------------------------------------------------
+
+## COMMENTS SYSTEM FOR BLOGS INTEGRATION
+- Disqus comments : https://disqus.com/
+
+## Flutterwave Integration 
+- Docs : https://laravelrave.netlify.app
+
+
 
 ## API 
 ## Admin/Server_Side Api Controller
