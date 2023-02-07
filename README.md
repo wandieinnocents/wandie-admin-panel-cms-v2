@@ -8,7 +8,23 @@ Wandie Admin Panel is a master admin panel that gives you a fully fledged back-e
 ## Flutterwave Integration 
 - Docs : https://laravelrave.netlify.app
 
+## MODULES IN THE APPLICATION 
+## -------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------
 
+## ECOMMERCE MODULE FEATURES
+- Add product brands
+- Manage product brands
+- Add product Colors
+- Manage product Colors
+- Add product category
+- Manage product categories
+- Add product
+- Manage Products
+
+
+## -------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------
 
 ## API 
 ## Admin/Server_Side Api Controller
