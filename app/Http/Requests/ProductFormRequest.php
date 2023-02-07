@@ -26,7 +26,7 @@ class ProductFormRequest extends FormRequest
         return [
             'product_category_id' => [
                 'required',
-                'string'
+                'integer'
             ],
             'name' => [
                 'required',
@@ -34,11 +34,13 @@ class ProductFormRequest extends FormRequest
             ],
             'slug' => [
                 'required',
-                'string'
+                'string',
+                'max:255'
             ],
             'brand' => [
                 'required',
-                'string'
+                'string',
+                'max:255'
             ],
             'small_description' => [
                 'required',
@@ -50,23 +52,23 @@ class ProductFormRequest extends FormRequest
             ],
             'original_price' => [
                 'required',
-                'string'
+                'integer'
             ],
             'selling_price' => [
                 'required',
-                'string'
+                'integer'
             ],
             'quantity' => [
                 'required',
-                'string'
+                'integer'
             ],
             'trending' => [
                 'required',
-                'string'
+                'integer'
             ],
             'status' => [
                 'required',
-                'string'
+                'integer'
             ],
             'meta_title' => [
                 'required',
@@ -80,6 +82,10 @@ class ProductFormRequest extends FormRequest
                 'required',
                 'string'
             ],
+            // 'image' => [
+            //     'required',
+            //     'string'
+            // ],
             
 
 
