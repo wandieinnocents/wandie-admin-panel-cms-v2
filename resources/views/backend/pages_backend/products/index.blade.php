@@ -1,7 +1,7 @@
 @extends('backend.layouts_backend.master')
 
 @section('title')
-Product Brands
+Products
 @endsection
 
 @section('content')
@@ -99,7 +99,14 @@ Product Brands
                                 </th>
                                 <td>{{ $product->id }}</td>
                                 <td><a href="#" class="text-body">{{ $product->name }}</a> </td>
-                                 <td>{{ $product->product_category_id }}</td>
+                                 <td>
+                                 @if($product->product_category)
+                                  {{ $product->product_category->name }}
+                                 @else
+                                  <span class="badge bg-soft-danger text-danger" style="padding:10px;">No Category</span>
+
+                                 @endif
+                                 </td>
                                   <td>{{ $product->brand }}</td>
                                    <td><a href="#" class="text-body">
 
@@ -129,13 +136,13 @@ Product Brands
                                     <div class="row">
                                         <div class="col-md-4">
                                             <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                                data-bs-target="#viewProductBrandDetails{{ $product->id }}"
+                                                data-bs-target="#viewProductProductDetails{{ $product->id }}"
                                                 data-bs-whatever="@getbootstrap"><i class=" far fa-eye  "></i></button>
                                         </div>
 
                                         <div class="col-md-4">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#editProductBrand{{ $product->id }}"
+                                                data-bs-target="#editProductProduct{{ $product->id }}"
                                                 data-bs-whatever="@getbootstrap"><i class="fas fa-pencil-alt "></i></button>
 
                                         </div>
@@ -156,14 +163,14 @@ Product Brands
 
 
 
-                            <!-- VIEW PRODUCT BRANDS MODAL -->
-                            <div class="modal fade" id="viewProductBrandDetails{{ $product->id }}"
-                                tabindex="-1" aria-labelledby="viewProductBrandDetailsLabel" style="display: none;"
+                            <!-- VIEW PRODUCT ProductS MODAL -->
+                            <div class="modal fade" id="viewProductProductDetails{{ $product->id }}"
+                                tabindex="-1" aria-labelledby="viewProductProductDetailsLabel" style="display: none;"
                                 aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="viewProductBrandDetailsLabel">Product 
+                                            <h5 class="modal-title" id="viewProductProductDetailsLabel">Product 
                                                 Details</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
@@ -230,7 +237,7 @@ Product Brands
                                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close
                                             </button>
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#editProductBrand{{ $product->id }}"
+                                                data-bs-target="#editProductProduct{{ $product->id }}"
                                                 data-bs-whatever="@getbootstrap">Edit Product</button>
                                         </div>
                                     </div>
@@ -239,13 +246,13 @@ Product Brands
                             <!-- END OF VIEW DETAILS MODEL -->
 
 
-                            {{-- UPDATE PRODUCT  BRAND --}}
-                            <div class="modal fade" id="editProductBrand{{ $product->id }}" tabindex="-1"
-                                aria-labelledby="editProductBrandLabel" style="display: none;" aria-hidden="true">
+                            {{-- UPDATE PRODUCT  Product --}}
+                            <div class="modal fade" id="editProductProduct{{ $product->id }}" tabindex="-1"
+                                aria-labelledby="editProductProductLabel" style="display: none;" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="viewProductBrandDetailsLabel">Edit Brand
+                                            <h5 class="modal-title" id="viewProductProductDetailsLabel">Edit Product
                                                 Details</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
@@ -488,7 +495,7 @@ Product Brands
                                     </div>
                                 </div>
                             </div>
-                            {{-- END UPDATE Product Brand --}}
+                            {{-- END UPDATE Product  --}}
                         @endforeach
 
 
