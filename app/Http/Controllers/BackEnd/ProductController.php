@@ -24,7 +24,9 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('backend.pages_backend.products.index',compact('products'));
+        $product_categories = ProductCategory::all();
+        $product_brands = ProductBrands::all();
+        return view('backend.pages_backend.products.index',compact('products','product_categories','product_brands'));
 
     }
 
@@ -123,9 +125,47 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductFormRequest $request, $id)
     {
-        //
+          // pick validations 
+       $validatedData = $request->validated();
+       $product = Product::findOrFail($id);
+       $product->product_category_id = $validatedData['product_category_id'];
+       $product->name = $validatedData['name'];
+       $product->slug = Str::slug($validatedData['slug']);
+       $product->brand = $validatedData['brand'];
+       $product->small_description = $validatedData['small_description'];
+       $product->description = $validatedData['description'];
+       $product->original_price = $validatedData['original_price'];
+       $product->selling_price = $validatedData['selling_price'];
+       $product->quantity = $validatedData['quantity'];
+       $product->trending = $request->trending == true ? '1':'0';
+       $product->status = $request->status == true ? '1':'0';
+       $product->meta_title = $validatedData['meta_title'];
+       $product->meta_keywords = $validatedData['meta_keywords'];
+       $product->meta_description = $validatedData['meta_description'];
+       // image
+       if($request->hasFile('image')){
+        // delete oldpath on update
+        $path = 'uploads/products/'.$product->image;
+        if(File::exists($path)){
+            File::delete($path);
+        }
+
+        $file = $request->file('image');
+        $ext = $file->getClientOriginalExtension();
+        $filename = time().'.'.$ext;
+        $file->move('uploads/products/', $filename);
+        $product->image = $filename;
+
+    }
+
+    
+
+
+    //   dd("image");
+       $product->update();
+       return redirect('/products')->with('messageupdate','Product Updated successfuly');
     }
 
     /**

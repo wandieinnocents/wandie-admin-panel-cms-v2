@@ -62,14 +62,14 @@ class ProductFormRequest extends FormRequest
                 'required',
                 'integer'
             ],
-            'trending' => [
-                'nullable',
-                'integer'
-            ],
-            'status' => [
-                'nullable',
-                'integer'
-            ],
+            // 'trending' => [
+            //     'nullable',
+            //     'integer'
+            // ],
+            // 'status' => [
+            //     'nullable',
+            //     'integer'
+            // ],
             'meta_title' => [
                 'required',
                 'string'

@@ -110,7 +110,7 @@ Product Brands
                                   @endif
 
                                  </a> </td>
-                                  <td>
+                                
                                    <td>{{ $product->original_price }}</td>
                                     <td>{{ $product->selling_price }}</td>
                                 <td><a href="#" class="text-body">{{ $product->slug }}</a> </td>
@@ -262,236 +262,219 @@ Product Brands
                                                     @csrf
                                                     @method('PATCH') 
                                                     
-                                                            <!-- Nav tabs -->
-                                                            <ul class="nav nav-tabs" role="tablist">
-                                                                <li class="nav-item">
-                                                                    <a class="nav-link active" data-bs-toggle="tab" href="#home" role="tab" aria-selected="false">
-                                                                        <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                                                                        <span class="d-none d-sm-block">Home</span>    
-                                                                    </a>
-                                                                </li>
-                                                                <li class="nav-item">
-                                                                    <a class="nav-link" data-bs-toggle="tab" href="#seo" role="tab" aria-selected="false">
-                                                                        <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                                                                        <span class="d-none d-sm-block"> SEO </span>    
-                                                                    </a>
-                                                                </li>
-                                                                <li class="nav-item">
-                                                                    <a class="nav-link " data-bs-toggle="tab" href="#details" role="tab" aria-selected="true">
-                                                                        <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
-                                                                        <span class="d-none d-sm-block"> Details</span>    
-                                                                    </a>
-                                                                </li>
-                                                                <li class="nav-item">
-                                                                    <a class="nav-link" data-bs-toggle="tab" href="#product_images" role="tab" aria-selected="false">
-                                                                        <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
-                                                                        <span class="d-none d-sm-block"> Images</span>    
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                            
-                                                                <!-- Tab panes -->
-                                                                <div class="tab-content p-3 text-muted">
-                                                                    <div class="tab-pane active" id="home" role="tabpanel">
-                                                                        
+                                                            
 
                                                                         {{-- START TAB 1 CONTENT--}}
 
                                                                         <div class="row">
-                                                                        <div class="col-md-6">
-                                                                            <div class="mb-3">
-                                                                                <label class="form-label" for="validationCustom01">Select Product Category</label>
-                                                                                
-                                                                                @error('product_category_id') 
-                                                                                    <small class="text-danger"> {{ $message }}</small>
-                                                                                @enderror
-                                                                            </div>
-                                                                        </div>
+                                                                                <h5> HOME CONTENT</h5><hr>
+                                                                                    <div class="col-md-6">
+                                                                                        <div class="mb-3">
+                                                                                            <label class="form-label" for="validationCustom01">Select Product Category</label>
+                                                                                            <select name="product_category_id" class="form-select">
+                                                                                                @foreach ($product_categories as $product_category)
+                                                                                                    <option value="{{ $product_category->id }}">
+                                                                                                        {{ $product_category->name }}
+                                                                                                        
+                                                                                                    </option>
+                                                                                                @endforeach
+                                                                                            </select>
+                                                                                            @error('product_category_id') 
+                                                                                                <small class="text-danger"> {{ $message }}</small>
+                                                                                            @enderror
+                                                                                        </div>
+                                                                                    </div>
 
-                                                                            <div class="col-md-6">
-                                                                            <div class="mb-3">
-                                                                                <label class="form-label" for="validationCustom01">Select Product Brand</label>
-                                                                            
-                                                                                @error('brand') 
-                                                                                    <small class="text-danger"> {{ $message }}</small>
-                                                                                @enderror
-                                                                            </div>
-                                                                        </div>
+                                                                                    <div class="col-md-6">
+                                                                                        <div class="mb-3">
+                                                                                            <label class="form-label" for="validationCustom01">Select Product Brand</label>
+                                                                                            <select name="brand" class="form-select">
+                                                                                                @foreach ($product_brands as $product_brand)
+                                                                                                    <option value="{{ $product_brand->name }}">
+                                                                                                        {{ $product_brand->name }}
+                                                                                                        
+                                                                                                    </option>
+                                                                                                @endforeach
+                                                                                            </select>
+                                                                                            @error('brand') 
+                                                                                                <small class="text-danger"> {{ $message }}</small>
+                                                                                            @enderror
+                                                                                        </div>
+                                                                                </div>
 
-                                                                        <div class="col-md-6">
-                                                                            <div class="mb-3">
-                                                                                <label class="form-label" for="validationCustom01">Product Name</label>
-                                                                                <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Enter product name" value="{{ $product->name}}" >
-                                                                                @error('name') 
-                                                                                    <small class="text-danger"> {{ $message }}</small>
-                                                                                @enderror
-                                                                            </div>
-                                                                        </div>
+                                                                                <div class="col-md-6">
+                                                                                    <div class="mb-3">
+                                                                                        <label class="form-label" for="validationCustom01">Product Name</label>
+                                                                                        <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Enter product name" value="{{ $product->name}}" >
+                                                                                        @error('name') 
+                                                                                            <small class="text-danger"> {{ $message }}</small>
+                                                                                        @enderror
+                                                                                    </div>
+                                                                                </div>
 
-                                                                        <div class="col-md-6">
-                                                                            <div class="mb-3">
-                                                                                <label class="form-label" for="validationCustom01">Slug</label>
-                                                                                <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Enter slug" value="{{ $product->slug}}" >
-                                                                                @error('slug') 
-                                                                                    <small class="text-danger"> {{ $message }}</small>
-                                                                                @enderror
-                                                                            </div>
-                                                                        </div>
+                                                                                <div class="col-md-6">
+                                                                                    <div class="mb-3">
+                                                                                        <label class="form-label" for="validationCustom01">Slug</label>
+                                                                                        <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Enter slug" value="{{ $product->slug}}" >
+                                                                                        @error('slug') 
+                                                                                            <small class="text-danger"> {{ $message }}</small>
+                                                                                        @enderror
+                                                                                    </div>
+                                                                                </div>
 
 
-                                                                        <div class="col-md-12">
-                                                                            <div class="mb-3">
-                                                                                <label class="form-label">Small Description</label>
-                                                                                <textarea class="form-control" name="small_description" id="exampleFormControlTextarea5"
-                                                                                    placeholder="Enter Small Description" rows="3">{{ $product->small_description}}</textarea>
-                                                                            @error('small_description') 
-                                                                                    <small class="text-danger"> {{ $message }}</small>
-                                                                                @enderror
-                                                                            </div>
-                                                                        </div>
+                                                                                <div class="col-md-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label class="form-label">Small Description</label>
+                                                                                        <textarea class="form-control" name="small_description" id="exampleFormControlTextarea5"
+                                                                                            placeholder="Enter Small Description" rows="3">{{ $product->small_description}}</textarea>
+                                                                                    @error('small_description') 
+                                                                                            <small class="text-danger"> {{ $message }}</small>
+                                                                                        @enderror
+                                                                                    </div>
+                                                                                </div>
 
-                                                                        <div class="col-md-12">
-                                                                            <div class="mb-3">
-                                                                                <label class="form-label">Description</label>
-                                                                                <textarea class="form-control" name="description" id="exampleFormControlTextarea5"
-                                                                                    placeholder="Enter  Description" rows="3">{{ $product->description}}</textarea>
-                                                                                @error('description') 
-                                                                                    <small class="text-danger"> {{ $message }}</small>
-                                                                                @enderror
-                                                                            </div>
-                                                                        </div>
+                                                                                <div class="col-md-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label class="form-label">Description</label>
+                                                                                        <textarea class="form-control" name="description" id="exampleFormControlTextarea5"
+                                                                                            placeholder="Enter  Description" rows="3">{{ $product->description}}</textarea>
+                                                                                        @error('description') 
+                                                                                            <small class="text-danger"> {{ $message }}</small>
+                                                                                        @enderror
+                                                                                    </div>
+                                                                                </div>
 
+                                                                                {{-- META TAGS --}}
+                                                                                 <hr><h5>META TAGS</h5><hr>
+                                                                                  <div class="col-md-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label class="form-label" for="validationCustom01">Meta Title</label>
+                                                                                        <input type="text" class="form-control" id="validationCustom01"  name="meta_title" placeholder="Enter Title" value="{{ $product->meta_title }}" >
+                                                                                        @error('meta_title') 
+                                                                                            <small class="text-danger"> {{ $message }}</small>
+                                                                                        @enderror
+                                                                                    </div>
+                                                                                </div>
                                                                         
+                                                                                    <div class="col-md-12">
+                                                                                        <div class="mb-3">
+                                                                                            <label class="form-label">Meta Keywords</label>
+                                                                                            <textarea class="form-control" name="meta_keywords" id="exampleFormControlTextarea5"
+                                                                                                placeholder="Enter Meta Keywords" rows="3">{{ $product->meta_keywords}}</textarea>
+                                                                                            @error('meta_keywords') 
+                                                                                                <small class="text-danger"> {{ $message }}</small>
+                                                                                            @enderror
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                <div class="col-md-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label class="form-label">Meta Description</label>
+                                                                                        <textarea class="form-control" name="meta_description" id="exampleFormControlTextarea5"
+                                                                                            placeholder="Enter Meta Description" rows="3">{{ $product->meta_description}}</textarea>
+                                                                                        @error('meta_description') 
+                                                                                            <small class="text-danger"> {{ $message }}</small>
+                                                                                        @enderror
+                                                                                    </div>
+                                                                                </div>
 
 
 
 
-                                                                    </div>
+                                                                                 {{-- PRODUCT DETAILS --}}
+                                                                                 <hr><h5>PRODUCT DETAILS</h5><hr>
+                                                                                 <div class="col-md-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label class="form-label" for="validationCustom01">Original Price</label>
+                                                                                        <input type="text" class="form-control" id="validationCustom01"  name="original_price" placeholder="Enter Title" value="{{ $product->original_price}}" >
+                                                                                        @error('original_price') 
+                                                                                            <small class="text-danger"> {{ $message }}</small>
+                                                                                        @enderror
+                                                                                    </div>
+                                                                                </div>
 
+                                                                                <div class="col-md-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label class="form-label" for="validationCustom01">Selling Price</label>
+                                                                                        <input type="text" class="form-control" id="validationCustom01"  name="selling_price" placeholder="Enter Title" value="{{ $product->selling_price}}" >
+                                                                                        @error('selling_price') 
+                                                                                            <small class="text-danger"> {{ $message }}</small>
+                                                                                        @enderror
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="col-md-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label class="form-label" for="validationCustom01">Quantity</label>
+                                                                                        <input type="text" class="form-control" id="validationCustom01"  name="quantity" placeholder="Enter Title" value="{{ $product->quantity}}" >
+                                                                                        @error('quantity') 
+                                                                                            <small class="text-danger"> {{ $message }}</small>
+                                                                                        @enderror
+                                                                                    </div>
+                                                                                </div>
+
+
+                                                                                <div class="col-md-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label class="form-label" for="validationCustom01">Trending</label>
+                                                                                        <input type="checkbox"    name="trending"  {{ $product->trending == '1' ?  'checked' : ''}} >
+                                                                                        @error('trending') 
+                                                                                            <small class="text-danger"> {{ $message }}</small>
+                                                                                        @enderror
+                                                                                    </div>
+                                                                                </div>
+
+
+                                                                                <div class="col-md-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label class="form-label" for="validationCustom01">Status</label>
+                                                                                        <input type="checkbox"    name="status"  {{ $product->status == '1' ?  'checked' : ''}}>
+                                                                                        @error('status') 
+                                                                                            <small class="text-danger"> {{ $message }}</small>
+                                                                                        @enderror
+                                                                                    </div>
+                                                                                </div>
+
+
+
+                                                                                {{-- PRODUCT IMAGES --}}
+                                                                                  <hr><h5>PRODUCT IMAGES</h5><hr>
+                                                                                     
+                                                                                    <div class="col-md-12">
+                                                                                        <div class="mb-3">
+                                                                                                <label class="form-label" for="validationCustom01">image</label>
+                                                                                                <input type="file" class="form-control" id="validationCustom01"  name="image"  value="" >
+                                                                                                @if ($product->image)
+                                                                                                    <img src={{ asset('uploads/products/'.$product->image) }}   width="60px" height="60px" />
+                                                                                                @else
+                                                                                                    <span class="badge bg-soft-danger text-danger" style="padding:10px;">No Photo</span>
+                                                                                                @endif
+
+                                                                                            @error('image') 
+                                                                                                    <small class="text-danger"> {{ $message }}</small>
+                                                                                            @enderror
+                                                                                        </div>
+                                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                 
+
+                                                                       </div>
 
                                                                         {{-- END TAB 1  CONTENT--}}
 
-                                                                    </div>
-
-                                                                    {{--    SEO TAB --}}
-                                                                    <div class="tab-pane" id="seo" role="tabpanel">
-                                                                        <div class="col-md-12">
-                                                                            <div class="mb-3">
-                                                                                <label class="form-label" for="validationCustom01">Meta Title</label>
-                                                                                <input type="text" class="form-control" id="validationCustom01"  name="meta_title" placeholder="Enter Title" value="{{ $product->meta_title }}" >
-                                                                                @error('meta_title') 
-                                                                                    <small class="text-danger"> {{ $message }}</small>
-                                                                                @enderror
-                                                                            </div>
-                                                                        </div>
-                                                                        
-                                                                        <div class="col-md-12">
-                                                                            <div class="mb-3">
-                                                                                <label class="form-label">Meta Keywords</label>
-                                                                                <textarea class="form-control" name="meta_keywords" id="exampleFormControlTextarea5"
-                                                                                    placeholder="Enter Meta Keywords" rows="3">{{ $product->meta_keywords}}</textarea>
-                                                                                @error('meta_keywords') 
-                                                                                    <small class="text-danger"> {{ $message }}</small>
-                                                                                @enderror
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <div class="col-md-12">
-                                                                            <div class="mb-3">
-                                                                                <label class="form-label">Meta Description</label>
-                                                                                <textarea class="form-control" name="meta_description" id="exampleFormControlTextarea5"
-                                                                                    placeholder="Enter Meta Description" rows="3">{{ $product->meta_description}}</textarea>
-                                                                                @error('meta_description') 
-                                                                                    <small class="text-danger"> {{ $message }}</small>
-                                                                                @enderror
-                                                                            </div>
-                                                                        </div>
-
-
-
-                                                                    </div>
-
-                                                                    {{-- PRODUCT DETAILS --}}
-                                                                    <div class="tab-pane" id="details" role="tabpanel">
-                                                                        <div class="col-md-12">
-                                                                            <div class="mb-3">
-                                                                                <label class="form-label" for="validationCustom01">Original Price</label>
-                                                                                <input type="text" class="form-control" id="validationCustom01"  name="original_price" placeholder="Enter Title" value="{{ $product->original_price}}" >
-                                                                                @error('original_price') 
-                                                                                    <small class="text-danger"> {{ $message }}</small>
-                                                                                @enderror
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <div class="col-md-12">
-                                                                            <div class="mb-3">
-                                                                                <label class="form-label" for="validationCustom01">Selling Price</label>
-                                                                                <input type="text" class="form-control" id="validationCustom01"  name="selling_price" placeholder="Enter Title" value="{{ $product->selling_price}}" >
-                                                                                @error('selling_price') 
-                                                                                    <small class="text-danger"> {{ $message }}</small>
-                                                                                @enderror
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <div class="col-md-12">
-                                                                            <div class="mb-3">
-                                                                                <label class="form-label" for="validationCustom01">Quantity</label>
-                                                                                <input type="text" class="form-control" id="validationCustom01"  name="quantity" placeholder="Enter Title" value="{{ $product->quantity}}" >
-                                                                                @error('quantity') 
-                                                                                    <small class="text-danger"> {{ $message }}</small>
-                                                                                @enderror
-                                                                            </div>
-                                                                        </div>
-
-
-                                                                        <div class="col-md-12">
-                                                                            <div class="mb-3">
-                                                                                <label class="form-label" for="validationCustom01">Trending</label>
-                                                                                <input type="checkbox"    name="trending" >
-                                                                                @error('trending') 
-                                                                                    <small class="text-danger"> {{ $message }}</small>
-                                                                                @enderror
-                                                                            </div>
-                                                                        </div>
-
-
-                                                                        <div class="col-md-12">
-                                                                            <div class="mb-3">
-                                                                                <label class="form-label" for="validationCustom01">Status</label>
-                                                                                <input type="checkbox"    name="status" >
-                                                                                @error('status') 
-                                                                                    <small class="text-danger"> {{ $message }}</small>
-                                                                                @enderror
-                                                                            </div>
-                                                                        </div>
-
-
-
-
-
-                                                                    </div>
-
-                                                                    {{-- PRODUCT IMAGES TAB --}}
-                                                                    <div class="tab-pane" id="product_images" role="tabpanel">
-                                                                        
-                                                                      <div class="col-md-12">
-                                                                        <div class="mb-3">
-                                                                            <label class="form-label" for="validationCustom01">image</label>
-                                                                            <input type="file" class="form-control" id="validationCustom01"  name="image"  value="" >
-                                                                            @if ($product->image)
-                                                                                <img src={{ asset('uploads/products/'.$product->image) }}   width="60px" height="60px" />
-                                                                            @else
-                                                                                <span class="badge bg-soft-danger text-danger" style="padding:10px;">No Photo</span>
-                                                                            @endif
-
-                                                                        @error('image') 
-                                                                                <small class="text-danger"> {{ $message }}</small>
-                                                                        @enderror
-                                                                        </div>
-                                                                    </div>
-
-                                                                    </div>
-                                                                </div>
+                                                                   
                                                     
                                                                 <!-- Editor -->
                                                                 <button class="btn btn-primary" type="submit">Update Product</button>
