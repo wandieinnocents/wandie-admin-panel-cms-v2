@@ -8,6 +8,8 @@ use App\Models\ProductCategory;
 use App\Models\ProductBrands;
 use App\Models\Product;
 use App\Http\Requests\ProductFormRequest;
+use Illuminate\Support\Str;
+
 
 
 class ProductController extends Controller
@@ -43,21 +45,40 @@ class ProductController extends Controller
      */
     public function store(ProductFormRequest $request)
     {
-        dd("store product");
+        // dd("store product");
         
        // pick validations 
        $validatedData = $request->validated();
+       // check if the category exists
+    //    $category = ProductCategory::findOrFail($validatedData['product_category_id']);
+    //    $category->products()->create([
+
+    //     $category->name = $validatedData['name'];
+
+    //    ]);
+
        $product = new Product();
+       $product->product_category_id = $validatedData['product_category_id'];
        $product->name = $validatedData['name'];
        $product->slug = Str::slug($validatedData['slug']);
+       $product->brand = $validatedData['brand'];
+       $product->small_description = $validatedData['small_description'];
+       $product->description = $validatedData['description'];
+       $product->original_price = $validatedData['original_price'];
+       $product->selling_price = $validatedData['selling_price'];
+       $product->quantity = $validatedData['quantity'];
+       $product->selling_price = $validatedData['selling_price'];
+       $product->selling_price = $validatedData['selling_price'];
+       $product->selling_price = $validatedData['selling_price'];
+       $product->trending = $request->trending == true ? '1':'0';
        $product->status = $request->status == true ? '1':'0';
-
-       // save
-    //    dd($brand);
-   
-       $brand->save();
-       // redirect
-       return redirect('/products')->with('message','Product added successfuly');
+       $product->meta_title = $validatedData['meta_title'];
+       $product->meta_keywords = $validatedData['meta_keywords'];
+       $product->meta_description = $validatedData['meta_description'];
+       
+       dd($product);
+    //    $brand->save();
+    //    return redirect('/products')->with('message','Product added successfuly');
     }
 
     /**
