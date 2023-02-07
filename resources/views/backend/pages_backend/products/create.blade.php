@@ -46,23 +46,23 @@
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" data-bs-toggle="tab" href="#profile" role="tab" aria-selected="false">
+                                                <a class="nav-link" data-bs-toggle="tab" href="#seo" role="tab" aria-selected="false">
                                                     <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                                                    <span class="d-none d-sm-block">Profile</span>    
+                                                    <span class="d-none d-sm-block">SEO Tags</span>    
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link " data-bs-toggle="tab" href="#messages" role="tab" aria-selected="true">
+                                                <a class="nav-link " data-bs-toggle="tab" href="#details" role="tab" aria-selected="true">
                                                     <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
-                                                    <span class="d-none d-sm-block">Messages</span>    
+                                                    <span class="d-none d-sm-block">Details</span>    
                                                 </a>
                                             </li>
-                                            <li class="nav-item">
+                                            {{-- <li class="nav-item">
                                                 <a class="nav-link" data-bs-toggle="tab" href="#settings" role="tab" aria-selected="false">
                                                     <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
                                                     <span class="d-none d-sm-block">Settings</span>    
                                                 </a>
-                                            </li>
+                                            </li> --}}
                                         </ul>
         
                                         <!-- Tab panes -->
@@ -73,16 +73,19 @@
                                                 {{-- START TAB 1 CONTENT--}}
 
                                                  <div class="row">
-                                                <div class="col-md-12">
+                                                 <div class="col-md-6">
                                                     <div class="mb-3">
-                                                        <label class="form-label" for="validationCustom01">Name</label>
-                                                        <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Ennter Brand Name" value="">
-                                                         @error('name') 
-                                                            <small class="text-danger"> {{ $message }}</small>
-                                                          @enderror
-                                                        
+                                                        <label class="form-label" for="validationCustom01">Category</label>
+                                                        <select name="product_category_id" class="form-select">
+                                                            @foreach ($product_categories as $product_category)
+                                                                <option value="{{ $product_category->id }}">
+                                                                    {{ $product_category->name }}
+                                                                    
+                                                                </option>
+                                                            @endforeach
+                                                        </select>
                                                     </div>
-                                                </div>
+                                                  </div>
 
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
@@ -112,7 +115,7 @@
                                                 {{-- END TAB 1  CONTENT--}}
 
                                             </div>
-                                            <div class="tab-pane" id="profile" role="tabpanel">
+                                            <div class="tab-pane" id="seo" role="tabpanel">
                                                 <p class="mb-0">
                                                     Food truck fixie locavore, accusamus mcsweeney's marfa nulla
                                                     single-origin coffee squid. Exercitation +1 labore velit, blog
@@ -123,7 +126,7 @@
                                                     aesthetic magna delectus.
                                                 </p>
                                             </div>
-                                            <div class="tab-pane" id="messages" role="tabpanel">
+                                            <div class="tab-pane" id="details" role="tabpanel">
                                                 <p class="mb-0">
                                                     Etsy mixtape wayfarers, ethical wes anderson tofu before they
                                                     sold out mcsweeney's organic lomo retro fanny pack lo-fi
@@ -134,7 +137,7 @@
                                                     mi whatever gluten yr.
                                                 </p>
                                             </div>
-                                            <div class="tab-pane" id="settings" role="tabpanel">
+                                            {{-- <div class="tab-pane" id="settings" role="tabpanel">
                                                 <p class="mb-0">
                                                     Trust fund seitan letterpress, keytar raw denim keffiyeh etsy
                                                     art party before they sold out master cleanse gluten-free squid
@@ -143,7 +146,7 @@
                                                     vinyl keffiyeh DIY salvia PBR, banh mi before they sold out
                                                     farm-to-table VHS.
                                                 </p>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                    
                                             <!-- Editor -->

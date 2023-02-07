@@ -4,6 +4,7 @@ namespace App\Http\Controllers\BackEnd;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\ProductCategory;
 
 class ProductController extends Controller
 {
@@ -25,7 +26,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('backend.pages_backend.products.create');
+        $product_categories = ProductCategory::all();
+        return view('backend.pages_backend.products.create',compact('product_categories'));
     }
 
     /**
