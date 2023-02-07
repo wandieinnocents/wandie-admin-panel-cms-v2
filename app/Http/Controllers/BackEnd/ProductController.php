@@ -21,7 +21,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('backend.pages_backend.products.index');
+        $products = Product::all();
+        return view('backend.pages_backend.products.index',compact('products'));
 
     }
 
@@ -48,14 +49,7 @@ class ProductController extends Controller
         
        // pick validations 
        $validatedData = $request->validated();
-       // check if the category exists
-    //    $category = ProductCategory::findOrFail($validatedData['product_category_id']);
-    //    $category->products()->create([
-
-    //     $category->name = $validatedData['name'];
-
-    //    ]);
-
+       // create new product
        $product = new Product();
        $product->product_category_id = $validatedData['product_category_id'];
        $product->name = $validatedData['name'];
@@ -76,9 +70,10 @@ class ProductController extends Controller
        $product->meta_description = $validatedData['meta_description'];
 
     //    dd("store product");
+    // image
 
        $product->save();
-    //    return redirect('/products')->with('message','Product added successfuly');
+       return redirect('/products')->with('messagesave','Product added successfuly');
     }
 
     /**

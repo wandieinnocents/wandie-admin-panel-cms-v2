@@ -14,7 +14,7 @@ Product Brands
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <h5 class="card-title">Product Brands <span class="text-muted fw-normal ms-2">(1)</span></h5>
+                        <h5 class="card-title">Products <span class="text-muted fw-normal ms-2">(1)</span></h5>
                     </div>
                 </div>
 
@@ -22,8 +22,8 @@ Product Brands
                     <div class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
 
                         <div>
-                            <a href="{{ route('product_brands.create') }}" class="btn bg-primary text-light"><i
-                                    class="bx bx-plus me-1"></i> Add Brand</a>
+                            <a href="{{ route('products.create') }}" class="btn bg-primary text-light"><i
+                                    class="bx bx-plus me-1"></i> Add Product</a>
                         </div>
 
                     </div>
@@ -34,11 +34,11 @@ Product Brands
 
             <!-- FETCH FEEDBACKS -->
             {{-- alert add item --}}
-             @if(session('message'))
+             @if(session('messagesave'))
              {{-- <div class="alert alert-success" > {{ session('message')}} </div> --}}
              <div class="alert alert-success alert-dismissible alert-label-icon label-arrow fade show" role="alert">
                 <i class="mdi mdi-check-all label-icon"></i>
-                {{ session('message')}}
+                {{ session('messagesave')}}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             @endif
@@ -84,7 +84,7 @@ Product Brands
                     </thead>
                     <tbody>
 
-                        @foreach ($product_brands as $product_brand)
+                        @foreach ($products as $product)
                             <tr>
                                 <th scope="row">
                                     <div class="form-check font-size-16">
@@ -92,12 +92,12 @@ Product Brands
                                         <label class="form-check-label" for="contacusercheck11"></label>
                                     </div>
                                 </th>
-                                <td>{{ $product_brand->id }}</td>
-                                <td><a href="#" class="text-body">{{ $product_brand->name }}</a> </td>
-                                <td><a href="#" class="text-body">{{ $product_brand->slug }}</a> </td>
+                                <td>{{ $product->id }}</td>
+                                <td><a href="#" class="text-body">{{ $product->name }}</a> </td>
+                                <td><a href="#" class="text-body">{{ $product->slug }}</a> </td>
                                 <td>
 
-                                    @if($product_brand->status == '0')
+                                    @if($product->status == '0')
                                     <span class="badge bg-soft-danger text-danger" style="padding:10px;">Hidden</span>
                                     @else
                                     <span class="badge bg-soft-success text-success" style="padding:10px;">Visible</span>
@@ -110,19 +110,19 @@ Product Brands
                                     <div class="row">
                                         <div class="col-md-4">
                                             <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                                data-bs-target="#viewProductBrandDetails{{ $product_brand->id }}"
+                                                data-bs-target="#viewProductBrandDetails{{ $product->id }}"
                                                 data-bs-whatever="@getbootstrap"><i class=" far fa-eye  "></i></button>
                                         </div>
 
                                         <div class="col-md-4">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#editProductBrand{{ $product_brand->id }}"
+                                                data-bs-target="#editProductBrand{{ $product->id }}"
                                                 data-bs-whatever="@getbootstrap"><i class="fas fa-pencil-alt "></i></button>
 
                                         </div>
                                         <!-- delete food menu -->
                                         <div class="col-md-4">
-                                            <form action="{{ route('product_brands.destroy', $product_brand->id) }}"
+                                            <form action="{{ route('products.destroy', $product->id) }}"
                                                 method="post">
                                                 @csrf
                                                 @method('DELETE')
@@ -138,7 +138,7 @@ Product Brands
 
 
                             <!-- VIEW PRODUCT BRANDS MODAL -->
-                            <div class="modal fade" id="viewProductBrandDetails{{ $product_brand->id }}"
+                            <div class="modal fade" id="viewProductBrandDetails{{ $product->id }}"
                                 tabindex="-1" aria-labelledby="viewProductBrandDetailsLabel" style="display: none;"
                                 aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
@@ -155,12 +155,12 @@ Product Brands
                                         <div class="modal-body">
                                          
 
-                                            <p>Brand Name : {{ $product_brand->name }}</p>
+                                            <p>Brand Name : {{ $product->name }}</p>
                                             <hr>
-                                            <p>Slug : {{ $product_brand->slug }}</p>
+                                            <p>Slug : {{ $product->slug }}</p>
                                             <hr>
                                             <p>status :
-                                            @if($product_brand->status == '0')
+                                            @if($product->status == '0')
                                     <span class="badge bg-soft-danger text-danger" style="padding:10px;">Hidden</span>
                                     @else
                                     <span class="badge bg-soft-success text-success" style="padding:10px;">Visible</span>
@@ -173,7 +173,7 @@ Product Brands
                                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close
                                             </button>
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#editProductBrand{{ $product_brand->id }}"
+                                                data-bs-target="#editProductBrand{{ $product->id }}"
                                                 data-bs-whatever="@getbootstrap">Edit Brand</button>
                                         </div>
                                     </div>
@@ -183,7 +183,7 @@ Product Brands
 
 
                             {{-- UPDATE PRODUCT  BRAND --}}
-                            <div class="modal fade" id="editProductBrand{{ $product_brand->id }}" tabindex="-1"
+                            <div class="modal fade" id="editProductBrand{{ $product->id }}" tabindex="-1"
                                 aria-labelledby="editProductBrandLabel" style="display: none;" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
                                     <div class="modal-content">
@@ -198,7 +198,7 @@ Product Brands
 
                                             <!-- UPDATE Product BRAND -->
 
-                                             <form  action="{{ route('product_brands.update', $product_brand->id) }}"
+                                             <form  action="{{ route('products.update', $product->id) }}"
                                                 method="post" enctype="multipart/form-data">
                                                 @csrf
                                                 @method('PATCH')
@@ -207,7 +207,7 @@ Product Brands
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Name</label>
-                                                        <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Ennter Brand Name" value="{{ $product_brand->name}}">
+                                                        <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Ennter Brand Name" value="{{ $product->name}}">
                                                          @error('name') 
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
@@ -218,7 +218,7 @@ Product Brands
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Slug</label>
-                                                        <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Ennter slug" value="{{ $product_brand->slug}}" >
+                                                        <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Ennter slug" value="{{ $product->slug}}" >
                                                          @error('slug') 
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
@@ -229,7 +229,7 @@ Product Brands
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Status</label>
-                                                        <input type="checkbox"    name="status" {{ $product_brand->status == '1' ? 'checked':''}} >
+                                                        <input type="checkbox"    name="status" {{ $product->status == '1' ? 'checked':''}} >
                                                          @error('status') 
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
