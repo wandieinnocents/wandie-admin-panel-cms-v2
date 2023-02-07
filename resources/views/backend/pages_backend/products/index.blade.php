@@ -378,7 +378,7 @@ Product Brands
                                                                         <div class="col-md-12">
                                                                             <div class="mb-3">
                                                                                 <label class="form-label" for="validationCustom01">Meta Title</label>
-                                                                                <input type="text" class="form-control" id="validationCustom01"  name="meta_title" placeholder="Enter Title" value="" >
+                                                                                <input type="text" class="form-control" id="validationCustom01"  name="meta_title" placeholder="Enter Title" value="{{ $product->meta_title }}" >
                                                                                 @error('meta_title') 
                                                                                     <small class="text-danger"> {{ $message }}</small>
                                                                                 @enderror
@@ -389,7 +389,7 @@ Product Brands
                                                                             <div class="mb-3">
                                                                                 <label class="form-label">Meta Keywords</label>
                                                                                 <textarea class="form-control" name="meta_keywords" id="exampleFormControlTextarea5"
-                                                                                    placeholder="Enter Meta Keywords" rows="3"></textarea>
+                                                                                    placeholder="Enter Meta Keywords" rows="3">{{ $product->meta_keywords}}</textarea>
                                                                                 @error('meta_keywords') 
                                                                                     <small class="text-danger"> {{ $message }}</small>
                                                                                 @enderror
@@ -400,7 +400,7 @@ Product Brands
                                                                             <div class="mb-3">
                                                                                 <label class="form-label">Meta Description</label>
                                                                                 <textarea class="form-control" name="meta_description" id="exampleFormControlTextarea5"
-                                                                                    placeholder="Enter Meta Description" rows="3"></textarea>
+                                                                                    placeholder="Enter Meta Description" rows="3">{{ $product->meta_description}}</textarea>
                                                                                 @error('meta_description') 
                                                                                     <small class="text-danger"> {{ $message }}</small>
                                                                                 @enderror
@@ -416,7 +416,7 @@ Product Brands
                                                                         <div class="col-md-12">
                                                                             <div class="mb-3">
                                                                                 <label class="form-label" for="validationCustom01">Original Price</label>
-                                                                                <input type="text" class="form-control" id="validationCustom01"  name="original_price" placeholder="Enter Title" value="" >
+                                                                                <input type="text" class="form-control" id="validationCustom01"  name="original_price" placeholder="Enter Title" value="{{ $product->original_price}}" >
                                                                                 @error('original_price') 
                                                                                     <small class="text-danger"> {{ $message }}</small>
                                                                                 @enderror
@@ -426,7 +426,7 @@ Product Brands
                                                                         <div class="col-md-12">
                                                                             <div class="mb-3">
                                                                                 <label class="form-label" for="validationCustom01">Selling Price</label>
-                                                                                <input type="text" class="form-control" id="validationCustom01"  name="selling_price" placeholder="Enter Title" value="" >
+                                                                                <input type="text" class="form-control" id="validationCustom01"  name="selling_price" placeholder="Enter Title" value="{{ $product->selling_price}}" >
                                                                                 @error('selling_price') 
                                                                                     <small class="text-danger"> {{ $message }}</small>
                                                                                 @enderror
@@ -436,7 +436,7 @@ Product Brands
                                                                         <div class="col-md-12">
                                                                             <div class="mb-3">
                                                                                 <label class="form-label" for="validationCustom01">Quantity</label>
-                                                                                <input type="text" class="form-control" id="validationCustom01"  name="quantity" placeholder="Enter Title" value="" >
+                                                                                <input type="text" class="form-control" id="validationCustom01"  name="quantity" placeholder="Enter Title" value="{{ $product->quantity}}" >
                                                                                 @error('quantity') 
                                                                                     <small class="text-danger"> {{ $message }}</small>
                                                                                 @enderror
@@ -474,11 +474,19 @@ Product Brands
                                                                     {{-- PRODUCT IMAGES TAB --}}
                                                                     <div class="tab-pane" id="product_images" role="tabpanel">
                                                                         
-                                                                    <div class="col-md-12">
+                                                                      <div class="col-md-12">
                                                                         <div class="mb-3">
-                                                                            <label class="form-label" for="validationCustom05">Upload Product Images</label>
-                                                                            <input type="file" multiple class="form-control" name="image" id="validationCustom05" placeholder="" >
-                                                                            
+                                                                            <label class="form-label" for="validationCustom01">image</label>
+                                                                            <input type="file" class="form-control" id="validationCustom01"  name="image"  value="" >
+                                                                            @if ($product->image)
+                                                                                <img src={{ asset('uploads/products/'.$product->image) }}   width="60px" height="60px" />
+                                                                            @else
+                                                                                <span class="badge bg-soft-danger text-danger" style="padding:10px;">No Photo</span>
+                                                                            @endif
+
+                                                                        @error('image') 
+                                                                                <small class="text-danger"> {{ $message }}</small>
+                                                                        @enderror
                                                                         </div>
                                                                     </div>
 
@@ -486,7 +494,7 @@ Product Brands
                                                                 </div>
                                                     
                                                                 <!-- Editor -->
-                                                                <button class="btn btn-primary" type="submit">Add Product</button>
+                                                                <button class="btn btn-primary" type="submit">Update Product</button>
                                                     </form>
                                                 </div>
                                                 
