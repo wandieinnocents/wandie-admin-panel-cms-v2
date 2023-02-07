@@ -9,6 +9,8 @@ use App\Models\ProductBrands;
 use App\Models\Product;
 use App\Http\Requests\ProductFormRequest;
 use Illuminate\Support\Str;
+use App\Models\productImage;
+use Illuminate\Support\Facades\File;
 
 
 
@@ -60,18 +62,31 @@ class ProductController extends Controller
        $product->original_price = $validatedData['original_price'];
        $product->selling_price = $validatedData['selling_price'];
        $product->quantity = $validatedData['quantity'];
-       $product->selling_price = $validatedData['selling_price'];
-       $product->selling_price = $validatedData['selling_price'];
-       $product->selling_price = $validatedData['selling_price'];
        $product->trending = $request->trending == true ? '1':'0';
        $product->status = $request->status == true ? '1':'0';
        $product->meta_title = $validatedData['meta_title'];
        $product->meta_keywords = $validatedData['meta_keywords'];
        $product->meta_description = $validatedData['meta_description'];
+       // image
+       if($request->hasFile('image')){
+        // delete oldpath on update
+        $path = 'uploads/products/'.$product->image;
+        if(File::exists($path)){
+            File::delete($path);
+        }
 
-    //    dd("store product");
-    // image
+        $file = $request->file('image');
+        $ext = $file->getClientOriginalExtension();
+        $filename = time().'.'.$ext;
+        $file->move('uploads/products/', $filename);
+        $product->image = $filename;
 
+    }
+
+    
+
+
+    //   dd("image");
        $product->save();
        return redirect('/products')->with('messagesave','Product added successfuly');
     }

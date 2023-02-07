@@ -76,6 +76,11 @@ Product Brands
                             </th>
                             <th scope="col"> #ID</th>
                             <th scope="col"> Name</th>
+                            <th scope="col"> Category</th>
+                            <th scope="col"> Brand</th>
+                            <th scope="col"> Image</th>
+                            <th scope="col"> Original Price</th>
+                            <th scope="col"> Selling Price</th>
                             <th scope="col"> Slug</th>
                             <th scope="col"> Status</th>
                            
@@ -94,6 +99,20 @@ Product Brands
                                 </th>
                                 <td>{{ $product->id }}</td>
                                 <td><a href="#" class="text-body">{{ $product->name }}</a> </td>
+                                 <td>{{ $product->product_category_id }}</td>
+                                  <td>{{ $product->brand }}</td>
+                                   <td><a href="#" class="text-body">
+
+                                  @if ($product->image)
+                                       <img src={{ asset('uploads/products/'.$product->image) }}   width="60px" height="60px" />
+                                  @else
+                                       <span class="badge bg-soft-danger text-danger" style="padding:10px;">No Photo</span>
+                                  @endif
+
+                                 </a> </td>
+                                  <td>
+                                   <td>{{ $product->original_price }}</td>
+                                    <td>{{ $product->selling_price }}</td>
                                 <td><a href="#" class="text-body">{{ $product->slug }}</a> </td>
                                 <td>
 

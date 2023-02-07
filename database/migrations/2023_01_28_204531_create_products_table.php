@@ -28,7 +28,8 @@ class CreateProductsTable extends Migration
             $table->tinyInteger('status')->default('0')->comment('0=visible,1=hidden');
             $table->string('meta_title')->nullable();
             $table->mediumText('meta_keywords')->nullable();
-            $table->longText('meta_description')->nullable();          
+            $table->longText('meta_description')->nullable();    
+            $table->text('image')->nullable();         
             $table->foreign('product_category_id')->references('id')->on('product_categories')->onDelete('cascade');
             $table->timestamps();
         });
