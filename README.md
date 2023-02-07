@@ -3,8 +3,8 @@ Wandie Admin Panel is a master admin panel that gives you a fully fledged back-e
 
 
 ## MODULES IN THE APPLICATION 
-## -------------------------------------------------------------------------------
-## -------------------------------------------------------------------------------
+## ------------------------------------
+## ------------------------------------
 
 ## ECOMMERCE MODULE FEATURES
 - Add product brands
@@ -17,8 +17,8 @@ Wandie Admin Panel is a master admin panel that gives you a fully fledged back-e
 - Manage Products
 
 
-## -------------------------------------------------------------------------------
-## -------------------------------------------------------------------------------
+## ------------------------------------
+## ------------------------------------
 
 ## COMMENTS SYSTEM FOR BLOGS INTEGRATION
 - Disqus comments : https://disqus.com/
