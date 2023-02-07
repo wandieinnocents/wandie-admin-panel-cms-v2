@@ -83,6 +83,9 @@ class ProductController extends Controller
 
     }
 
+    // multiple images
+    // https://www.itsolutionstuff.com/post/laravel-9-multiple-image-upload-tutorialexample.html
+
     
 
 
@@ -133,6 +136,9 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->delete();
+
+        return redirect('/products')->with('messagedelete', 'Product  is successfully deleted');
     }
 }
