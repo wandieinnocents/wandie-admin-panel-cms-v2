@@ -176,6 +176,10 @@ Route::resource('/product_brands', 'App\Http\Controllers\BackEnd\ProductBrandsCo
 // products
 Route::resource('/products', 'App\Http\Controllers\BackEnd\ProductController');
 
+// product colors
+Route::resource('/product_colors', 'App\Http\Controllers\BackEnd\ProductColorController');
+
+
 
 
 
