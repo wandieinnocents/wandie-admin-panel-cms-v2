@@ -45,7 +45,6 @@ class ProductController extends Controller
      */
     public function store(ProductFormRequest $request)
     {
-        // dd("store product");
         
        // pick validations 
        $validatedData = $request->validated();
@@ -75,9 +74,10 @@ class ProductController extends Controller
        $product->meta_title = $validatedData['meta_title'];
        $product->meta_keywords = $validatedData['meta_keywords'];
        $product->meta_description = $validatedData['meta_description'];
-       
-       dd($product);
-    //    $brand->save();
+
+    //    dd("store product");
+
+       $product->save();
     //    return redirect('/products')->with('message','Product added successfuly');
     }
 

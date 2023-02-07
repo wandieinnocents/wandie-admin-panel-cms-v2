@@ -84,6 +84,9 @@
                                                                     </option>
                                                                 @endforeach
                                                             </select>
+                                                             @error('product_category_id') 
+                                                                <small class="text-danger"> {{ $message }}</small>
+                                                            @enderror
                                                         </div>
                                                     </div>
 
@@ -98,14 +101,17 @@
                                                                     </option>
                                                                 @endforeach
                                                             </select>
+                                                             @error('brand') 
+                                                                <small class="text-danger"> {{ $message }}</small>
+                                                            @enderror
                                                         </div>
                                                     </div>
 
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label" for="validationCustom01">Product Name</label>
-                                                            <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Ennter slug" value="" >
-                                                            @error('slug') 
+                                                            <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Enter product name" value="" >
+                                                            @error('name') 
                                                                 <small class="text-danger"> {{ $message }}</small>
                                                             @enderror
                                                         </div>
@@ -114,7 +120,7 @@
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <label class="form-label" for="validationCustom01">Slug</label>
-                                                            <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Ennter slug" value="" >
+                                                            <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Enter slug" value="" >
                                                             @error('slug') 
                                                                 <small class="text-danger"> {{ $message }}</small>
                                                             @enderror
@@ -127,6 +133,9 @@
                                                             <label class="form-label">Small Description</label>
                                                             <textarea class="form-control" name="small_description" id="exampleFormControlTextarea5"
                                                                 placeholder="Enter Small Description" rows="3"></textarea>
+                                                           @error('small_description') 
+                                                                <small class="text-danger"> {{ $message }}</small>
+                                                            @enderror
                                                         </div>
                                                     </div>
 
@@ -135,6 +144,9 @@
                                                             <label class="form-label">Description</label>
                                                             <textarea class="form-control" name="description" id="exampleFormControlTextarea5"
                                                                 placeholder="Enter  Description" rows="3"></textarea>
+                                                             @error('description') 
+                                                                <small class="text-danger"> {{ $message }}</small>
+                                                            @enderror
                                                         </div>
                                                     </div>
 
@@ -194,7 +206,7 @@
                                                         <div class="mb-3">
                                                             <label class="form-label" for="validationCustom01">Original Price</label>
                                                             <input type="text" class="form-control" id="validationCustom01"  name="original_price" placeholder="Enter Title" value="" >
-                                                            @error('meta_title') 
+                                                            @error('original_price') 
                                                                 <small class="text-danger"> {{ $message }}</small>
                                                             @enderror
                                                         </div>
@@ -203,8 +215,8 @@
                                                     <div class="col-md-12">
                                                         <div class="mb-3">
                                                             <label class="form-label" for="validationCustom01">Selling Price</label>
-                                                            <input type="text" class="form-control" id="validationCustom01"  name="original_price" placeholder="Enter Title" value="" >
-                                                            @error('meta_title') 
+                                                            <input type="text" class="form-control" id="validationCustom01"  name="selling_price" placeholder="Enter Title" value="" >
+                                                            @error('selling_price') 
                                                                 <small class="text-danger"> {{ $message }}</small>
                                                             @enderror
                                                         </div>
@@ -213,8 +225,8 @@
                                                     <div class="col-md-12">
                                                         <div class="mb-3">
                                                             <label class="form-label" for="validationCustom01">Quantity</label>
-                                                            <input type="text" class="form-control" id="validationCustom01"  name="original_price" placeholder="Enter Title" value="" >
-                                                            @error('meta_title') 
+                                                            <input type="text" class="form-control" id="validationCustom01"  name="quantity" placeholder="Enter Title" value="" >
+                                                            @error('quantity') 
                                                                 <small class="text-danger"> {{ $message }}</small>
                                                             @enderror
                                                         </div>
@@ -254,7 +266,7 @@
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom05">Upload Product Images</label>
-                                                        <input type="file" multiple class="form-control" name="image" id="validationCustom05" placeholder="" required>
+                                                        <input type="file" multiple class="form-control" name="image" id="validationCustom05" placeholder="" >
                                                         
                                                     </div>
                                                 </div>
