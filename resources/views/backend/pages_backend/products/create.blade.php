@@ -35,8 +35,8 @@
                                 <div class="card">
                                   
                                     <div class="card-body">
-                                    <form  action="{{ route('product_brands.store') }}"  method="POST" enctype="multipart/form-data">
-                                    
+                                    <form  action="{{ route('products.store') }}"  method="POST" enctype="multipart/form-data">
+                                     @csrf
                                         <!-- Nav tabs -->
                                         <ul class="nav nav-tabs" role="tablist">
                                             <li class="nav-item">
@@ -48,109 +48,222 @@
                                             <li class="nav-item">
                                                 <a class="nav-link" data-bs-toggle="tab" href="#seo" role="tab" aria-selected="false">
                                                     <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                                                    <span class="d-none d-sm-block">SEO Tags</span>    
+                                                    <span class="d-none d-sm-block">Product SEO Tags</span>    
                                                 </a>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link " data-bs-toggle="tab" href="#details" role="tab" aria-selected="true">
                                                     <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
-                                                    <span class="d-none d-sm-block">Details</span>    
+                                                    <span class="d-none d-sm-block">Product Details</span>    
                                                 </a>
                                             </li>
-                                            {{-- <li class="nav-item">
-                                                <a class="nav-link" data-bs-toggle="tab" href="#settings" role="tab" aria-selected="false">
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-bs-toggle="tab" href="#product_images" role="tab" aria-selected="false">
                                                     <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
-                                                    <span class="d-none d-sm-block">Settings</span>    
+                                                    <span class="d-none d-sm-block">Product Images</span>    
                                                 </a>
-                                            </li> --}}
+                                            </li>
                                         </ul>
         
-                                        <!-- Tab panes -->
-                                        <div class="tab-content p-3 text-muted">
-                                            <div class="tab-pane active" id="home" role="tabpanel">
-                                                
+                                            <!-- Tab panes -->
+                                            <div class="tab-content p-3 text-muted">
+                                                <div class="tab-pane active" id="home" role="tabpanel">
+                                                    
 
-                                                {{-- START TAB 1 CONTENT--}}
+                                                    {{-- START TAB 1 CONTENT--}}
 
-                                                 <div class="row">
-                                                 <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label class="form-label" for="validationCustom01">Category</label>
-                                                        <select name="product_category_id" class="form-select">
-                                                            @foreach ($product_categories as $product_category)
-                                                                <option value="{{ $product_category->id }}">
-                                                                    {{ $product_category->name }}
-                                                                    
-                                                                </option>
-                                                            @endforeach
-                                                        </select>
+                                                    <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label class="form-label" for="validationCustom01">Select Product Category</label>
+                                                            <select name="product_category_id" class="form-select">
+                                                                @foreach ($product_categories as $product_category)
+                                                                    <option value="{{ $product_category->id }}">
+                                                                        {{ $product_category->name }}
+                                                                        
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
                                                     </div>
-                                                  </div>
 
-                                                <div class="col-md-12">
-                                                    <div class="mb-3">
-                                                        <label class="form-label" for="validationCustom01">Slug</label>
-                                                        <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Ennter slug" value="" >
-                                                         @error('slug') 
-                                                            <small class="text-danger"> {{ $message }}</small>
-                                                          @enderror
+                                                        <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label class="form-label" for="validationCustom01">Select Product Brand</label>
+                                                            <select name="brand" class="form-select">
+                                                                @foreach ($product_brands as $product_brand)
+                                                                    <option value="{{ $product_brand->name }}">
+                                                                        {{ $product_brand->name }}
+                                                                        
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
                                                     </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label class="form-label" for="validationCustom01">Product Name</label>
+                                                            <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Ennter slug" value="" >
+                                                            @error('slug') 
+                                                                <small class="text-danger"> {{ $message }}</small>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label class="form-label" for="validationCustom01">Slug</label>
+                                                            <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Ennter slug" value="" >
+                                                            @error('slug') 
+                                                                <small class="text-danger"> {{ $message }}</small>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Small Description</label>
+                                                            <textarea class="form-control" name="small_description" id="exampleFormControlTextarea5"
+                                                                placeholder="Enter Small Description" rows="3"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Description</label>
+                                                            <textarea class="form-control" name="description" id="exampleFormControlTextarea5"
+                                                                placeholder="Enter  Description" rows="3"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                    
+
+
+
+
                                                 </div>
 
 
+                                                    {{-- END TAB 1  CONTENT--}}
+
+                                                </div>
+
+                                                {{--    SEO TAB --}}
+                                                <div class="tab-pane" id="seo" role="tabpanel">
+                                                    <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <label class="form-label" for="validationCustom01">Meta Title</label>
+                                                            <input type="text" class="form-control" id="validationCustom01"  name="meta_title" placeholder="Enter Title" value="" >
+                                                            @error('meta_title') 
+                                                                <small class="text-danger"> {{ $message }}</small>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Meta Keywords</label>
+                                                            <textarea class="form-control" name="meta_keywords" id="exampleFormControlTextarea5"
+                                                                placeholder="Enter Meta Keywords" rows="3"></textarea>
+                                                            @error('meta_keywords') 
+                                                                <small class="text-danger"> {{ $message }}</small>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Meta Description</label>
+                                                            <textarea class="form-control" name="meta_description" id="exampleFormControlTextarea5"
+                                                                placeholder="Enter Meta Description" rows="3"></textarea>
+                                                            @error('meta_description') 
+                                                                <small class="text-danger"> {{ $message }}</small>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+
+
+                                                </div>
+
+                                                {{-- PRODUCT DETAILS --}}
+                                                <div class="tab-pane" id="details" role="tabpanel">
+                                                    <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <label class="form-label" for="validationCustom01">Original Price</label>
+                                                            <input type="text" class="form-control" id="validationCustom01"  name="original_price" placeholder="Enter Title" value="" >
+                                                            @error('meta_title') 
+                                                                <small class="text-danger"> {{ $message }}</small>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <label class="form-label" for="validationCustom01">Selling Price</label>
+                                                            <input type="text" class="form-control" id="validationCustom01"  name="original_price" placeholder="Enter Title" value="" >
+                                                            @error('meta_title') 
+                                                                <small class="text-danger"> {{ $message }}</small>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <label class="form-label" for="validationCustom01">Quantity</label>
+                                                            <input type="text" class="form-control" id="validationCustom01"  name="original_price" placeholder="Enter Title" value="" >
+                                                            @error('meta_title') 
+                                                                <small class="text-danger"> {{ $message }}</small>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <label class="form-label" for="validationCustom01">Trending</label>
+                                                            <input type="checkbox"    name="trending" >
+                                                            @error('trending') 
+                                                                <small class="text-danger"> {{ $message }}</small>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <label class="form-label" for="validationCustom01">Status</label>
+                                                            <input type="checkbox"    name="status" >
+                                                            @error('status') 
+                                                                <small class="text-danger"> {{ $message }}</small>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+
+
+
+
+                                                </div>
+
+                                                {{-- PRODUCT IMAGES TAB --}}
+                                                <div class="tab-pane" id="product_images" role="tabpanel">
+                                                    
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
-                                                        <label class="form-label" for="validationCustom01">Status</label>
-                                                        <input type="checkbox"    name="status" >
-                                                         @error('status') 
-                                                            <small class="text-danger"> {{ $message }}</small>
-                                                          @enderror
+                                                        <label class="form-label" for="validationCustom05">Upload Product Images</label>
+                                                        <input type="file" multiple class="form-control" name="image" id="validationCustom05" placeholder="" required>
+                                                        
                                                     </div>
                                                 </div>
 
-
+                                                </div>
                                             </div>
-
-
-                                                {{-- END TAB 1  CONTENT--}}
-
-                                            </div>
-                                            <div class="tab-pane" id="seo" role="tabpanel">
-                                                <p class="mb-0">
-                                                    Food truck fixie locavore, accusamus mcsweeney's marfa nulla
-                                                    single-origin coffee squid. Exercitation +1 labore velit, blog
-                                                    sartorial PBR leggings next level wes anderson artisan four loko
-                                                    farm-to-table craft beer twee. Qui photo booth letterpress,
-                                                    commodo enim craft beer mlkshk aliquip jean shorts ullamco ad
-                                                    vinyl cillum PBR. Homo nostrud organic, assumenda labore
-                                                    aesthetic magna delectus.
-                                                </p>
-                                            </div>
-                                            <div class="tab-pane" id="details" role="tabpanel">
-                                                <p class="mb-0">
-                                                    Etsy mixtape wayfarers, ethical wes anderson tofu before they
-                                                    sold out mcsweeney's organic lomo retro fanny pack lo-fi
-                                                    farm-to-table readymade. Messenger bag gentrify pitchfork
-                                                    tattooed craft beer, iphone skateboard locavore carles etsy
-                                                    salvia banksy hoodie helvetica. DIY synth PBR banksy irony.
-                                                    Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh
-                                                    mi whatever gluten yr.
-                                                </p>
-                                            </div>
-                                            {{-- <div class="tab-pane" id="settings" role="tabpanel">
-                                                <p class="mb-0">
-                                                    Trust fund seitan letterpress, keytar raw denim keffiyeh etsy
-                                                    art party before they sold out master cleanse gluten-free squid
-                                                    scenester freegan cosby sweater. Fanny pack portland seitan DIY,
-                                                    art party locavore wolf cliche high life echo park Austin. Cred
-                                                    vinyl keffiyeh DIY salvia PBR, banh mi before they sold out
-                                                    farm-to-table VHS.
-                                                </p>
-                                            </div> --}}
-                                        </div>
                                    
                                             <!-- Editor -->
-                                            <button class="btn btn-primary" type="submit">Add Product Brand</button>
+                                            <button class="btn btn-primary" type="submit">Add Product</button>
                                         </form>
                                     </div>
                                 </div>

@@ -5,6 +5,10 @@ namespace App\Http\Controllers\BackEnd;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
+use App\Models\ProductBrands;
+use App\Models\Product;
+use App\Http\Requests\ProductFormRequest;
+
 
 class ProductController extends Controller
 {
@@ -27,7 +31,8 @@ class ProductController extends Controller
     public function create()
     {
         $product_categories = ProductCategory::all();
-        return view('backend.pages_backend.products.create',compact('product_categories'));
+        $product_brands = ProductBrands::all();
+        return view('backend.pages_backend.products.create',compact('product_categories','product_brands'));
     }
 
     /**
@@ -36,9 +41,23 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductFormRequest $request)
     {
-        //
+        dd("store product");
+        
+       // pick validations 
+       $validatedData = $request->validated();
+       $product = new Product();
+       $product->name = $validatedData['name'];
+       $product->slug = Str::slug($validatedData['slug']);
+       $product->status = $request->status == true ? '1':'0';
+
+       // save
+    //    dd($brand);
+   
+       $brand->save();
+       // redirect
+       return redirect('/products')->with('message','Product added successfuly');
     }
 
     /**
