@@ -110,7 +110,7 @@
 
                          <li>
                             <a href="/product_colors/create">
-                                <span data-key="t-calendar">Add Color</span>
+                                <span data-key="t-calendar"> Add Color</span>
                             </a>
                         </li>
 
