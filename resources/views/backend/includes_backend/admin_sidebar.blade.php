@@ -6,6 +6,7 @@
             <!-- Left Menu Stargit ddt -->
             <ul class="metismenu list-unstyled" id="side-menu">
                 <!-- <li class="menu-title" data-key="t-menu">Menu</li> -->
+                {{-- home dashboard --}}
                 <li>
                     <a href="/dashboard">
                         <i class="fas fa-home"></i>
@@ -37,7 +38,7 @@
                                 <span data-key="t-calendar">View Sliders</span>
                             </a>
                         </li>
-                       
+
                     </ul>
                 </li>
 
