@@ -29,12 +29,12 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li>
-                            <a href="/project_categories/create">
+                            <a href="/home_sliders/create">
                                 <span data-key="t-calendar">Add Slider</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/project_categories">
+                            <a href="/home_sliders">
                                 <span data-key="t-calendar">View Sliders</span>
                             </a>
                         </li>

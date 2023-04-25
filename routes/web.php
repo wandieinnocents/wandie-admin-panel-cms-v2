@@ -179,6 +179,10 @@ Route::resource('/products', 'App\Http\Controllers\BackEnd\ProductController');
 // product colors
 Route::resource('/product_colors', 'App\Http\Controllers\BackEnd\ProductColorController');
 
+// slider  home
+Route::resource('/home_sliders', 'App\Http\Controllers\BackEnd\SliderController');
+
+
 
 
 
