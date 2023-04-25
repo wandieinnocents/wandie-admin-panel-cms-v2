@@ -37,17 +37,17 @@ Add product color
                                         <!-- <p class="card-title-desc">Add Category</p> -->
                                     </div>
                                     <div class="card-body">
-                                    <form  action="{{ route('product_brands.store') }}"  method="POST" enctype="multipart/form-data">
+                                    <form  action="{{ route('product_colors.store') }}"  method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Name</label>
                                                         <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Ennter Brand Name" value="">
-                                                         @error('name') 
+                                                         @error('name')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
-                                                        
+
                                                     </div>
                                                 </div>
 
@@ -55,7 +55,7 @@ Add product color
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Slug</label>
                                                         <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Ennter slug" value="" >
-                                                         @error('slug') 
+                                                         @error('slug')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
                                                     </div>
@@ -66,7 +66,7 @@ Add product color
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Status</label>
                                                         <input type="checkbox"    name="status" >
-                                                         @error('status') 
+                                                         @error('status')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
                                                     </div>
@@ -77,7 +77,7 @@ Add product color
 
 
 
-                                                
+
                                             </div>
 
                                             <!-- Editor -->
@@ -87,7 +87,7 @@ Add product color
                                 </div>
                                 <!-- end card -->
                             </div> <!-- end col -->
-        
+
                         </div>
                         <!-- end row -->
 

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\BackEnd;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\ProductColor;
+
 
 class ProductColorController extends Controller
 {
@@ -14,6 +16,8 @@ class ProductColorController extends Controller
      */
     public function index()
     {
+        $product_colors = ProductColor::all();
+        dd($product_colors);
         return view('backend.pages_backend.product_colors.index');
 
     }

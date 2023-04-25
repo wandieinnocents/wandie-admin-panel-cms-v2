@@ -42,3 +42,8 @@ How to add an admin api controller
 ## Customer/Client Api Controller
 How to add an customer/client api controller 
 - php artisan make:controller Api/v1/Customer/CustomerApiPostController -r
+
+
+## CODE MANUAL DOCUMENTATION
+## CREATING VALIDATIONS
+php artisan make:request ProductColorFormRequest
