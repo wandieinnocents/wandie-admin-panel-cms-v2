@@ -45,5 +45,12 @@ How to add an customer/client api controller
 
 
 ## CODE MANUAL DOCUMENTATION
-## CREATING VALIDATIONS
+
+## Validation requests
 php artisan make:request ProductColorFormRequest
+
+## Making single validation
+php artisan migrate:refresh --path=/database/migrations/fileName.php
+
+
+

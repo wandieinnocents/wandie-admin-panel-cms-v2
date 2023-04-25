@@ -43,7 +43,7 @@ Add product color
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Name</label>
-                                                        <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Ennter Brand Name" value="">
+                                                        <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder=" Color Name" value="">
                                                          @error('name')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
@@ -53,8 +53,8 @@ Add product color
 
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
-                                                        <label class="form-label" for="validationCustom01">Slug</label>
-                                                        <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Ennter slug" value="" >
+                                                        <label class="form-label" for="validationCustom01">Color</label>
+                                                        <input type="text" class="form-control" id="validationCustom01"  name="color" placeholder=" slug" value="" >
                                                          @error('slug')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
@@ -62,15 +62,7 @@ Add product color
                                                 </div>
 
 
-                                                <div class="col-md-12">
-                                                    <div class="mb-3">
-                                                        <label class="form-label" for="validationCustom01">Status</label>
-                                                        <input type="checkbox"    name="status" >
-                                                         @error('status')
-                                                            <small class="text-danger"> {{ $message }}</small>
-                                                          @enderror
-                                                    </div>
-                                                </div>
+
 
 
 
@@ -81,7 +73,7 @@ Add product color
                                             </div>
 
                                             <!-- Editor -->
-                                            <button class="btn btn-primary" type="submit">Add Product Brand</button>
+                                            <button class="btn btn-primary" type="submit">Add Product Color</button>
                                         </form>
                                     </div>
                                 </div>
