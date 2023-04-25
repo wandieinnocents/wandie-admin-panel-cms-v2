@@ -24,11 +24,11 @@ class ProductColorFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'product_category_id' => [
-                'required',
-                'integer'
-            ],
             'name' => [
+                'required',
+                'string'
+            ],
+            'color' => [
                 'required',
                 'string'
             ],
