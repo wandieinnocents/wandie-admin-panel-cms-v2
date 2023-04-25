@@ -14,7 +14,7 @@ Product Brands
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <h5 class="card-title">Product Brands <span class="text-muted fw-normal ms-2">(1)</span></h5>
+                        <h5 class="card-title">Product Colors <span class="text-muted fw-normal ms-2">(1)</span></h5>
                     </div>
                 </div>
 
@@ -22,7 +22,7 @@ Product Brands
                     <div class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
 
                         <div>
-                            <a href="{{ route('product_brands.create') }}" class="btn bg-primary text-light"><i
+                            <a href="{{ route('product_colors.create') }}" class="btn bg-primary text-light"><i
                                     class="bx bx-plus me-1"></i> Add Brand</a>
                         </div>
 
@@ -44,7 +44,7 @@ Product Brands
             @endif
 
              {{-- alert delete item --}}
-              @if(session('messagedelete')) 
+              @if(session('messagedelete'))
              <div class="alert alert-danger alert-dismissible alert-label-icon label-arrow fade show" role="alert">
                 <i class="mdi mdi-block-helper label-icon"></i>
                 {{ session('messagedelete')}}
@@ -54,7 +54,7 @@ Product Brands
              @endif
 
              {{-- alert update item --}}
-              @if(session('messageupdate')) 
+              @if(session('messageupdate'))
              <div class="alert alert-info alert-dismissible alert-label-icon label-arrow fade show mb-0" role="alert">
                 <i class="mdi mdi-check-all label-icon"></i>
                 {{ session('messageupdate')}}
@@ -76,15 +76,14 @@ Product Brands
                             </th>
                             <th scope="col"> #ID</th>
                             <th scope="col"> Name</th>
-                            <th scope="col"> Slug</th>
-                            <th scope="col"> Status</th>
-                           
+
+
                             <th style="width: 150px; min-width: 80px;">Action</th>
                         </tr>
                     </thead>
                     <tbody>
 
-                        @foreach ($product_brands as $product_brand)
+                        @foreach ($product_colors as $product_brand)
                             <tr>
                                 <th scope="row">
                                     <div class="form-check font-size-16">
@@ -94,18 +93,8 @@ Product Brands
                                 </th>
                                 <td>{{ $product_brand->id }}</td>
                                 <td><a href="#" class="text-body">{{ $product_brand->name }}</a> </td>
-                                <td><a href="#" class="text-body">{{ $product_brand->slug }}</a> </td>
-                                <td>
+                  
 
-                                    @if($product_brand->status == '0')
-                                    <span class="badge bg-soft-danger text-danger" style="padding:10px;">Hidden</span>
-                                    @else
-                                    <span class="badge bg-soft-success text-success" style="padding:10px;">Visible</span>
-
-                                    @endif
-                                   
-                                  </td>
-                                
                                 <td colspan="6">
                                     <div class="row">
                                         <div class="col-md-4">
@@ -122,7 +111,7 @@ Product Brands
                                         </div>
                                         <!-- delete food menu -->
                                         <div class="col-md-4">
-                                            <form action="{{ route('product_brands.destroy', $product_brand->id) }}"
+                                            <form action="{{ route('product_colors.destroy', $product_brand->id) }}"
                                                 method="post">
                                                 @csrf
                                                 @method('DELETE')
@@ -153,7 +142,7 @@ Product Brands
 
 
                                         <div class="modal-body">
-                                         
+
 
                                             <p>Brand Name : {{ $product_brand->name }}</p>
                                             <hr>
@@ -167,7 +156,7 @@ Product Brands
 
                                     @endif
                                      </p>
-                                            
+
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close
@@ -198,7 +187,7 @@ Product Brands
 
                                             <!-- UPDATE Product BRAND -->
 
-                                             <form  action="{{ route('product_brands.update', $product_brand->id) }}"
+                                             <form  action="{{ route('product_colors.update', $product_brand->id) }}"
                                                 method="post" enctype="multipart/form-data">
                                                 @csrf
                                                 @method('PATCH')
@@ -208,10 +197,10 @@ Product Brands
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Name</label>
                                                         <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Ennter Brand Name" value="{{ $product_brand->name}}">
-                                                         @error('name') 
+                                                         @error('name')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
-                                                        
+
                                                     </div>
                                                 </div>
 
@@ -219,7 +208,7 @@ Product Brands
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Slug</label>
                                                         <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Ennter slug" value="{{ $product_brand->slug}}" >
-                                                         @error('slug') 
+                                                         @error('slug')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
                                                     </div>
@@ -230,7 +219,7 @@ Product Brands
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Status</label>
                                                         <input type="checkbox"    name="status" {{ $product_brand->status == '1' ? 'checked':''}} >
-                                                         @error('status') 
+                                                         @error('status')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
                                                     </div>
@@ -241,7 +230,7 @@ Product Brands
 
 
 
-                                                
+
                                             </div>
 
                                             <!-- Editor -->

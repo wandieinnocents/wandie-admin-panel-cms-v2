@@ -19,8 +19,8 @@ class ProductColorController extends Controller
     public function index()
     {
         $product_colors = ProductColor::all();
-        dd($product_colors);
-        return view('backend.pages_backend.product_colors.index');
+        // dd($product_colors);
+        return view('backend.pages_backend.product_colors.index',compact('product_colors'));
 
     }
 

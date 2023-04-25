@@ -28,10 +28,7 @@ class ProductColorFormRequest extends FormRequest
                 'required',
                 'string'
             ],
-            'color' => [
-                'required',
-                'string'
-            ],
+
         ];
     }
 }

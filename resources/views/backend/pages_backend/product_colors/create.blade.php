@@ -54,14 +54,6 @@ Add product color
 
 
 
-
-
-
-
-
-
-
-
                                             </div>
 
                                             <!-- Editor -->
