@@ -81,9 +81,14 @@ class ProductColorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductColorFormRequest $request, $id)
     {
-        //
+        $validatedData = $request->validated();
+        $product_color = ProductColor::findOrFail($id);
+        $product_color->name = $validatedData['name'];
+
+        $product_color->update();
+        return redirect('/product_colors')->with('messageupdate','Color Updated successfuly');
     }
 
     /**

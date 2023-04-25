@@ -23,7 +23,7 @@ Product Brands
 
                         <div>
                             <a href="{{ route('product_colors.create') }}" class="btn bg-primary text-light"><i
-                                    class="bx bx-plus me-1"></i> Add Brand</a>
+                                    class="bx bx-plus me-1"></i> Add Product Color</a>
                         </div>
 
                     </div>
@@ -34,11 +34,11 @@ Product Brands
 
             <!-- FETCH FEEDBACKS -->
             {{-- alert add item --}}
-             @if(session('message'))
+             @if(session('messagesave'))
              {{-- <div class="alert alert-success" > {{ session('message')}} </div> --}}
              <div class="alert alert-success alert-dismissible alert-label-icon label-arrow fade show" role="alert">
                 <i class="mdi mdi-check-all label-icon"></i>
-                {{ session('message')}}
+                {{ session('messagesave')}}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             @endif
@@ -83,7 +83,7 @@ Product Brands
                     </thead>
                     <tbody>
 
-                        @foreach ($product_colors as $product_brand)
+                        @foreach ($product_colors as $product_color)
                             <tr>
                                 <th scope="row">
                                     <div class="form-check font-size-16">
@@ -91,27 +91,27 @@ Product Brands
                                         <label class="form-check-label" for="contacusercheck11"></label>
                                     </div>
                                 </th>
-                                <td>{{ $product_brand->id }}</td>
-                                <td><a href="#" class="text-body">{{ $product_brand->name }}</a> </td>
-                  
+                                <td>{{ $product_color->id }}</td>
+                                <td><a href="#" class="text-body">{{ $product_color->name }}</a> </td>
+
 
                                 <td colspan="6">
                                     <div class="row">
                                         <div class="col-md-4">
                                             <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                                data-bs-target="#viewProductBrandDetails{{ $product_brand->id }}"
+                                                data-bs-target="#viewProductColorDetails{{ $product_color->id }}"
                                                 data-bs-whatever="@getbootstrap"><i class=" far fa-eye  "></i></button>
                                         </div>
 
                                         <div class="col-md-4">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#editProductBrand{{ $product_brand->id }}"
+                                                data-bs-target="#editProductBrand{{ $product_color->id }}"
                                                 data-bs-whatever="@getbootstrap"><i class="fas fa-pencil-alt "></i></button>
 
                                         </div>
                                         <!-- delete food menu -->
                                         <div class="col-md-4">
-                                            <form action="{{ route('product_colors.destroy', $product_brand->id) }}"
+                                            <form action="{{ route('product_colors.destroy', $product_color->id) }}"
                                                 method="post">
                                                 @csrf
                                                 @method('DELETE')
@@ -126,14 +126,14 @@ Product Brands
 
 
 
-                            <!-- VIEW PRODUCT BRANDS MODAL -->
-                            <div class="modal fade" id="viewProductBrandDetails{{ $product_brand->id }}"
-                                tabindex="-1" aria-labelledby="viewProductBrandDetailsLabel" style="display: none;"
+                            <!-- VIEW PRODUCT COLOR MODAL -->
+                            <div class="modal fade" id="viewProductColorDetails{{ $product_color->id }}"
+                                tabindex="-1" aria-labelledby="viewProductColorDetailsLabel" style="display: none;"
                                 aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="viewProductBrandDetailsLabel">Product Brand
+                                            <h5 class="modal-title" id="viewProductColorDetailsLabel">Product Color
                                                 Details</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
@@ -144,26 +144,19 @@ Product Brands
                                         <div class="modal-body">
 
 
-                                            <p>Brand Name : {{ $product_brand->name }}</p>
+                                            <p>#ID : {{ $product_color->id }}</p>
                                             <hr>
-                                            <p>Slug : {{ $product_brand->slug }}</p>
-                                            <hr>
-                                            <p>status :
-                                            @if($product_brand->status == '0')
-                                    <span class="badge bg-soft-danger text-danger" style="padding:10px;">Hidden</span>
-                                    @else
-                                    <span class="badge bg-soft-success text-success" style="padding:10px;">Visible</span>
+                                            <p>Color Name : {{ $product_color->name }}</p>
 
-                                    @endif
-                                     </p>
+
 
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close
                                             </button>
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#editProductBrand{{ $product_brand->id }}"
-                                                data-bs-whatever="@getbootstrap">Edit Brand</button>
+                                                data-bs-target="#editProductBrand{{ $product_color->id }}"
+                                                data-bs-whatever="@getbootstrap">Edit Color</button>
                                         </div>
                                     </div>
                                 </div>
@@ -171,13 +164,13 @@ Product Brands
                             <!-- END OF VIEW DETAILS MODEL -->
 
 
-                            {{-- UPDATE PRODUCT  BRAND --}}
-                            <div class="modal fade" id="editProductBrand{{ $product_brand->id }}" tabindex="-1"
+                            {{-- UPDATE PRODUCT  COLOR --}}
+                            <div class="modal fade" id="editProductBrand{{ $product_color->id }}" tabindex="-1"
                                 aria-labelledby="editProductBrandLabel" style="display: none;" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="viewProductBrandDetailsLabel">Edit Brand
+                                            <h5 class="modal-title" id="viewProductColorDetailsLabel">Edit Color
                                                 Details</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
@@ -187,7 +180,7 @@ Product Brands
 
                                             <!-- UPDATE Product BRAND -->
 
-                                             <form  action="{{ route('product_colors.update', $product_brand->id) }}"
+                                             <form  action="{{ route('product_colors.update', $product_color->id) }}"
                                                 method="post" enctype="multipart/form-data">
                                                 @csrf
                                                 @method('PATCH')
@@ -196,7 +189,7 @@ Product Brands
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Name</label>
-                                                        <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Ennter Brand Name" value="{{ $product_brand->name}}">
+                                                        <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Enter Color Name" value="{{ $product_color->name}}">
                                                          @error('name')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
@@ -204,26 +197,7 @@ Product Brands
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-12">
-                                                    <div class="mb-3">
-                                                        <label class="form-label" for="validationCustom01">Slug</label>
-                                                        <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Ennter slug" value="{{ $product_brand->slug}}" >
-                                                         @error('slug')
-                                                            <small class="text-danger"> {{ $message }}</small>
-                                                          @enderror
-                                                    </div>
-                                                </div>
 
-
-                                                <div class="col-md-12">
-                                                    <div class="mb-3">
-                                                        <label class="form-label" for="validationCustom01">Status</label>
-                                                        <input type="checkbox"    name="status" {{ $product_brand->status == '1' ? 'checked':''}} >
-                                                         @error('status')
-                                                            <small class="text-danger"> {{ $message }}</small>
-                                                          @enderror
-                                                    </div>
-                                                </div>
 
 
 
