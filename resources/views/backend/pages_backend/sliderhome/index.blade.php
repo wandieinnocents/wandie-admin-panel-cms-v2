@@ -26,7 +26,7 @@
                 <div class="col-md-6">
                     <div class="mb-3">
                         <h5 class="card-title">Photos <span
-                                class="text-muted fw-normal ms-2">({{ $count_galleries }})</span></h5>
+                                class="text-muted fw-normal ms-2">({{ $count_sliders }})</span></h5>
                     </div>
                 </div>
 
@@ -34,7 +34,7 @@
                     <div class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
 
                         <div>
-                            <a href="/galleries/create" class="btn bg-primary text-light"><i class="bx bx-plus me-1"></i> Add
+                            <a href="/home_sliders/create" class="btn bg-primary text-light"><i class="bx bx-plus me-1"></i> Add
                                 Photo</a>
                         </div>
 
@@ -61,18 +61,20 @@
                                 </div>
                             </th>
                             <th scope="col">#ID</th>
-                            <th scope="col">Category</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Photo</th>
-
+                            <th scope="col">Title</th>
+                            <th scope="col">Subtitle</th>
                             <th scope="col">Description</th>
+                            <th scope="col">Photo</th>
+                            <th scope="col">Link One</th>
+
+
                             <th style="width: 150px; min-width: 80px;">Action</th>
                         </tr>
                     </thead>
                     <tbody>
 
 
-                        @foreach ($galleries as $gallery)
+                        @foreach ($sliders as $slider)
                             <tr>
                                 <th scope="row">
                                     <div class="form-check font-size-16">
@@ -80,28 +82,20 @@
                                         <label class="form-check-label" for="contacusercheck11"></label>
                                     </div>
                                 </th>
-                                <td>{{ $gallery->id }}</td>
+                                <td>{{ $slider->id }}</td>
 
-                                <td>
-                                    <a href="#"
-                                        class="text-body">
-                                        @if(!empty($gallery->gallery_category_r->gallery_category_name))
-                                        {{ $gallery->gallery_category_r->gallery_category_name }} 
-                                        @else
-                                        <p class="text-danger">No Category</p>
-                                        @endif
 
-                                    </a>
-                                </td>
-                                <td>{{ $gallery->gallery_name }}</td>
+                                <td>{{ $slider->title }}</td>
+                                <td>{{ $slider->subtitle }}</td>
+                                <td>{{ $slider->description }}</td>
                                 <td>
 
-                                    @if ($gallery->gallery_photo)
-                                        <a href="{!! asset($gallery->gallery_photo) !!}" target="_blank">
+                                    @if ($slider->photo)
+                                        <a href="{!! asset($slider->photo) !!}" target="_blank">
                                             <img class="img-thumbnail avatar-sm rounded-circle me-2" class="user-img"
                                                 style="width: 100px; height:100px;"
                                                 onerror="if (this.src != '{{ asset('assets/backend_assets/assets/images/users/avatar-2.jpg') }}') this.src = '{{ asset('assets/backend_assets/assets/images/users/avatar-2.jpg') }}';"
-                                                src="{{ asset($gallery->gallery_photo) }}" alt="preview"
+                                                src="{{ asset($slider->photo) }}" alt="preview"
                                                 style="height:120px !important; width:80px !important; margin-left:20px;">
                                         </a>
                                     @else
@@ -109,31 +103,29 @@
                                     @endif
 
 
-
-
-                                    <!-- <img src="assets/backend_assets/assets/images/users/avatar-2.jpg" alt="" class="avatar-sm rounded-circle me-2">  -->
                                 </td>
+                                <td>{{ $slider->link_one }}</td>
 
 
-                                <td>{{ $gallery->gallery_description }}</td>
+
                                 <td colspan="6">
                                     <div class="row">
                                         <div class="col-md-4">
                                             <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal{{ $gallery->id }}"
+                                                data-bs-target="#exampleModal{{ $slider->id }}"
                                                 data-bs-whatever="@getbootstrap"><i class=" far fa-eye  "></i></button>
                                         </div>
 
                                         <div class="col-md-4">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#editPhotoOrder{{ $gallery->id }}"
+                                                data-bs-target="#editPhotoOrder{{ $slider->id }}"
                                                 data-bs-whatever="@getbootstrap"><i class="fas fa-pencil-alt "></i></button>
 
                                         </div>
 
                                         <!-- UPDATE -->
                                         <div class="col-md-4">
-                                            <form action="{{ route('galleries.update', $gallery->id) }}" method="post">
+                                            <form action="{{ route('home_sliders.update', $slider->id) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <a> <button class="btn btn-danger shadow btn-xs sharp"> <span
@@ -153,7 +145,7 @@
 
 
                             <!-- VIEW DETAILS MODEL -->
-                            <div class="modal fade" id="exampleModal{{ $gallery->id }}" tabindex="-1"
+                            <div class="modal fade" id="exampleModal{{ $slider->id }}" tabindex="-1"
                                 aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
                                     <div class="modal-content">
@@ -167,31 +159,30 @@
 
                                         <div class="modal-body">
 
-                                            <img src="{{ asset($gallery->gallery_photo) }} "
+                                            <img src="{{ asset($slider->photo) }}"
                                                 style="width: 100%; height:60%;">
                                             <hr>
-                                            <p>Photo : {{ $gallery->gallery_name }}</p>
+                                            <p>Title : {{ $slider->title }}</p>
                                             <hr>
-
-                                            <p>Category : 
-                                            @if(!empty($gallery->gallery_category_r->gallery_category_name))
-                                            {{ $gallery->gallery_category_r->gallery_category_name }} 
-                                            @else
-                                            <p class="text-danger">No Category</p>
-                                            @endif
-
-
-                                            </p>
+                                            <p>SubTitle : {{ $slider->subtitle }}</p>
                                             <hr>
-                                            <p>Description : {{ $gallery->gallery_description }}</p>
+                                            <p>Description : {{ $slider->description }}</p>
+                                            <hr>
+                                            <p>Link One : {{ $slider->link_one }}</p>
+                                            <hr>
+                                            <p>Link Two : {{ $slider->link_two }}</p>
+                                            <hr>
+                                            <p>Link Three : {{ $slider->link_three }}</p>
+                                            <hr>
+                                            <p>Link Three : {{ $slider->link_four }}</p>
 
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close
                                             </button>
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#editPhotoOrder{{ $gallery->id }}"
-                                                data-bs-whatever="@getbootstrap">Edit Photo</button>
+                                                data-bs-target="#editPhotoOrder{{ $slider->id }}"
+                                                data-bs-whatever="@getbootstrap">Edit Slide</button>
                                         </div>
                                     </div>
                                 </div>
@@ -202,7 +193,7 @@
 
 
                             <!-- edit  Photo MENU DETAILS MODEL -->
-                            <div class="modal fade" id="editPhotoOrder{{ $gallery->id }}" tabindex="-1"
+                            <div class="modal fade" id="editPhotoOrder{{ $slider->id }}" tabindex="-1"
                                 aria-labelledby="editPhotoOrderLabel" style="display: none;" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
                                     <div class="modal-content">
@@ -216,7 +207,7 @@
 
                                             <!-- form update Photo menu items -->
 
-                                            <form action="{{ route('galleries.update', $gallery->id) }}" method="post"
+                                            <form action="{{ route('home_sliders.update', $slider->id) }}" method="post"
                                                 enctype="multipart/form-data">
                                                 @csrf
                                                 @method('PATCH')
@@ -224,12 +215,7 @@
                                                 <div class="mb-3">
                                                     <label class="form-label" for="validationCustom01">Category</label>
 
-                                                    <select name="gallery_category_id" class="form-select">
-                                                        @foreach ($gallery_categories as $gallery_category)
-                                                            <option value="{{ $gallery_category->id }}">
-                                                                {{ $gallery_category->gallery_category_name }}</option>
-                                                        @endforeach
-                                                    </select>
+
 
 
                                                 </div>
@@ -237,19 +223,19 @@
                                                 <div class="mb-3">
                                                     <label for="recipient-name" class="col-form-label">Name:</label>
                                                     <input type="text" class="form-control" name="gallery_name"
-                                                        value="{{ $gallery->gallery_name }}" id="recipient-name">
+                                                        value="{{ $slider->gallery_name }}" id="recipient-name">
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom05">Photo</label>
                                                         <input type="file" class="form-control" name="gallery_photo"
-                                                            value="{{ $gallery->gallery_photo }}" placeholder="Zip">
+                                                            value="{{ $slider->gallery_photo }}" placeholder="Zip">
 
                                                     </div>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="message-text" class="col-form-label">Description:</label>
-                                                    <textarea class="form-control" name="gallery_description" value="" id="message-text">{{ $gallery->gallery_description }}</textarea>
+                                                    <textarea class="form-control" name="gallery_description" value="" id="message-text">{{ $slider->gallery_description }}</textarea>
                                                 </div>
 
                                                 <div class="modal-footer">

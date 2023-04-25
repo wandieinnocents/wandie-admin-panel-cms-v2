@@ -18,11 +18,9 @@ class SliderController extends Controller
      */
     public function index()
     {
-        dd("home");
-        $galleries = Gallery::all();
-        $count_galleries = Gallery::count();
-        $gallery_categories = GalleryCategory::all();
-        return view('backend.pages_backend.sliderhome.index',compact('galleries','count_galleries','gallery_categories'));
+        $sliders = SliderHome::all();
+        $count_sliders = SliderHome::count();
+        return view('backend.pages_backend.sliderhome.index',compact('sliders','count_sliders'));
 
     }
 
