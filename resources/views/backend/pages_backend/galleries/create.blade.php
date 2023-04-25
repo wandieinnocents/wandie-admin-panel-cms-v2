@@ -37,7 +37,7 @@
 
                         <div class="row">
                         <div class="col-xl-3">
-                            
+
                             </div>
 
                             <div class="col-xl-6">
@@ -57,37 +57,37 @@
                                                     <select name="gallery_category_id" class="form-select">
                                                     @foreach($gallery_categories as $gallery_category)
                                                             <option value="{{ $gallery_category->id }}">{{ $gallery_category->gallery_category_name }}</option>
-                                                           
+
                                                             @endforeach
-                                                           
-                                                            
+
+
                                                     </select>
 
-                
+
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom02">Photo Name</label>
                                                         <input type="text" class="form-control"  name="gallery_name" id="validationCustom02" placeholder="Enter name" value="" required>
-                                                        
+
                                                     </div>
                                                 </div>
 
-                                               
+
                                             </div>
                                             <div class="row">
-                                                
-                                              
+
+
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom05">Photo</label>
                                                         <input type="file" class="form-control" name="gallery_photo" id="validationCustom05" placeholder="" required>
-                                                        
+
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" >Description</label>
@@ -100,22 +100,22 @@
                                 </div>
                                 <!-- end card -->
                             </div> <!-- end col -->
-        
+
                         </div>
                         <!-- end row -->
 
                         <div class="col-xl-3">
 
                         </div>
-                        
-                        
 
 
 
 
 
 
-                   
+
+
+
 
                     </div>
                     <!-- container-fluid -->
