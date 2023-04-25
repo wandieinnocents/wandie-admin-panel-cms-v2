@@ -96,9 +96,30 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SliderHomeFormRequest $request, $id)
     {
-        //
+         // pick validations
+       $validatedData = $request->validated();
+       $slider = SliderHome::findOrFail($id);
+       $slider->title = $validatedData['title'];
+       $slider->subtitle = $validatedData['subtitle'];
+       $slider->link_one = $validatedData['link_one'];
+       $slider->link_two = $validatedData['link_two'];
+       $slider->link_three = $validatedData['link_three'];
+       $slider->link_four = $validatedData['link_four'];
+       $slider->description = $validatedData['description'];
+
+
+       if($request->hasfile('photo')){
+        $file               = $request->file('photo');
+        $extension          = $file->getClientOriginalExtension();  //get image extension
+        $filename           = time() . '.' .$extension;
+        $file->move('uploads/slider_home/',$filename);
+        $slider->photo   = url('uploads' . '/slider_home/'  . $filename);
+    }
+
+       $slider->update();
+       return redirect('/home_sliders')->with('messageupdate','Slider Updated successfuly');
     }
 
     /**

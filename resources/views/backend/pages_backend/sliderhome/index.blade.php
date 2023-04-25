@@ -48,6 +48,37 @@
 
 
             <!-- FETCH FEEDBACKS -->
+             <!-- FETCH FEEDBACKS -->
+            {{-- alert add item --}}
+            @if(session('messagesave'))
+            {{-- <div class="alert alert-success" > {{ session('message')}} </div> --}}
+            <div class="alert alert-success alert-dismissible alert-label-icon label-arrow fade show" role="alert">
+               <i class="mdi mdi-check-all label-icon"></i>
+               {{ session('messagesave')}}
+               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+           </div>
+           @endif
+
+            {{-- alert delete item --}}
+             @if(session('messagedelete'))
+            <div class="alert alert-danger alert-dismissible alert-label-icon label-arrow fade show" role="alert">
+               <i class="mdi mdi-block-helper label-icon"></i>
+               {{ session('messagedelete')}}
+               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+           </div>
+             {{-- <div class="alert alert-danger" > {{ session('messagedelete')}} </div> --}}
+            @endif
+
+            {{-- alert update item --}}
+             @if(session('messageupdate'))
+            <div class="alert alert-info alert-dismissible alert-label-icon label-arrow fade show mb-0" role="alert">
+               <i class="mdi mdi-check-all label-icon"></i>
+               {{ session('messageupdate')}}
+               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+           </div>
+           @endif
+
+
 
             <div class="table-responsive mb-4">
                 <table class="table align-middle datatable dt-responsive table-check nowrap"
@@ -192,7 +223,7 @@
 
 
 
-                            <!-- edit  Photo MENU DETAILS MODEL -->
+                            <!-- edit   DETAILS MODEL -->
                             <div class="modal fade" id="editPhotoOrder{{ $slider->id }}" tabindex="-1"
                                 aria-labelledby="editPhotoOrderLabel" style="display: none;" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
@@ -212,38 +243,110 @@
                                                 @csrf
                                                 @method('PATCH')
 
-                                                <div class="mb-3">
-                                                    <label class="form-label" for="validationCustom01">Category</label>
-
-
-
-
-                                                </div>
-
-                                                <div class="mb-3">
-                                                    <label for="recipient-name" class="col-form-label">Name:</label>
-                                                    <input type="text" class="form-control" name="gallery_name"
-                                                        value="{{ $slider->gallery_name }}" id="recipient-name">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label class="form-label" for="validationCustom05">Photo</label>
-                                                        <input type="file" class="form-control" name="gallery_photo"
-                                                            value="{{ $slider->gallery_photo }}" placeholder="Zip">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <label class="form-label" for="validationCustom02">Title</label>
+                                                            <input type="text" class="form-control"  name="title" id="validationCustom02" placeholder="Enter title" value="{{ $slider->title}}" >
+                                                            @error('title')
+                                                            <small class="text-danger"> {{ $message }}</small>
+                                                            @enderror
+                                                        </div>
 
                                                     </div>
                                                 </div>
-                                                <div class="mb-3">
-                                                    <label for="message-text" class="col-form-label">Description:</label>
-                                                    <textarea class="form-control" name="gallery_description" value="" id="message-text">{{ $slider->gallery_description }}</textarea>
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <label class="form-label" for="validationCustom02">Sub Title</label>
+                                                            <input type="text" class="form-control"  name="subtitle" id="validationCustom02" placeholder="Enter subtitle" value="{{ $slider->subtitle}}" >
+                                                            @error('subtitle')
+                                                            <small class="text-danger"> {{ $message }}</small>
+                                                            @enderror
+
+                                                        </div>
+                                                    </div>
                                                 </div>
 
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">Close</button>
-                                                    <!-- <button  type="submit" class="btn btn-primary">Submit</button> -->
-                                                    <button class="btn btn-primary" type="submit">Update Photo</button>
+                                                <div class="row">
+                                                     <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <label class="form-label" for="validationCustom05">Photo</label>
+                                                            <input type="file" class="form-control" name="photo" id="validationCustom05" placeholder="" >
+                                                            @error('photo')
+                                                            <small class="text-danger"> {{ $message }}</small>
+                                                            @enderror
+
+                                                        </div>
+                                                    </div>
                                                 </div>
+
+
+
+                                                <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <label class="form-label" >Description</label>
+                                                            <textarea class="form-control" name="description" id="exampleFormControlTextarea5" placeholder="Enter Slider Description" rows="3">{{ $slider->description}}</textarea>
+                                                            @error('description')
+                                                            <small class="text-danger"> {{ $slider->description}}</small>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="mb-3">
+                                                                <label class="form-label" for="validationCustom02">Link 1</label>
+                                                                <input type="text" class="form-control"  name="link_one" id="validationCustom02" placeholder="Enter link - Optional" value="{{ $slider->link_one}}" >
+                                                                @error('link_one')
+                                                                <small class="text-danger"> {{ $message }}</small>
+                                                                @enderror
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="mb-3">
+                                                                <label class="form-label" for="validationCustom02">Link 2</label>
+                                                                <input type="text" class="form-control"  name="link_two" id="validationCustom02" placeholder="Enter link - Optional" value="{{ $slider->link_two}}" >
+                                                                @error('link_two')
+                                                                <small class="text-danger"> {{ $message }}</small>
+                                                                @enderror
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="mb-3">
+                                                                <label class="form-label" for="validationCustom02">Link 3</label>
+                                                                <input type="text" class="form-control"  name="link_three" id="validationCustom02" placeholder="Enter link - Optional" value="{{ $slider->link_three}}" >
+                                                                @error('link_three')
+                                                                <small class="text-danger"> {{ $message }}</small>
+                                                                @enderror
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="mb-3">
+                                                                <label class="form-label" for="validationCustom02">Link 4</label>
+                                                                <input type="text" class="form-control"  name="link_four" id="validationCustom02" placeholder="Enter link - Optional" value="{{ $slider->link_four}}" >
+                                                                @error('link_four')
+                                                                <small class="text-danger"> {{ $message }}</small>
+                                                                @enderror
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <button class="btn btn-primary" type="submit">Update Slide</button>
 
 
                                             </form>
