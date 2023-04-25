@@ -42,8 +42,8 @@ Add product color
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
-                                                        <label class="form-label" for="validationCustom01">Name</label>
-                                                        <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder=" Color Name" value="">
+                                                        <label class="form-label" for="validationCustom01">Color Name</label>
+                                                        <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Enter Color Name" value="">
                                                          @error('name')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
@@ -51,15 +51,7 @@ Add product color
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-12">
-                                                    <div class="mb-3">
-                                                        <label class="form-label" for="validationCustom01">Color</label>
-                                                        <input type="text" class="form-control" id="validationCustom01"  name="color" placeholder=" slug" value="" >
-                                                         @error('slug')
-                                                            <small class="text-danger"> {{ $message }}</small>
-                                                          @enderror
-                                                    </div>
-                                                </div>
+
 
 
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\BackEnd;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ProductColor;
+use App\Http\Requests\ProductColorFormRequest;
+
 
 
 class ProductColorController extends Controller
@@ -38,10 +40,17 @@ class ProductColorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductColorFormRequest $request)
     {
-        //
-    }
+        // pick validations
+       $validatedData = $request->validated();
+       // create new product
+       $product_color = new ProductColor();
+       $product_color->name = $validatedData['name'];
+        //    save
+        $product_color->save();
+        return redirect('/product_colors')->with('messagesave','Color added successfuly');
+        }
 
     /**
      * Display the specified resource.
