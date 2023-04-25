@@ -16,13 +16,13 @@ class CreateSliderHomesTable extends Migration
         Schema::create('slider_homes', function (Blueprint $table) {
             $table->id();
             $table->text('title');
-            $table->text('subtitle');
-            $table->text('photo');
-            $table->text('description');
-            $table->string('link_one');
-            $table->string('link_two');
-            $table->string('link_three');
-            $table->string('link_four');
+            $table->text('subtitle')->nullable();
+            $table->longText('description')->nullable();
+            $table->text('photo')->nullable();
+            $table->string('link_one')->nullable();
+            $table->string('link_two')->nullable();
+            $table->string('link_three')->nullable();
+            $table->string('link_four')->nullable();
 
 
             $table->timestamps();
