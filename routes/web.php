@@ -24,10 +24,10 @@ Route::get('/', function (Request $request) {
     $posts = Post::all();
     // $paramedic_courses = Course::all()->where('course_school_category', '=', 'Dental')->limit(2)->get();
     $paramedic_courses = DB::table('courses')->where('course_school_category', '=', 'Paramedical')->limit(3)->get();
-    
+
     // $nursing_courses = Course::all()->where('course_school_category', '=', 'Nursing');
     $nursing_courses = DB::table('courses')->where('course_school_category', '=', 'Nursing')->limit(3)->get();
-   
+
 
     return view('welcome',compact('posts','paramedic_courses','nursing_courses'));
 });
@@ -53,7 +53,7 @@ Route::resource('/video_gallery', 'App\Http\Controllers\FrontEnd\FrontEndVideoGa
 Route::resource('/articles', 'App\Http\Controllers\FrontEnd\FrontEndPostController');
 //bookings
 Route::resource('/book', 'App\Http\Controllers\FrontEnd\FrontEndBookingController');
-//contact 
+//contact
 Route::resource('/contact', 'App\Http\Controllers\FrontEnd\FrontEndContactController');
 // projects
 Route::resource('/our_projects', 'App\Http\Controllers\FrontEnd\FrontEndProjectController');
@@ -110,7 +110,7 @@ Auth::routes([
     'verify' => false, // Email Verification Routes...
   ]);
 
-// middleware auth 
+// middleware auth
 Route::group(['middleware' => ['auth']], function() {
 
 
@@ -128,7 +128,7 @@ Route::resource('/posts', 'App\Http\Controllers\BackEnd\PostController');
 // Post category
 Route::resource('/post_categories', 'App\Http\Controllers\BackEnd\PostCategoryController');
 
-// Admin dashboard 
+// Admin dashboard
 Route::resource('/dashboard', 'App\Http\Controllers\BackEnd\DashboardController');
 // Bookings
 Route::resource('/bookings', 'App\Http\Controllers\BackEnd\BookingController');
@@ -147,7 +147,7 @@ Route::resource('/faqs', 'App\Http\Controllers\BackEnd\FaqController');
 Route::resource('/orders', 'App\Http\Controllers\BackEnd\OrderController');
 // Gallery  category
 Route::resource('/gallery_categories', 'App\Http\Controllers\BackEnd\GalleryCategoryController');
-// Gallery 
+// Gallery
 Route::resource('/galleries', 'App\Http\Controllers\BackEnd\GalleryController');
 
 // video gallery
@@ -156,7 +156,7 @@ Route::resource('/video_galleries', 'App\Http\Controllers\BackEnd\BackEndVideoGa
 
 // Services category
 Route::resource('/service_categories', 'App\Http\Controllers\BackEnd\ServiceCategoryController');
-// Services 
+// Services
 Route::resource('/services', 'App\Http\Controllers\BackEnd\ServiceController');
 // Project category
 Route::resource('/project_categories', 'App\Http\Controllers\BackEnd\ProjectCategoryController');
