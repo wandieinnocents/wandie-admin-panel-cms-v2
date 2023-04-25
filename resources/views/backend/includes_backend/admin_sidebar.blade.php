@@ -109,17 +109,17 @@
                             </a>
                         </li>
 
-                         <li>
+                         {{-- <li>
                             <a href="/product_colors/create">
                                 <span data-key="t-calendar"> Add Color</span>
                             </a>
-                        </li>
+                        </li> --}}
 
-                         <li>
+                         {{-- <li>
                             <a href="/product_colors">
                                 <span data-key="t-calendar">View Colors</span>
                             </a>
-                        </li>
+                        </li> --}}
 
 
                         <li>
