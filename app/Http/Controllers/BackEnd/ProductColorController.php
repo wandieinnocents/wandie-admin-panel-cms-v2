@@ -99,6 +99,9 @@ class ProductColorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product_color = ProductColor::findOrFail($id);
+        $product_color->delete();
+
+        return redirect('/product_colors')->with('messagedelete', 'Color  is successfully deleted');
     }
 }

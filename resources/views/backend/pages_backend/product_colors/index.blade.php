@@ -1,7 +1,7 @@
 @extends('backend.layouts_backend.master')
 
 @section('title')
-Product Brands
+Product Colors
 @endsection
 
 @section('content')
@@ -105,7 +105,7 @@ Product Brands
 
                                         <div class="col-md-4">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#editProductBrand{{ $product_color->id }}"
+                                                data-bs-target="#editProductColor{{ $product_color->id }}"
                                                 data-bs-whatever="@getbootstrap"><i class="fas fa-pencil-alt "></i></button>
 
                                         </div>
@@ -155,7 +155,7 @@ Product Brands
                                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close
                                             </button>
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#editProductBrand{{ $product_color->id }}"
+                                                data-bs-target="#editProductColor{{ $product_color->id }}"
                                                 data-bs-whatever="@getbootstrap">Edit Color</button>
                                         </div>
                                     </div>
@@ -165,8 +165,8 @@ Product Brands
 
 
                             {{-- UPDATE PRODUCT  COLOR --}}
-                            <div class="modal fade" id="editProductBrand{{ $product_color->id }}" tabindex="-1"
-                                aria-labelledby="editProductBrandLabel" style="display: none;" aria-hidden="true">
+                            <div class="modal fade" id="editProductColor{{ $product_color->id }}" tabindex="-1"
+                                aria-labelledby="editProductColorLabel" style="display: none;" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -178,7 +178,7 @@ Product Brands
                                         <div class="modal-body">
 
 
-                                            <!-- UPDATE Product BRAND -->
+                                            <!-- UPDATE Product COLOR -->
 
                                              <form  action="{{ route('product_colors.update', $product_color->id) }}"
                                                 method="post" enctype="multipart/form-data">
@@ -208,7 +208,7 @@ Product Brands
                                             </div>
 
                                             <!-- Editor -->
-                                            <button class="btn btn-primary" type="submit">Update Product Brand</button>
+                                            <button class="btn btn-primary" type="submit">Update Product Color</button>
                                         </form>
                                         </div>
 
@@ -216,7 +216,7 @@ Product Brands
                                     </div>
                                 </div>
                             </div>
-                            {{-- END UPDATE Product Brand --}}
+                            {{-- END UPDATE Product Color --}}
                         @endforeach
 
 
