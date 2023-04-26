@@ -112,7 +112,7 @@ class SliderController extends Controller
 
        if($request->hasfile('photo')){
         $file               = $request->file('photo');
-        $extension          = $file->getClientOriginalExtension();  //get image extension
+        $extension          = $file->getClientOriginalExtension();  
         $filename           = time() . '.' .$extension;
         $file->move('uploads/slider_home/',$filename);
         $slider->photo   = url('uploads' . '/slider_home/'  . $filename);
