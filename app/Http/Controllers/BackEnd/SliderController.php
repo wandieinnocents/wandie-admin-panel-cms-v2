@@ -100,6 +100,7 @@ class SliderController extends Controller
     {
          // pick validations
        $validatedData = $request->validated();
+    //    create slider object
        $slider = SliderHome::findOrFail($id);
        $slider->title = $validatedData['title'];
        $slider->subtitle = $validatedData['subtitle'];
@@ -112,7 +113,7 @@ class SliderController extends Controller
 
        if($request->hasfile('photo')){
         $file               = $request->file('photo');
-        $extension          = $file->getClientOriginalExtension();  
+        $extension          = $file->getClientOriginalExtension();
         $filename           = time() . '.' .$extension;
         $file->move('uploads/slider_home/',$filename);
         $slider->photo   = url('uploads' . '/slider_home/'  . $filename);
