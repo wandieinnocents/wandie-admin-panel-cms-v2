@@ -132,6 +132,7 @@ class SliderController extends Controller
     public function destroy($id)
     {
         $slider = SliderHome::findOrFail($id);
+        // delete slider
         $slider->delete();
 
         return redirect('/home_sliders')->with('messagedelete', 'Slider  is successfully deleted');
