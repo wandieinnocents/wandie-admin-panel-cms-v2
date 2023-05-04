@@ -44,7 +44,7 @@ Products
             @endif
 
              {{-- alert delete item --}}
-              @if(session('messagedelete')) 
+              @if(session('messagedelete'))
              <div class="alert alert-danger alert-dismissible alert-label-icon label-arrow fade show" role="alert">
                 <i class="mdi mdi-block-helper label-icon"></i>
                 {{ session('messagedelete')}}
@@ -54,7 +54,7 @@ Products
              @endif
 
              {{-- alert update item --}}
-              @if(session('messageupdate')) 
+              @if(session('messageupdate'))
              <div class="alert alert-info alert-dismissible alert-label-icon label-arrow fade show mb-0" role="alert">
                 <i class="mdi mdi-check-all label-icon"></i>
                 {{ session('messageupdate')}}
@@ -83,7 +83,7 @@ Products
                             <th scope="col"> Selling Price</th>
                             <th scope="col"> Slug</th>
                             <th scope="col"> Status</th>
-                           
+
                             <th style="width: 150px; min-width: 80px;">Action</th>
                         </tr>
                     </thead>
@@ -117,7 +117,7 @@ Products
                                   @endif
 
                                  </a> </td>
-                                
+
                                    <td>{{ $product->original_price }}</td>
                                     <td>{{ $product->selling_price }}</td>
                                 <td><a href="#" class="text-body">{{ $product->slug }}</a> </td>
@@ -129,9 +129,9 @@ Products
                                     <span class="badge bg-soft-success text-success" style="padding:10px;">Visible</span>
 
                                     @endif
-                                   
+
                                   </td>
-                                
+
                                 <td colspan="6">
                                     <div class="row">
                                         <div class="col-md-4">
@@ -170,7 +170,7 @@ Products
                                 <div class="modal-dialog modal-dialog-scrollable">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="viewProductProductDetailsLabel">Product 
+                                            <h5 class="modal-title" id="viewProductProductDetailsLabel">Product
                                                 Details</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
@@ -228,10 +228,10 @@ Products
                                             <hr>
                                             <p> Description : {{ $product->description }}</p>
                                             <hr>
-                                           
-                                           
-                                           
-                                            
+
+
+
+
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close
@@ -262,14 +262,14 @@ Products
 
                                             <!-- UPDATE Product  -->
                                             <div class="card">
-                                            
+
                                                 <div class="card-body">
                                                  <form  action="{{ route('products.update', $product->id) }}"
                                                     method="post" enctype="multipart/form-data">
                                                     @csrf
-                                                    @method('PATCH') 
-                                                    
-                                                            
+                                                    @method('PATCH')
+
+
 
                                                                         {{-- START TAB 1 CONTENT--}}
 
@@ -282,11 +282,11 @@ Products
                                                                                                 @foreach ($product_categories as $product_category)
                                                                                                     <option value="{{ $product_category->id }}">
                                                                                                         {{ $product_category->name }}
-                                                                                                        
+
                                                                                                     </option>
                                                                                                 @endforeach
                                                                                             </select>
-                                                                                            @error('product_category_id') 
+                                                                                            @error('product_category_id')
                                                                                                 <small class="text-danger"> {{ $message }}</small>
                                                                                             @enderror
                                                                                         </div>
@@ -299,11 +299,11 @@ Products
                                                                                                 @foreach ($product_brands as $product_brand)
                                                                                                     <option value="{{ $product_brand->name }}">
                                                                                                         {{ $product_brand->name }}
-                                                                                                        
+
                                                                                                     </option>
                                                                                                 @endforeach
                                                                                             </select>
-                                                                                            @error('brand') 
+                                                                                            @error('brand')
                                                                                                 <small class="text-danger"> {{ $message }}</small>
                                                                                             @enderror
                                                                                         </div>
@@ -313,7 +313,7 @@ Products
                                                                                     <div class="mb-3">
                                                                                         <label class="form-label" for="validationCustom01">Product Name</label>
                                                                                         <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Enter product name" value="{{ $product->name}}" >
-                                                                                        @error('name') 
+                                                                                        @error('name')
                                                                                             <small class="text-danger"> {{ $message }}</small>
                                                                                         @enderror
                                                                                     </div>
@@ -323,7 +323,7 @@ Products
                                                                                     <div class="mb-3">
                                                                                         <label class="form-label" for="validationCustom01">Slug</label>
                                                                                         <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Enter slug" value="{{ $product->slug}}" >
-                                                                                        @error('slug') 
+                                                                                        @error('slug')
                                                                                             <small class="text-danger"> {{ $message }}</small>
                                                                                         @enderror
                                                                                     </div>
@@ -335,7 +335,7 @@ Products
                                                                                         <label class="form-label">Small Description</label>
                                                                                         <textarea class="form-control" name="small_description" id="exampleFormControlTextarea5"
                                                                                             placeholder="Enter Small Description" rows="3">{{ $product->small_description}}</textarea>
-                                                                                    @error('small_description') 
+                                                                                    @error('small_description')
                                                                                             <small class="text-danger"> {{ $message }}</small>
                                                                                         @enderror
                                                                                     </div>
@@ -346,7 +346,7 @@ Products
                                                                                         <label class="form-label">Description</label>
                                                                                         <textarea class="form-control" name="description" id="exampleFormControlTextarea5"
                                                                                             placeholder="Enter  Description" rows="3">{{ $product->description}}</textarea>
-                                                                                        @error('description') 
+                                                                                        @error('description')
                                                                                             <small class="text-danger"> {{ $message }}</small>
                                                                                         @enderror
                                                                                     </div>
@@ -358,18 +358,18 @@ Products
                                                                                     <div class="mb-3">
                                                                                         <label class="form-label" for="validationCustom01">Meta Title</label>
                                                                                         <input type="text" class="form-control" id="validationCustom01"  name="meta_title" placeholder="Enter Title" value="{{ $product->meta_title }}" >
-                                                                                        @error('meta_title') 
+                                                                                        @error('meta_title')
                                                                                             <small class="text-danger"> {{ $message }}</small>
                                                                                         @enderror
                                                                                     </div>
                                                                                 </div>
-                                                                        
+
                                                                                     <div class="col-md-12">
                                                                                         <div class="mb-3">
                                                                                             <label class="form-label">Meta Keywords</label>
                                                                                             <textarea class="form-control" name="meta_keywords" id="exampleFormControlTextarea5"
                                                                                                 placeholder="Enter Meta Keywords" rows="3">{{ $product->meta_keywords}}</textarea>
-                                                                                            @error('meta_keywords') 
+                                                                                            @error('meta_keywords')
                                                                                                 <small class="text-danger"> {{ $message }}</small>
                                                                                             @enderror
                                                                                         </div>
@@ -380,7 +380,7 @@ Products
                                                                                         <label class="form-label">Meta Description</label>
                                                                                         <textarea class="form-control" name="meta_description" id="exampleFormControlTextarea5"
                                                                                             placeholder="Enter Meta Description" rows="3">{{ $product->meta_description}}</textarea>
-                                                                                        @error('meta_description') 
+                                                                                        @error('meta_description')
                                                                                             <small class="text-danger"> {{ $message }}</small>
                                                                                         @enderror
                                                                                     </div>
@@ -395,7 +395,7 @@ Products
                                                                                     <div class="mb-3">
                                                                                         <label class="form-label" for="validationCustom01">Original Price</label>
                                                                                         <input type="text" class="form-control" id="validationCustom01"  name="original_price" placeholder="Enter Title" value="{{ $product->original_price}}" >
-                                                                                        @error('original_price') 
+                                                                                        @error('original_price')
                                                                                             <small class="text-danger"> {{ $message }}</small>
                                                                                         @enderror
                                                                                     </div>
@@ -405,7 +405,7 @@ Products
                                                                                     <div class="mb-3">
                                                                                         <label class="form-label" for="validationCustom01">Selling Price</label>
                                                                                         <input type="text" class="form-control" id="validationCustom01"  name="selling_price" placeholder="Enter Title" value="{{ $product->selling_price}}" >
-                                                                                        @error('selling_price') 
+                                                                                        @error('selling_price')
                                                                                             <small class="text-danger"> {{ $message }}</small>
                                                                                         @enderror
                                                                                     </div>
@@ -415,7 +415,7 @@ Products
                                                                                     <div class="mb-3">
                                                                                         <label class="form-label" for="validationCustom01">Quantity</label>
                                                                                         <input type="text" class="form-control" id="validationCustom01"  name="quantity" placeholder="Enter Title" value="{{ $product->quantity}}" >
-                                                                                        @error('quantity') 
+                                                                                        @error('quantity')
                                                                                             <small class="text-danger"> {{ $message }}</small>
                                                                                         @enderror
                                                                                     </div>
@@ -426,7 +426,7 @@ Products
                                                                                     <div class="mb-3">
                                                                                         <label class="form-label" for="validationCustom01">Trending</label>
                                                                                         <input type="checkbox"    name="trending"  {{ $product->trending == '1' ?  'checked' : ''}} >
-                                                                                        @error('trending') 
+                                                                                        @error('trending')
                                                                                             <small class="text-danger"> {{ $message }}</small>
                                                                                         @enderror
                                                                                     </div>
@@ -437,7 +437,7 @@ Products
                                                                                     <div class="mb-3">
                                                                                         <label class="form-label" for="validationCustom01">Status</label>
                                                                                         <input type="checkbox"    name="status"  {{ $product->status == '1' ?  'checked' : ''}}>
-                                                                                        @error('status') 
+                                                                                        @error('status')
                                                                                             <small class="text-danger"> {{ $message }}</small>
                                                                                         @enderror
                                                                                     </div>
@@ -447,7 +447,8 @@ Products
 
                                                                                 {{-- PRODUCT IMAGES --}}
                                                                                   <hr><h5>PRODUCT IMAGES</h5><hr>
-                                                                                     
+                                                                                  {{-- product images --}}
+
                                                                                     <div class="col-md-12">
                                                                                         <div class="mb-3">
                                                                                                 <label class="form-label" for="validationCustom01">image</label>
@@ -458,7 +459,7 @@ Products
                                                                                                     <span class="badge bg-soft-danger text-danger" style="padding:10px;">No Photo</span>
                                                                                                 @endif
 
-                                                                                            @error('image') 
+                                                                                            @error('image')
                                                                                                     <small class="text-danger"> {{ $message }}</small>
                                                                                             @enderror
                                                                                         </div>
@@ -475,19 +476,19 @@ Products
 
 
 
-                                                                                 
+
 
                                                                        </div>
 
                                                                         {{-- END TAB 1  CONTENT--}}
 
-                                                                   
-                                                    
+
+
                                                                 <!-- Editor -->
                                                                 <button class="btn btn-primary" type="submit">Update Product</button>
                                                     </form>
                                                 </div>
-                                                
+
                                             </div>
                                         </div>
 
