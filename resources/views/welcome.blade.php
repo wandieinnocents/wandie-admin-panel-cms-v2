@@ -2,24 +2,23 @@
 <html class="no-js" lang="en">
 
 
-<!-- Mirrored from htmldemo.net/pallas/pallas/index-6.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 May 2023 10:42:35 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Pallas - eCommerce Bootstrap 4 Template</title>
+    <title>Home</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/frontend/img/favicon.ico">
 
     <!-- CSS
     ========================= -->
 
     <!-- Plugins CSS -->
-    <link rel="stylesheet" href="assets/css/plugins.css">
+    <link rel="stylesheet" href="assets/frontend/css/plugins.css">
 
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/frontend/css/style.css">
 
 </head>
 
@@ -2284,15 +2283,14 @@
 ============================================ -->
 
 <!-- Plugins JS -->
-<script src="assets/js/plugins.js"></script>
+<script src="assets/frontend/js/plugins.js"></script>
 
 <!-- Main JS -->
-<script src="assets/js/main.js"></script>
+<script src="assets/frontend/js/main.js"></script>
 
 
 
 </body>
 
 
-<!-- Mirrored from htmldemo.net/pallas/pallas/index-6.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 May 2023 10:44:16 GMT -->
 </html>
