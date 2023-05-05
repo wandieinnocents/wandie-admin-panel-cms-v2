@@ -9,16 +9,16 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/frontend/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/frontend/img/favicon.ico') }}">
 
     <!-- CSS
     ========================= -->
 
     <!-- Plugins CSS -->
-    <link rel="stylesheet" href="assets/frontend/css/plugins.css">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/plugins.css') }}">
 
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="assets/frontend/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
 
 </head>
 
@@ -74,7 +74,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-3">
                         <div class="logo">
-                            <a href="index.html"><img src="assets/img/logo/logo-3.png" alt=""></a>
+                            <a href="index.html"><img src="assets/frontend/img/logo/logo-3.png" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-9">
@@ -113,7 +113,7 @@
                                  <div class="mini_cart mini_cart_six">
                                     <div class="cart_item">
                                        <div class="cart_img">
-                                           <a href="#"><img src="assets/img/s-product/product.jpg" alt=""></a>
+                                           <a href="#"><img src="assets/frontend/img/s-product/product.jpg" alt=""></a>
                                        </div>
                                         <div class="cart_info">
                                             <a href="#">Condimentum Watches</a>
@@ -128,7 +128,7 @@
                                     </div>
                                     <div class="cart_item">
                                        <div class="cart_img">
-                                           <a href="#"><img src="assets/img/s-product/product2.jpg" alt=""></a>
+                                           <a href="#"><img src="assets/frontend/img/s-product/product2.jpg" alt=""></a>
                                        </div>
                                         <div class="cart_info">
                                             <a href="#">Officiis debitis</a>
@@ -464,7 +464,7 @@
                              <div class="mini_cart">
                                 <div class="cart_item">
                                    <div class="cart_img">
-                                       <a href="#"><img src="assets/img/s-product/product.jpg" alt=""></a>
+                                       <a href="#"><img src="assets/frontend/img/s-product/product.jpg" alt=""></a>
                                    </div>
                                     <div class="cart_info">
                                         <a href="#">Condimentum Watches</a>
@@ -479,7 +479,7 @@
                                 </div>
                                 <div class="cart_item">
                                    <div class="cart_img">
-                                       <a href="#"><img src="assets/img/s-product/product2.jpg" alt=""></a>
+                                       <a href="#"><img src="assets/frontend/img/s-product/product2.jpg" alt=""></a>
                                    </div>
                                     <div class="cart_info">
                                         <a href="#">Officiis debitis</a>
@@ -616,7 +616,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12 offset-lg-3">
                     <div class="slider_area slider_six owl-carousel">
-                        <div class="single_slider" data-bgimg="assets/img/slider/slider11.jpg">
+                        <div class="single_slider" data-bgimg="assets/frontend/img/slider/slider11.jpg">
                             <div class="slider_content slider_content_six content_position_left">
                                 <h1>  <span>products </span> Gear VR</h1>
                                 <span>Virtual reality though </span>
@@ -624,7 +624,7 @@
                                 <a href="shop.html">shop now</a>
                             </div>
                         </div>
-                        <div class="single_slider d-flex align-items-center" data-bgimg="assets/img/slider/slider12.jpg">
+                        <div class="single_slider d-flex align-items-center" data-bgimg="assets/frontend/img/slider/slider12.jpg">
                             <div class="slider_content slider_content_six content_position_center">
                                 <h1>  <span>products </span> Gear VR</h1>
                                 <span>Virtual reality though </span>
@@ -638,12 +638,12 @@
                     <div class="sidebar_banner_six">
                         <div class="single_banner mb-30">
                             <div class="banner_thumb">
-                                <a href="shop.html"><img src="assets/img/bg/banner18.jpg" alt=""></a>
+                                <a href="shop.html"><img src="assets/frontend/img/bg/banner18.jpg" alt=""></a>
                             </div>
                         </div>
                         <div class="single_banner">
                             <div class="banner_thumb">
-                                <a href="shop.html"><img src="assets/img/bg/banner19.jpg" alt=""></a>
+                                <a href="shop.html"><img src="assets/frontend/img/bg/banner19.jpg" alt=""></a>
                             </div>
                         </div>
                     </div>
@@ -662,7 +662,7 @@
                     <div class="category_product_carousel category_column4 owl-carousel">
                         <div class="single_category_product">
                             <div class="category_product_thumb">
-                                <a href="shop.html"><img src="assets/img/category/category1.jpg" alt=""></a>
+                                <a href="shop.html"><img src="assets/frontend/img/category/category1.jpg" alt=""></a>
                             </div>
                             <div class="category_product_name">
                                 <h2><a href="shop.html">television</a></h2>
@@ -670,7 +670,7 @@
                         </div>
                         <div class="single_category_product">
                             <div class="category_product_thumb">
-                                <a href="shop.html"><img src="assets/img/category/category2.jpg" alt=""></a>
+                                <a href="shop.html"><img src="assets/frontend/img/category/category2.jpg" alt=""></a>
                             </div>
                             <div class="category_product_name">
                                 <h2><a href="shop.html">audio</a></h2>
@@ -678,7 +678,7 @@
                         </div>
                         <div class="single_category_product">
                             <div class="category_product_thumb">
-                                <a href="shop.html"><img src="assets/img/category/category3.jpg" alt=""></a>
+                                <a href="shop.html"><img src="assets/frontend/img/category/category3.jpg" alt=""></a>
                             </div>
                             <div class="category_product_name">
                                 <h2><a href="shop.html">Camera</a></h2>
@@ -686,7 +686,7 @@
                         </div>
                         <div class="single_category_product">
                             <div class="category_product_thumb">
-                                <a href="shop.html"><img src="assets/img/category/category4.jpg" alt=""></a>
+                                <a href="shop.html"><img src="assets/frontend/img/category/category4.jpg" alt=""></a>
                             </div>
                             <div class="category_product_name">
                                 <h2><a href="shop.html">lundry</a></h2>
@@ -694,7 +694,7 @@
                         </div>
                         <div class="single_category_product">
                             <div class="category_product_thumb">
-                                <a href="shop.html"><img src="assets/img/category/category5.jpg" alt=""></a>
+                                <a href="shop.html"><img src="assets/frontend/img/category/category5.jpg" alt=""></a>
                             </div>
                             <div class="category_product_name">
                                 <h2><a href="shop.html">cooling</a></h2>
@@ -702,7 +702,7 @@
                         </div>
                         <div class="single_category_product">
                             <div class="category_product_thumb">
-                                <a href="shop.html"><img src="assets/img/category/category2.jpg" alt=""></a>
+                                <a href="shop.html"><img src="assets/frontend/img/category/category2.jpg" alt=""></a>
                             </div>
                             <div class="category_product_name">
                                 <h2><a href="shop.html">audio</a></h2>
@@ -727,7 +727,7 @@
                         <div class="product_carousel product_column3 owl-carousel">
                             <div class="single_product">
                                 <div class="product_thumb">
-                                    <a href="product-details.html"><img src="assets/img/product/product26.jpg" alt=""></a>
+                                    <a href="product-details.html"><img src="assets/frontend/img/product/product26.jpg" alt=""></a>
                                     <div class="label_product">
                                         <span class="label_sale">sale</span>
                                     </div>
@@ -763,7 +763,7 @@
                             </div>
                             <div class="single_product">
                                 <div class="product_thumb">
-                                    <a href="product-details.html"><img src="assets/img/product/product27.jpg" alt=""></a>
+                                    <a href="product-details.html"><img src="assets/frontend/img/product/product27.jpg" alt=""></a>
                                     <div class="quick_button">
                                         <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="quick view"> <i class="zmdi zmdi-eye"></i></a>
                                     </div>
@@ -796,7 +796,7 @@
                             </div>
                             <div class="single_product">
                                 <div class="product_thumb">
-                                    <a href="product-details.html"><img src="assets/img/product/product28.jpg" alt=""></a>
+                                    <a href="product-details.html"><img src="assets/frontend/img/product/product28.jpg" alt=""></a>
                                     <div class="label_product">
                                         <span class="label_sale">sale</span>
                                     </div>
@@ -832,7 +832,7 @@
                             </div>
                             <div class="single_product">
                                 <div class="product_thumb">
-                                    <a href="product-details.html"><img src="assets/img/product/product26.jpg" alt=""></a>
+                                    <a href="product-details.html"><img src="assets/frontend/img/product/product26.jpg" alt=""></a>
                                     <div class="quick_button">
                                         <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="quick view"> <i class="zmdi zmdi-eye"></i></a>
                                     </div>
@@ -865,7 +865,7 @@
                             </div>
                             <div class="single_product">
                                 <div class="product_thumb">
-                                    <a href="product-details.html"><img src="assets/img/product/product27.jpg" alt=""></a>
+                                    <a href="product-details.html"><img src="assets/frontend/img/product/product27.jpg" alt=""></a>
                                     <div class="label_product">
                                         <span class="label_sale">sale</span>
                                     </div>
@@ -909,7 +909,7 @@
                             <div class="deals_product_column1 owl-carousel">
                                 <div class="deals_product_list">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/product/product1.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/product/product1.jpg" alt=""></a>
                                         <div class="label_product">
                                             <span class="label_sale">sale</span>
                                         </div>
@@ -941,7 +941,7 @@
                                 </div>
                                 <div class="deals_product_list">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/product/product2.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/product/product2.jpg" alt=""></a>
                                         <div class="label_product">
                                             <span class="label_sale">sale</span>
                                         </div>
@@ -973,7 +973,7 @@
                                 </div>
                                 <div class="deals_product_list">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/product/product3.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/product/product3.jpg" alt=""></a>
                                         <div class="label_product">
                                             <span class="label_sale">sale</span>
                                         </div>
@@ -1019,7 +1019,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="single_banner">
                         <div class="banner_thumb">
-                            <a href="shop.html"><img src="assets/img/bg/banner20.jpg" alt=""></a>
+                            <a href="shop.html"><img src="assets/frontend/img/bg/banner20.jpg" alt=""></a>
                         </div>
 
                     </div>
@@ -1027,7 +1027,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="single_banner">
                         <div class="banner_thumb">
-                            <a href="shop.html"><img src="assets/img/bg/banner21.jpg" alt=""></a>
+                            <a href="shop.html"><img src="assets/frontend/img/bg/banner21.jpg" alt=""></a>
                         </div>
 
                     </div>
@@ -1052,7 +1052,7 @@
                             <div class="product_carousel product_column3 owl-carousel">
                                 <div class="single_product">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/product/product3.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/product/product3.jpg" alt=""></a>
                                         <div class="label_product">
                                             <span class="label_sale">sale</span>
                                         </div>
@@ -1088,7 +1088,7 @@
                                 </div>
                                 <div class="single_product">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/product/product4.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/product/product4.jpg" alt=""></a>
                                         <div class="quick_button">
                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="quick view"> <i class="zmdi zmdi-eye"></i></a>
                                         </div>
@@ -1121,7 +1121,7 @@
                                 </div>
                                 <div class="single_product">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/product/product5.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/product/product5.jpg" alt=""></a>
                                         <div class="label_product">
                                             <span class="label_sale">sale</span>
                                         </div>
@@ -1157,7 +1157,7 @@
                                 </div>
                                 <div class="single_product">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/product/product6.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/product/product6.jpg" alt=""></a>
                                         <div class="quick_button">
                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="quick view"> <i class="zmdi zmdi-eye"></i></a>
                                         </div>
@@ -1190,7 +1190,7 @@
                                 </div>
                                 <div class="single_product">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/product/product3.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/product/product3.jpg" alt=""></a>
                                         <div class="label_product">
                                             <span class="label_sale">sale</span>
                                         </div>
@@ -1236,7 +1236,7 @@
                             <div class="product_carousel product_column3 owl-carousel">
                                 <div class="single_product">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/product/product18.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/product/product18.jpg" alt=""></a>
                                         <div class="label_product">
                                             <span class="label_sale">sale</span>
                                         </div>
@@ -1272,7 +1272,7 @@
                                 </div>
                                 <div class="single_product">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/product/product19.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/product/product19.jpg" alt=""></a>
                                         <div class="quick_button">
                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="quick view"> <i class="zmdi zmdi-eye"></i></a>
                                         </div>
@@ -1305,7 +1305,7 @@
                                 </div>
                                 <div class="single_product">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/product/product17.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/product/product17.jpg" alt=""></a>
                                         <div class="label_product">
                                             <span class="label_sale">sale</span>
                                         </div>
@@ -1341,7 +1341,7 @@
                                 </div>
                                 <div class="single_product">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/product/product27.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/product/product27.jpg" alt=""></a>
                                         <div class="quick_button">
                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="quick view"> <i class="zmdi zmdi-eye"></i></a>
                                         </div>
@@ -1374,7 +1374,7 @@
                                 </div>
                                 <div class="single_product">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/product/product28.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/product/product28.jpg" alt=""></a>
                                         <div class="label_product">
                                             <span class="label_sale">sale</span>
                                         </div>
@@ -1420,7 +1420,7 @@
                             <div class="product_carousel product_column3 owl-carousel">
                                 <div class="single_product">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/product/product22.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/product/product22.jpg" alt=""></a>
                                         <div class="label_product">
                                             <span class="label_sale">sale</span>
                                         </div>
@@ -1456,7 +1456,7 @@
                                 </div>
                                 <div class="single_product">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/product/product23.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/product/product23.jpg" alt=""></a>
                                         <div class="quick_button">
                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="quick view"> <i class="zmdi zmdi-eye"></i></a>
                                         </div>
@@ -1489,7 +1489,7 @@
                                 </div>
                                 <div class="single_product">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/product/product24.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/product/product24.jpg" alt=""></a>
                                         <div class="label_product">
                                             <span class="label_sale">sale</span>
                                         </div>
@@ -1525,7 +1525,7 @@
                                 </div>
                                 <div class="single_product">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/product/product25.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/product/product25.jpg" alt=""></a>
                                         <div class="quick_button">
                                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="quick view"> <i class="zmdi zmdi-eye"></i></a>
                                         </div>
@@ -1558,7 +1558,7 @@
                                 </div>
                                 <div class="single_product">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/product/product22.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/product/product22.jpg" alt=""></a>
                                         <div class="label_product">
                                             <span class="label_sale">sale</span>
                                         </div>
@@ -1603,25 +1603,25 @@
                             </div>
                             <div class="brand_carousel  brand_column4 owl-carousel">
                                 <div class="single_brand">
-                                    <a href="#"><img src="assets/img/brand/brand.png" alt=""></a>
+                                    <a href="#"><img src="assets/frontend/img/brand/brand.png" alt=""></a>
                                 </div>
                                 <div class="single_brand">
-                                    <a href="#"><img src="assets/img/brand/brand1.png" alt=""></a>
+                                    <a href="#"><img src="assets/frontend/img/brand/brand1.png" alt=""></a>
                                 </div>
                                 <div class="single_brand">
-                                    <a href="#"><img src="assets/img/brand/brand2.png" alt=""></a>
+                                    <a href="#"><img src="assets/frontend/img/brand/brand2.png" alt=""></a>
                                 </div>
                                 <div class="single_brand">
-                                    <a href="#"><img src="assets/img/brand/brand3.png" alt=""></a>
+                                    <a href="#"><img src="assets/frontend/img/brand/brand3.png" alt=""></a>
                                 </div>
                                 <div class="single_brand">
-                                    <a href="#"><img src="assets/img/brand/brand4.png" alt=""></a>
+                                    <a href="#"><img src="assets/frontend/img/brand/brand4.png" alt=""></a>
                                 </div>
                                 <div class="single_brand">
-                                    <a href="#"><img src="assets/img/brand/brand5.png" alt=""></a>
+                                    <a href="#"><img src="assets/frontend/img/brand/brand5.png" alt=""></a>
                                 </div>
                                 <div class="single_brand">
-                                    <a href="#"><img src="assets/img/brand/brand1.png" alt=""></a>
+                                    <a href="#"><img src="assets/frontend/img/brand/brand1.png" alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -1638,7 +1638,7 @@
                             <div class="small_product_wrapper small_product_six">
                                 <div class="small_product_items">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/s-product/product3.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/s-product/product3.jpg" alt=""></a>
                                     </div>
                                     <div class="product_content">
                                         <div class="product_name">
@@ -1661,7 +1661,7 @@
                                 </div>
                                 <div class="small_product_items">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/s-product/product4.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/s-product/product4.jpg" alt=""></a>
                                     </div>
                                     <div class="product_content">
                                         <div class="product_name">
@@ -1684,7 +1684,7 @@
                                 </div>
                                 <div class="small_product_items">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/s-product/product5.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/s-product/product5.jpg" alt=""></a>
                                     </div>
                                     <div class="product_content">
                                         <div class="product_name">
@@ -1707,7 +1707,7 @@
                                 </div>
                                 <div class="small_product_items">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/s-product/product6.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/s-product/product6.jpg" alt=""></a>
                                     </div>
                                     <div class="product_content">
                                         <div class="product_name">
@@ -1730,7 +1730,7 @@
                                 </div>
                                 <div class="small_product_items">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/s-product/product7.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/s-product/product7.jpg" alt=""></a>
                                     </div>
                                     <div class="product_content">
                                         <div class="product_name">
@@ -1753,7 +1753,7 @@
                                 </div>
                                 <div class="small_product_items">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/s-product/product8.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/s-product/product8.jpg" alt=""></a>
                                     </div>
                                     <div class="product_content">
                                         <div class="product_name">
@@ -1776,7 +1776,7 @@
                                 </div>
                                 <div class="small_product_items">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/s-product/product3.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/s-product/product3.jpg" alt=""></a>
                                     </div>
                                     <div class="product_content">
                                         <div class="product_name">
@@ -1799,7 +1799,7 @@
                                 </div>
                                 <div class="small_product_items">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/s-product/product4.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/s-product/product4.jpg" alt=""></a>
                                     </div>
                                     <div class="product_content">
                                         <div class="product_name">
@@ -1822,7 +1822,7 @@
                                 </div>
                                 <div class="small_product_items">
                                     <div class="product_thumb">
-                                        <a href="product-details.html"><img src="assets/img/s-product/product5.jpg" alt=""></a>
+                                        <a href="product-details.html"><img src="assets/frontend/img/s-product/product5.jpg" alt=""></a>
                                     </div>
                                     <div class="product_content">
                                         <div class="product_name">
@@ -1850,7 +1850,7 @@
                         <!--banner area start-->
                         <div class="single_banner mb-50">
                             <div class="banner_thumb">
-                                <a href="shop.html"><img src="assets/img/bg/banner22.jpg" alt=""></a>
+                                <a href="shop.html"><img src="assets/frontend/img/bg/banner22.jpg" alt=""></a>
                             </div>
                         </div>
                         <!--banner area end-->
@@ -1906,7 +1906,7 @@
                             <div class="sidebar_blog_carousel sidebar_blog_carousel owl-carousel">
                                <div class="sidebar_blog_list">
                                     <div class="sidebar_blog_thumb">
-                                        <a href="blog-details.html"><img src="assets/img/blog/blog1.jpg" alt=""></a>
+                                        <a href="blog-details.html"><img src="assets/frontend/img/blog/blog1.jpg" alt=""></a>
                                     </div>
                                     <div class="sidebar_blog_content">
                                         <div class="post_meta">
@@ -1922,7 +1922,7 @@
                                 </div>
                                 <div class="sidebar_blog_list">
                                     <div class="sidebar_blog_thumb">
-                                        <a href="blog-details.html"><img src="assets/img/blog/blog2.jpg" alt=""></a>
+                                        <a href="blog-details.html"><img src="assets/frontend/img/blog/blog2.jpg" alt=""></a>
                                     </div>
                                     <div class="sidebar_blog_content">
                                         <div class="post_meta">
@@ -1938,7 +1938,7 @@
                                 </div>
                                 <div class="sidebar_blog_list">
                                     <div class="sidebar_blog_thumb">
-                                        <a href="blog-details.html"><img src="assets/img/blog/blog3.jpg" alt=""></a>
+                                        <a href="blog-details.html"><img src="assets/frontend/img/blog/blog3.jpg" alt=""></a>
                                     </div>
                                     <div class="sidebar_blog_content">
                                         <div class="post_meta">
@@ -1992,7 +1992,7 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-5">
                             <div class="widgets_container contact_us">
-                                <a href="index.html"><img src="assets/img/logo/logo-3.png" alt=""></a>
+                                <a href="index.html"><img src="assets/frontend/img/logo/logo-3.png" alt=""></a>
                                 <div class="footer_contact">
                                     <ul>
                                         <li><i class="zmdi zmdi-home"></i><span>Addresss:</span> 2 Fauconberg Rd,Chiswick, London</li>
@@ -2076,31 +2076,31 @@
                                 <h3>instagram</h3>
                                 <div class="instagram_gallery">
                                     <div class="single_instagram">
-                                        <a href="#"><img src="assets/img/about/instagram1.jpg" alt=""></a>
+                                        <a href="#"><img src="assets/frontend/img/about/instagram1.jpg" alt=""></a>
                                     </div>
                                     <div class="single_instagram">
-                                        <a href="#"><img src="assets/img/about/instagram2.jpg" alt=""></a>
+                                        <a href="#"><img src="assets/frontend/img/about/instagram2.jpg" alt=""></a>
                                     </div>
                                     <div class="single_instagram">
-                                        <a href="#"><img src="assets/img/about/instagram3.jpg" alt=""></a>
+                                        <a href="#"><img src="assets/frontend/img/about/instagram3.jpg" alt=""></a>
                                     </div>
                                     <div class="single_instagram">
-                                        <a href="#"><img src="assets/img/about/instagram4.jpg" alt=""></a>
+                                        <a href="#"><img src="assets/frontend/img/about/instagram4.jpg" alt=""></a>
                                     </div>
                                     <div class="single_instagram">
-                                        <a href="#"><img src="assets/img/about/instagram5.jpg" alt=""></a>
+                                        <a href="#"><img src="assets/frontend/img/about/instagram5.jpg" alt=""></a>
                                     </div>
                                     <div class="single_instagram">
-                                        <a href="#"><img src="assets/img/about/instagram6.jpg" alt=""></a>
+                                        <a href="#"><img src="assets/frontend/img/about/instagram6.jpg" alt=""></a>
                                     </div>
                                     <div class="single_instagram">
-                                        <a href="#"><img src="assets/img/about/instagram7.jpg" alt=""></a>
+                                        <a href="#"><img src="assets/frontend/img/about/instagram7.jpg" alt=""></a>
                                     </div>
                                     <div class="single_instagram">
-                                        <a href="#"><img src="assets/img/about/instagram8.jpg" alt=""></a>
+                                        <a href="#"><img src="assets/frontend/img/about/instagram8.jpg" alt=""></a>
                                     </div>
                                     <div class="single_instagram">
-                                        <a href="#"><img src="assets/img/about/instagram9.jpg" alt=""></a>
+                                        <a href="#"><img src="assets/frontend/img/about/instagram9.jpg" alt=""></a>
                                     </div>
 
                                 </div>
@@ -2152,7 +2152,7 @@
                     </div>
                     <div class="col-lg-6 col-md-5">
                         <div class="footer_payment text-right">
-                            <p><img src="assets/img/icon/payment.png" alt=""></p>
+                            <p><img src="assets/frontend/img/icon/payment.png" alt=""></p>
                         </div>
                     </div>
                 </div>
@@ -2177,22 +2177,22 @@
                                     <div class="tab-content product-details-large">
                                         <div class="tab-pane fade show active" id="tab1" role="tabpanel" >
                                             <div class="modal_tab_img">
-                                                <a href="#"><img src="assets/img/product/product37.jpg" alt=""></a>
+                                                <a href="#"><img src="assets/frontend/img/product/product37.jpg" alt=""></a>
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="tab2" role="tabpanel">
                                             <div class="modal_tab_img">
-                                                <a href="#"><img src="assets/img/product/product24.jpg" alt=""></a>
+                                                <a href="#"><img src="assets/frontend/img/product/product24.jpg" alt=""></a>
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="tab3" role="tabpanel">
                                             <div class="modal_tab_img">
-                                                <a href="#"><img src="assets/img/product/product25.jpg" alt=""></a>
+                                                <a href="#"><img src="assets/frontend/img/product/product25.jpg" alt=""></a>
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="tab4" role="tabpanel">
                                             <div class="modal_tab_img">
-                                                <a href="#"><img src="assets/img/product/product22.jpg" alt=""></a>
+                                                <a href="#"><img src="assets/frontend/img/product/product22.jpg" alt=""></a>
                                             </div>
                                         </div>
                                     </div>
@@ -2283,10 +2283,10 @@
 ============================================ -->
 
 <!-- Plugins JS -->
-<script src="assets/frontend/js/plugins.js"></script>
+<script src="{{ asset('assets/frontend/js/plugins.js') }}"></script>
 
 <!-- Main JS -->
-<script src="assets/frontend/js/main.js"></script>
+<script src="{{ asset('assets/frontend/js/main.js') }}"></script>
 
 
 
