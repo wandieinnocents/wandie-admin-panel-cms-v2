@@ -1,99 +1,177 @@
-<footer id="rs-footer" class="rs-footer">
-            <div class="footer-top">
-                <div class="container">
+
+    <!--footer area start-->
+    <footer class="footer_widgets footer_six">
+        <div class="footer_six_inner">
+            <div class="container">
+                <div class="footer_top">
                     <div class="row">
-                        <div class="col-lg-3 col-md-12 col-sm-12 footer-widget md-mb-50">
-                            <h4 class="widget-title">Quick Links</h4>
-                            <ul class="site-map">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Courses</a></li>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="contacts.html">Contact Us</a></li>
-                                <li><a href="#">Gallery</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-3 col-md-12 col-sm-12 footer-widget md-mb-50">
-                            <h4 class="widget-title">School</h4>
-                            <ul class="site-map">
-                                <li><a href="#">About</a></li>
-                                <li><a href="staff.html">Staff</a></li>
-                                <li><a href="faq.html">FAQ's</a></li>
-                                <li><a href="#">Testimonials</a></li>
-                                <li><a href="volunteer.html">Volunteer</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-3 col-md-12 col-sm-12 footer-widget md-mb-50">
-                            <h4 class="widget-title">Courses</h4>
-                            <ul class="site-map">
-                                <li><a href="#">Dip. Clinical Medicine</a></li>
-                                <li><a href="#">Dip. Dentistry</a></li>
-                                <li><a href="#">Nursing & Midwifery</a></li>
-                                <li><a href="#">Dip. Medical Lab. Technology</a></li>
-                                <li><a href="#">Dip. Public Health></li>
-                            </ul>
-                        </div>
-                        
-                        <div class="col-lg-3 col-md-12 col-sm-12 footer-widget">
-                            <h4 class="widget-title">Address</h4>
-                            <ul class="address-widget">
-                                <li>
-                                    <i class="flaticon-location"></i>
-                                    <div class="desc">Maya - Nakirebe along Kampala - Masaka Road,</div>
-                                </li>
-                                <!-- <li>
-                                    <i class="flaticon-email">
-                                        <div class="desc">
-                                            P.O BOX 72128, Kampala, Uganda
-                                        </div> 
-                                    </i>
-                                </li> -->
-                                <li>
-                                    <i class="flaticon-call"></i>
-                                    <div class="desc">
+                        <div class="col-lg-4 col-md-5">
+                            <div class="widgets_container contact_us">
+                                <a href="index.html"><img src="assets/frontend/img/logo/logo-3.png" alt=""></a>
+                                <div class="footer_contact">
                                     <ul>
-                                        <a href="tel:(123)-456-7890">+256-392 00 1503 </a> ,<br>
-                                        <a href="tel:(123)-456-7890">+256-704789181</a> ,<br>
-                                        <a href="tel:(123)-456-7890">+256-775 534 797 (whatsapp)</a>
+                                        <li><i class="zmdi zmdi-home"></i><span>Addresss:</span> 2 Fauconberg Rd,Chiswick, London</li>
+                                        <li><i class="zmdi zmdi-phone-setting"></i><span>Phone:</span><a href="tel:(+1) 866-540-3229">(+1) 866-540-3229</a> </li>
+                                        <li><i class="zmdi zmdi-email"></i><span>Email:</span>  info@plazathemes.com</li>
                                     </ul>
+                                </div>
+                                 <div class="social_icone">
+                                    <ul>
+                                        <li class="share"><a href="#" title="rss"><i class="fa fa-share-alt"></i></a>
+                                            <div class="social_title">
+                                                <p>Subscribe</p>
+                                                <h3>Rss Feed</h3>
+                                            </div>
+                                        </li>
+                                        <li class="twitter"><a href="#" title="twitter"><i class="fa fa-twitter"></i></a>
+                                            <div class="social_title">
+                                                <p>Follow Us</p>
+                                                <h3>Twitter</h3>
+                                            </div>
+                                        </li>
+                                        <li class="facebook"><a href="#" title="facebook"><i class="fa fa-facebook"></i></a>
+                                            <div class="social_title">
+                                                <p>Find Us</p>
+                                                <h3>Facebook</h3>
+                                            </div>
+                                        </li>
+                                        <li class="google_plus"><a href="#" title="google"><i class="fa fa-google-plus"></i></a>
+                                            <div class="social_title">
+                                                <p>Find Us</p>
+                                                <h3>Google+</h3>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-7">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="widgets_container widget_menu">
+                                        <h3>CUSTOMER SERVICE</h3>
+                                        <div class="footer_menu">
+                                            <ul>
+                                                <li><a href="#">Shipping & Returns</a></li>
+                                                <li><a href="#"> Secure Shopping</a></li>
+                                                <li><a href="#">International Shipping</a></li>
+                                                <li><a href="#"> Affiliates</a></li>
+                                                <li><a href="contact.html"> Contact</a></li>
+                                                <li><a href="#"> Travel</a></li>
+                                                <li><a href="#">ecommerce</a></li>
+                                                <li><a href="#"> Creative</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </li>
-                                <li>
-                                    <i class="flaticon-email"></i>
-                                    <div class="desc">
-                                        <a href="mailto:infoname@gmail.com">info.ipim@gmail.com</a> , 
-                                        <a href="http://paramedicalinstitute.org">http://paramedicalinstitute.org</a>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="widgets_container widget_menu">
+                                        <h3>Information</h3>
+                                        <div class="footer_menu">
+                                            <ul>
+                                                <li><a href="about.html">About Us</a></li>
+                                                <li><a href="#">Delivery infomation</a></li>
+                                                <li><a href="#">Privacy Policy</a></li>
+                                                <li><a href="#"> Travel</a></li>
+                                                <li><a href="blog.html">Blog</a></li>
+                                                <li><a href="#">Portfolio</a></li>
+                                                <li><a href="#">Conditions</a></li>
+                                                <li><a href="#"> Frequently Questions</a></li>
+
+                                            </ul>
+                                        </div>
+
                                     </div>
-                                </li>
-                            </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-3 col-md-5">
+                            <div class="widgets_container">
+                                <h3>instagram</h3>
+                                <div class="instagram_gallery">
+                                    <div class="single_instagram">
+                                        <a href="#"><img src="assets/frontend/img/about/instagram1.jpg" alt=""></a>
+                                    </div>
+                                    <div class="single_instagram">
+                                        <a href="#"><img src="assets/frontend/img/about/instagram2.jpg" alt=""></a>
+                                    </div>
+                                    <div class="single_instagram">
+                                        <a href="#"><img src="assets/frontend/img/about/instagram3.jpg" alt=""></a>
+                                    </div>
+                                    <div class="single_instagram">
+                                        <a href="#"><img src="assets/frontend/img/about/instagram4.jpg" alt=""></a>
+                                    </div>
+                                    <div class="single_instagram">
+                                        <a href="#"><img src="assets/frontend/img/about/instagram5.jpg" alt=""></a>
+                                    </div>
+                                    <div class="single_instagram">
+                                        <a href="#"><img src="assets/frontend/img/about/instagram6.jpg" alt=""></a>
+                                    </div>
+                                    <div class="single_instagram">
+                                        <a href="#"><img src="assets/frontend/img/about/instagram7.jpg" alt=""></a>
+                                    </div>
+                                    <div class="single_instagram">
+                                        <a href="#"><img src="assets/frontend/img/about/instagram8.jpg" alt=""></a>
+                                    </div>
+                                    <div class="single_instagram">
+                                        <a href="#"><img src="assets/frontend/img/about/instagram9.jpg" alt=""></a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="footer_tag">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="footer_tag_container">
+                                    <div class="footer_tag_menu">
+                                        <h3>Furniture :</h3>
+                                        <ul>
+                                            <li><a href="#">bedroom</a></li>
+                                            <li><a href="#">Livingroom</a></li>
+                                            <li><a href="#">badroom</a></li>
+                                            <li><a href="#">Sofa</a></li>
+                                            <li><a href="#">Chair</a></li>
+                                            <li><a href="#">Bed</a></li>
+                                            <li><a href="#">Desk</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="footer_tag_menu">
+                                        <h3>Electronic :</h3>
+                                        <ul>
+                                            <li><a href="#">Laptop</a></li>
+                                            <li><a href="#">TV</a></li>
+                                            <li><a href="#">Computer</a></li>
+                                            <li><a href="#">Mobile</a></li>
+                                            <li><a href="#">Tablet</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer_bottom footer_bottom_six">
+            <div class="container">
+               <div class="row">
+                    <div class="col-lg-6 col-md-7">
+                        <div class="copyright_area">
+                            <p>Copyright &copy; 2023 <a href="#"> pallas </a>  All Right Reserved.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5">
+                        <div class="footer_payment text-right">
+                            <p><img src="assets/frontend/img/icon/payment.png" alt=""></p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <div class="container">                    
-                    <div class="row y-middle">
-                        <div class="col-lg-4 md-mb-20">
-                            <div class="footer-logo md-text-center">
-                                <a href="index2.html"><img src="{{ asset('assets/frontend/images/pre-logo.png') }}" alt="" style="size: 0.5cm;"></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 md-mb-20">
-                            <div class="copyright text-center md-text-left">
-                                <!-- <p>&copy; 2022 All Rights Reserved. Developed By <a href="http://rstheme.com/">RSTheme</a></p> -->
-                                
-                                <p>&copy; 2022 All Rights Reserved.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 text-right md-text-left">
-                            <ul class="footer-social">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        </div>
+    </footer>
+    <!--footer area end-->
