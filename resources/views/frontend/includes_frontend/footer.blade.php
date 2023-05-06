@@ -124,36 +124,7 @@
 
                     </div>
                 </div>
-                <div class="footer_tag">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="footer_tag_container">
-                                    <div class="footer_tag_menu">
-                                        <h3>Furniture :</h3>
-                                        <ul>
-                                            <li><a href="#">bedroom</a></li>
-                                            <li><a href="#">Livingroom</a></li>
-                                            <li><a href="#">badroom</a></li>
-                                            <li><a href="#">Sofa</a></li>
-                                            <li><a href="#">Chair</a></li>
-                                            <li><a href="#">Bed</a></li>
-                                            <li><a href="#">Desk</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="footer_tag_menu">
-                                        <h3>Electronic :</h3>
-                                        <ul>
-                                            <li><a href="#">Laptop</a></li>
-                                            <li><a href="#">TV</a></li>
-                                            <li><a href="#">Computer</a></li>
-                                            <li><a href="#">Mobile</a></li>
-                                            <li><a href="#">Tablet</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
+                
             </div>
 
         </div>
