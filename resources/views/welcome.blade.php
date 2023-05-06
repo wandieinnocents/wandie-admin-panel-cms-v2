@@ -50,66 +50,7 @@
     </section>
     <!--slider area end-->
 
-    <!--category product area start-->
-    <section class="category_product_area category_product_six  mb-50">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="category_product_carousel category_column4 owl-carousel">
-                        <div class="single_category_product">
-                            <div class="category_product_thumb">
-                                <a href="shop.html"><img src="assets/frontend/img/category/category1.jpg" alt=""></a>
-                            </div>
-                            <div class="category_product_name">
-                                <h2><a href="shop.html">television</a></h2>
-                            </div>
-                        </div>
-                        <div class="single_category_product">
-                            <div class="category_product_thumb">
-                                <a href="shop.html"><img src="assets/frontend/img/category/category2.jpg" alt=""></a>
-                            </div>
-                            <div class="category_product_name">
-                                <h2><a href="shop.html">audio</a></h2>
-                            </div>
-                        </div>
-                        <div class="single_category_product">
-                            <div class="category_product_thumb">
-                                <a href="shop.html"><img src="assets/frontend/img/category/category3.jpg" alt=""></a>
-                            </div>
-                            <div class="category_product_name">
-                                <h2><a href="shop.html">Camera</a></h2>
-                            </div>
-                        </div>
-                        <div class="single_category_product">
-                            <div class="category_product_thumb">
-                                <a href="shop.html"><img src="assets/frontend/img/category/category4.jpg" alt=""></a>
-                            </div>
-                            <div class="category_product_name">
-                                <h2><a href="shop.html">lundry</a></h2>
-                            </div>
-                        </div>
-                        <div class="single_category_product">
-                            <div class="category_product_thumb">
-                                <a href="shop.html"><img src="assets/frontend/img/category/category5.jpg" alt=""></a>
-                            </div>
-                            <div class="category_product_name">
-                                <h2><a href="shop.html">cooling</a></h2>
-                            </div>
-                        </div>
-                        <div class="single_category_product">
-                            <div class="category_product_thumb">
-                                <a href="shop.html"><img src="assets/frontend/img/category/category2.jpg" alt=""></a>
-                            </div>
-                            <div class="category_product_name">
-                                <h2><a href="shop.html">audio</a></h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--category product area end-->
+   
 
       <!--new product area start-->
     <section class="new_product_area mb-50">
