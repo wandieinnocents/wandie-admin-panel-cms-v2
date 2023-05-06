@@ -5,184 +5,1235 @@
 @endsection
 
 @section('content')
-   
-   <!-- Breadcrumbs Start -->
-			<div class="rs-breadcrumbs breadcrumbs-overlay">
-					<div class="breadcrumbs-img">
-							<img src="assets/frontend/images/breadcrumbs/mayaimg.png" alt="Breadcrumbs Image">
-					</div>
-					<div class="breadcrumbs-text white-color">
-							<h1 class="page-title">About Us</h1>
-							<ul>
-								<li>
-									<a class="active" href="index-2.html">Home</a>
-								</li>
-								<li>About Us</li>
-							</ul>
-					</div>
-			</div>
-			<!-- Breadcrumbs End -->
 
-			<!-- About Section Start -->
-			<div id="rs-about" class="rs-about style1 pt-100 pb-100 md-pt-70 md-pb-70">
-				<div class="container">
-					<div class="row align-items-center">
-						<div class="col-lg-6 order-last padding-0 md-pl-15 md-pr-15 md-mb-30">
-							<div class="img-part">
-								<img class="" src="assets/frontend/images/about/about.png" alt="About Image">
-								
-								<!-- <div class="bold-text mb-22">Director - Dr. Grace Stephen Sseruyange Dental Technologist(USA), Dentist(Uganda)</div> -->
-							</div>
-						</div>
-						<div class="col-lg-6 pr-70 md-pr-15">
-							<div class="sec-title">
-								<div class="sub-title orange">About IPI</div>
-								<h2 class="title mb-17">The International Paramedical Institute</h2>
-								<div class="bold-text mb-22">IPI is a science institution,  training dental professionals, clinical officers and many other health care courses,</div>
-								<div class="desc">It is founded by Bunawona Uganda Community Outreach (BUCO) which is determined to help, treat and prevent oral conditions and many other health care problems in Uganda. It has a modern and spacious dental clinic, medical laboratories, dormitories, Medical equipment, classrooms and well stalked library and computer laboratory.</div>
-								<div class="desc">We target Ugandan students who have attained the UCE and UACE certificates plus International students from outside Uganda especially Tanzania, Kenya, South Sudan, Democratic Republic of Congo, Somalia, Rwanda and Burundi plus other countries.Young aspirants study in a stimulating environment of independent thinking and innovation in various disciplines of Health Care. </div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- About Section End -->
 
-			<!-- CTA Section Start -->
-			<div class="rs-cta style2">
-				<div class="partition-bg-wrap inner-page">
-					<div class="container">
-						<div class="row y-bottom">
-							<div class="col-lg-6 pb-50 md-pt-70 md-pb-70">
-								
-							</div>
-							<div class="col-lg-6 pl-62 pt-134 pb-150 md-pt-50 md-pb-50 md-pl-15">
-								<div class="sec-title mb-40 md-mb-20">
-										<h2 class="title mb-16">VISION</h2>
-										<div class="desc">To be a leading model international paramedical institution that produces health professionals capable of self reliance and job creation worldwide.</div>
-								        <h2 class="title mb-16">MISSION</h2>
-										<div class="desc">To enable the future and competence of our professional graduates produced through a carefully analyzed national and international curriculum to acquire knowledge and practical skills fit for global job market.</div>
-									</div>
-								<div class="btn-part">
-										<a class="readon2 blue" href="#">Apply Now</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- CTA Section End -->
 
-			<!-- Counter Section Start -->
-			<!-- <div id="rs-counter" class="rs-counter style2-about pt-100 md-pt-70">
-				<div class="container">
-					<div class="row couter-area">
-						<div class="col-md-4 sm-mb-30">
-							<div class="counter-item text-center">
-								<div class="counter-bg">
-									<img src="assets/images/counter/bg1.png" alt="Counter Image">
-								</div>
-								<div class="counter-text">
-									<h2 class="rs-count kplus">2</h2>
-									<h4 class="title mb-0">Students</h4>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 sm-mb-30">
-							<div class="counter-item text-center">
-								<div class="counter-bg">
-									<img src="assets/images/counter/bg2.png" alt="Counter Image">
-								</div>
-								<div class="counter-text">
-									<h2 class="rs-count">3.50</h2>
-									<h4 class="title mb-0">Average CGPA</h4>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="counter-item text-center">
-								<div class="counter-bg">
-									<img src="assets/images/counter/bg3.png" alt="Counter Image">
-								</div>
-								<div class="counter-text">
-									<h2 class="rs-count percent">95</h2>
-									<h4 class="title mb-0">Graduates</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> -->
-			<!-- Counter Section End -->
 
-			<!-- About Section Start -->
-			<div class="rs-about style1 pt-100 pb-100 md-pt-70 md-pb-70">
-				<div class="container">
-					<div class="row align-items-center">
-						<div class="col-lg-6 padding-0 md-pl-15 md-pr-15 md-mb-30">
-							<div class="img-part">
-								<img class="" src="assets/frontend/images/about/history.png" alt="About Image">
-							</div>
-                            <ul class="nav nav-tabs histort-part" id="myTab" role="tablist">
-                                <li class="nav-item tab-btns single-history">
-                                    <a class="nav-link tab-btn active" id="about-history-tab" data-toggle="tab" href="#about-history" role="tab" aria-controls="about-history" aria-selected="true"><span class="icon-part"><i class="flaticon-analysis"></i></span>Objective</a>
-                                </li>
-                                <li class="nav-item tab-btns single-history">
-                                    <a class="nav-link tab-btn" id="about-mission-tab" data-toggle="tab" href="#about-mission" role="tab" aria-controls="about-mission" aria-selected="false"><span class="icon-part"><i class="flaticon-flower"></i></span>Certified by M.E.S</a>
-                                </li>
-                                <li class="nav-item tab-btns single-history last-item">
-                                    <a class="nav-link tab-btn" id="about-admin-tab" data-toggle="tab" href="#about-admin" role="tab" aria-controls="about-admin" aria-selected="false"><span class="icon-part"><i class="flaticon-analysis"></i></span>Administration</a>
-                                </li>
-                            </ul>
-						</div>
-						<div class="offset-lg-1"></div>
-						<div class="col-lg-5">
-							<div class="tab-content tabs-content" id="myTabContent">
-                                <div class="tab-pane tab fade show active" id="about-history" role="tabpanel" aria-labelledby="about-history-tab">
-                                    <div class="sec-title mb-25">
-                                        <h2 class="title">The Main Objective Of IPI</h2>
-                                        <div class="desc"><ol>
-                                            <li>To ensure provision of high balanced quality health educational services for future self-reliance of our graduates.</li>
-                                            <li>To enable the development of areas in the vicinity of the institute through self-help projects that shall be attached to the paramedical institution.</li>
-                                            <li>To provide quality educational services through health awareness for better livelihood of the graduates that shall enroll with the institute.</li>
-                                            <li>To match with both national and international health standards through provision of local and international curriculum to students at affordable school fees rates.</li>
-                                            <li>To liaise with both national and international NGOs, CBO and other faith based organizations in provision of best health educational services and practices through lobbying and partnerships.</li>
-                                            <li>To engage in qualitative and quantitative research for production of highly competent academic and science oriented human resources. </li>
-                                        </ol></div>
+
+   <!-- SHOP START -->
+    <!--breadcrumbs area start-->
+    <div class="breadcrumbs_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_content">
+                        <ul>
+                            <li><a href="index.html">home</a></li>
+                            <li>shop right sidebar list</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs area end-->
+
+    <!--shop  area start-->
+    <div class="shop_area shop_sidebar mt-50 mb-50">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-9 col-md-12">
+                    <!--shop wrapper start-->
+                    <!--shop toolbar start-->
+                    <div class="shop_title">
+                        <h1>shop</h1>
+                    </div>
+                    <div class="shop_toolbar_wrapper">
+                        <div class="shop_toolbar_btn">
+
+                            <button data-role="grid_3" type="button" class=" btn-grid-3" data-bs-toggle="tooltip" title="3"></button>
+
+                            <button data-role="grid_4" type="button"  class=" btn-grid-4" data-bs-toggle="tooltip" title="4"></button>
+
+                            <button data-role="grid_list" type="button"  class="active btn-list" data-bs-toggle="tooltip" title="List"></button>
+                        </div>
+                        <div class=" niceselect_option">
+
+                            <form class="select_option" action="#">
+                                <select name="orderby" id="short">
+
+                                    <option selected value="1">Sort by average rating</option>
+                                    <option  value="2">Sort by popularity</option>
+                                    <option value="3">Sort by newness</option>
+                                    <option value="4">Sort by price: low to high</option>
+                                    <option value="5">Sort by price: high to low</option>
+                                    <option value="6">Product Name: Z</option>
+                                </select>
+                            </form>
+
+
+                        </div>
+                        <div class="page_amount">
+                            <p>Showing 1–9 of 21 results</p>
+                        </div>
+                    </div>
+                    <!--shop toolbar end-->
+
+                     <div class="row no-gutters shop_wrapper grid_list">
+                        <div class="col-12 ">
+                            <div class="single_product">
+                                <div class="product_thumb">
+                                    <a href="product-details.html"><img src="assets/frontend/img/product/product15.jpg" alt=""></a>
+                                    <div class="label_product">
+                                        <span class="label_sale">sale</span>
                                     </div>
-                                    <!-- <div class="tab-img"> -->
-                                        <!-- <img class="" src="assets/images/about/tab1.jpg" alt="Tab Image"> -->
-                                    <!-- </div> -->
+                                    <div class="quick_button">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="quick view"> <i class="zmdi zmdi-eye"></i></a>
+                                    </div>
                                 </div>
-                                <div class="tab-pane fade" id="about-mission" role="tabpanel" aria-labelledby="about-mission-tab">
-                                    <div class="sec-title mb-25">
-                                        <h2 class="title">Certified by Ministry of Education & Sports</h2>
-                                        <div class="desc">The Registrar Allied health professionals council with his inspection team and ministry of education  visited the school twice and recommendations were made to be good and given a go ahead to teach students. The inspection team was led by Assistant Commissioner Mr. Mugerwa and chairman Allied Health professional’s council Mr. Mpima and Bruhan, Kabanda on technical team, support staff and other members.</div>
-                                        <div class="desc">The school has a team of experienced teachers like Mr. Acidiri William former principal Mulago dental school, Mr Onyango – Principal public health dentistry and Tutor oral surgery,  Mr. Mutyaba Joseph – Dentist, Mr. Sseruyange Stephen Grace Bunawona- Director IPI Maya</div>
+                                <div class="product_content grid_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Aliquam lobortis</a></h3>
                                     </div>
-                                    <!-- <div class="tab-img">
-                                        <img class="" src="assets/images/about/tab2.jpg" alt="Tab Image">
-                                    </div> -->
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="tab-pane fade" id="about-admin" role="tabpanel" aria-labelledby="about-admin-tab">
-                                    <div class="sec-title mb-25">
-                                        <h2 class="title">IPI Administration</h2>
-                                        <div class="desc">Our Administration Team consists of both techinal and not-techical staff in regards to medical related courses, competent to accomplish duties which are the foundation of the success of IPI</div>
+                                <div class="product_content list_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Aliquam lobortis</a></h3>
                                     </div>
-                                    <div class="tab-img">
-                                        <img class="" src="assets/frontend/images/about/tab3.jpg" alt="Tab Image">
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="product_desc">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus. </p>
                                     </div>
                                 </div>
                             </div>
-						</div>
-					</div>
-                    <!-- Intro Info Tabs-->
-                    <div class="intro-info-tabs">
-                        
+                        </div>
+                        <div class="col-12 ">
+                            <div class="single_product">
+                                <div class="product_thumb">
+                                    <a href="product-details.html"><img src="assets/frontend/img/product/product16.jpg" alt=""></a>
+                                    <div class="label_product">
+                                        <span class="label_sale">sale</span>
+                                    </div>
+                                    <div class="quick_button">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="quick view"> <i class="zmdi zmdi-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product_content grid_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Aliquam lobortis Camera</a></h3>
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product_content list_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Aliquam lobortis Camera</a></h3>
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="product_desc">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ">
+                            <div class="single_product">
+                                <div class="product_thumb">
+                                    <a href="product-details.html"><img src="assets/frontend/img/product/product17.jpg" alt=""></a>
+                                    <div class="label_product">
+                                        <span class="label_sale">sale</span>
+                                    </div>
+                                    <div class="quick_button">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="quick view"> <i class="zmdi zmdi-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product_content grid_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Aliquam lobortis est</a></h3>
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product_content list_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Aliquam lobortis est</a></h3>
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="product_desc">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ">
+                            <div class="single_product">
+                                <div class="product_thumb">
+                                    <a href="product-details.html"><img src="assets/frontend/img/product/product18.jpg" alt=""></a>
+                                    <div class="label_product">
+                                        <span class="label_sale">sale</span>
+                                    </div>
+                                    <div class="quick_button">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="quick view"> <i class="zmdi zmdi-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product_content grid_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Aliquam Watches</a></h3>
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product_content list_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Aliquam Watches</a></h3>
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="product_desc">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" col-12 ">
+                            <div class="single_product">
+                                <div class="product_thumb">
+                                    <a href="product-details.html"><img src="assets/frontend/img/product/product19.jpg" alt=""></a>
+                                    <div class="label_product">
+                                        <span class="label_sale">sale</span>
+                                    </div>
+                                    <div class="quick_button">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="quick view"> <i class="zmdi zmdi-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product_content grid_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Auctor gravida enim</a></h3>
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product_content list_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Auctor gravida enim</a></h3>
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="product_desc">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ">
+                            <div class="single_product">
+                                <div class="product_thumb">
+                                    <a href="product-details.html"><img src="assets/frontend/img/product/product20.jpg" alt=""></a>
+                                    <div class="label_product">
+                                        <span class="label_sale">sale</span>
+                                    </div>
+                                    <div class="quick_button">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="quick view"> <i class="zmdi zmdi-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product_content grid_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Cillum dolore</a></h3>
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product_content list_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Cillum dolore</a></h3>
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="product_desc">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" col-12 ">
+                            <div class="single_product">
+                                <div class="product_thumb">
+                                    <a href="product-details.html"><img src="assets/frontend/img/product/product21.jpg" alt=""></a>
+                                    <div class="label_product">
+                                        <span class="label_sale">sale</span>
+                                    </div>
+                                    <div class="quick_button">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="quick view"> <i class="zmdi zmdi-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product_content grid_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Condimentum posuere</a></h3>
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product_content list_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Condimentum posuere</a></h3>
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="product_desc">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ">
+                            <div class="single_product">
+                                <div class="product_thumb">
+                                    <a href="product-details.html"><img src="assets/frontend/img/product/product22.jpg" alt=""></a>
+                                    <div class="label_product">
+                                        <span class="label_sale">sale</span>
+                                    </div>
+                                    <div class="quick_button">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="quick view"> <i class="zmdi zmdi-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product_content grid_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Aliquam Watches</a></h3>
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product_content list_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Aliquam Watches</a></h3>
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="product_desc">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ">
+                            <div class="single_product">
+                                <div class="product_thumb">
+                                    <a href="product-details.html"><img src="assets/frontend/img/product/product23.jpg" alt=""></a>
+                                    <div class="label_product">
+                                        <span class="label_sale">sale</span>
+                                    </div>
+                                    <div class="quick_button">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="quick view"> <i class="zmdi zmdi-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product_content grid_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Consequuntur magni</a></h3>
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product_content list_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Consequuntur magni</a></h3>
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="product_desc">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ">
+                            <div class="single_product">
+                                <div class="product_thumb">
+                                    <a href="product-details.html"><img src="assets/frontend/img/product/product24.jpg" alt=""></a>
+                                    <div class="label_product">
+                                        <span class="label_sale">sale</span>
+                                    </div>
+                                    <div class="quick_button">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="quick view"> <i class="zmdi zmdi-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product_content grid_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Convallis quam sit</a></h3>
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product_content list_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Convallis quam sit</a></h3>
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="product_desc">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ">
+                            <div class="single_product">
+                                <div class="product_thumb">
+                                    <a href="product-details.html"><img src="assets/frontend/img/product/product25.jpg" alt=""></a>
+                                    <div class="label_product">
+                                        <span class="label_sale">sale</span>
+                                    </div>
+                                    <div class="quick_button">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="quick view"> <i class="zmdi zmdi-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product_content grid_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Cras neque</a></h3>
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product_content list_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Cras neque</a></h3>
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="product_desc">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ">
+                            <div class="single_product">
+                                <div class="product_thumb">
+                                    <a href="product-details.html"><img src="assets/frontend/img/product/product29.jpg" alt=""></a>
+                                    <div class="label_product">
+                                        <span class="label_sale">sale</span>
+                                    </div>
+                                    <div class="quick_button">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="quick view"> <i class="zmdi zmdi-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product_content grid_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Cras neque metus</a></h3>
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product_content list_content">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Cras neque metus</a></h3>
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                     <div class="price_box">
+                                        <span class="current_price">$65.00</span>
+                                        <span class="old_price">$70.00</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                           <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="product_desc">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-				</div>
-			</div>
-			<!-- About Section End -->          
+
+                    <div class="shop_toolbar t_bottom">
+                        <div class="pagination">
+                            <ul>
+                                <li class="current">1</li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li class="next"><a href="#">next</a></li>
+                                <li><a href="#">>></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--shop toolbar end-->
+                    <!--shop wrapper end-->
+                </div>
+                <div class="col-lg-3 col-md-12">
+                   <!--sidebar widget start-->
+                    <aside class="sidebar_widget">
+                        <div class="shop_sidebar_banner mb-50">
+                            <a href="#"><img src="assets/img/bg/banner16.jpg" alt=""></a>
+                        </div>
+                        <div class="widget_list widget_categories">
+                            <h2>categories</h2>
+                            <ul>
+                                <li>
+                                    <a href="#">Categories1 <span>(6)</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">Categories2 <span>(10)</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">Categories3 <span>(4)</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">Categories4 <span>(10)</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">Categories5 <span>(8)</span></a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="widget_list widget_filter">
+                            <h2>Filter by price</h2>
+                            <form action="#">
+                                <div id="slider-range"></div>
+                                <button type="submit">Filter</button>
+                                <input type="text" name="text" id="amount" />
+
+                            </form>
+                        </div>
+
+
+                        <div class="widget_list">
+                                <h2>Manufacturer</h2>
+                                <ul>
+                                    <li>
+                                        <a href="#">Brake Parts <span>(6)</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Accessories <span>(10)</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Engine Parts <span>(4)</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#">hermes <span>(10)</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#">louis vuitton <span>(8)</span></a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        <div class="widget_list">
+                                <h2>Select By Color</h2>
+                                <ul>
+                                    <li>
+                                        <a href="#">Black  <span>(6)</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> Blue <span>(8)</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Brown <span>(10)</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> Green <span>(6)</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Pink <span>(4)</span></a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        <div class="widget_list recent_product">
+                            <h2>Top Rated Products</h2>
+                            <div class="recent_product_container">
+                                <div class="recent_product_list">
+                                    <div class="recent_product_thumb">
+                                        <a href="product-details.html"><img src="assets/frontend/img/s-product/product.jpg" alt=""></a>
+                                    </div>
+                                    <div class="recent_product_content">
+                                        <h3><a href="product-details.html">Natus erro</a></h3>
+                                        <div class="product_rating">
+                                            <ul>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price_box">
+                                            <span class="current_price">$65.00</span>
+                                            <span class="old_price">$70.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="recent_product_list">
+                                    <div class="recent_product_thumb">
+                                        <a href="product-details.html"><img src="assets/frontend/img/s-product/product2.jpg" alt=""></a>
+                                    </div>
+                                    <div class="recent_product_content">
+                                        <h3><a href="product-details.html">Nemo enim</a></h3>
+                                        <div class="product_rating">
+                                            <ul>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price_box">
+                                            <span class="current_price">$65.00</span>
+                                            <span class="old_price">$70.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="recent_product_list">
+                                    <div class="recent_product_thumb">
+                                        <a href="product-details.html"><img src="assets/frontend/img/s-product/product3.jpg" alt=""></a>
+                                    </div>
+                                    <div class="recent_product_content">
+                                        <h3><a href="product-details.html">Consequuntur magni</a></h3>
+                                        <div class="product_rating">
+                                            <ul>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price_box">
+                                            <span class="current_price">$65.00</span>
+                                            <span class="old_price">$70.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="recent_product_list">
+                                    <div class="recent_product_thumb">
+                                        <a href="product-details.html"><img src="assets/frontend/img/s-product/product4.jpg" alt=""></a>
+                                    </div>
+                                    <div class="recent_product_content">
+                                        <h3><a href="product-details.html">Cras neque</a></h3>
+                                        <div class="product_rating">
+                                            <ul>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price_box">
+                                            <span class="current_price">$65.00</span>
+                                            <span class="old_price">$70.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="recent_product_list">
+                                    <div class="recent_product_thumb">
+                                        <a href="product-details.html"><img src="assets/frontend/img/s-product/product5.jpg" alt=""></a>
+                                    </div>
+                                    <div class="recent_product_content">
+                                        <h3><a href="product-details.html">Endurance2</a></h3>
+                                        <div class="product_rating">
+                                            <ul>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price_box">
+                                            <span class="current_price">$65.00</span>
+                                            <span class="old_price">$70.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="recent_product_list">
+                                    <div class="recent_product_thumb">
+                                        <a href="product-details.html"><img src="assets/frontend/img/s-product/product6.jpg" alt=""></a>
+                                    </div>
+                                    <div class="recent_product_content">
+                                        <h3><a href="product-details.html">Crown Summit1</a></h3>
+                                        <div class="product_rating">
+                                            <ul>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price_box">
+                                            <span class="current_price">$65.00</span>
+                                            <span class="old_price">$70.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="recent_product_list">
+                                    <div class="recent_product_thumb">
+                                        <a href="product-details.html"><img src="assets/frontend/img/s-product/product7.jpg" alt=""></a>
+                                    </div>
+                                    <div class="recent_product_content">
+                                        <h3><a href="product-details.html">Compete Hoodie3</a></h3>
+                                        <div class="product_rating">
+                                            <ul>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price_box">
+                                            <span class="current_price">$65.00</span>
+                                            <span class="old_price">$70.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="recent_product_list">
+                                    <div class="recent_product_thumb">
+                                        <a href="product-details.html"><img src="assets/frontend/img/s-product/product3.jpg" alt=""></a>
+                                    </div>
+                                    <div class="recent_product_content">
+                                        <h3><a href="product-details.html">Crown Summit1</a></h3>
+                                        <div class="product_rating">
+                                            <ul>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price_box">
+                                            <span class="current_price">$65.00</span>
+                                            <span class="old_price">$70.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="recent_product_list">
+                                    <div class="recent_product_thumb">
+                                        <a href="product-details.html"><img src="assets/frontend/img/s-product/product4.jpg" alt=""></a>
+                                    </div>
+                                    <div class="recent_product_content">
+                                        <h3><a href="product-details.html">Crown Summit1</a></h3>
+                                        <div class="price_box">
+                                            <span class="current_price">$65.00</span>
+                                            <span class="old_price">$70.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="recent_product_list">
+                                    <div class="recent_product_thumb">
+                                        <a href="product-details.html"><img src="assets/frontend/img/s-product/product5.jpg" alt=""></a>
+                                    </div>
+                                    <div class="recent_product_content">
+                                        <h3><a href="product-details.html">Crown Summit1</a></h3>
+                                        <div class="product_rating">
+                                            <ul>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price_box">
+                                            <span class="current_price">$65.00</span>
+                                            <span class="old_price">$70.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="recent_product_list">
+                                    <div class="recent_product_thumb">
+                                        <a href="product-details.html"><img src="assets/frontend/img/s-product/product6.jpg" alt=""></a>
+                                    </div>
+                                    <div class="recent_product_content">
+                                        <h3><a href="product-details.html">Crown Summit1</a></h3>
+                                        <div class="product_rating">
+                                            <ul>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price_box">
+                                            <span class="current_price">$65.00</span>
+                                            <span class="old_price">$70.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="recent_product_list">
+                                    <div class="recent_product_thumb">
+                                        <a href="product-details.html"><img src="assets/frontend/img/s-product/product7.jpg" alt=""></a>
+                                    </div>
+                                    <div class="recent_product_content">
+                                        <h3><a href="product-details.html">Crown Summit1</a></h3>
+                                        <div class="product_rating">
+                                            <ul>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price_box">
+                                            <span class="current_price">$65.00</span>
+                                            <span class="old_price">$70.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </aside>
+                    <!--sidebar widget end-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--shop  area end-->
+
+
+    <!-- SHOP END -->
+
+
+
 
 
 @endsection
