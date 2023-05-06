@@ -124,7 +124,7 @@
 
                     </div>
                 </div>
-                
+
             </div>
 
         </div>
@@ -133,7 +133,7 @@
                <div class="row">
                     <div class="col-lg-6 col-md-7">
                         <div class="copyright_area">
-                            <p>Copyright &copy; 2023 <a href="#"> pallas </a>  All Right Reserved.</p>
+                            <p>Copyright &copy; 2023 <a href="#">  Wanran Inc </a>  All Right Reserved.</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-5">
