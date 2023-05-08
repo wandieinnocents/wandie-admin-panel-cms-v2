@@ -174,7 +174,7 @@
                                         </ul>
                                     </li>
                                     {{-- Contact Us --}}
-                                    <li><a href="contact.html"><i class="zmdi zmdi-account-box-mail"></i>  Contact Us</a></li>
+                                    <li><a href="/contact"><i class="zmdi zmdi-account-box-mail"></i>  Contact Us</a></li>
                                 </ul>
                             </nav>
                         </div>

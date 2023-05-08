@@ -136,8 +136,6 @@
                                      <li><a href="#"><span><i class="zmdi zmdi-tv"></i></span> TV & Audio</a></li>
                                      <li><a href="#"><span><i class="zmdi zmdi-tv-list"></i></span> home funiture</a></li>
                                      <li><a href="#"><span><i class="zmdi zmdi-cake"></i></span> toys for kids</a></li>
-                                     <li><a href="#"><span><i class="zmdi zmdi-memory"></i></span> Memory Cards</a></li>
-                                     <li><a href="#"><span><i class="zmdi zmdi-case-download"></i></span> Living Room</a></li>
                                      <li class="hidden"><a href="shop-left-sidebar.html">New Sofas</a></li>
                                      <li class="hidden"><a href="shop-left-sidebar.html">Sleight Sofas</a></li>
                                      <li><a href="#" id="more-btn"><i class="fa fa-plus" aria-hidden="true"></i> More Categories</a></li>
