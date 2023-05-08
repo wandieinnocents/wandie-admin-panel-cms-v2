@@ -51,7 +51,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-3">
                         <div class="logo">
-                            <a href="index.html"><img src="assets/frontend/img/logo/logo-3.png" alt=""></a>
+                            <a href="index.html"><img src="{{ asset('assets/frontend/img/logo/logo-3.png') }}" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-9">
@@ -90,7 +90,7 @@
                                  <div class="mini_cart mini_cart_six">
                                     <div class="cart_item">
                                        <div class="cart_img">
-                                           <a href="#"><img src="assets/frontend/img/s-product/product.jpg" alt=""></a>
+                                           <a href="#"><img src="{{ asset('assets/frontend/img/s-product/product.jpg') }}" alt=""></a>
                                        </div>
                                         <div class="cart_info">
                                             <a href="#">Condimentum Watches</a>
@@ -105,7 +105,7 @@
                                     </div>
                                     <div class="cart_item">
                                        <div class="cart_img">
-                                           <a href="#"><img src="assets/frontend/img/s-product/product2.jpg" alt=""></a>
+                                           <a href="#"><img src="{{ asset('assets/frontend/img/s-product/product2.jpg') }}" alt=""></a>
                                        </div>
                                         <div class="cart_info">
                                             <a href="#">Officiis debitis</a>
@@ -269,7 +269,7 @@
                              <div class="mini_cart">
                                 <div class="cart_item">
                                    <div class="cart_img">
-                                       <a href="#"><img src="assets/frontend/img/s-product/product.jpg" alt=""></a>
+                                       <a href="#"><img src="{{ asset('assets/frontend/img/s-product/product.jpg') }}" alt=""></a>
                                    </div>
                                     <div class="cart_info">
                                         <a href="#">Condimentum Watches</a>
@@ -284,7 +284,7 @@
                                 </div>
                                 <div class="cart_item">
                                    <div class="cart_img">
-                                       <a href="#"><img src="assets/frontend/img/s-product/product2.jpg" alt=""></a>
+                                       <a href="#"><img src="{{ asset('assets/frontend/img/s-product/product2.jpg') }}" alt=""></a>
                                    </div>
                                     <div class="cart_info">
                                         <a href="#">Officiis debitis</a>

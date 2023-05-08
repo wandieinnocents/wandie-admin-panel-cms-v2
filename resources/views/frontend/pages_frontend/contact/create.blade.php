@@ -26,7 +26,6 @@
     <!--breadcrumbs area end-->
 
 
-
     <!--contact area start-->
     <div class="contact_area">
         <div class="container">
