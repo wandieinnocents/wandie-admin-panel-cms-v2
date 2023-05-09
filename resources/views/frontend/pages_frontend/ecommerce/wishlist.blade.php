@@ -94,7 +94,6 @@
                                     <li><a href="#"><i class="fa fa-rss"></i></a></li>
                                     <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
                                     <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
                                     <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                                 </ul>
                             </div>
@@ -104,7 +103,7 @@
                 </div>
             </div>
      <!--wishlist area end -->
-    
+
 
 
 
