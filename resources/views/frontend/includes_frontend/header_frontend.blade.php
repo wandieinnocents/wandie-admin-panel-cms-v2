@@ -153,16 +153,16 @@
                                 <ul>
 
                                     <li class="active"><a  href="/"><i class="zmdi zmdi-home"></i> home </a>
-
                                     </li>
-                                    <li class="mega_items"><a href="/about"><i class="zmdi zmdi-shopping-basket"></i> shop </a>
+                                    <li><a href="/about"><i class="zmdi zmdi-comments"></i> about Us</a></li>
+
+                                    <li class="mega_items"><a href="/shop"><i class="zmdi zmdi-shopping-basket"></i> shop </a>
 
                                     </li>
                                     <li><a href="blog.html"><i class="zmdi zmdi-collection-music"></i> blog </a>
 
                                     </li>
 
-                                    <li><a href="about.html"><i class="zmdi zmdi-comments"></i> about Us</a></li>
                                     {{-- My account --}}
                                     <li><a href="#"><i class="zmdi zmdi-star"></i> My Account <i class="zmdi zmdi-caret-down"></i></a>
                                         <ul class="sub_menu pages">
