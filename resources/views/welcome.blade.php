@@ -153,7 +153,7 @@
                         @foreach (  $sliders as  $slider )
 
 
-                        <div class="single_slider" data-bgimg="assets/frontend/img/slider/slider11.jpg">
+                        <div class="single_slider" data-bgimg="{{ asset($slider->photo) }}">
                             <div class="slider_content slider_content_six content_position_left">
                                 <h1> {{ $slider->title }} </h1>
                                 <span>{{ $slider->subtitle }} </span>
