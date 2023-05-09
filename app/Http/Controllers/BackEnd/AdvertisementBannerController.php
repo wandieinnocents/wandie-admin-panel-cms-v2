@@ -25,7 +25,7 @@ class AdvertisementBannerController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.pages_backend.advertisement_banners.create');
     }
 
     /**

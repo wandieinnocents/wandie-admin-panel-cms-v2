@@ -20,6 +20,7 @@ class CreateAdvertisementBannersTable extends Migration
             $table->string('link')->nullable();
             $table->timestamps();
 
+
         });
     }
 
