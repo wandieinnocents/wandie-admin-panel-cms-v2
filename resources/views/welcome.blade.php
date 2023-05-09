@@ -171,16 +171,16 @@
                 {{-- Start of ads --}}
                 <div class="col-lg-3">
                     <div class="sidebar_banner_six">
+                        @foreach ($banneradverts_sliderarea as $banner_slider_right )
+
+
                         <div class="single_banner mb-30">
                             <div class="banner_thumb">
-                                <a href="shop.html"><img src="assets/frontend/img/bg/banner18.jpg" alt=""></a>
+                                <a href="#"><img src="{{ asset($banner_slider_right->photo) }}" alt=""></a>
                             </div>
                         </div>
-                        <div class="single_banner">
-                            <div class="banner_thumb">
-                                <a href="shop.html"><img src="assets/frontend/img/bg/banner19.jpg" alt=""></a>
-                            </div>
-                        </div>
+                        @endforeach
+
                     </div>
                 </div>
                 {{-- End of ads --}}
@@ -493,22 +493,21 @@
     <div class="banner_area banner_column2 mb-50">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6">
+
+                @foreach ($banners_innerpage as $banners_inner )
+
+                <div class="col-lg-3 col-md-3">
                     <div class="single_banner">
                         <div class="banner_thumb">
-                            <a href="shop.html"><img src="assets/frontend/img/bg/banner20.jpg" alt=""></a>
+                            <a href="#"><img src="{{ asset($banners_inner->photo) }}" alt=""></a>
                         </div>
 
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="single_banner">
-                        <div class="banner_thumb">
-                            <a href="shop.html"><img src="assets/frontend/img/bg/banner21.jpg" alt=""></a>
-                        </div>
 
-                    </div>
-                </div>
+                @endforeach
+
+
             </div>
         </div>
     </div>
