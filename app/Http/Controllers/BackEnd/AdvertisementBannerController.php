@@ -4,6 +4,9 @@ namespace App\Http\Controllers\BackEnd;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\AdvertBannerRequest;
+use App\Models\AdvertisementBanner;
+
 
 class AdvertisementBannerController extends Controller
 {
@@ -34,9 +37,26 @@ class AdvertisementBannerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdvertBannerRequest $request)
     {
-        //
+           // pick validations
+       $validatedData = $request->validated();
+       $banner = new AdvertisementBanner();
+
+       $banner->link = $validatedData['link'];
+
+       if($request->hasfile('photo')){
+        $file               = $request->file('photo');
+        $extension          = $file->getClientOriginalExtension();  //get image extension
+        $filename           = time() . '.' .$extension;
+        $file->move('uploads/advert_banners/',$filename);
+        $banner->photo   = url('uploads' . '/advert_banners/'  . $filename);
+        // dd($banner);
+    }
+
+       $banner->save();
+       return redirect('/advertisement_banners')->with('messagesave','Banner added successfuly');
+
     }
 
     /**

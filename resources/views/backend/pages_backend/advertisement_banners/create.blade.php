@@ -69,8 +69,8 @@ Adverts
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom02">Banner Link </label>
-                                                        <input type="text" class="form-control"  name="title" id="validationCustom02" placeholder="Enter Banner Link (https://wanran.com/productdetails)" value="" >
-                                                        @error('title')
+                                                        <input type="text" class="form-control"  name="link" id="validationCustom02" placeholder="Enter Banner Link (https://wanran.com/productdetails)" value="" >
+                                                        @error('link')
                                                         <small class="text-danger"> {{ $message }}</small>
                                                         @enderror
                                                     </div>
@@ -81,7 +81,7 @@ Adverts
 
 
 
-                                            <button class="btn btn-primary" type="submit">Add Slide</button>
+                                            <button class="btn btn-primary" type="submit">Add Banner</button>
                                         </form>
                                     </div>
                                 </div>
