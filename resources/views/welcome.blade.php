@@ -150,6 +150,7 @@
                 {{-- Start of slider --}}
                 <div class="col-lg-6 col-md-12 ">
                     <div class="slider_area slider_six owl-carousel">
+
                         <div class="single_slider" data-bgimg="assets/frontend/img/slider/slider11.jpg">
                             <div class="slider_content slider_content_six content_position_left">
                                 <h1>  <span>products </span> Gear VR</h1>
@@ -158,14 +159,8 @@
                                 <a href="shop.html">shop now</a>
                             </div>
                         </div>
-                        <div class="single_slider d-flex align-items-center" data-bgimg="assets/frontend/img/slider/slider12.jpg">
-                            <div class="slider_content slider_content_six content_position_center">
-                                <h1>  <span>products </span> Gear VR</h1>
-                                <span>Virtual reality though </span>
-                                <h2><span>From </span> $99 <span>00 </span></h2>
-                                <a href="shop.html">shop now</a>
-                            </div>
-                        </div>
+
+
                     </div>
                 </div>
                 {{-- End of slider --}}

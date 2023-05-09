@@ -19,18 +19,10 @@ use App\Models\Course;
 |
 */
 
-Route::get('/', function (Request $request) {
 
-    $posts = Post::all();
-    // $paramedic_courses = Course::all()->where('course_school_category', '=', 'Dental')->limit(2)->get();
-    $paramedic_courses = DB::table('courses')->where('course_school_category', '=', 'Paramedical')->limit(3)->get();
+// Homepage
+Route::get('/', 'App\Http\Controllers\FrontEnd\HomePageController@index');
 
-    // $nursing_courses = Course::all()->where('course_school_category', '=', 'Nursing');
-    $nursing_courses = DB::table('courses')->where('course_school_category', '=', 'Nursing')->limit(3)->get();
-
-
-    return view('welcome',compact('posts','paramedic_courses','nursing_courses'));
-});
 
 
 // FRONT END ROUTES
