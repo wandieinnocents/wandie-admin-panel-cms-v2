@@ -1,6 +1,7 @@
 @extends('backend.layouts_backend.master')
 
 @section('title')
+Advertisement Banners
 @endsection
 
 @section('extra_styles')
@@ -25,8 +26,8 @@
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <h5 class="card-title">Photos <span
-                                class="text-muted fw-normal ms-2">({{ $count_sliders }})</span></h5>
+                        <h5 class="card-title">Banners <span
+                                class="text-muted fw-normal ms-2">({{ $count_banners }})</span></h5>
                     </div>
                 </div>
 
@@ -34,8 +35,8 @@
                     <div class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
 
                         <div>
-                            <a href="/home_sliders/create" class="btn bg-primary text-light"><i class="bx bx-plus me-1"></i> Add
-                                Photo</a>
+                            <a href="/advertisement_banners/create" class="btn bg-primary text-light"><i class="bx bx-plus me-1"></i> Add
+                                Banner</a>
                         </div>
 
 
@@ -92,11 +93,8 @@
                                 </div>
                             </th>
                             <th scope="col">#ID</th>
-                            <th scope="col">Title</th>
-                            <th scope="col">Subtitle</th>
-                            <th scope="col">Description</th>
+                            <th scope="col">Link</th>
                             <th scope="col">Photo</th>
-                            <th scope="col">Link One</th>
 
 
                             <th style="width: 150px; min-width: 80px;">Action</th>
@@ -105,7 +103,7 @@
                     <tbody>
 
 
-                        @foreach ($sliders as $slider)
+                        @foreach ($banners as $banner)
                             <tr>
                                 <th scope="row">
                                     <div class="form-check font-size-16">
@@ -113,20 +111,18 @@
                                         <label class="form-check-label" for="contacusercheck11"></label>
                                     </div>
                                 </th>
-                                <td>{{ $slider->id }}</td>
+                                <td>{{ $banner->id }}</td>
 
 
-                                <td>{{ $slider->title }}</td>
-                                <td>{{ $slider->subtitle }}</td>
-                                <td>{{ $slider->description }}</td>
+                                <td>{{ $banner->link }}</td>
                                 <td>
 
-                                    @if ($slider->photo)
-                                        <a href="{!! asset($slider->photo) !!}" target="_blank">
+                                    @if ($banner->photo)
+                                        <a href="{!! asset($banner->photo) !!}" target="_blank">
                                             <img class="img-thumbnail avatar-sm rounded-circle me-2" class="user-img"
                                                 style="width: 100px; height:100px;"
                                                 onerror="if (this.src != '{{ asset('assets/backend_assets/assets/images/users/avatar-2.jpg') }}') this.src = '{{ asset('assets/backend_assets/assets/images/users/avatar-2.jpg') }}';"
-                                                src="{{ asset($slider->photo) }}" alt="preview"
+                                                src="{{ asset($banner->photo) }}" alt="preview"
                                                 style="height:120px !important; width:80px !important; margin-left:20px;">
                                         </a>
                                     @else
@@ -135,7 +131,6 @@
 
 
                                 </td>
-                                <td>{{ $slider->link_one }}</td>
 
 
 
@@ -143,20 +138,20 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal{{ $slider->id }}"
+                                                data-bs-target="#exampleModal{{ $banner->id }}"
                                                 data-bs-whatever="@getbootstrap"><i class=" far fa-eye  "></i></button>
                                         </div>
 
                                         <div class="col-md-4">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#editPhotoOrder{{ $slider->id }}"
+                                                data-bs-target="#editPhotoOrder{{ $banner->id }}"
                                                 data-bs-whatever="@getbootstrap"><i class="fas fa-pencil-alt "></i></button>
 
                                         </div>
 
                                         <!-- UPDATE -->
                                         <div class="col-md-4">
-                                            <form action="{{ route('home_sliders.update', $slider->id) }}" method="post">
+                                            <form action="{{ route('advertisement_banners.update', $banner->id) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <a> <button class="btn btn-danger shadow btn-xs sharp"> <span
@@ -176,12 +171,12 @@
 
 
                             <!-- VIEW DETAILS MODEL -->
-                            <div class="modal fade" id="exampleModal{{ $slider->id }}" tabindex="-1"
+                            <div class="modal fade" id="exampleModal{{ $banner->id }}" tabindex="-1"
                                 aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Product Details</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Banner    Details</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
@@ -190,29 +185,19 @@
 
                                         <div class="modal-body">
 
-                                            <img src="{{ asset($slider->photo) }}"
+                                            <img src="{{ asset($banner->photo) }}"
                                                 style="width: 100%; height:60%;">
                                             <hr>
-                                            <p>Title : {{ $slider->title }}</p>
-                                            <hr>
-                                            <p>SubTitle : {{ $slider->subtitle }}</p>
-                                            <hr>
-                                            <p>Description : {{ $slider->description }}</p>
-                                            <hr>
-                                            <p>Link One : {{ $slider->link_one }}</p>
-                                            <hr>
-                                            <p>Link Two : {{ $slider->link_two }}</p>
-                                            <hr>
-                                            <p>Link Three : {{ $slider->link_three }}</p>
-                                            <hr>
-                                            <p>Link Three : {{ $slider->link_four }}</p>
+                                            <p>Link : {{ $banner->link }}</p>
+
+
 
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close
                                             </button>
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#editPhotoOrder{{ $slider->id }}"
+                                                data-bs-target="#editPhotoOrder{{ $banner->id }}"
                                                 data-bs-whatever="@getbootstrap">Edit Slide</button>
                                         </div>
                                     </div>
@@ -224,12 +209,12 @@
 
 
                             <!-- edit   DETAILS MODEL -->
-                            <div class="modal fade" id="editPhotoOrder{{ $slider->id }}" tabindex="-1"
+                            <div class="modal fade" id="editPhotoOrder{{ $banner->id }}" tabindex="-1"
                                 aria-labelledby="editPhotoOrderLabel" style="display: none;" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Edit Product Details</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Edit Banner Details</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
@@ -238,7 +223,7 @@
 
                                             <!-- form update Photo menu items -->
 
-                                            <form action="{{ route('home_sliders.update', $slider->id) }}" method="post"
+                                            <form action="{{ route('advertisement_banners.update', $banner->id) }}" method="post"
                                                 enctype="multipart/form-data">
                                                 @csrf
                                                 @method('PATCH')
@@ -246,9 +231,9 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="mb-3">
-                                                            <label class="form-label" for="validationCustom02">Title</label>
-                                                            <input type="text" class="form-control"  name="title" id="validationCustom02" placeholder="Enter title" value="{{ $slider->title}}" >
-                                                            @error('title')
+                                                            <label class="form-label" for="validationCustom02">Link</label>
+                                                            <input type="text" class="form-control"  name="link" id="validationCustom02" placeholder="Enter Link" value="{{ $banner->link}}" >
+                                                            @error('link')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                             @enderror
                                                         </div>
@@ -256,18 +241,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="mb-3">
-                                                            <label class="form-label" for="validationCustom02">Sub Title</label>
-                                                            <input type="text" class="form-control"  name="subtitle" id="validationCustom02" placeholder="Enter subtitle" value="{{ $slider->subtitle}}" >
-                                                            @error('subtitle')
-                                                            <small class="text-danger"> {{ $message }}</small>
-                                                            @enderror
 
-                                                        </div>
-                                                    </div>
-                                                </div>
 
                                                 <div class="row">
                                                      <div class="col-md-12">
@@ -283,70 +257,7 @@
                                                 </div>
 
 
-
-                                                <div class="col-md-12">
-                                                        <div class="mb-3">
-                                                            <label class="form-label" >Description</label>
-                                                            <textarea class="form-control" name="description" id="exampleFormControlTextarea5" placeholder="Enter Slider Description" rows="3">{{ $slider->description}}</textarea>
-                                                            @error('description')
-                                                            <small class="text-danger"> {{ $slider->description}}</small>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div class="mb-3">
-                                                                <label class="form-label" for="validationCustom02">Link 1</label>
-                                                                <input type="text" class="form-control"  name="link_one" id="validationCustom02" placeholder="Enter link - Optional" value="{{ $slider->link_one}}" >
-                                                                @error('link_one')
-                                                                <small class="text-danger"> {{ $message }}</small>
-                                                                @enderror
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div class="mb-3">
-                                                                <label class="form-label" for="validationCustom02">Link 2</label>
-                                                                <input type="text" class="form-control"  name="link_two" id="validationCustom02" placeholder="Enter link - Optional" value="{{ $slider->link_two}}" >
-                                                                @error('link_two')
-                                                                <small class="text-danger"> {{ $message }}</small>
-                                                                @enderror
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div class="mb-3">
-                                                                <label class="form-label" for="validationCustom02">Link 3</label>
-                                                                <input type="text" class="form-control"  name="link_three" id="validationCustom02" placeholder="Enter link - Optional" value="{{ $slider->link_three}}" >
-                                                                @error('link_three')
-                                                                <small class="text-danger"> {{ $message }}</small>
-                                                                @enderror
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div class="mb-3">
-                                                                <label class="form-label" for="validationCustom02">Link 4</label>
-                                                                <input type="text" class="form-control"  name="link_four" id="validationCustom02" placeholder="Enter link - Optional" value="{{ $slider->link_four}}" >
-                                                                @error('link_four')
-                                                                <small class="text-danger"> {{ $message }}</small>
-                                                                @enderror
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <button class="btn btn-primary" type="submit">Update Slide</button>
+                                                    <button class="btn btn-primary" type="submit">Update Banner</button>
 
 
                                             </form>

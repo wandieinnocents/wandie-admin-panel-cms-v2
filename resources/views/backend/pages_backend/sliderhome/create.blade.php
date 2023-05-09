@@ -78,7 +78,7 @@ Slider Home
                                             <div class="row">
                                                  <div class="col-md-12">
                                                     <div class="mb-3">
-                                                        <label class="form-label" for="validationCustom05">Photo</label>
+                                                        <label class="form-label" for="validationCustom05">Photo (570px × 480px)</label>
                                                         <input type="file" class="form-control" name="photo" id="validationCustom05" placeholder="" >
                                                         @error('photo')
                                                         <small class="text-danger"> {{ $message }}</small>

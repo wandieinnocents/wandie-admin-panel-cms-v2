@@ -25,7 +25,6 @@ class AdvertBannerRequest extends FormRequest
     public function rules()
     {
         return [
-
             'link' => [
                 'required',
                 'string'

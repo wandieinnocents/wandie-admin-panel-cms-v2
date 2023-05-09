@@ -17,7 +17,9 @@ class AdvertisementBannerController extends Controller
      */
     public function index()
     {
-        return view('backend.pages_backend.advertisement_banners.index',compact('banners'));
+        $banners = AdvertisementBanner::all();
+        $count_banners = AdvertisementBanner::count();
+        return view('backend.pages_backend.advertisement_banners.index',compact('banners','count_banners'));
 
     }
 
@@ -88,9 +90,24 @@ class AdvertisementBannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AdvertBannerRequest $request, $id)
     {
-        //
+        $validatedData = $request->validated();
+        $banner =  AdvertisementBanner::findOrFail($id);
+
+        $banner->link = $validatedData['link'];
+
+        if($request->hasfile('photo')){
+         $file               = $request->file('photo');
+         $extension          = $file->getClientOriginalExtension();  //get image extension
+         $filename           = time() . '.' .$extension;
+         $file->move('uploads/advert_banners/',$filename);
+         $banner->photo   = url('uploads' . '/advert_banners/'  . $filename);
+         // dd($banner);
+     }
+
+        $banner->update();
+        return redirect('/advertisement_banners')->with('messageupdate','Banner Updated successfuly');
     }
 
     /**
@@ -101,6 +118,10 @@ class AdvertisementBannerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $banner = AdvertisementBanner::findOrFail($id);
+        // delete slider
+        $banner->delete();
+
+        return redirect('/advertisement_banners')->with('messagedelete', 'Banner  is successfully deleted');
     }
 }
