@@ -159,9 +159,7 @@
                                     <li class="mega_items"><a href="/shop"><i class="zmdi zmdi-shopping-basket"></i> shop </a>
 
                                     </li>
-                                    <li><a href="blog.html"><i class="zmdi zmdi-collection-music"></i> blog </a>
 
-                                    </li>
 
                                     {{-- My account --}}
                                     <li><a href="#"><i class="zmdi zmdi-star"></i> My Account <i class="zmdi zmdi-caret-down"></i></a>
@@ -174,7 +172,7 @@
                                         </ul>
                                     </li>
                                     {{-- Contact Us --}}
-                                    <li><a href="/contact"><i class="zmdi zmdi-account-box-mail"></i>  Contact Us</a></li>
+                                    <li><a href="/contact/create"><i class="zmdi zmdi-account-box-mail"></i>  Contact Us</a></li>
                                 </ul>
                             </nav>
                         </div>
