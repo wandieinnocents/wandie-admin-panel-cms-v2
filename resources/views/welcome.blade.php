@@ -150,15 +150,18 @@
                 {{-- Start of slider --}}
                 <div class="col-lg-6 col-md-12 ">
                     <div class="slider_area slider_six owl-carousel">
+                        @foreach (  $sliders as  $slider )
+
 
                         <div class="single_slider" data-bgimg="assets/frontend/img/slider/slider11.jpg">
                             <div class="slider_content slider_content_six content_position_left">
-                                <h1>  <span>products </span> Gear VR</h1>
-                                <span>Virtual reality though </span>
-                                <h2><span>From </span> $99 <span>00 </span></h2>
-                                <a href="shop.html">shop now</a>
+                                <h1> {{ $slider->title }} </h1>
+                                <span>{{ $slider->subtitle }} </span>
+                                <a href="{{ $slider->link_one }}">shop now</a>
                             </div>
                         </div>
+
+                        @endforeach
 
 
                     </div>
