@@ -185,6 +185,8 @@ Route::resource('/product_colors', 'App\Http\Controllers\BackEnd\ProductColorCon
 
 // slider  home
 Route::resource('/home_sliders', 'App\Http\Controllers\BackEnd\SliderController');
+// advertisement banners
+Route::resource('/advertisement_banners', 'App\Http\Controllers\BackEnd\SliderController');
 
 
 

@@ -42,6 +42,26 @@
                     </ul>
                 </li>
 
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i class="fas fa-university"></i>
+                        <span data-key="t-apps">Advert Banners</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="/home_sliders/create">
+                                <span data-key="t-calendar">Add Advert Banner</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/home_sliders">
+                                <span data-key="t-calendar">View Adverts</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
                 {{-- feedback --}}
 
                 <li>
