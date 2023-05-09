@@ -89,6 +89,8 @@ Route::resource('nursing','App\Http\Controllers\FrontEnd\NursingCourseController
 // events
 Route::resource('our_events','App\Http\Controllers\FrontEnd\FrontEndEventController');
 
+// SHOPPING PAGES
+Route::resource('shop','App\Http\Controllers\FrontEnd\ShopController');
 
 
 
