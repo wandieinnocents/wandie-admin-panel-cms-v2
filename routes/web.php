@@ -90,7 +90,17 @@ Route::resource('nursing','App\Http\Controllers\FrontEnd\NursingCourseController
 Route::resource('our_events','App\Http\Controllers\FrontEnd\FrontEndEventController');
 
 // SHOPPING PAGES
+// shop page
 Route::resource('shop','App\Http\Controllers\FrontEnd\ShopController');
+// checkout
+Route::resource('checkout','App\Http\Controllers\FrontEnd\CheckoutController');
+// myaccount
+Route::resource('myaccount','App\Http\Controllers\FrontEnd\MyAccountController');
+// cart page
+Route::resource('cart','App\Http\Controllers\FrontEnd\CartController');
+// wishlist
+Route::resource('wishlist','App\Http\Controllers\FrontEnd\WishListController');
+
 
 
 

@@ -14,7 +14,7 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-       return "checkout";
+        return view('frontend.pages_frontend.ecommerce.checkout');
     }
 
     /**

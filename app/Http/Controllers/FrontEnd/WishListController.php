@@ -14,7 +14,7 @@ class WishListController extends Controller
      */
     public function index()
     {
-        return "wishlist";
+        return view('frontend.pages_frontend.ecommerce.wishlist');
     }
 
     /**

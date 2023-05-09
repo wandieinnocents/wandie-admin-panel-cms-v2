@@ -14,7 +14,7 @@ class MyAccountController extends Controller
      */
     public function index()
     {
-        return "myaccount";
+        return view('frontend.pages_frontend.ecommerce.myaccount');
     }
 
     /**

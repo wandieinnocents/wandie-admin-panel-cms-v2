@@ -164,10 +164,10 @@
                                     {{-- My account --}}
                                     <li><a href="#"><i class="zmdi zmdi-star"></i> My Account <i class="zmdi zmdi-caret-down"></i></a>
                                         <ul class="sub_menu pages">
-                                            <li><a href="about.html">Checkout</a></li>
-                                            <li><a href="services.html">My Account</a></li>
-                                            <li><a href="portfolio.html">Shopping Cart</a></li>
-                                            <li><a href="faq.html">Wishlist</a></li>
+                                            <li><a href="/checkout">Checkout</a></li>
+                                            <li><a href="/myaccount">My Account</a></li>
+                                            <li><a href="/cart">Shopping Cart</a></li>
+                                            <li><a href="/wishlist">Wishlist</a></li>
 
                                         </ul>
                                     </li>
