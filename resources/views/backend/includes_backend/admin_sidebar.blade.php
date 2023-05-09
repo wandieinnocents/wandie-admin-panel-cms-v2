@@ -22,7 +22,7 @@
                 </li> --}}
                 <!-- sliders -->
 
-                  <li>
+                <li>
                     <a href="javascript: void(0);" class="has-arrow">
                         <i class="fas fa-university"></i>
                         <span data-key="t-apps">Slideshow</span>
@@ -49,12 +49,12 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li>
-                            <a href="/home_sliders/create">
+                            <a href="/advertisement_banners/create">
                                 <span data-key="t-calendar">Add Advert Banner</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/home_sliders">
+                            <a href="/advertisement_banners">
                                 <span data-key="t-calendar">View Adverts</span>
                             </a>
                         </li>
@@ -111,7 +111,7 @@
 
                 {{-- products --}}
 
-                  <li>
+                <li>
                     <a href="javascript: void(0);" class="has-arrow">
                         <i class="fas fa-university"></i>
                         <span data-key="t-apps">Products</span>
@@ -123,19 +123,19 @@
                             </a>
                         </li>
 
-                         <li>
+                        <li>
                             <a href="/product_brands">
                                 <span data-key="t-calendar">View Brands</span>
                             </a>
                         </li>
 
-                         {{-- <li>
+                        {{-- <li>
                             <a href="/product_colors/create">
                                 <span data-key="t-calendar"> Add Color</span>
                             </a>
                         </li> --}}
 
-                         {{-- <li>
+                        {{-- <li>
                             <a href="/product_colors">
                                 <span data-key="t-calendar">View Colors</span>
                             </a>
@@ -203,7 +203,7 @@
                         <span data-key="t-apps">Videos</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                             <li>
+                        <li>
                             <a href="/video_galleries/create">
                                 <span data-key="t-chat">Add Video</span>
                             </a>
@@ -277,7 +277,7 @@
 
 
                 {{-- courses --}}
-                 <!-- <li>
+                <!-- <li>
                     <a href="javascript: void(0);" class="has-arrow">
                         <i class="fas fa-university"></i>
                         <span data-key="t-apps">Courses</span>
@@ -296,7 +296,7 @@
                     </ul>
                 </li> -->
                 {{-- events --}}
-                 <li>
+                <li>
                     <a href="javascript: void(0);" class="has-arrow">
                         <i class="fas fa-university"></i>
                         <span data-key="t-apps">Events</span>
@@ -323,17 +323,17 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <!-- Post categories create -->
-                            <li>
-                                <a href="/post_categories/create">
-                                    <span data-key="t-calendar">Add Category</span>
-                                </a>
-                            </li>
+                        <li>
+                            <a href="/post_categories/create">
+                                <span data-key="t-calendar">Add Category</span>
+                            </a>
+                        </li>
                         <!-- Post categories list -->
-                            <li>
-                                <a href="/post_categories">
-                                    <span data-key="t-calendar">View Categories</span>
-                                </a>
-                            </li>
+                        <li>
+                            <a href="/post_categories">
+                                <span data-key="t-calendar">View Categories</span>
+                            </a>
+                        </li>
                         <!-- Create post -->
                         <li>
                             <a href="{{ route('posts.create') }}">
@@ -379,7 +379,7 @@
                                 <span data-key="t-calendar">Add Faq</span>
                             </a>
                         </li>
-                    <li>
+                        <li>
                             <a href="/faqs">
                                 <span data-key="t-calendar">View Faq's</span>
                             </a>

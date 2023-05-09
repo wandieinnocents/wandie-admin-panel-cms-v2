@@ -14,8 +14,12 @@ class CreateAdvertisementBannersTable extends Migration
     public function up()
     {
         Schema::create('advertisement_banners', function (Blueprint $table) {
+
             $table->id();
+            $table->text('photo');
+            $table->string('link')->nullable();
             $table->timestamps();
+
         });
     }
 
