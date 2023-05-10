@@ -20,8 +20,8 @@ class FrontEndProductCategoryController extends Controller
         if($category){
 
             // products () =  relationship in ProductCategory model
-            $product= $category->products()->get();
-            return view('frontend.pages_frontend.ecommerce.products.index');
+            $products = $category->products()->get();
+            return view('frontend.pages_frontend.ecommerce.products.index',compact('products','category'));
 
         } else {
             return redirect->back();

@@ -32,6 +32,11 @@
             <div class="new_product_area product_color_six mb-50">
 
                 <div class="row">
+
+                    {{-- Fetch data --}}
+                    @forelse ( $products as  $product )
+
+
                     <div class="col-md-3">
                         {{-- single product --}}
                         <div class="single_product">
@@ -46,7 +51,9 @@
                             </div>
                             <div class="product_content">
                                 <div class="product_name">
-                                    <h3><a href="product-details.html">Aliquam Watches</a></h3>
+                                    <h3><a href="product-details.html">{{   $product->name }}</a></h3>
+                                    <h3><a href="product-details.html">{{   $product->brand }}</a></h3>
+
                                 </div>
                                 <div class="product_rating">
                                     <ul>
@@ -72,6 +79,14 @@
                         </div>
                         {{-- end single product --}}
                     </div>
+
+                    @empty
+
+                    <div class="col-md-12 text-center"><h2>No Products available for Category :  {{  $category->name }} </h2></div>
+
+                    @endforelse
+
+                    {{-- End fetch data --}}
 
                      </div>
             </div>
