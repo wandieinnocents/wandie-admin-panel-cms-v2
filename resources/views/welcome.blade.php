@@ -177,7 +177,7 @@
                         <div class="single_banner mb-30">
                             <div class="banner_thumb">
                                 <a href="#"><img src="{{ asset($banner_slider_right->photo) }}" alt=""
-                                    style="max-width:270px; height:225px; object-fit: cover;"></a>
+                                    style="width:270px; height:225px; object-fit: cover;"></a>
                             </div>
                         </div>
                         @endforeach
@@ -501,7 +501,7 @@
                     <div class="single_banner">
                         <div class="banner_thumb">
                             <a href="#"><img src="{{ asset($banners_inner->photo) }}" alt=""
-                                style="max-width:270px; height:225px; object-fit: cover;"></a>
+                                style="width:270px; height:225px; object-fit: cover;"></a>
                         </div>
 
                     </div>
