@@ -181,7 +181,7 @@
                                     <li class="active"><a  href="/"><i class="zmdi zmdi-home"></i> home </a>
                                     </li>
                                     <li><a href="/about"><i class="zmdi zmdi-comments"></i> about Us</a></li>
-                                    <li><a href="/about"><i class="zmdi zmdi-comments"></i>  Categories</a></li>
+                                    <li><a href="/all_product_categories"><i class="zmdi zmdi-comments"></i>  Categories</a></li>
                                     <li><a href="/about"><i class="zmdi zmdi-comments"></i> Featured</a></li>
 
 
