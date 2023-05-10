@@ -16,7 +16,7 @@
                     <div class="breadcrumb_content">
                         <ul>
                             <li><a href="index.html">home</a></li>
-                            <li>Shopping Cart</li>
+                            <li>All Categories</li>
                         </ul>
                     </div>
                 </div>
@@ -31,54 +31,30 @@
             <div class="row">
                 <div class="col-12">
                     <div class="category_product_carousel category_column4 owl-carousel">
+
+                        @foreach ($categories as $category )
+
+
                         <div class="single_category_product">
                             <div class="category_product_thumb">
-                                <a href="shop.html"><img src="assets/frontend/img/category/category1.jpg" alt=""></a>
+                                <a href="shop.html"><img src="{{ asset('uploads/product_category/'.$category->image) }}" alt=""
+                                    style="width:208px; height:158px; object-fit:cover;"></a>
                             </div>
                             <div class="category_product_name">
-                                <h2><a href="shop.html">television</a></h2>
+                                <h2><a href="shop.html">{{ $category->name }}</a></h2>
                             </div>
                         </div>
-                        <div class="single_category_product">
-                            <div class="category_product_thumb">
-                                <a href="shop.html"><img src="assets/frontend/img/category/category2.jpg" alt=""></a>
-                            </div>
-                            <div class="category_product_name">
-                                <h2><a href="shop.html">audio</a></h2>
-                            </div>
-                        </div>
-                        <div class="single_category_product">
-                            <div class="category_product_thumb">
-                                <a href="shop.html"><img src="assets/frontend/img/category/category3.jpg" alt=""></a>
-                            </div>
-                            <div class="category_product_name">
-                                <h2><a href="shop.html">Camera</a></h2>
-                            </div>
-                        </div>
-                        <div class="single_category_product">
-                            <div class="category_product_thumb">
-                                <a href="shop.html"><img src="assets/frontend/img/category/category4.jpg" alt=""></a>
-                            </div>
-                            <div class="category_product_name">
-                                <h2><a href="shop.html">lundry</a></h2>
-                            </div>
-                        </div>
-                        <div class="single_category_product">
-                            <div class="category_product_thumb">
-                                <a href="shop.html"><img src="assets/frontend/img/category/category5.jpg" alt=""></a>
-                            </div>
-                            <div class="category_product_name">
-                                <h2><a href="shop.html">cooling</a></h2>
-                            </div>
-                        </div>
-                        <div class="single_category_product">
-                            <div class="category_product_thumb">
-                                <a href="shop.html"><img src="assets/frontend/img/category/category2.jpg" alt=""></a>
-                            </div>
-                            <div class="category_product_name">
-                                <h2><a href="shop.html">audio</a></h2>
-                            </div>
-                        </div>
+
+                        @endforeach
+
+
+
+
+
+
+
+
+
                     </div>
                 </div>
             </div>

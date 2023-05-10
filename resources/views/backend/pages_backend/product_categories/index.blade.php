@@ -44,7 +44,7 @@ Product Categories
             @endif
 
              {{-- alert delete item --}}
-              @if(session('messagedelete')) 
+              @if(session('messagedelete'))
              <div class="alert alert-danger alert-dismissible alert-label-icon label-arrow fade show" role="alert">
                 <i class="mdi mdi-block-helper label-icon"></i>
                 {{ session('messagedelete')}}
@@ -54,7 +54,7 @@ Product Categories
              @endif
 
              {{-- alert update item --}}
-              @if(session('messageupdate')) 
+              @if(session('messageupdate'))
              <div class="alert alert-info alert-dismissible alert-label-icon label-arrow fade show mb-0" role="alert">
                 <i class="mdi mdi-check-all label-icon"></i>
                 {{ session('messageupdate')}}
@@ -112,14 +112,14 @@ Product Categories
                                     {{-- <a href="#" class="text-body">{{ $product_category->status == '0' ? 'Hidden':'Visible' }} --}}
 
                                     @if($product_category->status == '0')
-                                    <span class="badge bg-soft-danger text-danger" style="padding:10px;">Hidden</span>
-                                    @else
                                     <span class="badge bg-soft-success text-success" style="padding:10px;">Visible</span>
+                                    @else
+                                    <span class="badge bg-soft-danger text-danger" style="padding:10px;">Hidden</span>
 
                                     @endif
-                                   
+
                                   </td>
-                                  
+
                                 <td>{{ $product_category->description }}</td>
                                  <td><a href="#" class="text-body">{{ $product_category->meta_keywords }}</a> </td>
                                   <td><a href="#" class="text-body">{{ $product_category->meta_title }}</a> </td>
@@ -185,7 +185,7 @@ Product Categories
                                             <hr>
                                             <p>Slug : {{ $product_category->slug }}</p>
                                             <hr>
-                                            <p>status : 
+                                            <p>status :
                                              @if($product_category->status == '0')
                                                 <span class="badge bg-soft-danger text-danger" style="padding:10px;">Hidden</span>
                                                 @else
@@ -243,10 +243,10 @@ Product Categories
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Name</label>
                                                         <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Ennter Category Name" value="{{ $product_category->name}}">
-                                           @error('name') 
+                                           @error('name')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
-                                                        
+
                                                     </div>
                                                 </div>
 
@@ -254,7 +254,7 @@ Product Categories
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Slug</label>
                                                         <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Ennter slug" value="{{ $product_category->slug }}" >
-                                                         @error('slug') 
+                                                         @error('slug')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
                                                     </div>
@@ -267,7 +267,7 @@ Product Categories
                                                     <div class="mb-3">
                                                         <label class="form-label" >Description</label>
                                                         <textarea class="form-control"  name="description" placeholder="Enter Category Description" rows="3">{{ $product_category->description }}</textarea>
-                                                         @error('description') 
+                                                         @error('description')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
                                                     </div>
@@ -283,7 +283,7 @@ Product Categories
                                                             <span class="badge bg-soft-danger text-danger" style="padding:10px;">No Photo</span>
                                                         @endif
 
-                                                       @error('image') 
+                                                       @error('image')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                        @enderror
                                                     </div>
@@ -293,7 +293,7 @@ Product Categories
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Status</label>
                                                         <input type="checkbox"    name="status" value={{ $product_category->status == '1' ? 'checked' : ''}}  >
-                                                         @error('status') 
+                                                         @error('status')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
                                                     </div>
@@ -302,34 +302,34 @@ Product Categories
                                                  <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Status</label>
-                                                        <input type="checkbox"    name="status" {{ $product_category->status == '1' ? 
+                                                        <input type="checkbox"    name="status" {{ $product_category->status == '1' ?
                                                         'checked' : ''}} >
 
-                                                         @error('status') 
+                                                         @error('status')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
                                                     </div>
                                                 </div>
 
 
-                                              
+
                                                 <h3>SEO TAGS </H3>
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Meta title</label>
                                                         <input type="text" class="form-control" id="validationCustom01"  name="meta_title" placeholder="Ennter Category Name" value="{{ $product_category->meta_title }}" >
-                                                         @error('meta_title') 
+                                                         @error('meta_title')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
                                                     </div>
                                                 </div>
 
-                                                
+
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" >Meta Keywords</label>
                                                         <textarea class="form-control"  name="meta_keywords" placeholder="Enter Category Description" rows="3">{{ $product_category->meta_keywords }}</textarea>
-                                                         @error('meta_keywords') 
+                                                         @error('meta_keywords')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
                                                     </div>
@@ -340,13 +340,13 @@ Product Categories
                                                     <div class="mb-3">
                                                         <label class="form-label" >Meta Description</label>
                                                         <textarea class="form-control"  name="meta_description" placeholder="Enter Category Description" rows="3">{{ $product_category->meta_description }}</textarea>
-                                                         @error('meta_description') 
+                                                         @error('meta_description')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
                                                     </div>
                                                 </div>
 
-                                                
+
                                             </div>
 
                                             <!-- Editor -->
