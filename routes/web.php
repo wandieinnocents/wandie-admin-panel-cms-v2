@@ -92,6 +92,9 @@ Route::resource('myaccount','App\Http\Controllers\FrontEnd\MyAccountController')
 Route::resource('cart','App\Http\Controllers\FrontEnd\CartController');
 // wishlist
 Route::resource('wishlist','App\Http\Controllers\FrontEnd\WishListController');
+// frontend product category
+Route::get('/all_product_categories', 'App\Http\Controllers\FrontEnd\FrontEndProductCategoryController@categories');
+
 
 
 
@@ -109,7 +112,7 @@ Route::resource('wishlist','App\Http\Controllers\FrontEnd\WishListController');
 
 // Auth::routes();
 Auth::routes([
-    'register' => false, // Registration Routes...
+    'register' => true, // Registration Routes...
     'reset' => false, // Password Reset Routes...
     'verify' => false, // Email Verification Routes...
   ]);

@@ -13,57 +13,49 @@
                     <div class="col-lg-8">
                         <div class="top_right text-right">
                             <ul>
-                                <li class="currency"><a href="#"><i class="fa fa-dollar"></i> US Dollar <i class="zmdi zmdi-caret-down"></i></a>
+                                {{-- <li class="currency"><a href="#"><i class="fa fa-dollar"></i> US Dollar <i class="zmdi zmdi-caret-down"></i></a>
                                     <ul class="dropdown_currency">
                                         <li><a href="#">EUR – Euro</a></li>
                                         <li><a href="#">GBP – British Pound</a></li>
                                         <li><a href="#">INR – India Rupee</a></li>
                                     </ul>
-                                </li>
-                               <li class="language"><a href="#"><i class="zmdi zmdi-dribbble"></i> English1 <i class="zmdi zmdi-caret-down"></i></a>
+                                </li> --}}
+                               {{-- <li class="language"><a href="#"><i class="zmdi zmdi-dribbble"></i> English1 <i class="zmdi zmdi-caret-down"></i></a>
                                     <ul class="dropdown_language">
                                         <li><a href="#">English</a></li>
                                         <li><a href="#">Germany</a></li>
                                     </ul>
-                                </li>
+                                </li> --}}
 
                                 {{-- Authenticated User or not --}}
 
                                  <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
+                                    @guest
+                                        @if (Route::has('login'))
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('login') }}">Login</a>
+                                            </li>
+                                        @endif
 
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                        <li class="top_links"><a href="#"><i class="zmdi zmdi-account"></i>  {{ Auth::user()->name }} <i class="zmdi zmdi-caret-down"></i></a>
-                            <ul class="dropdown_links">
-                                <li><a href="/checkout">Checkout</a></li>
-                                    <li><a href="/myaccount">My Account</a></li>
-                                    <li><a href="/cart">Shopping Cart</a></li>
-                                    <li><a href="/wishlist">Wishlist</a></li>
-                                    <li><a href="{{ route('logout') }}">Logout</a></li>
-                            </ul>
-                        </li>
+                                        @if (Route::has('register'))
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                            </li>
+                                        @endif
+                                    @else
+                                    <li class="top_links"><a href="#"><i class="zmdi zmdi-account"></i>  {{ Auth::user()->name }} <i class="zmdi zmdi-caret-down"></i></a>
+                                        <ul class="dropdown_links">
+                                            <li><a href="/checkout">Profile</a></li>
+                                                <li><a href="/myaccount"> Orders</a></li>
+                                                <li><a href="/cart"> Wishlist</a></li>
+                                                <li><a href="/wishlist"> Cart</a></li>
+                                                <li><a href="{{ route('logout') }}">Logout</a></li>
+                                        </ul>
+                                    </li>
 
-                        @endguest
+                                    @endguest
 
-                                {{-- <li class="top_links"><a href="#"><i class="zmdi zmdi-account"></i> My account <i class="zmdi zmdi-caret-down"></i></a>
-                                    <ul class="dropdown_links">
-                                        <li><a href="/checkout">Checkout</a></li>
-                                            <li><a href="/myaccount">My Account</a></li>
-                                            <li><a href="/cart">Shopping Cart</a></li>
-                                            <li><a href="/wishlist">Wishlist</a></li>
-                                            <li><a href="/wishlist">Login</a></li>
-                                    </ul>
-                                </li> --}}
+
 
                                 {{-- End authenticated User --}}
 
@@ -189,24 +181,20 @@
                                     <li class="active"><a  href="/"><i class="zmdi zmdi-home"></i> home </a>
                                     </li>
                                     <li><a href="/about"><i class="zmdi zmdi-comments"></i> about Us</a></li>
+                                    <li><a href="/about"><i class="zmdi zmdi-comments"></i>  Categories</a></li>
+                                    <li><a href="/about"><i class="zmdi zmdi-comments"></i> Featured</a></li>
+
 
                                     <li class="mega_items"><a href="/shop"><i class="zmdi zmdi-shopping-basket"></i> shop </a>
 
                                     </li>
 
 
-                                    {{-- My account --}}
-                                    <li><a href="#"><i class="zmdi zmdi-star"></i> My Account <i class="zmdi zmdi-caret-down"></i></a>
-                                        <ul class="sub_menu pages">
-                                            <li><a href="/checkout">Checkout</a></li>
-                                            <li><a href="/myaccount">My Account</a></li>
-                                            <li><a href="/cart">Shopping Cart</a></li>
-                                            <li><a href="/wishlist">Wishlist</a></li>
-
-                                        </ul>
-                                    </li>
                                     {{-- Contact Us --}}
                                     <li><a href="/contact/create"><i class="zmdi zmdi-account-box-mail"></i>  Contact Us</a></li>
+                                    <li class="mega_items"><a href="/cart"><i class="zmdi zmdi-shopping-basket"></i> Cart (0) </a></li>
+                                    <li class="mega_items"><a href="/wishlist"><i class="zmdi zmdi-shopping-basket"></i> Wishlist (0) </a></li>
+
                                 </ul>
                             </nav>
                         </div>
@@ -243,27 +231,52 @@
 
                         <div class="top_right">
                             <ul>
-                                <li class="currency"><a href="#"><i class="fa fa-dollar"></i> US Dollar <i class="zmdi zmdi-caret-down"></i></a>
+                                {{-- <li class="currency"><a href="#"><i class="fa fa-dollar"></i> US Dollar <i class="zmdi zmdi-caret-down"></i></a>
                                     <ul class="dropdown_currency">
                                         <li><a href="#">EUR – Euro</a></li>
                                         <li><a href="#">GBP – British Pound</a></li>
                                         <li><a href="#">INR – India Rupee</a></li>
                                     </ul>
-                                </li>
-                               <li class="language"><a href="#"><i class="zmdi zmdi-dribbble"></i> English1 <i class="zmdi zmdi-caret-down"></i></a>
+                                </li> --}}
+                               {{-- <li class="language"><a href="#"><i class="zmdi zmdi-dribbble"></i> English1 <i class="zmdi zmdi-caret-down"></i></a>
                                     <ul class="dropdown_language">
                                         <li><a href="#">English</a></li>
                                         <li><a href="#">Germany</a></li>
                                     </ul>
-                                </li>
-                                <li class="top_links"><a href="#"><i class="zmdi zmdi-account"></i> My account <i class="zmdi zmdi-caret-down"></i></a>
-                                    <ul class="dropdown_links">
-                                            <li><a href="/checkout">Checkout</a></li>
-                                            <li><a href="/myaccount">My Account</a></li>
-                                            <li><a href="/cart">Shopping Cart</a></li>
-                                            <li><a href="/wishlist">Wishlist</a></li>
-                                    </ul>
-                                </li>
+                                </li> --}}
+
+                                {{-- Authenticated User or not --}}
+
+                                 <!-- Authentication Links -->
+                                    @guest
+                                        @if (Route::has('login'))
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('login') }}">Login</a>
+                                            </li>
+                                        @endif
+
+                                        @if (Route::has('register'))
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                            </li>
+                                        @endif
+                                    @else
+                                    <li class="top_links"><a href="#"><i class="zmdi zmdi-account"></i>  {{ Auth::user()->name }} <i class="zmdi zmdi-caret-down"></i></a>
+                                        <ul class="dropdown_links">
+                                            <li><a href="/checkout">Profile</a></li>
+                                                <li><a href="/myaccount"> Orders</a></li>
+                                                <li><a href="/cart"> Wishlist</a></li>
+                                                <li><a href="/wishlist"> Cart</a></li>
+                                                <li><a href="{{ route('logout') }}">Logout</a></li>
+                                        </ul>
+                                    </li>
+
+                                    @endguest
+
+
+
+                                {{-- End authenticated User --}}
+
 
                             </ul>
                         </div>
