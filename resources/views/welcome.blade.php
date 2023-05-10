@@ -499,7 +499,8 @@
                 <div class="col-lg-3 col-md-3">
                     <div class="single_banner">
                         <div class="banner_thumb">
-                            <a href="#"><img src="{{ asset($banners_inner->photo) }}" alt=""></a>
+                            <a href="#"><img src="{{ asset($banners_inner->photo) }}" alt=""
+                                style="max-width:270px; height:225px; object-fit: cover;"></a>
                         </div>
 
                     </div>
