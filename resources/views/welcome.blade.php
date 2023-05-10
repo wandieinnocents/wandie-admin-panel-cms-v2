@@ -176,7 +176,8 @@
 
                         <div class="single_banner mb-30">
                             <div class="banner_thumb">
-                                <a href="#"><img src="{{ asset($banner_slider_right->photo) }}" alt=""></a>
+                                <a href="#"><img src="{{ asset($banner_slider_right->photo) }}" alt=""
+                                    style="max-width:270px; height:225px; object-fit: cover;"></a>
                             </div>
                         </div>
                         @endforeach
