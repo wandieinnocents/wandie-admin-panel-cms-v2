@@ -26,14 +26,48 @@
                                         <li><a href="#">Germany</a></li>
                                     </ul>
                                 </li>
-                                <li class="top_links"><a href="#"><i class="zmdi zmdi-account"></i> My account <i class="zmdi zmdi-caret-down"></i></a>
+
+                                {{-- Authenticated User or not --}}
+
+                                 <!-- Authentication Links -->
+                        @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                        <li class="top_links"><a href="#"><i class="zmdi zmdi-account"></i>  {{ Auth::user()->name }} <i class="zmdi zmdi-caret-down"></i></a>
+                            <ul class="dropdown_links">
+                                <li><a href="/checkout">Checkout</a></li>
+                                    <li><a href="/myaccount">My Account</a></li>
+                                    <li><a href="/cart">Shopping Cart</a></li>
+                                    <li><a href="/wishlist">Wishlist</a></li>
+                                    <li><a href="{{ route('logout') }}">Logout</a></li>
+                            </ul>
+                        </li>
+
+                        @endguest
+
+                                {{-- <li class="top_links"><a href="#"><i class="zmdi zmdi-account"></i> My account <i class="zmdi zmdi-caret-down"></i></a>
                                     <ul class="dropdown_links">
                                         <li><a href="/checkout">Checkout</a></li>
                                             <li><a href="/myaccount">My Account</a></li>
                                             <li><a href="/cart">Shopping Cart</a></li>
                                             <li><a href="/wishlist">Wishlist</a></li>
+                                            <li><a href="/wishlist">Login</a></li>
                                     </ul>
-                                </li>
+                                </li> --}}
+
+                                {{-- End authenticated User --}}
+
+
 
                             </ul>
                         </div>
