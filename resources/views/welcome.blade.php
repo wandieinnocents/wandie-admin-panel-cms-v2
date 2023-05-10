@@ -150,7 +150,7 @@
                 {{-- Start of slider --}}
                 <div class="col-lg-6 col-md-12 ">
                     <div class="slider_area slider_six owl-carousel">
-                        @foreach (  $sliders as  $slider )
+                        @forelse (  $sliders as  $slider )
 
 
                         <div class="single_slider" data-bgimg="{{ asset($slider->photo) }}">
@@ -161,7 +161,11 @@
                             </div>
                         </div>
 
-                        @endforeach
+                        @empty
+
+                        <div class="col-md-12 text-center"><h2 style="margin-top:200px;">No Sliders Found</h2></div>
+
+                        @endforelse
 
 
                     </div>
@@ -171,7 +175,7 @@
                 {{-- Start of ads --}}
                 <div class="col-lg-3">
                     <div class="sidebar_banner_six">
-                        @foreach ($banneradverts_sliderarea as $banner_slider_right )
+                        @forelse ($banneradverts_sliderarea as $banner_slider_right )
 
 
                         <div class="single_banner mb-30">
@@ -180,7 +184,11 @@
                                     style="width:270px; height:225px; object-fit: cover;"></a>
                             </div>
                         </div>
-                        @endforeach
+                        @empty
+
+                        <div class="col-md-12 text-center"><h2 style="margin-top:200px;">No Advert Found</h2></div>
+
+                        @endforelse
 
                     </div>
                 </div>
@@ -495,7 +503,7 @@
         <div class="container">
             <div class="row">
 
-                @foreach ($banners_innerpage as $banners_inner )
+                @forelse ($banners_innerpage as $banners_inner )
 
                 <div class="col-lg-3 col-md-3">
                     <div class="single_banner">
@@ -507,7 +515,11 @@
                     </div>
                 </div>
 
-                @endforeach
+                @empty
+
+                <div class="col-md-12 text-center"><h2 style="margin-top:200px;">No Sliders Found</h2></div>
+
+                @endforelse
 
 
             </div>
