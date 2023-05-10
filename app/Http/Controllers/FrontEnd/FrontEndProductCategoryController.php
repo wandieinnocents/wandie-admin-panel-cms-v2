@@ -13,4 +13,19 @@ class FrontEndProductCategoryController extends Controller
         // dd($categories);
         return view('frontend.pages_frontend.ecommerce.product_categories.all_product_categories',compact('categories'));
     }
+
+    // get products in each category using slug
+    public function products($category_slug ){
+        $category = ProductCategory::where('slug',$category_slug)->first();
+        if($category){
+
+            // products () =  relationship in ProductCategory model
+            $product= $category->products()->get();
+            return view('frontend.pages_frontend.ecommerce.products.index');
+
+        } else {
+            return redirect->back();
+        }
+
+    }
 }

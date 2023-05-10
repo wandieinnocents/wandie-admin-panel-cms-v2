@@ -33,7 +33,7 @@
                 <div class="col-3">
                         <div class="single_category_product">
                             <div class="category_product_thumb">
-                                <a href="shop.html"><img src="{{ asset('uploads/product_category/'.$category->image) }}" alt=""
+                                <a href="{{ url('/all_product_categories/'.$category->slug) }}"><img src="{{ asset('uploads/product_category/'.$category->image) }}" alt=""
                                     style="width:208px; height:158px; object-fit:cover;"></a>
                             </div>
                             <div class="category_product_name">
@@ -43,7 +43,7 @@
 
                 </div>
                 @endforeach
-                
+
             </div>
         </div>
     </section>
