@@ -29,12 +29,8 @@
     <section class="category_product_area mt-30 mb-50">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <div class="category_product_carousel category_column4 owl-carousel">
-
-                        @foreach ($categories as $category )
-
-
+                @foreach ($categories as $category )
+                <div class="col-3">
                         <div class="single_category_product">
                             <div class="category_product_thumb">
                                 <a href="shop.html"><img src="{{ asset('uploads/product_category/'.$category->image) }}" alt=""
@@ -45,18 +41,9 @@
                             </div>
                         </div>
 
-                        @endforeach
-
-
-
-
-
-
-
-
-
-                    </div>
                 </div>
+                @endforeach
+                
             </div>
         </div>
     </section>
