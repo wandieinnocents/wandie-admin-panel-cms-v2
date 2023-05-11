@@ -24,13 +24,11 @@ class FrontEndProductCategoryController extends Controller
         // display active product brands
         $product_brands = ProductBrands::where('status','0')->get();
 
-
-
         if($category){
 
             // products () =  relationship in ProductCategory model
             $products = $category->products()->get();
-            return view('frontend.pages_frontend.ecommerce.products.index',['products' => $products, 'categories' => $categories,'category' => $category ,'product_brands' => $product_brands]);
+            return view('frontend.pages_frontend.ecommerce.products_per_category.index',['products' => $products, 'categories' => $categories,'category' => $category ,'product_brands' => $product_brands]);
 
         } else {
             return redirect->back();
@@ -38,7 +36,14 @@ class FrontEndProductCategoryController extends Controller
 
     }
 
-    
+    // public function brands(){
+
+    //     $product_brands = ProductBrands::where('status','0')->get();
+    //     return view('frontend.pages_frontend.ecommerce.product_brands.index',['product_brands' => $product_brands]);
+
+    // }
+
+
 
 
 }

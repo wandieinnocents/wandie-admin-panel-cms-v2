@@ -149,6 +149,29 @@
                     </ul>
                 </div>
 
+                {{-- categories --}}
+                <div class="widget_list widget_categories">
+                    <h2>Brands</h2>
+                    <ul>
+                        @forelse($product_brands  as $brand)
+                        <li>
+                            @if($brand)
+                            <a href="{{ url('/all_product_categories/'.$brand->slug) }}">{{ $brand->name }}
+                            @else
+                            <div class="col-md-12 text-center"><h3>No Category</h3></div>
+                            @endif
+                        </li>
+
+                        @empty
+                        <div class="col-md-12 text-center"><h3>No Categories</h3></div>
+
+                        @endforelse
+
+
+
+                    </ul>
+                </div>
+
 
                 <div class="widget_list widget_filter">
                     <h2>Filter by price</h2>

@@ -96,6 +96,8 @@ Route::resource('wishlist','App\Http\Controllers\FrontEnd\WishListController');
 Route::get('/all_product_categories', 'App\Http\Controllers\FrontEnd\FrontEndProductCategoryController@categories');
 // category slug - get products in each category
 Route::get('/all_product_categories/{category_slug}', 'App\Http\Controllers\FrontEnd\FrontEndProductCategoryController@products');
+// brand slug - get products in each brand
+// Route::get('/all_product_categories/{brand_slug}', 'App\Http\Controllers\FrontEnd\FrontEndProductCategoryController@brands');
 
 
 
