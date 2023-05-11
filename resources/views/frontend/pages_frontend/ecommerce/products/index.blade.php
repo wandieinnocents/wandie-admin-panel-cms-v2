@@ -41,7 +41,7 @@
                         {{-- single product --}}
                         <div class="single_product">
                             <div class="product_thumb">
-                                <a href="product-details.html"><img src="{{ asset('assets/frontend/img/product/product18.jpg') }}" alt=""></a>
+                                <a href="{{ url('/all_product_categories/'.$product->product_category->slug.'/'.$product->slug) }}"><img src="{{ asset('assets/frontend/img/product/product18.jpg') }}" alt=""></a>
                                 <div class="label_product">
                                     @if ($product->quantity > 0 )
                                     <span class="label_sale">IN STOCK</span>
