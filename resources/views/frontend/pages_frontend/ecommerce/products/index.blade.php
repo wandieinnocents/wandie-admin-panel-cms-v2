@@ -1,25 +1,21 @@
 @extends('frontend.layouts_frontend.master')
 
 @section('title')
-   {{ $category->meta_title }}
+    {{ $category->meta_title }}
 @endsection
 
 @section('title')
-   {{ $category->meta_keywords }}
+    {{ $category->meta_keywords }}
 @endsection
 
 
 @section('title')
-   {{ $category->meta_description }}
+    {{ $category->meta_description }}
 @endsection
 
 
 
 @section('content')
-
-
-
-
     <!--breadcrumbs area start-->
     <div class="breadcrumbs_area">
         <div class="container">
@@ -38,37 +34,183 @@
     <!--breadcrumbs area end-->
 
 
-            <!--new product area start-->
+
+
+    <div class="row">
+        <div class="col-md-1">
+            {{-- Hidden> --}}
+        </div>
+
+        {{-- FETCH PRODUCTS --}}
+        <div class="col-md-7">
             <div class="new_product_area product_color_six mb-50">
 
                 <div class="row">
 
                     {{-- Fetch data --}}
-                    @forelse ( $products as  $product )
-
-
-                    <div class="col-md-3">
-                        {{-- single product --}}
-                        <div class="single_product">
-                            <div class="product_thumb">
-                                <a href="{{ url('/all_product_categories/'.$product->product_category->slug.'/'.$product->slug) }}"><img src="{{ asset('assets/frontend/img/product/product18.jpg') }}" alt=""></a>
-                                <div class="label_product">
-                                    @if ($product->quantity > 0 )
-                                    <span class="label_sale">IN STOCK</span>
-                                    @else
-                                    <span class="label_sale" style="background-color:red;">OUT OF STOCK</span>
-                                    @endif
+                    @forelse ($products as  $product)
+                        <div class="col-md-4">
+                            {{-- single product --}}
+                            <div class="single_product">
+                                <div class="product_thumb">
+                                    <a
+                                        href="{{ url('/all_product_categories/' . $product->product_category->slug . '/' . $product->slug) }}"><img
+                                            src="{{ asset('assets/frontend/img/product/product18.jpg') }}"
+                                            alt=""></a>
+                                    <div class="label_product">
+                                        @if ($product->quantity > 0)
+                                            <span class="label_sale">IN STOCK</span>
+                                        @else
+                                            <span class="label_sale" style="background-color:red;">OUT OF STOCK</span>
+                                        @endif
+                                    </div>
+                                    <div class="quick_button">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"
+                                            title="quick view"> <i class="zmdi zmdi-eye"></i></a>
+                                    </div>
                                 </div>
-                                <div class="quick_button">
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="quick view"> <i class="zmdi zmdi-eye"></i></a>
+                                <div class="product_content">
+                                    <div class="product_name">
+                                        <h3><a
+                                                href="{{ url('/all_product_categories/' . $product->product_category->slug . '/' . $product->slug) }}">{{ $product->name }}</a>
+                                        </h3>
+                                        <h3><a
+                                                href="{{ url('/all_product_categories/' . $product->product_category->slug . '/' . $product->slug) }}">{{ $product->brand }}</a>
+                                        </h3>
+
+                                    </div>
+                                    <div class="product_rating">
+                                        <ul>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="price_box">
+                                        <span class="current_price">{{ $product->selling_price }}</span>
+                                        <span class="old_price">{{ $product->original_price }}</span>
+                                    </div>
+                                    <div class="action_links">
+                                        <ul>
+                                            <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i
+                                                        class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i
+                                                        class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="compare"><a href="#" title="compare"><i
+                                                        class="zmdi zmdi-swap"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="product_content">
-                                <div class="product_name">
-                                    <h3><a href="{{ url('/all_product_categories/'.$product->product_category->slug.'/'.$product->slug) }}">{{   $product->name }}</a></h3>
-                                    <h3><a href="{{ url('/all_product_categories/'.$product->product_category->slug.'/'.$product->slug) }}">{{   $product->brand }}</a></h3>
+                            {{-- end single product --}}
+                        </div>
+                    @empty
 
-                                </div>
+                        <div class="col-md-12 text-center">
+                            <h2>No Products available for Category : {{ $category->name }} </h2>
+                        </div>
+                    @endforelse
+
+                    {{-- End fetch data --}}
+
+                </div>
+            </div>
+        </div>
+        {{-- END FETCH PRODUCTS --}}
+
+        <!--sidebar widget start-->
+        <div class="col-md-3">
+            <aside class="sidebar_widget">
+                <div class="shop_sidebar_banner mb-50">
+                    <a href="#"><img src="assets/img/bg/banner16.jpg" alt=""></a>
+                </div>
+                <div class="widget_list widget_categories">
+                    <h2>categories</h2>
+                    <ul>
+                        <li>
+                            <a href="#">Categories1 <span>(6)</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Categories2 <span>(10)</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Categories3 <span>(4)</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Categories4 <span>(10)</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Categories5 <span>(8)</span></a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="widget_list widget_filter">
+                    <h2>Filter by price</h2>
+                    <form action="#">
+                        <div id="slider-range"></div>
+                        <button type="submit">Filter</button>
+                        <input type="text" name="text" id="amount" />
+
+                    </form>
+                </div>
+
+
+                <div class="widget_list">
+                    <h2>Manufacturer</h2>
+                    <ul>
+                        <li>
+                            <a href="#">Brake Parts <span>(6)</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Accessories <span>(10)</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Engine Parts <span>(4)</span></a>
+                        </li>
+                        <li>
+                            <a href="#">hermes <span>(10)</span></a>
+                        </li>
+                        <li>
+                            <a href="#">louis vuitton <span>(8)</span></a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="widget_list">
+                    <h2>Select By Color</h2>
+                    <ul>
+                        <li>
+                            <a href="#">Black <span>(6)</span></a>
+                        </li>
+                        <li>
+                            <a href="#"> Blue <span>(8)</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Brown <span>(10)</span></a>
+                        </li>
+                        <li>
+                            <a href="#"> Green <span>(6)</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Pink <span>(4)</span></a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="widget_list recent_product">
+                    <h2>Top Rated Products</h2>
+                    <div class="recent_product_container">
+                        <div class="recent_product_list">
+                            <div class="recent_product_thumb">
+                                <a href="product-details.html"><img src="assets/frontend/img/s-product/product.jpg"
+                                        alt=""></a>
+                            </div>
+                            <div class="recent_product_content">
+                                <h3><a href="product-details.html">Natus erro</a></h3>
                                 <div class="product_rating">
                                     <ul>
                                         <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
@@ -79,32 +221,255 @@
                                     </ul>
                                 </div>
                                 <div class="price_box">
-                                    <span class="current_price">{{ $product->selling_price }}</span>
-                                    <span class="old_price">{{ $product->original_price }}</span>
-                                </div>
-                                <div class="action_links">
-                                    <ul>
-                                    <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                        <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
-                                        <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
-                                    </ul>
+                                    <span class="current_price">$65.00</span>
+                                    <span class="old_price">$70.00</span>
                                 </div>
                             </div>
                         </div>
-                        {{-- end single product --}}
+                        <div class="recent_product_list">
+                            <div class="recent_product_thumb">
+                                <a href="product-details.html"><img src="assets/frontend/img/s-product/product2.jpg"
+                                        alt=""></a>
+                            </div>
+                            <div class="recent_product_content">
+                                <h3><a href="product-details.html">Nemo enim</a></h3>
+                                <div class="product_rating">
+                                    <ul>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="price_box">
+                                    <span class="current_price">$65.00</span>
+                                    <span class="old_price">$70.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recent_product_list">
+                            <div class="recent_product_thumb">
+                                <a href="product-details.html"><img src="assets/frontend/img/s-product/product3.jpg"
+                                        alt=""></a>
+                            </div>
+                            <div class="recent_product_content">
+                                <h3><a href="product-details.html">Consequuntur magni</a></h3>
+                                <div class="product_rating">
+                                    <ul>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="price_box">
+                                    <span class="current_price">$65.00</span>
+                                    <span class="old_price">$70.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recent_product_list">
+                            <div class="recent_product_thumb">
+                                <a href="product-details.html"><img src="assets/frontend/img/s-product/product4.jpg"
+                                        alt=""></a>
+                            </div>
+                            <div class="recent_product_content">
+                                <h3><a href="product-details.html">Cras neque</a></h3>
+                                <div class="product_rating">
+                                    <ul>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="price_box">
+                                    <span class="current_price">$65.00</span>
+                                    <span class="old_price">$70.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recent_product_list">
+                            <div class="recent_product_thumb">
+                                <a href="product-details.html"><img src="assets/frontend/img/s-product/product5.jpg"
+                                        alt=""></a>
+                            </div>
+                            <div class="recent_product_content">
+                                <h3><a href="product-details.html">Endurance2</a></h3>
+                                <div class="product_rating">
+                                    <ul>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="price_box">
+                                    <span class="current_price">$65.00</span>
+                                    <span class="old_price">$70.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recent_product_list">
+                            <div class="recent_product_thumb">
+                                <a href="product-details.html"><img src="assets/frontend/img/s-product/product6.jpg"
+                                        alt=""></a>
+                            </div>
+                            <div class="recent_product_content">
+                                <h3><a href="product-details.html">Crown Summit1</a></h3>
+                                <div class="product_rating">
+                                    <ul>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="price_box">
+                                    <span class="current_price">$65.00</span>
+                                    <span class="old_price">$70.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recent_product_list">
+                            <div class="recent_product_thumb">
+                                <a href="product-details.html"><img src="assets/frontend/img/s-product/product7.jpg"
+                                        alt=""></a>
+                            </div>
+                            <div class="recent_product_content">
+                                <h3><a href="product-details.html">Compete Hoodie3</a></h3>
+                                <div class="product_rating">
+                                    <ul>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="price_box">
+                                    <span class="current_price">$65.00</span>
+                                    <span class="old_price">$70.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recent_product_list">
+                            <div class="recent_product_thumb">
+                                <a href="product-details.html"><img src="assets/frontend/img/s-product/product3.jpg"
+                                        alt=""></a>
+                            </div>
+                            <div class="recent_product_content">
+                                <h3><a href="product-details.html">Crown Summit1</a></h3>
+                                <div class="product_rating">
+                                    <ul>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="price_box">
+                                    <span class="current_price">$65.00</span>
+                                    <span class="old_price">$70.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recent_product_list">
+                            <div class="recent_product_thumb">
+                                <a href="product-details.html"><img src="assets/frontend/img/s-product/product4.jpg"
+                                        alt=""></a>
+                            </div>
+                            <div class="recent_product_content">
+                                <h3><a href="product-details.html">Crown Summit1</a></h3>
+                                <div class="price_box">
+                                    <span class="current_price">$65.00</span>
+                                    <span class="old_price">$70.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recent_product_list">
+                            <div class="recent_product_thumb">
+                                <a href="product-details.html"><img src="assets/frontend/img/s-product/product5.jpg"
+                                        alt=""></a>
+                            </div>
+                            <div class="recent_product_content">
+                                <h3><a href="product-details.html">Crown Summit1</a></h3>
+                                <div class="product_rating">
+                                    <ul>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="price_box">
+                                    <span class="current_price">$65.00</span>
+                                    <span class="old_price">$70.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recent_product_list">
+                            <div class="recent_product_thumb">
+                                <a href="product-details.html"><img src="assets/frontend/img/s-product/product6.jpg"
+                                        alt=""></a>
+                            </div>
+                            <div class="recent_product_content">
+                                <h3><a href="product-details.html">Crown Summit1</a></h3>
+                                <div class="product_rating">
+                                    <ul>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="price_box">
+                                    <span class="current_price">$65.00</span>
+                                    <span class="old_price">$70.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recent_product_list">
+                            <div class="recent_product_thumb">
+                                <a href="product-details.html"><img src="assets/frontend/img/s-product/product7.jpg"
+                                        alt=""></a>
+                            </div>
+                            <div class="recent_product_content">
+                                <h3><a href="product-details.html">Crown Summit1</a></h3>
+                                <div class="product_rating">
+                                    <ul>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="price_box">
+                                    <span class="current_price">$65.00</span>
+                                    <span class="old_price">$70.00</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </div>
 
-                    @empty
+            </aside>
+        </div>
+        <!--sidebar widget end-->
 
-                    <div class="col-md-12 text-center"><h2>No Products available for Category :  {{  $category->name }} </h2></div>
-
-                    @endforelse
-
-                    {{-- End fetch data --}}
-
-                     </div>
-            </div>
-            <!--new product area end-->
+        <div class="col-md-1">
+            {{-- Hidden --}}
+        </div>
+    </div>
 
 
 
@@ -114,11 +479,11 @@
 
 
     <!-- modal area start-->
-    <div class="modal fade" id="modal_box" tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal fade" id="modal_box" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
                 <div class="modal_body">
                     <div class="container">
@@ -126,40 +491,57 @@
                             <div class="col-lg-5 col-md-5 col-sm-12">
                                 <div class="modal_tab">
                                     <div class="tab-content product-details-large">
-                                        <div class="tab-pane fade show active" id="tab1" role="tabpanel" >
+                                        <div class="tab-pane fade show active" id="tab1" role="tabpanel">
                                             <div class="modal_tab_img">
-                                                <a href="#"><img src="{{ asset('assets/frontend/img/product/product37.jpg') }}" alt=""></a>
+                                                <a href="#"><img
+                                                        src="{{ asset('assets/frontend/img/product/product37.jpg') }}"
+                                                        alt=""></a>
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="tab2" role="tabpanel">
                                             <div class="modal_tab_img">
-                                                <a href="#"><img src="assets/frontend/img/product/product24.jpg" alt=""></a>
+                                                <a href="#"><img src="assets/frontend/img/product/product24.jpg"
+                                                        alt=""></a>
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="tab3" role="tabpanel">
                                             <div class="modal_tab_img">
-                                                <a href="#"><img src="assets/frontend/img/product/product25.jpg" alt=""></a>
+                                                <a href="#"><img src="assets/frontend/img/product/product25.jpg"
+                                                        alt=""></a>
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="tab4" role="tabpanel">
                                             <div class="modal_tab_img">
-                                                <a href="#"><img src="assets/frontend/img/product/product22.jpg" alt=""></a>
+                                                <a href="#"><img src="assets/frontend/img/product/product22.jpg"
+                                                        alt=""></a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="modal_tab_button">
                                         <ul class="nav product_navactive owl-carousel" role="tablist">
-                                            <li >
-                                                <a class="nav-link active" data-bs-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="false"><img src="assets/frontend/img/product/productbig1.jpg" alt=""></a>
+                                            <li>
+                                                <a class="nav-link active" data-bs-toggle="tab" href="#tab1"
+                                                    role="tab" aria-controls="tab1" aria-selected="false"><img
+                                                        src="assets/frontend/img/product/productbig1.jpg"
+                                                        alt=""></a>
                                             </li>
                                             <li>
-                                                 <a class="nav-link" data-bs-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false"><img src="assets/frontend/img/product/productbig2.jpg" alt=""></a>
+                                                <a class="nav-link" data-bs-toggle="tab" href="#tab2" role="tab"
+                                                    aria-controls="tab2" aria-selected="false"><img
+                                                        src="assets/frontend/img/product/productbig2.jpg"
+                                                        alt=""></a>
                                             </li>
                                             <li>
-                                               <a class="nav-link button_three" data-bs-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false"><img src="assets/frontend/img/product/productbig4.jpg" alt=""></a>
+                                                <a class="nav-link button_three" data-bs-toggle="tab" href="#tab3"
+                                                    role="tab" aria-controls="tab3" aria-selected="false"><img
+                                                        src="assets/frontend/img/product/productbig4.jpg"
+                                                        alt=""></a>
                                             </li>
                                             <li>
-                                               <a class="nav-link" data-bs-toggle="tab" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false"><img src="assets/frontend/img/product/productbig5.jpg" alt=""></a>
+                                                <a class="nav-link" data-bs-toggle="tab" href="#tab4" role="tab"
+                                                    aria-controls="tab4" aria-selected="false"><img
+                                                        src="assets/frontend/img/product/productbig5.jpg"
+                                                        alt=""></a>
                                             </li>
 
                                         </ul>
@@ -173,35 +555,38 @@
                                     </div>
                                     <div class="modal_price mb-10">
                                         <span class="new_price">$64.99</span>
-                                        <span class="old_price" >$78.99</span>
+                                        <span class="old_price">$78.99</span>
                                     </div>
                                     <div class="modal_description mb-15">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia iste laborum ad impedit pariatur esse optio tempora sint ullam autem deleniti nam in quos qui nemo ipsum numquam, reiciendis maiores quidem aperiam, rerum vel recusandae </p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia iste laborum
+                                            ad impedit pariatur esse optio tempora sint ullam autem deleniti nam in quos qui
+                                            nemo ipsum numquam, reiciendis maiores quidem aperiam, rerum vel recusandae </p>
                                     </div>
                                     <div class="variants_selects">
                                         <div class="variants_size">
-                                           <h2>size</h2>
-                                           <select class="select_option">
-                                               <option selected value="1">s</option>
-                                               <option value="1">m</option>
-                                               <option value="1">l</option>
-                                               <option value="1">xl</option>
-                                               <option value="1">xxl</option>
-                                           </select>
+                                            <h2>size</h2>
+                                            <select class="select_option">
+                                                <option selected value="1">s</option>
+                                                <option value="1">m</option>
+                                                <option value="1">l</option>
+                                                <option value="1">xl</option>
+                                                <option value="1">xxl</option>
+                                            </select>
                                         </div>
                                         <div class="variants_color">
-                                           <h2>color</h2>
-                                           <select class="select_option">
-                                               <option selected value="1">purple</option>
-                                               <option value="1">violet</option>
-                                               <option value="1">black</option>
-                                               <option value="1">pink</option>
-                                               <option value="1">orange</option>
-                                           </select>
+                                            <h2>color</h2>
+                                            <select class="select_option">
+                                                <option selected value="1">purple</option>
+                                                <option value="1">violet</option>
+                                                <option value="1">black</option>
+                                                <option value="1">pink</option>
+                                                <option value="1">orange</option>
+                                            </select>
                                         </div>
                                         <div class="modal_add_to_cart">
                                             <form action="#">
-                                                <input min="0" max="100" step="2" value="1" type="number">
+                                                <input min="0" max="100" step="2" value="1"
+                                                    type="number">
                                                 <button type="submit">add to cart</button>
                                             </form>
                                         </div>
@@ -209,11 +594,15 @@
                                     <div class="modal_social">
                                         <h2>Share this product</h2>
                                         <ul>
-                                            <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a>
+                                            </li>
                                             <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li class="pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                            <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                            <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                            <li class="pinterest"><a href="#"><i class="fa fa-pinterest"></i></a>
+                                            </li>
+                                            <li class="google-plus"><a href="#"><i
+                                                        class="fa fa-google-plus"></i></a></li>
+                                            <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -225,12 +614,5 @@
         </div>
     </div>
 
-     <!-- modal area end-->
-
-
-
-
-
-
-
+    <!-- modal area end-->
 @endsection

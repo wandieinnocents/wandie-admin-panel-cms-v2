@@ -9,14 +9,14 @@ Feedback
 <!-- Main content dashboard  -->
 
 
-                       
+
                 <div class="page-content">
                     <div class="container-fluid">
 
-                       
+
 
                         <div class="row align-items-center">
-                            
+
                             <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
@@ -46,7 +46,7 @@ Feedback
                             <table class="table align-middle datatable dt-responsive table-check nowrap" style="border-collapse: collapse; border-spacing: 0 8px; width: 100%;">
                                 <thead>
                                   <tr>
-                                    
+
                                     <th scope="col">#ID</th>
                                     <th scope="col">Full Name</th>
                                     <th scope="col">Subject</th>
@@ -59,10 +59,10 @@ Feedback
                                 <!-- Fetch data from database -->
                                 @foreach($feedbacks as $feedback)
                                 <tbody>
-                                   
-                                    
+
+
                                       <tr>
-                                       
+
                                         <td>{{ $feedback->id }}</td>
                                         <td>
                                             <a href="#" class="text-body">{{ $feedback->name }}</a>
@@ -71,25 +71,25 @@ Feedback
                                         <td>{{ $feedback->email }}</td>
                                         <td>{{ $feedback->phone }}</td>
                                         <td>{!! Str::limit($feedback->description, 60, ' ...') !!}</td>
-                                        
+
                                         <td colspan="6">
                                              <div class="row">
                                              <div class="col-md-4">
                                              <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $feedback->id }}" data-bs-whatever="@getbootstrap"><i class=" far fa-eye  "></i></button>
                                             </div>
-                                                
+
                                             <!-- <div class="col-md-4">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editFoodOrder" data-bs-whatever="@getbootstrap"><i class="fas fa-pencil-alt "></i></button>
 
                                             </div>  -->
-                                            
+
                                             <!-- delete food menu -->
                                             <div class="col-md-4">
                                             <form action="{{ route('contact.destroy', $feedback->id) }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <a >  <button class="btn btn-danger shadow btn-xs sharp"> <span class="fa fa-trash"> </button> </a>  
-                                                        
+                                                        <a >  <button class="btn btn-danger shadow btn-xs sharp"> <span class="fa fa-trash"> </button> </a>
+
                                             </form>
 
 
@@ -109,8 +109,8 @@ Feedback
                                         <h5 class="modal-title" id="exampleModalLabel">Feedback Details</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                               
-                                    
+
+
 
                                     <div class="modal-body">
                                     <p>Name : {{ $feedback->name }}</p>
@@ -123,7 +123,7 @@ Feedback
                                     <hr>
 
                                     <p>Description : {{ $feedback->description }}</p>
-                                    
+
 
                                     </div>
                                     <div class="modal-footer">
@@ -147,21 +147,21 @@ Feedback
                             <!-- end table -->
                         </div>
                         <!-- end table responsive -->
-                        
+
                     </div> <!-- container-fluid -->
                 </div>
                 <!-- End Page-content -->
 
-                
-
-                        
 
 
 
 
 
 
-                   
+
+
+
+
 
                     </div>
                     <!-- container-fluid -->
