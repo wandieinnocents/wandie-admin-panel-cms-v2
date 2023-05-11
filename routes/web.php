@@ -109,6 +109,7 @@ Route::get('/all_product_categories/{category_slug}', 'App\Http\Controllers\Fron
 
 
 
+
 // BACKEND ROUTES
 
 // Auth::routes();

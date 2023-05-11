@@ -124,53 +124,31 @@
         <!--sidebar widget start-->
         <div class="col-md-3">
             <aside class="sidebar_widget">
-               
+
 
                 {{-- categories --}}
                 <div class="widget_list widget_categories">
                     <h2>categories</h2>
                     <ul>
+                        @forelse($categories  as $product_category)
                         <li>
-                            <a href="#">Categories1 <span>(6)</span></a>
+                            @if($product_category)
+                            <a href="{{ url('/all_product_categories/'.$product_category->slug) }}">{{ $product_category->name }}
+                            @else
+                            <div class="col-md-12 text-center"><h3>No Category</h3></div>
+                            @endif
                         </li>
-                        <li>
-                            <a href="#">Categories2 <span>(10)</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Categories3 <span>(4)</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Categories4 <span>(10)</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Categories5 <span>(8)</span></a>
-                        </li>
+
+                        @empty
+                        <div class="col-md-12 text-center"><h3>No Categories</h3></div>
+
+                        @endforelse
+
+
 
                     </ul>
                 </div>
 
-                {{-- brands --}}
-                <div class="widget_list widget_categories">
-                    <h2>Brands</h2>
-                    <ul>
-                        <li>
-                            <a href="#">Categories1 <span>(6)</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Categories2 <span>(10)</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Categories3 <span>(4)</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Categories4 <span>(10)</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Categories5 <span>(8)</span></a>
-                        </li>
-
-                    </ul>
-                </div>
 
                 <div class="widget_list widget_filter">
                     <h2>Filter by price</h2>

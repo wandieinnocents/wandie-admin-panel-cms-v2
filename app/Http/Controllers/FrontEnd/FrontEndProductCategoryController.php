@@ -5,6 +5,8 @@ namespace App\Http\Controllers\FrontEnd;
 use App\Http\Controllers\Controller;
 // use Illuminate\Http\Request;
 use App\Models\ProductCategory;
+use App\Models\ProductBrands;
+
 
 class FrontEndProductCategoryController extends Controller
 {
@@ -17,15 +19,26 @@ class FrontEndProductCategoryController extends Controller
     // get products in each category using slug
     public function products($category_slug ){
         $category = ProductCategory::where('slug',$category_slug)->first();
+        // display all categories
+        $categories = ProductCategory::where('status','0')->get();
+        // display active product brands
+        $product_brands = ProductBrands::where('status','0')->get();
+
+
+
         if($category){
 
             // products () =  relationship in ProductCategory model
             $products = $category->products()->get();
-            return view('frontend.pages_frontend.ecommerce.products.index',compact('products','category'));
+            return view('frontend.pages_frontend.ecommerce.products.index',['products' => $products, 'categories' => $categories,'category' => $category ,'product_brands' => $product_brands]);
 
         } else {
             return redirect->back();
         }
 
     }
+
+    
+
+
 }
