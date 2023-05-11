@@ -16,6 +16,8 @@ class FrontEndProductCategoryController extends Controller
         return view('frontend.pages_frontend.ecommerce.product_categories.all_product_categories',compact('categories'));
     }
 
+
+
     // get products in each category using slug
     public function products($category_slug ){
         $category = ProductCategory::where('slug',$category_slug)->first();
@@ -24,15 +26,21 @@ class FrontEndProductCategoryController extends Controller
         // display active product brands
         $product_brands = ProductBrands::where('status','0')->get();
 
-        if($category){
+        // deleted
+        // if($category){
+        //     // products () =  relationship in ProductCategory model
+        //     $products = $category->products()->get();
+        //     return view('frontend.pages_frontend.ecommerce.products_per_category.index',['products' => $products, 'categories' => $categories,'category' => $category ,'product_brands' => $product_brands]);
 
-            // products () =  relationship in ProductCategory model
-            $products = $category->products()->get();
-            return view('frontend.pages_frontend.ecommerce.products_per_category.index',['products' => $products, 'categories' => $categories,'category' => $category ,'product_brands' => $product_brands]);
+        // } else {
 
-        } else {
-            return redirect->back();
-        }
+        //     return redirect->back();
+        // }
+
+        // products () =  relationship in ProductCategory model
+        $products = $category->products()->get();
+        return view('frontend.pages_frontend.ecommerce.products_per_category.index',['products' => $products, 'categories' => $categories,'category' => $category ,'product_brands' => $product_brands]);
+
 
     }
 

@@ -131,9 +131,36 @@
                     <h2>categories</h2>
                     <ul>
                         @forelse($categories  as $product_category)
+                            <li>
+                                @if ($product_category)
+                                    <a href="{{ url('/all_product_categories/' . $product_category->slug) }}">{{ $product_category->name }}</a>
+                                    @else
+                                        <div class="col-md-12 text-center">
+                                            <h3>No Category</h3>
+                                        </div>
+                                @endif
+                            </li>
+
+                        @empty
+                            <div class="col-md-12 text-center">
+                                <h3>No Categories</h3>
+                            </div>
+
+                        @endforelse
+
+
+
+                    </ul>
+                </div>
+
+                {{-- old brands --}}
+                {{-- <div class="widget_list widget_categories">
+                    <h2>Brands</h2>
+                    <ul>
+                        @forelse($product_brands  as $brand)
                         <li>
-                            @if($product_category)
-                            <a href="{{ url('/all_product_categories/'.$product_category->slug) }}">{{ $product_category->name }}
+                            @if ($brand)
+                            <a href="{{ url('/all_product_categories/'.$brand->slug) }}">{{ $brand->name }} </a>
                             @else
                             <div class="col-md-12 text-center"><h3>No Category</h3></div>
                             @endif
@@ -147,28 +174,13 @@
 
 
                     </ul>
-                </div>
+                </div> --}}
 
-                {{-- categories --}}
+                {{-- new brands --}}
                 <div class="widget_list widget_categories">
                     <h2>Brands</h2>
                     <ul>
-                        @forelse($product_brands  as $brand)
-                        <li>
-                            @if($brand)
-                            <a href="{{ url('/all_product_categories/'.$brand->slug) }}">{{ $brand->name }}
-                            @else
-                            <div class="col-md-12 text-center"><h3>No Category</h3></div>
-                            @endif
-                        </li>
-
-                        @empty
-                        <div class="col-md-12 text-center"><h3>No Categories</h3></div>
-
-                        @endforelse
-
-
-
+                        <li> <a href="d">Nokkk </a> </li>
                     </ul>
                 </div>
 
