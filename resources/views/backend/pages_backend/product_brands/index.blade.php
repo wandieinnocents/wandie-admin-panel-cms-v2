@@ -94,7 +94,14 @@ Product Brands
                                     </div>
                                 </th>
                                 <td>{{ $product_brand->id }}</td>
-                                <td>{{ $product_brand->id }}</td>
+                                <td>
+                                    @if($product_brand->product_category)
+                                    {{ $product_brand->product_category->name }}
+                                   @else
+                                    <span class="badge bg-soft-danger text-danger" style="padding:10px;">No Category</span>
+
+                                   @endif
+                                </td>
                                 <td><a href="#" class="text-body">{{ $product_brand->name }}</a> </td>
                                 <td><a href="#" class="text-body">{{ $product_brand->slug }}</a> </td>
                                 <td>

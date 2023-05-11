@@ -33,7 +33,12 @@ class ProductBrandFormRequest extends FormRequest
                 'string'
 
             ],
-         
+            'product_category_id' => [
+                'required',
+                'integer'
+
+            ],
+
 
         ];
     }

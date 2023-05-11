@@ -48,6 +48,7 @@ class ProductBrandsController extends Controller
        $validatedData = $request->validated();
        $brand = new ProductBrands();
        $brand->name = $validatedData['name'];
+       $brand->product_category_id = $validatedData['product_category_id'];
        $brand->slug = Str::slug($validatedData['slug']);
        $brand->status = $request->status == true ? '1':'0';
 
@@ -94,6 +95,7 @@ class ProductBrandsController extends Controller
        $validatedData = $request->validated();
        $brand = ProductBrands::findOrFail($id);
        $brand->name = $validatedData['name'];
+       $brand->product_category_id = $validatedData['product_category_id'];
        $brand->slug = Str::slug($validatedData['slug']);
        $brand->status = $request->status == true ? '1':'0';
 
