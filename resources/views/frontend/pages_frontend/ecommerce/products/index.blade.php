@@ -43,7 +43,11 @@
                             <div class="product_thumb">
                                 <a href="product-details.html"><img src="{{ asset('assets/frontend/img/product/product18.jpg') }}" alt=""></a>
                                 <div class="label_product">
-                                    <span class="label_sale">sale</span>
+                                    @if ($product->quantity > 0 )
+                                    <span class="label_sale">IN STOCK</span>
+                                    @else
+                                    <span class="label_sale" style="background-color:red;">OUT OF STOCK</span>
+                                    @endif
                                 </div>
                                 <div class="quick_button">
                                     <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"  title="quick view"> <i class="zmdi zmdi-eye"></i></a>
