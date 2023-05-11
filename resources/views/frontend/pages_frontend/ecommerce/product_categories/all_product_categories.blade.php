@@ -29,7 +29,7 @@
     <section class="category_product_area mt-30 mb-50">
         <div class="container">
             <div class="row">
-                @foreach ($categories as $category )
+                @forelse ($categories as $category )
                 <div class="col-3">
                         <div class="single_category_product">
                             <div class="category_product_thumb">
@@ -42,7 +42,11 @@
                         </div>
 
                 </div>
-                @endforeach
+                @empty
+
+                <div class="col-md-12 text-center"><h2 style="margin-top:200px;">No Categories Found</h2></div>
+
+                @endforelse
 
             </div>
         </div>
