@@ -1,8 +1,18 @@
 @extends('frontend.layouts_frontend.master')
 
 @section('title')
-   All products
+   {{ $category->meta_title }}
 @endsection
+
+@section('title')
+   {{ $category->meta_keywords }}
+@endsection
+
+
+@section('title')
+   {{ $category->meta_description }}
+@endsection
+
 
 
 @section('content')
@@ -55,8 +65,8 @@
                             </div>
                             <div class="product_content">
                                 <div class="product_name">
-                                    <h3><a href="product-details.html">{{   $product->name }}</a></h3>
-                                    <h3><a href="product-details.html">{{   $product->brand }}</a></h3>
+                                    <h3><a href="{{ url('/all_product_categories/'.$product->product_category->slug.'/'.$product->slug) }}">{{   $product->name }}</a></h3>
+                                    <h3><a href="{{ url('/all_product_categories/'.$product->product_category->slug.'/'.$product->slug) }}">{{   $product->brand }}</a></h3>
 
                                 </div>
                                 <div class="product_rating">
