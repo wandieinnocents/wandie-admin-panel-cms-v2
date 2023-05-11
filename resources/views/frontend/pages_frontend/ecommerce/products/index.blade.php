@@ -24,7 +24,7 @@
                     <div class="breadcrumb_content">
                         <ul>
                             <li><a href="index.html">home</a></li>
-                            <li>Categories</li>
+                            <li>Products</li>
                         </ul>
                     </div>
                 </div>
@@ -124,9 +124,9 @@
         <!--sidebar widget start-->
         <div class="col-md-3">
             <aside class="sidebar_widget">
-                <div class="shop_sidebar_banner mb-50">
-                    <a href="#"><img src="assets/img/bg/banner16.jpg" alt=""></a>
-                </div>
+               
+
+                {{-- categories --}}
                 <div class="widget_list widget_categories">
                     <h2>categories</h2>
                     <ul>
@@ -148,6 +148,30 @@
 
                     </ul>
                 </div>
+
+                {{-- brands --}}
+                <div class="widget_list widget_categories">
+                    <h2>Brands</h2>
+                    <ul>
+                        <li>
+                            <a href="#">Categories1 <span>(6)</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Categories2 <span>(10)</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Categories3 <span>(4)</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Categories4 <span>(10)</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Categories5 <span>(8)</span></a>
+                        </li>
+
+                    </ul>
+                </div>
+
                 <div class="widget_list widget_filter">
                     <h2>Filter by price</h2>
                     <form action="#">
