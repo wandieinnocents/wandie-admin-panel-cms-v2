@@ -50,8 +50,8 @@ class ProductController extends Controller
      */
     public function store(ProductFormRequest $request)
     {
-        
-       // pick validations 
+
+       // pick validations
        $validatedData = $request->validated();
        // create new product
        $product = new Product();
@@ -88,7 +88,7 @@ class ProductController extends Controller
     // multiple images
     // https://www.itsolutionstuff.com/post/laravel-9-multiple-image-upload-tutorialexample.html
 
-    
+
 
 
     //   dd("image");
@@ -127,7 +127,7 @@ class ProductController extends Controller
      */
     public function update(ProductFormRequest $request, $id)
     {
-          // pick validations 
+          // pick validations
        $validatedData = $request->validated();
        $product = Product::findOrFail($id);
        $product->product_category_id = $validatedData['product_category_id'];
@@ -160,7 +160,7 @@ class ProductController extends Controller
 
     }
 
-    
+
 
 
     //   dd("image");

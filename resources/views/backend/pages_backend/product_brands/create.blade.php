@@ -42,12 +42,30 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
+                                                        <label class="form-label" for="validationCustom01">Select Product Category</label>
+                                                        <select name="product_category_id" class="form-select">
+                                                            @foreach ($product_categories as $product_category)
+                                                                <option value="{{ $product_category->id }}">
+                                                                    {{ $product_category->name }}
+
+                                                                </option>
+                                                            @endforeach
+                                                        </select>
+                                                        @error('product_category_id')
+                                                            <small class="text-danger"> {{ $message }}</small>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Name</label>
                                                         <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Ennter Brand Name" value="">
-                                                         @error('name') 
+                                                         @error('name')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
-                                                        
+
                                                     </div>
                                                 </div>
 
@@ -55,7 +73,7 @@
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Slug</label>
                                                         <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Ennter slug" value="" >
-                                                         @error('slug') 
+                                                         @error('slug')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
                                                     </div>
@@ -64,9 +82,10 @@
 
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
-                                                        <label class="form-label" for="validationCustom01">Status</label>
                                                         <input type="checkbox"    name="status" >
-                                                         @error('status') 
+                                                        <label class="form-label" for="validationCustom01">Status (Checked=Hidden, Unchecked=Visible)</label>
+
+                                                         @error('status')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
                                                     </div>
@@ -77,7 +96,7 @@
 
 
 
-                                                
+
                                             </div>
 
                                             <!-- Editor -->
@@ -87,7 +106,7 @@
                                 </div>
                                 <!-- end card -->
                             </div> <!-- end col -->
-        
+
                         </div>
                         <!-- end row -->
 

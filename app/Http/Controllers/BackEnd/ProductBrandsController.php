@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ProductBrandFormRequest;
 use App\Models\ProductBrands;
 use Illuminate\Support\Str;
+use App\Models\ProductCategory;
+
 
 class ProductBrandsController extends Controller
 {
@@ -28,7 +30,9 @@ class ProductBrandsController extends Controller
      */
     public function create()
     {
-        return view('backend.pages_backend.product_brands.create');
+        $product_categories = ProductCategory::where('status','0')->get();
+        // dd($product_categories);
+        return view('backend.pages_backend.product_brands.create',['product_categories' => $product_categories]);
     }
 
     /**
