@@ -27,4 +27,5 @@ class ProductBrands extends Model
          // product belogs to a category
          return $this->belongsTo(ProductCategory::class, 'product_category_id', 'id');
      }
+
 }

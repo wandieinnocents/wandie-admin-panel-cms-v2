@@ -48,7 +48,7 @@
                 <div class="row">
 
                     {{-- Fetch data --}}
-                    @forelse ($products as  $product)
+                    @forelse ($products_available as  $product)
                         <div class="col-md-4">
                             {{-- single product --}}
                             <div class="single_product">
@@ -75,7 +75,7 @@
                                                 href="{{ url('/all_product_categories/' . $product->product_category->slug . '/' . $product->slug) }}">{{ $product->name }}</a>
                                         </h3>
                                         <h3><a
-                                                href="{{ url('/all_product_categories/' . $product->product_category->slug . '/' . $product->slug) }}">{{ $product->brand }}</a>
+                                                href="{{ url('/all_product_categories/' . $product->product_category->slug . '/' . $product->slug) }}">Brand: {{ $product->brand }}</a>
                                         </h3>
 
                                     </div>
@@ -127,7 +127,7 @@
 
 
                 {{-- categories --}}
-                <div class="widget_list widget_categories">
+                {{-- <div class="widget_list widget_categories">
                     <h2>categories</h2>
                     <ul>
                         @forelse($categories  as $product_category)
@@ -151,7 +151,7 @@
 
 
                     </ul>
-                </div>
+                </div> --}}
 
                 {{-- old brands --}}
                  <div class="widget_list widget_categories">

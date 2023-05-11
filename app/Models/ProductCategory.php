@@ -12,15 +12,15 @@ class ProductCategory extends Model
     protected $table = 'product_categories';
     protected $fillable = [
 
-        'name', 
-        'slug', 
-        'description', 
-        'image', 
-        'meta_title', 
-        'meta_keywords', 
-        'meta_description', 
-        'status', 
-        
+        'name',
+        'slug',
+        'description',
+        'image',
+        'meta_title',
+        'meta_keywords',
+        'meta_description',
+        'status',
+
 
     ];
 
@@ -31,4 +31,6 @@ class ProductCategory extends Model
         // foreignkey //localkey
         return $this->hasMany(Product::class, 'product_category_id', 'id');
     }
+
+    
 }
