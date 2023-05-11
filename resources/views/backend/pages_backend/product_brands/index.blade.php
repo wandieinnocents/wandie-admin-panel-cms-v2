@@ -44,7 +44,7 @@ Product Brands
             @endif
 
              {{-- alert delete item --}}
-              @if(session('messagedelete')) 
+              @if(session('messagedelete'))
              <div class="alert alert-danger alert-dismissible alert-label-icon label-arrow fade show" role="alert">
                 <i class="mdi mdi-block-helper label-icon"></i>
                 {{ session('messagedelete')}}
@@ -54,7 +54,7 @@ Product Brands
              @endif
 
              {{-- alert update item --}}
-              @if(session('messageupdate')) 
+              @if(session('messageupdate'))
              <div class="alert alert-info alert-dismissible alert-label-icon label-arrow fade show mb-0" role="alert">
                 <i class="mdi mdi-check-all label-icon"></i>
                 {{ session('messageupdate')}}
@@ -75,10 +75,11 @@ Product Brands
                                 </div>
                             </th>
                             <th scope="col"> #ID</th>
+                            <th scope="col"> Product Category</th>
                             <th scope="col"> Name</th>
                             <th scope="col"> Slug</th>
                             <th scope="col"> Status</th>
-                           
+
                             <th style="width: 150px; min-width: 80px;">Action</th>
                         </tr>
                     </thead>
@@ -93,19 +94,20 @@ Product Brands
                                     </div>
                                 </th>
                                 <td>{{ $product_brand->id }}</td>
+                                <td>{{ $product_brand->id }}</td>
                                 <td><a href="#" class="text-body">{{ $product_brand->name }}</a> </td>
                                 <td><a href="#" class="text-body">{{ $product_brand->slug }}</a> </td>
                                 <td>
 
                                     @if($product_brand->status == '0')
-                                    <span class="badge bg-soft-danger text-danger" style="padding:10px;">Hidden</span>
-                                    @else
                                     <span class="badge bg-soft-success text-success" style="padding:10px;">Visible</span>
+                                    @else
+                                    <span class="badge bg-soft-danger text-danger" style="padding:10px;">Hidden</span>
 
                                     @endif
-                                   
+
                                   </td>
-                                
+
                                 <td colspan="6">
                                     <div class="row">
                                         <div class="col-md-4">
@@ -153,7 +155,7 @@ Product Brands
 
 
                                         <div class="modal-body">
-                                         
+
 
                                             <p>Brand Name : {{ $product_brand->name }}</p>
                                             <hr>
@@ -167,7 +169,7 @@ Product Brands
 
                                     @endif
                                      </p>
-                                            
+
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close
@@ -203,15 +205,32 @@ Product Brands
                                                 @csrf
                                                 @method('PATCH')
 
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="validationCustom01">Select Product Category</label>
+                                                        <select name="product_category_id" class="form-select">
+                                                            @foreach ($product_categories as $product_category)
+                                                                <option value="{{ $product_category->id }}">
+                                                                    {{ $product_category->name }}
+
+                                                                </option>
+                                                            @endforeach
+                                                        </select>
+                                                        @error('product_category_id')
+                                                            <small class="text-danger"> {{ $message }}</small>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+
                                              <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Name</label>
                                                         <input type="text" class="form-control" id="validationCustom01"  name="name" placeholder="Ennter Brand Name" value="{{ $product_brand->name}}">
-                                                         @error('name') 
+                                                         @error('name')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
-                                                        
+
                                                     </div>
                                                 </div>
 
@@ -219,7 +238,7 @@ Product Brands
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Slug</label>
                                                         <input type="text" class="form-control" id="validationCustom01"  name="slug" placeholder="Ennter slug" value="{{ $product_brand->slug}}" >
-                                                         @error('slug') 
+                                                         @error('slug')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
                                                     </div>
@@ -230,7 +249,7 @@ Product Brands
                                                     <div class="mb-3">
                                                         <label class="form-label" for="validationCustom01">Status</label>
                                                         <input type="checkbox"    name="status" {{ $product_brand->status == '1' ? 'checked':''}} >
-                                                         @error('status') 
+                                                         @error('status')
                                                             <small class="text-danger"> {{ $message }}</small>
                                                           @enderror
                                                     </div>
@@ -241,7 +260,7 @@ Product Brands
 
 
 
-                                                
+
                                             </div>
 
                                             <!-- Editor -->

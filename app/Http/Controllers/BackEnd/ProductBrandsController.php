@@ -20,7 +20,8 @@ class ProductBrandsController extends Controller
     public function index()
     {
         $product_brands = ProductBrands::all();
-        return view('backend.pages_backend.product_brands.index', compact('product_brands'));
+        $product_categories = ProductCategory::where('status','0')->get();
+        return view('backend.pages_backend.product_brands.index', ['product_brands' => $product_brands , 'product_categories' => $product_categories]);
     }
 
     /**
