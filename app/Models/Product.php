@@ -39,10 +39,10 @@ class Product extends Model
         return $this->belongsTo(ProductCategory::class, 'product_category_id', 'id');
     }
 
-    public function product_brand()
-    {
-        // foreignkey //localkey
-        // product belogs to a brand
-        return $this->belongsTo(ProductBrands::class, 'product_category_id', 'id');
-    }
+    // public function product_brand()
+    // {
+    //     // foreignkey //localkey
+    //     // product belogs to a brand
+    //     return $this->belongsTo(ProductBrands::class, 'product_category_id', 'id');
+    // }
 }

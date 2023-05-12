@@ -54,7 +54,7 @@
                             <div class="single_product">
                                 <div class="product_thumb">
                                     <a
-                                        href="{{ url('/all_product_categories/' . $product->product_category->slug . '/' . $product->slug) }}"><img
+                                        href="{{ url('/all_product_categories/' . $product->product_brand->slug . '/' . $product->slug) }}"><img
                                             src="{{ asset('assets/frontend/img/product/product18.jpg') }}"
                                             alt=""></a>
                                     <div class="label_product">

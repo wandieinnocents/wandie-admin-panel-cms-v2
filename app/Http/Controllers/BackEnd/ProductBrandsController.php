@@ -32,7 +32,6 @@ class ProductBrandsController extends Controller
     public function create()
     {
         $product_categories = ProductCategory::where('status','0')->get();
-        // dd($product_categories);
         return view('backend.pages_backend.product_brands.create',['product_categories' => $product_categories]);
     }
 

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Product;
 
 class ProductBrands extends Model
 {
@@ -27,5 +28,12 @@ class ProductBrands extends Model
          // product belogs to a category
          return $this->belongsTo(ProductCategory::class, 'product_category_id', 'id');
      }
+
+    //  public function products()
+    //  {
+    //      // foreignkey //localkey
+    //      return $this->hasMany(Product::class, 'product_category_id', 'id');
+    //  }
+
 
 }

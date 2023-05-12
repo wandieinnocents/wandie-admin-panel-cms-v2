@@ -42,8 +42,16 @@ class FrontEndProductCategoryController extends Controller
     public function brands($brand_slug){
 
         $product_brands = ProductBrands::where('status','0')->get();
-        $products_available  = Product::where('brand','sony')->get();
-        // dd( $products_available);
+        // $categories = ProductCategory::where('status','0')->get();
+        $brand = ProductCategory::where('slug',$brand_slug)->first();
+        // $products_categories = $category->products()->get();
+        // $products_categori = $brand->products_categories()->get();
+
+
+
+
+        $products_cats = ProductBrands::where('product_category_id','9')->get();
+        dd( $products_cats);
         // copy from products to brands
 
 
