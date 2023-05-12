@@ -107,7 +107,7 @@ Products
 
                                  @endif
                                  </td>
-                                  <td>{{ $product->brand_id }}</td>
+                                  <td>{{ $product->product_brand->name }}</td>
                                    <td><a href="#" class="text-body">
 
                                   @if ($product->image)
