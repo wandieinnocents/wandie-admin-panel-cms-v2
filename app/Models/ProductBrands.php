@@ -29,11 +29,11 @@ class ProductBrands extends Model
          return $this->belongsTo(ProductCategory::class, 'product_category_id', 'id');
      }
 
-    //  public function products()
-    //  {
-    //      // foreignkey //localkey
-    //      return $this->hasMany(Product::class, 'product_category_id', 'id');
-    //  }
+     public function products()
+    {
+        // foreignkey //localkey
+        return $this->hasMany(Product::class, 'brand_id', 'id');
+    }
 
 
 }

@@ -58,7 +58,7 @@ class ProductController extends Controller
        $product->product_category_id = $validatedData['product_category_id'];
        $product->name = $validatedData['name'];
        $product->slug = Str::slug($validatedData['slug']);
-       $product->brand = $validatedData['brand'];
+       $product->brand_id = $validatedData['brand_id'];
        $product->small_description = $validatedData['small_description'];
        $product->description = $validatedData['description'];
        $product->original_price = $validatedData['original_price'];
@@ -91,7 +91,7 @@ class ProductController extends Controller
 
 
 
-    //   dd("image");
+    //   dd($brand_id);
        $product->save();
        return redirect('/products')->with('messagesave','Product added successfuly');
     }
@@ -133,7 +133,7 @@ class ProductController extends Controller
        $product->product_category_id = $validatedData['product_category_id'];
        $product->name = $validatedData['name'];
        $product->slug = Str::slug($validatedData['slug']);
-       $product->brand = $validatedData['brand'];
+       $product->brand_id = $validatedData['brand_id'];
        $product->small_description = $validatedData['small_description'];
        $product->description = $validatedData['description'];
        $product->original_price = $validatedData['original_price'];

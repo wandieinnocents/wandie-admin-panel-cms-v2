@@ -37,10 +37,10 @@ class ProductFormRequest extends FormRequest
                 'string',
                 'max:255'
             ],
-            'brand' => [
+            'brand_id' => [
                 'required',
-                'string',
-                'max:255'
+                'integer'
+
             ],
             'small_description' => [
                 'required',
@@ -86,7 +86,7 @@ class ProductFormRequest extends FormRequest
             //     'required',
             //     'string'
             // ],
-            
+
 
 
         ];

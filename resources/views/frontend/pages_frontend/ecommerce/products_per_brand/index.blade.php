@@ -48,7 +48,7 @@
                 <div class="row">
 
                     {{-- Fetch data --}}
-                    @forelse ($products_available as  $product)
+                    @forelse ($all_products_by_brand as  $product)
                         <div class="col-md-4">
                             {{-- single product --}}
                             <div class="single_product">
@@ -75,7 +75,7 @@
                                                 href="">{{ $product->name }}</a>
                                         </h3>
                                         <h3><a
-                                                href="  ">Brand: {{ $product->brand }}</a>
+                                                href="  ">Brand: {{ $product->product_brand->name }}</a>
                                         </h3>
 
                                     </div>
@@ -110,7 +110,7 @@
                     @empty
 
                         <div class="col-md-12 text-center">
-                            <h2>No Products available for Category : {{ $category->name }} </h2>
+                            <h2>No Products available for Category</h2>
                         </div>
                     @endforelse
 
@@ -127,7 +127,7 @@
 
 
                 {{-- categories --}}
-                {{-- <div class="widget_list widget_categories">
+                <div class="widget_list widget_categories">
                     <h2>categories</h2>
                     <ul>
                         @forelse($categories  as $product_category)
@@ -151,8 +151,30 @@
 
 
                     </ul>
-                </div> --}}
+                </div>
 
+                {{-- old brands --}}
+                 <div class="widget_list widget_categories">
+                    <h2>Brands</h2>
+                    <ul>
+                        @forelse($product_brands  as $brand)
+                        <li>
+                            @if ($brand)
+                            <a href="{{ url('/products_by_brand/'.$brand->slug) }}">{{ $brand->name }} </a>
+                            @else
+                            <div class="col-md-12 text-center"><h3>No Category</h3></div>
+                            @endif
+                        </li>
+
+                        @empty
+                        <div class="col-md-12 text-center"><h3>No Categories</h3></div>
+
+                        @endforelse
+
+
+
+                    </ul>
+                </div>
 
                 {{-- new brands --}}
                 {{-- <div class="widget_list widget_categories">

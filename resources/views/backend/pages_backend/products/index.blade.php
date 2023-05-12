@@ -107,7 +107,7 @@ Products
 
                                  @endif
                                  </td>
-                                  <td>{{ $product->brand }}</td>
+                                  <td>{{ $product->brand_id }}</td>
                                    <td><a href="#" class="text-body">
 
                                   @if ($product->image)
@@ -124,9 +124,9 @@ Products
                                 <td>
 
                                     @if($product->status == '0')
-                                    <span class="badge bg-soft-danger text-danger" style="padding:10px;">Hidden</span>
-                                    @else
                                     <span class="badge bg-soft-success text-success" style="padding:10px;">Visible</span>
+                                    @else
+                                    <span class="badge bg-soft-danger text-danger" style="padding:10px;">Hidden</span>
 
                                     @endif
 
@@ -192,7 +192,7 @@ Products
                                             <hr>
                                             <p>Slug : {{ $product->slug }}</p>
                                             <hr>
-                                            <p>Brand : {{ $product->brand }}</p>
+                                            <p>Brand : {{ $product->brand_id }}</p>
                                             <hr>
                                              <p>status :
                                                 @if($product->status == '0')
@@ -295,15 +295,15 @@ Products
                                                                                     <div class="col-md-6">
                                                                                         <div class="mb-3">
                                                                                             <label class="form-label" for="validationCustom01">Select Product Brand</label>
-                                                                                            <select name="brand" class="form-select">
+                                                                                            <select name="brand_id" class="form-select">
                                                                                                 @foreach ($product_brands as $product_brand)
-                                                                                                    <option value="{{ $product_brand->name }}">
+                                                                                                    <option value="{{ $product_brand->id }}">
                                                                                                         {{ $product_brand->name }}
 
                                                                                                     </option>
                                                                                                 @endforeach
                                                                                             </select>
-                                                                                            @error('brand')
+                                                                                            @error('brand_id')
                                                                                                 <small class="text-danger"> {{ $message }}</small>
                                                                                             @enderror
                                                                                         </div>

@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('product_category_id');
             $table->string('name');
             $table->string('slug');
-            $table->string('brand')->nullable();
+            $table->unsignedBigInteger('brand_id')->nullable();
             $table->mediumText('small_description')->nullable();
             $table->longText('description')->nullable();
             $table->integer('original_price');
@@ -28,9 +28,11 @@ class CreateProductsTable extends Migration
             $table->tinyInteger('status')->default('0')->comment('0=visible,1=hidden');
             $table->string('meta_title')->nullable();
             $table->mediumText('meta_keywords')->nullable();
-            $table->longText('meta_description')->nullable();    
-            $table->text('image')->nullable();         
+            $table->longText('meta_description')->nullable();
+            $table->text('image')->nullable();
             $table->foreign('product_category_id')->references('id')->on('product_categories')->onDelete('cascade');
+            $table->foreign('brand_id')->references('id')->on('product_brands')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

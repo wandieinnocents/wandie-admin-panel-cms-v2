@@ -160,7 +160,7 @@
                         @forelse($product_brands  as $brand)
                         <li>
                             @if ($brand)
-                            <a href="{{ url('/categories_by_brand/'.$brand->slug) }}">{{ $brand->name }} </a>
+                            <a href="{{ url('/products_by_brand/'.$brand->slug) }}">{{ $brand->name }} </a>
                             @else
                             <div class="col-md-12 text-center"><h3>No Category</h3></div>
                             @endif

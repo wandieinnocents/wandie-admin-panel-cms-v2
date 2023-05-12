@@ -93,15 +93,15 @@
                                                                 <div class="col-md-6">
                                                                 <div class="mb-3">
                                                                     <label class="form-label" for="validationCustom01">Select Product Brand</label>
-                                                                    <select name="brand" class="form-select">
+                                                                    <select name="brand_id" class="form-select">
                                                                         @foreach ($product_brands as $product_brand)
-                                                                            <option value="{{ $product_brand->name }}">
+                                                                            <option value="{{ $product_brand->id }}">
                                                                                 {{ $product_brand->name }}
 
                                                                             </option>
                                                                         @endforeach
                                                                     </select>
-                                                                    @error('brand')
+                                                                    @error('brand_id')
                                                                         <small class="text-danger"> {{ $message }}</small>
                                                                     @enderror
                                                                 </div>
