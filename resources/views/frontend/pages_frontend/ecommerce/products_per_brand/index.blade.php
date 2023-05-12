@@ -54,7 +54,7 @@
                             <div class="single_product">
                                 <div class="product_thumb">
                                     <a
-                                        href="{{ url('/all_product_categories/' . $product->product_brand->slug . '/' . $product->slug) }}"><img
+                                        href=""><img
                                             src="{{ asset('assets/frontend/img/product/product18.jpg') }}"
                                             alt=""></a>
                                     <div class="label_product">
@@ -72,10 +72,10 @@
                                 <div class="product_content">
                                     <div class="product_name">
                                         <h3><a
-                                                href="{{ url('/all_product_categories/' . $product->product_category->slug . '/' . $product->slug) }}">{{ $product->name }}</a>
+                                                href="">{{ $product->name }}</a>
                                         </h3>
                                         <h3><a
-                                                href="{{ url('/all_product_categories/' . $product->product_category->slug . '/' . $product->slug) }}">Brand: {{ $product->brand }}</a>
+                                                href="  ">Brand: {{ $product->brand }}</a>
                                         </h3>
 
                                     </div>
@@ -153,28 +153,6 @@
                     </ul>
                 </div> --}}
 
-                {{-- old brands --}}
-                 <div class="widget_list widget_categories">
-                    <h2>Brands</h2>
-                    <ul>
-                        @forelse($product_brands  as $brand)
-                        <li>
-                            @if ($brand)
-                            <a href="{{ url('/product_brands/'.$brand->slug) }}">{{ $brand->name }} </a>
-                            @else
-                            <div class="col-md-12 text-center"><h3>No Category</h3></div>
-                            @endif
-                        </li>
-
-                        @empty
-                        <div class="col-md-12 text-center"><h3>No Categories</h3></div>
-
-                        @endforelse
-
-
-
-                    </ul>
-                </div>
 
                 {{-- new brands --}}
                 {{-- <div class="widget_list widget_categories">
