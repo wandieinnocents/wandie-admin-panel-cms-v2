@@ -32,7 +32,7 @@ class ProductCategory extends Model
         return $this->hasMany(Product::class, 'product_category_id', 'id');
     }
 
-    
+
 
 
 }
