@@ -192,7 +192,7 @@ Products
                                             <hr>
                                             <p>Slug : {{ $product->slug }}</p>
                                             <hr>
-                                            <p>Brand : {{ $product->brand_id }}</p>
+                                            <p>Brand : {{ $product->product_brand->name }}</p>
                                             <hr>
                                              <p>status :
                                                 @if($product->status == '0')
