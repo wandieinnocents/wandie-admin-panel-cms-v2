@@ -14,7 +14,7 @@ Products
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <h5 class="card-title">Products <span class="text-muted fw-normal ms-2">(1)</span></h5>
+                        <h5 class="card-title">Products <span class="text-muted fw-normal ms-2">({{ $count_products }})</span></h5>
                     </div>
                 </div>
 
@@ -196,9 +196,9 @@ Products
                                             <hr>
                                              <p>status :
                                                 @if($product->status == '0')
-                                                <span class="badge bg-soft-danger text-danger" style="padding:10px;">Hidden</span>
-                                                @else
                                                 <span class="badge bg-soft-success text-success" style="padding:10px;">Visible</span>
+                                                @else
+                                                <span class="badge bg-soft-danger text-danger" style="padding:10px;">Hidden</span>
 
                                                 @endif
                                             </p>
