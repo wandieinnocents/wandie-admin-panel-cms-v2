@@ -75,7 +75,7 @@
                                                 href="">{{ $product->name }}</a>
                                         </h3>
                                         <h3><a
-                                                href="  ">Brand: {{ $product->product_brand->name }}</a>
+                                                href="  ">Brand: {{ $product->product_brand->name }} </a>
                                         </h3>
 
                                     </div>
@@ -177,12 +177,17 @@
                 </div>
 
                 {{-- new brands --}}
-                {{-- <div class="widget_list widget_categories">
-                    <h2>Brands</h2>
+                 <div class="widget_list widget_categories">
+                    <h2>SORT PRODUCTS</h2>
                     <ul>
-                        <li> <a href="d">Nokkk </a> </li>
+                        <li> <a href="d">Sort by popularity </a> </li>
+                        <li> <a href="d">Sort by newness </a> </li>
+                        <li> <a href="d">Sort by price : Low to High </a> </li>
+                        <li> <a href="d">Sort by price : High to Low </a> </li>
+                        <li> <a href="d">Sort by Product Names : A-Z </a> </li>
+                        <li> <a href="d">Sort by Product names : Z-A </a> </li>
                     </ul>
-                </div> --}}
+                </div>
 
 
                 <div class="widget_list widget_filter">
@@ -193,6 +198,11 @@
                         <input type="text" name="text" id="amount" />
 
                     </form>
+
+
+
+
+
                 </div>
 
 

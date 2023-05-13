@@ -24,8 +24,19 @@ class FrontEndProductBrandController extends Controller
         // Get all brands
         $product_brands = ProductBrands::where('status','0')->get();
 
+        // count products per brand
+        $count_all_products_by_brand = $brand->products()->get();
+        // dd($count_all_products_by_brand);
 
-        return view('frontend.pages_frontend.ecommerce.products_per_brand.index',['all_products_by_brand' => $all_products_by_brand,'product_brands' => $product_brands ,'categories' => $categories]);
+
+
+        return view('frontend.pages_frontend.ecommerce.products_per_brand.index',[
+            'all_products_by_brand' => $all_products_by_brand,
+             'product_brands' => $product_brands ,
+             'categories' => $categories,
+             'count_all_products_by_brand' => $count_all_products_by_brand
+
+            ]);
 
 
     }
