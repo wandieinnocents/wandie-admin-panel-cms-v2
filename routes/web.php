@@ -97,7 +97,7 @@ Route::get('/all_product_categories', 'App\Http\Controllers\FrontEnd\FrontEndPro
 // category slug - get products in each category
 Route::get('/all_product_categories/{category_slug}', 'App\Http\Controllers\FrontEnd\FrontEndProductCategoryController@show_products_by_categories');
 // brand slug - get products in each brand
-Route::get('/products_by_brand/{brand_slug}', 'App\Http\Controllers\FrontEnd\FrontEndProductCategoryController@show_products_by_brands');
+Route::get('/products_by_brand/{brand_slug}', 'App\Http\Controllers\FrontEnd\FrontEndProductBrandController@show_products_by_brands');
 
 
 
