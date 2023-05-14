@@ -10,6 +10,7 @@ use App\Models\Product;
 
 class ProductSortController extends Controller
 {
+    // product sorting low to high
     public function price_low_to_high(){
        // display categories
        $categories = ProductCategory::where('status','0')->get();
@@ -25,4 +26,22 @@ class ProductSortController extends Controller
     ]);
 
     }
+
+
+    // product sorting high to low
+    public function price_high_to_low(){
+        // display categories
+        $categories = ProductCategory::where('status','0')->get();
+        // display brands
+        $product_brands = ProductBrands::where('status','0')->get();
+        // fetch products
+        $products = Product::orderBy('selling_price','desc')->get();
+     //    return view
+     return view('frontend.pages_frontend.ecommerce.sort_products.sort_price_high_to_low', [
+         'categories' => $categories,
+         'product_brands' => $product_brands,
+         'products' => $products
+     ]);
+
+     }
 }

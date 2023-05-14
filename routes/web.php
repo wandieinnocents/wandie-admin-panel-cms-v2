@@ -99,8 +99,10 @@ Route::get('/all_product_categories', 'App\Http\Controllers\FrontEnd\FrontEndPro
 Route::get('/all_product_categories/{category_slug}', 'App\Http\Controllers\FrontEnd\FrontEndProductCategoryController@show_products_by_categories');
 // brand slug - get products in each brand
 Route::get('/products_by_brand/{brand_slug}', 'App\Http\Controllers\FrontEnd\FrontEndProductBrandController@show_products_by_brands');
-// product sorting controller
+// product sorting low to high
 Route::get('/price_low_to_high', 'App\Http\Controllers\FrontEnd\ProductSortController@price_low_to_high');
+// product sorting high to low
+Route::get('/price_high_to_low', 'App\Http\Controllers\FrontEnd\ProductSortController@price_high_to_low');
 
 
 
