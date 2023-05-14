@@ -4,6 +4,9 @@ namespace App\Http\Controllers\FrontEnd;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\ProductCategory;
+use App\Models\ProductBrands;
+use App\Models\Product;
 
 class ShopController extends Controller
 {
@@ -14,7 +17,16 @@ class ShopController extends Controller
      */
     public function index()
     {
-        return view('frontend.pages_frontend.ecommerce.shop');
+        $categories = ProductCategory::where('status','0')->get();
+        $product_brands = ProductBrands::where('status','0')->get();
+        return view('frontend.pages_frontend.ecommerce.shop',
+
+        [
+            'categories' => $categories,
+            'product_brands' => $product_brands,
+
+
+        ]);
     }
 
     /**

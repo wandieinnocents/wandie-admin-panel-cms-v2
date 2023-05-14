@@ -34,7 +34,8 @@ class FrontEndProductCategoryController extends Controller
        $product_brands = ProductBrands::where('status','0')->get();
 
         // return view to display products per category
-            return view('frontend.pages_frontend.ecommerce.products_per_category.index',['products' => $products, 'categories' => $categories,'category' => $category , 'product_brands' => $product_brands ]);
+            return view('frontend.pages_frontend.ecommerce.products_per_category.index',[
+                'products' => $products, 'categories' => $categories,'category' => $category , 'product_brands' => $product_brands ]);
 
 
     }
