@@ -181,7 +181,7 @@
                     <h2>SORT PRODUCTS</h2>
                     <ul>
                         <li> <a href="d">Sort by popularity </a> </li>
-                        <li> <a href="d">Sort by newness </a> </li>
+                        <li> <a href="d">Sort by New Arrivals </a> </li>
                         <li> <a href="d">Sort by price : Low to High </a> </li>
                         <li> <a href="d">Sort by price : High to Low </a> </li>
                         <li> <a href="d">Sort by Product Names : A-Z </a> </li>
