@@ -23,11 +23,12 @@ class ShopController extends Controller
         $product_brands = ProductBrands::where('status','0')->get();
         // fetch products
         $products = Product::where('status','0')->get();
-        dd($products);
+        // dd($products);
         // return view
         return view('frontend.pages_frontend.ecommerce.shop', [
             'categories' => $categories,
             'product_brands' => $product_brands,
+            'products' => $products
         ]);
     }
 

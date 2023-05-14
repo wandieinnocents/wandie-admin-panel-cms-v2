@@ -71,83 +71,93 @@
                     {{-- LIST PRODUCTS --}}
                     <div class="row no-gutters shop_wrapper grid_list">
                         {{-- Fetch products --}}
-                        <div class="col-12 ">
-                            <div class="single_product">
-                                <div class="product_thumb">
-                                    <a href="product-details.html"><img src="assets/frontend/img/product/product25.jpg"
-                                            alt=""></a>
-                                    <div class="label_product">
-                                        <span class="label_sale">sale</span>
+                        @forelse($products as $product)
+                            <div class="col-12 ">
+                                <div class="single_product">
+                                    <div class="product_thumb">
+                                        <a href="product-details.html"><img src="assets/frontend/img/product/product25.jpg"
+                                                alt=""></a>
+                                        <div class="label_product">
+                                            <span class="label_sale">sale</span>
+                                        </div>
+                                        <div class="quick_button">
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"
+                                                title="quick view"> <i class="zmdi zmdi-eye"></i></a>
+                                        </div>
                                     </div>
-                                    <div class="quick_button">
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal_box"
-                                            title="quick view"> <i class="zmdi zmdi-eye"></i></a>
+                                    <div class="product_content grid_content">
+                                        <div class="product_name">
+                                            <h3><a href="product-details.html">Cras neque</a></h3>
+                                        </div>
+                                        <div class="product_rating">
+                                            <ul>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price_box">
+                                            <span class="current_price">$65.00</span>
+                                            <span class="old_price">$70.00</span>
+                                        </div>
+                                        <div class="action_links">
+                                            <ul>
+                                                <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i
+                                                            class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                                <li class="add_to_cart"><a href="cart.html" title="add to cart"><i
+                                                            class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                                <li class="compare"><a href="#" title="compare"><i
+                                                            class="zmdi zmdi-swap"></i></a></li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="product_content grid_content">
-                                    <div class="product_name">
-                                        <h3><a href="product-details.html">Cras neque</a></h3>
-                                    </div>
-                                    <div class="product_rating">
-                                        <ul>
-                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
-                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
-                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
-                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
-                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="price_box">
-                                        <span class="current_price">$65.00</span>
-                                        <span class="old_price">$70.00</span>
-                                    </div>
-                                    <div class="action_links">
-                                        <ul>
-                                            <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i
-                                                        class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i
-                                                        class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
-                                            <li class="compare"><a href="#" title="compare"><i
-                                                        class="zmdi zmdi-swap"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="product_content list_content">
-                                    <div class="product_name">
-                                        <h3><a href="product-details.html">Cras neque</a></h3>
-                                    </div>
-                                    <div class="product_rating">
-                                        <ul>
-                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
-                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
-                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
-                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
-                                            <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="price_box">
-                                        <span class="current_price">$65.00</span>
-                                        <span class="old_price">$70.00</span>
-                                    </div>
-                                    <div class="action_links">
-                                        <ul>
-                                            <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i
-                                                        class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i
-                                                        class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
-                                            <li class="compare"><a href="#" title="compare"><i
-                                                        class="zmdi zmdi-swap"></i></a></li>
-                                        </ul>
-                                    </div>
+                                    <div class="product_content list_content">
+                                        <div class="product_name">
+                                            <h3><a href="product-details.html">Cras neque</a></h3>
+                                        </div>
+                                        <div class="product_rating">
+                                            <ul>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price_box">
+                                            <span class="current_price">$65.00</span>
+                                            <span class="old_price">$70.00</span>
+                                        </div>
+                                        <div class="action_links">
+                                            <ul>
+                                                <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i
+                                                            class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                                <li class="add_to_cart"><a href="cart.html" title="add to cart"><i
+                                                            class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                                <li class="compare"><a href="#" title="compare"><i
+                                                            class="zmdi zmdi-swap"></i></a></li>
+                                            </ul>
+                                        </div>
 
-                                    <div class="product_desc">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus
-                                            vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna
-                                            fringilla tempus. </p>
+                                        <div class="product_desc">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus
+                                                vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae
+                                                urna
+                                                fringilla tempus. </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+
+                        @empty
+
+                            <div class="col-col-md-12 text-center">
+                                <h3>No Products Found </h3>
+                            </div>
+                        @endforelse
+
                         {{-- End fetch products --}}
 
 
