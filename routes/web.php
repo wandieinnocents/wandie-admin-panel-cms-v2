@@ -81,6 +81,7 @@ Route::resource('nursing','App\Http\Controllers\FrontEnd\NursingCourseController
 // events
 Route::resource('our_events','App\Http\Controllers\FrontEnd\FrontEndEventController');
 
+// ECOMMERCE
 // SHOPPING PAGES
 // shop page
 Route::resource('shop','App\Http\Controllers\FrontEnd\ShopController');
@@ -98,6 +99,8 @@ Route::get('/all_product_categories', 'App\Http\Controllers\FrontEnd\FrontEndPro
 Route::get('/all_product_categories/{category_slug}', 'App\Http\Controllers\FrontEnd\FrontEndProductCategoryController@show_products_by_categories');
 // brand slug - get products in each brand
 Route::get('/products_by_brand/{brand_slug}', 'App\Http\Controllers\FrontEnd\FrontEndProductBrandController@show_products_by_brands');
+// product sorting controller
+Route::get('/price_low_to_high', 'App\Http\Controllers\FrontEnd\ProductSortController@price_low_to_high');
 
 
 

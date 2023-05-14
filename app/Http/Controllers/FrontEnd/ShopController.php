@@ -23,6 +23,10 @@ class ShopController extends Controller
         $product_brands = ProductBrands::where('status','0')->get();
         // fetch products
         $products = Product::where('status','0')->get();
+        // sort products by low-high
+        // $sort_products_low_to_high = Product::orderBy('selling_price','asc')->get();
+        // dd($sort_products_low_to_high);
+
         // dd($products);
         // return view
         return view('frontend.pages_frontend.ecommerce.shop', [
