@@ -17,15 +17,14 @@ class ShopController extends Controller
      */
     public function index()
     {
+        // display categories
         $categories = ProductCategory::where('status','0')->get();
+        // display brands
         $product_brands = ProductBrands::where('status','0')->get();
-        return view('frontend.pages_frontend.ecommerce.shop',
-
-        [
+        // return view
+        return view('frontend.pages_frontend.ecommerce.shop', [
             'categories' => $categories,
             'product_brands' => $product_brands,
-
-
         ]);
     }
 
