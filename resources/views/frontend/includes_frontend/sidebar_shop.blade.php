@@ -56,14 +56,14 @@
 
     {{-- new brands --}}
     <div class="widget_list widget_categories">
-        <h2>SORT PRODUCTS</h2>
+        <h2>PRICE FILTER</h2>
         <ul>
-            <li> <a href="d">Sort by popularity </a> </li>
-            <li> <a href="d">Sort by New Arrivals </a> </li>
+            {{-- <li> <a href="d">Sort by popularity </a> </li>
+            <li> <a href="d">Sort by New Arrivals </a> </li> --}}
             <li> <a href="{{ url('/price_low_to_high') }}">Sort by price : Low to High </a> </li>
             <li> <a href="d">Sort by price : High to Low </a> </li>
-            <li> <a href="d">Sort by Product Names : A-Z </a> </li>
-            <li> <a href="d">Sort by Product names : Z-A </a> </li>
+            {{-- <li> <a href="d">Sort by Product Names : A-Z </a> </li>
+            <li> <a href="d">Sort by Product names : Z-A </a> </li> --}}
         </ul>
     </div>
 
