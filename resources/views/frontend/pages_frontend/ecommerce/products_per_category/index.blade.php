@@ -75,7 +75,7 @@
                                                 href="{{ url('/all_product_categories/' . $product->product_category->slug . '/' . $product->slug) }}">{{ $product->name }}</a>
                                         </h3>
                                         <h3><a
-                                                href="{{ url('/all_product_categories/' . $product->product_category->slug . '/' . $product->slug) }}">{{ $product->brand }}</a>
+                                                href="{{ url('/all_product_categories/' . $product->product_category->slug . '/' . $product->slug) }}">Brand : {{ $product->product_brand->name }}</a>
                                         </h3>
 
                                     </div>
