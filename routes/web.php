@@ -103,6 +103,8 @@ Route::get('/products_by_brand/{brand_slug}', 'App\Http\Controllers\FrontEnd\Fro
 Route::get('/price_low_to_high', 'App\Http\Controllers\FrontEnd\ProductSortController@price_low_to_high');
 // product sorting high to low
 Route::get('/price_high_to_low', 'App\Http\Controllers\FrontEnd\ProductSortController@price_high_to_low');
+// new arrivals
+Route::get('/new_arrivals', 'App\Http\Controllers\FrontEnd\ProductSortController@new_arrivals');
 
 
 
