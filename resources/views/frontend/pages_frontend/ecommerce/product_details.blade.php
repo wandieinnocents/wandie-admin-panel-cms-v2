@@ -86,8 +86,8 @@
                             </div>
 
                             <div class="product_d_meta">
-                                <span>Category: {{ $product->product_category->name }} </span>
-                                <span>Brand: <a href="#"> {{ $product->product_brand->name }}</a></span>
+                                <span> <b>Category: </b> {{ $product->product_category->name }}
+                                     | <b>Brand: </b> <a href="#"> {{ $product->product_brand->name }}</span>
 
                             </div>
                             <div class="product_desc">
@@ -128,15 +128,7 @@
                         </form>
 
 
-                        <div class="priduct_social">
-                            <ul>
-                                <li><a class="facebook" href="#" title="facebook"><i class="fa fa-facebook"></i> Like</a></li>
-                                <li><a class="twitter" href="#" title="twitter"><i class="fa fa-twitter"></i> tweet</a></li>
-                                <li><a class="pinterest" href="#" title="pinterest"><i class="fa fa-pinterest"></i> save</a></li>
-                                <li><a class="google-plus" href="#" title="google +"><i class="fa fa-google-plus"></i> share</a></li>
-                                <li><a class="linkedin" href="#" title="linkedin"><i class="fa fa-linkedin"></i> linked</a></li>
-                            </ul>
-                        </div>
+
                     </div>
                 </div>
 
