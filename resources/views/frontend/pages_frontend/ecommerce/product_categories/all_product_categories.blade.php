@@ -37,7 +37,7 @@
                                     style="width:208px; height:158px; object-fit:cover;"></a>
                             </div>
                             <div class="category_product_name">
-                                <h2><a href="shop.html">{{ $category->name }}</a></h2>
+                                <h2><a href="{{ url('/all_product_categories/'.$category->slug) }}">{{ $category->name }}</a></h2>
                             </div>
                         </div>
 

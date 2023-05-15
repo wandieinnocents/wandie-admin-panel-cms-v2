@@ -88,7 +88,7 @@
                                                     <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist">
                                                         <i  class="fa fa-heart-o" aria-hidden="true"></i></a>
                                                     </li>
-                                                    <li class="add_to_cart"><a href="{{ url('/shop' .'/' . $product->slug) }}" title="add to cart"><i
+                                                    <li class="add_to_cart"><a href="{{ url('/shop' .'/' . $product->id) }}" title="add to cart"><i
                                                                 class="zmdi zmdi-shopping-cart-plus"></i> View Details</a>
                                                     </li>
 

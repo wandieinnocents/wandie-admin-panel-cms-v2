@@ -14,7 +14,7 @@
                     <div class="breadcrumb_content">
                         <ul>
                             <li><a href="index.html">home</a></li>
-                            <li>Shopping </li>
+                            <li>Product Details </li>
                         </ul>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                     <div class="product_d_right">
                        <form action="#">
 
-                            <h1>Aliquam lobortis</h1>
+                            <h1>{{ $product->name }} </h1>
                             <div class="product_nav">
                                 <ul>
                                     <li class="prev"><a href="product-details.html"><i class="fa fa-angle-left"></i></a></li>

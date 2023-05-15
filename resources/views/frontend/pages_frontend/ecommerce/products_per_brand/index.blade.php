@@ -69,7 +69,7 @@
                                 </div>
                                 <div class="product_content">
                                     <div class="product_name">
-                                        <h3><a href="">{{ $product->name }}</a>
+                                        <h3><a href="{{ url('/shop' .'/' . $product->slug) }}">{{ $product->name }}</a>
                                         </h3>
                                         <h3><a href="  ">Brand: {{ $product->product_brand->name }} </a>
                                         </h3>
@@ -92,8 +92,8 @@
                                         <ul>
                                             <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i
                                                         class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                            <li class="add_to_cart"><a href="cart.html" title="add to cart"><i
-                                                        class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                            <li class="add_to_cart"><a href="{{ url('/shop' .'/' . $product->slug) }}" title="add to cart"><i
+                                                        class="zmdi zmdi-shopping-cart-plus"></i> View Details</a></li>
                                             <li class="compare"><a href="#" title="compare"><i
                                                         class="zmdi zmdi-swap"></i></a>
                                             </li>

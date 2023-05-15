@@ -65,9 +65,11 @@ class ShopController extends Controller
      */
     public function show($id)
     {
+        $product = Product::find($id);
+        // dd($product);
 
         return view('frontend.pages_frontend.ecommerce.product_details', [
-            // 'categories' => $categories,
+            'product' => $product,
 
         ]);
     }
