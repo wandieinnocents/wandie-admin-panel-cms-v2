@@ -69,12 +69,7 @@
                        <form action="#">
 
                             <h1>{{ $product->name }} </h1>
-                            <div class="product_nav">
-                                <ul>
-                                    <li class="prev"><a href="product-details.html"><i class="fa fa-angle-left"></i></a></li>
-                                    <li class="next"><a href="product-sidebar.html"><i class="fa fa-angle-right"></i></a></li>
-                                </ul>
-                            </div>
+
                             <div class="product_rating">
                                 <ul>
                                     <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
@@ -85,12 +80,18 @@
                                 </ul>
                             </div>
                             <div class="price_box">
-                                <span class="current_price">$70.00</span>
-                                <span class="old_price">$80.00</span>
+                                <span class="current_price">{{ $product->selling_price }}</span>
+                                <span class="old_price">{{ $product->original_price }}</span>
+
+                            </div>
+
+                            <div class="product_d_meta">
+                                <span>Category: {{ $product->product_category->name }} </span>
+                                <span>Brand: <a href="#"> {{ $product->product_brand->name }}</a></span>
 
                             </div>
                             <div class="product_desc">
-                                <p>eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl</p>
+                                <p> {{ $product->small_description }} </p>
                             </div>
                             <div class="product_variant color">
                                 <h3>Available Options</h3>
@@ -126,14 +127,7 @@
                             </div>
                         </form>
 
-                        <div class="product_d_meta">
-                            <span>SKU: N/A</span>
-                            <span>Category: <a href="#">Clothings</a></span>
-                            <span>Tags:
-                                <a href="#">Creams</a>
-                                <a href="#">Lotions</a>
-                            </span>
-                        </div>
+
                         <div class="priduct_social">
                             <ul>
                                 <li><a class="facebook" href="#" title="facebook"><i class="fa fa-facebook"></i> Like</a></li>
