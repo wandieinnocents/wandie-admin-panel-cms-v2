@@ -38,25 +38,25 @@
                             <ul class="s-tab-zoom owl-carousel single-product-active" id="gallery_01">
                                 <li>
                                     <a href="#" class="elevatezoom-gallery active" data-update="" data-image="assets/img/product/productbig2.jpg" data-zoom-image="assets/img/product/productbig2.jpg">
-                                        <img src="assets/img/product/productbig2.jpg" alt="zo-th-1"/>
+                                        <img src="{{ asset('assets/frontend/img/product/productbig1.jpg') }}" alt="zo-th-1"/>
                                     </a>
 
                                 </li>
                                 <li >
                                     <a href="#" class="elevatezoom-gallery active" data-update="" data-image="assets/img/product/productbig3.jpg" data-zoom-image="assets/img/product/productbig3.jpg">
-                                        <img src="assets/img/product/productbig3.jpg" alt="zo-th-1"/>
+                                        <img src="{{ asset('assets/frontend/img/product/productbig1.jpg') }}" alt="zo-th-1"/>
                                     </a>
 
                                 </li>
                                 <li >
                                     <a href="#" class="elevatezoom-gallery active" data-update="" data-image="assets/img/product/productbig4.jpg" data-zoom-image="assets/img/product/productbig4.jpg">
-                                        <img src="assets/img/product/productbig4.jpg" alt="zo-th-1"/>
+                                        <img src="{{ asset('assets/frontend/img/product/productbig1.jpg') }}" alt="zo-th-1"/>
                                     </a>
 
                                 </li>
                                 <li >
                                     <a href="#" class="elevatezoom-gallery active" data-update="" data-image="assets/img/product/productbig5.jpg" data-zoom-image="assets/img/product/productbig5.jpg">
-                                        <img src="assets/img/product/productbig5.jpg" alt="zo-th-1"/>
+                                        <img src="{{ asset('assets/frontend/img/product/productbig1.jpg') }}" alt="zo-th-1"/>
                                     </a>
 
                                 </li>
@@ -93,7 +93,7 @@
                             <div class="product_desc">
                                 <p> {{ $product->small_description }} </p>
                             </div>
-                            <div class="product_variant color">
+                            {{-- <div class="product_variant color">
                                 <h3>Available Options</h3>
                                 <label>color</label>
                                 <ul>
@@ -102,8 +102,8 @@
                                     <li class="color3"><a href="#"></a></li>
                                     <li class="color4"><a href="#"></a></li>
                                 </ul>
-                            </div>
-                            <div class="product_variant size">
+                            </div> --}}
+                            {{-- <div class="product_variant size">
                                 <label>size</label>
                                 <select class="niceselect_option" id="color2" name="produc_color2">
                                     <option selected value="1"> size in option</option>
@@ -113,7 +113,7 @@
                                     <option value="5">xl</option>
                                     <option value="6">xxl</option>
                                 </select>
-                            </div>
+                            </div> --}}
                             <div class="product_variant quantity">
                                 <label>quantity</label>
                                 <input min="1" max="100" value="1" type="number">
@@ -121,8 +121,10 @@
                              <div class="action_links">
                                 <ul>
                                     <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
-                                   <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-                                    <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li>
+                                    <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to wishlist</a></li>
+
+                                   {{-- <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li> --}}
+                                    {{-- <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li> --}}
                                 </ul>
                             </div>
                         </form>
