@@ -45,8 +45,8 @@
                                         <div class="product_thumb">
                                             <a
                                                 href="{{ url('/all_product_categories/' . $product->product_category->slug . '/' . $product->slug) }}"><img
-                                                    src="{{ asset('assets/frontend/img/product/product18.jpg') }}"
-                                                    alt=""></a>
+                                                    {{-- src="{{ asset('assets/frontend/img/product/product18.jpg') }}" --}}
+                                                    src="{{ asset('uploads/products/'.$product->image) }} "  style="object-fit:cover; width:370px; height:370px;" alt="Product_Image"></a>
                                             <div class="label_product">
                                                 {{-- check stock availability --}}
                                                 @if ($product->quantity > 0)

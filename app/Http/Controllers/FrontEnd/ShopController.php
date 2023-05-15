@@ -65,7 +65,11 @@ class ShopController extends Controller
      */
     public function show($id)
     {
-       dd("detauks");
+
+        return view('frontend.pages_frontend.ecommerce.product_details', [
+            // 'categories' => $categories,
+
+        ]);
     }
 
     /**
