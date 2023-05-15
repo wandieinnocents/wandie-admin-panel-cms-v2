@@ -65,7 +65,7 @@ class ShopController extends Controller
      */
     public function show($id)
     {
-        //
+       dd("detauks");
     }
 
     /**
