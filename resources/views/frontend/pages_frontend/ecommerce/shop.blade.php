@@ -39,7 +39,7 @@
 
                             {{-- Fetch data --}}
                             @forelse ($products as  $product)
-                                <div class="col-md-4">
+                                <div class="col-md-4" style="margin-top:20px;">
                                     {{-- single product --}}
                                     <div class="single_product">
                                         <div class="product_thumb">
