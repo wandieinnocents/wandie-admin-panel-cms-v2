@@ -55,10 +55,11 @@ class ProductSortController extends Controller
         // display brands
         $product_brands = ProductBrands::where('status','0')->get();
         // fetch products
-        $products = Product::orderBy('selling_price','desc')->get();
+        $products = Product::orderBy('created_at','desc')->take(10)->get();
+        // dd($products);
 
      //    return view
-     return view('frontend.pages_frontend.ecommerce.sort_products.sort_price_high_to_low', [
+     return view('frontend.pages_frontend.ecommerce.sort_products.new_arrivals', [
          'categories' => $categories,
          'product_brands' => $product_brands,
          'products' => $products
