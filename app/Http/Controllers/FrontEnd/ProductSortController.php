@@ -30,12 +30,14 @@ class ProductSortController extends Controller
 
     // product sorting high to low
     public function price_high_to_low(){
+        
         // display categories
         $categories = ProductCategory::where('status','0')->get();
         // display brands
         $product_brands = ProductBrands::where('status','0')->get();
         // fetch products
         $products = Product::orderBy('selling_price','desc')->get();
+
      //    return view
      return view('frontend.pages_frontend.ecommerce.sort_products.sort_price_high_to_low', [
          'categories' => $categories,
