@@ -23,40 +23,37 @@
     </div>
     <!--breadcrumbs area end-->
 
-      <!--product details start-->
-      <div class="product_details variable_product mt-50 mb-50">
+    <!--product details start-->
+    <div class="product_details variable_product mt-50 mb-50">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6">
-                   <div class="product-details-tab">
+                    <div class="product-details-tab">
                         <div id="img-1" class="zoomWrapper single-zoom">
                             <a href="#">
-                                <img id="zoom1" src="{{ asset('assets/frontend/img/product/productbig1.jpg') }}" data-zoom-image="assets/img/product/productbig1.jpg" alt="big-1">
+                                <img id="zoom1" src="{{ asset('assets/frontend/img/product/productbig1.jpg') }}"
+                                    data-zoom-image="{{ asset('assets/frontend/img/product/productbig1.jpg') }}" alt="big-1">
                             </a>
                         </div>
                         <div class="single-zoom-thumb">
                             <ul class="s-tab-zoom owl-carousel single-product-active" id="gallery_01">
+
+
                                 <li>
-                                    <a href="#" class="elevatezoom-gallery active" data-update="" data-image="assets/img/product/productbig2.jpg" data-zoom-image="assets/img/product/productbig2.jpg">
-                                        <img src="{{ asset('assets/frontend/img/product/productbig1.jpg') }}" alt="zo-th-1"/>
+                                    <a href="#" class="elevatezoom-gallery active" data-update=""
+                                        data-image="{{ asset('assets/frontend/img/product/productbig1.jpg') }}"
+                                        data-zoom-image="{{ asset('assets/frontend/img/product/productbig1.jpg') }}">
+                                        <img src="{{ asset('assets/frontend/img/product/productbig1.jpg') }}"
+                                            alt="zo-th-1" />
                                     </a>
 
                                 </li>
-                                <li >
-                                    <a href="#" class="elevatezoom-gallery active" data-update="" data-image="assets/img/product/productbig3.jpg" data-zoom-image="assets/img/product/productbig3.jpg">
-                                        <img src="{{ asset('assets/frontend/img/product/productbig1.jpg') }}" alt="zo-th-1"/>
-                                    </a>
-
-                                </li>
-                                <li >
-                                    <a href="#" class="elevatezoom-gallery active" data-update="" data-image="assets/img/product/productbig4.jpg" data-zoom-image="assets/img/product/productbig4.jpg">
-                                        <img src="{{ asset('assets/frontend/img/product/productbig1.jpg') }}" alt="zo-th-1"/>
-                                    </a>
-
-                                </li>
-                                <li >
-                                    <a href="#" class="elevatezoom-gallery active" data-update="" data-image="assets/img/product/productbig5.jpg" data-zoom-image="assets/img/product/productbig5.jpg">
-                                        <img src="{{ asset('assets/frontend/img/product/productbig1.jpg') }}" alt="zo-th-1"/>
+                                <li>
+                                    <a href="#" class="elevatezoom-gallery active" data-update=""
+                                        data-image="{{ asset('assets/frontend/img/product/productbig2.jpg') }}"
+                                        data-zoom-image="{{ asset('assets/frontend/img/product/productbig2.jpg') }}">
+                                        <img src="{{ asset('assets/frontend/img/product/productbig2.jpg') }}"
+                                            alt="zo-th-1" />
                                     </a>
 
                                 </li>
@@ -66,7 +63,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="product_d_right">
-                       <form action="#">
+                        <form action="#">
 
                             <h1>{{ $product->name }} </h1>
 
@@ -87,7 +84,7 @@
 
                             <div class="product_d_meta">
                                 <span> <b>Category: </b> {{ $product->product_category->name }}
-                                     | <b>Brand: </b>  {{ $product->product_brand->name }}</span>
+                                    | <b>Brand: </b> {{ $product->product_brand->name }}</span>
 
                             </div>
                             <div class="product_desc">
@@ -118,12 +115,14 @@
                                 <label>quantity</label>
                                 <input min="1" max="100" value="1" type="number">
                             </div>
-                             <div class="action_links">
+                            <div class="action_links">
                                 <ul>
-                                    <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
-                                    <li class="add_to_cart"><a href="cart.html" title="add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i> add to wishlist</a></li>
+                                    <li class="add_to_cart"><a href="cart.html" title="add to cart"><i
+                                                class="zmdi zmdi-shopping-cart-plus"></i> add to cart</a></li>
+                                    <li class="add_to_cart"><a href="cart.html" title="add to cart"><i
+                                                class="zmdi zmdi-shopping-cart-plus"></i> add to wishlist</a></li>
 
-                                   {{-- <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li> --}}
+                                    {{-- <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li> --}}
                                     {{-- <li class="compare"><a href="#" title="compare"><i class="zmdi zmdi-swap"></i></a></li> --}}
                                 </ul>
                             </div>
@@ -141,7 +140,7 @@
 
     <!--product details end-->
 
-     <!--product info start-->
+    <!--product info start-->
     <div class="product_d_info">
         <div class="container">
             <div class="row">
@@ -149,26 +148,29 @@
                     <div class="product_d_inner">
                         <div class="product_info_button">
                             <ul class="nav" role="tablist">
-                                <li >
-                                    <a class="active" data-bs-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="false">Description</a>
+                                <li>
+                                    <a class="active" data-bs-toggle="tab" href="#info" role="tab"
+                                        aria-controls="info" aria-selected="false">Description</a>
                                 </li>
                                 <li>
-                                     <a data-bs-toggle="tab" href="#sheet" role="tab" aria-controls="sheet" aria-selected="false">Specification</a>
+                                    <a data-bs-toggle="tab" href="#sheet" role="tab" aria-controls="sheet"
+                                        aria-selected="false">Specification</a>
                                 </li>
                                 <li>
-                                   <a data-bs-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Reviews (1)</a>
+                                    <a data-bs-toggle="tab" href="#reviews" role="tab" aria-controls="reviews"
+                                        aria-selected="false">Reviews (1)</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="tab-content">
-                            <div class="tab-pane fade show active" id="info" role="tabpanel" >
+                            <div class="tab-pane fade show active" id="info" role="tabpanel">
                                 <div class="product_info_content">
                                     <p> {{ $product->description }} </p>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="sheet" role="tabpanel" >
+                            <div class="tab-pane fade" id="sheet" role="tabpanel">
                                 <div class="product_d_table">
-                                   <form action="#">
+                                    <form action="#">
                                         <table>
                                             <tbody>
                                                 <tr>
@@ -187,7 +189,7 @@
 
                             </div>
 
-                            <div class="tab-pane fade" id="reviews" role="tabpanel" >
+                            <div class="tab-pane fade" id="reviews" role="tabpanel">
                                 <div class="reviews_wrapper">
                                     <h2>1 review for Donec eu furniture</h2>
                                     <div class="reviews_comment_box">
@@ -213,10 +215,10 @@
                                     </div>
                                     <div class="comment_title">
                                         <h2>Add a review </h2>
-                                        <p>Your email address will not be published.  Required fields are marked </p>
+                                        <p>Your email address will not be published. Required fields are marked </p>
                                     </div>
                                     <div class="product_ratting mb-10">
-                                       <h3>Your rating</h3>
+                                        <h3>Your rating</h3>
                                         <ul>
                                             <li><a href="#"><i class="fa fa-star"></i></a></li>
                                             <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -230,20 +232,20 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <label for="review_comment">Your review </label>
-                                                    <textarea name="comment" id="review_comment" ></textarea>
+                                                    <textarea name="comment" id="review_comment"></textarea>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6">
                                                     <label for="author">Name</label>
-                                                    <input id="author"  type="text">
+                                                    <input id="author" type="text">
 
                                                 </div>
                                                 <div class="col-lg-6 col-md-6">
                                                     <label for="email">Email </label>
-                                                    <input id="email"  type="text">
+                                                    <input id="email" type="text">
                                                 </div>
                                             </div>
                                             <button type="submit">Submit</button>
-                                         </form>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
