@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\ProductCategory;
 use App\Models\ProductBrands;
+use App\Models\ProductImage;
+
+
 class Product extends Model
 {
     use HasFactory;
@@ -44,5 +47,14 @@ class Product extends Model
         // foreignkey //localkey
         // product belogs to a brand
         return $this->belongsTo(ProductBrands::class, 'product_category_id', 'id');
+    }
+
+
+    // relationship between product and product images table
+    // a product has many product images
+    public function product_images()
+    {
+        // foreignkey //localkey
+        return $this->hasMany(ProductImage::class, 'product_id', 'id');
     }
 }

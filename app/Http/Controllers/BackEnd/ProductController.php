@@ -55,36 +55,73 @@ class ProductController extends Controller
        // pick validations
        $validatedData = $request->validated();
        // create new product
-       $product = new Product();
-       $product->product_category_id = $validatedData['product_category_id'];
-       $product->name = $validatedData['name'];
-       $product->slug = Str::slug($validatedData['slug']);
-       $product->brand_id = $validatedData['brand_id'];
-       $product->small_description = $validatedData['small_description'];
-       $product->description = $validatedData['description'];
-       $product->original_price = $validatedData['original_price'];
-       $product->selling_price = $validatedData['selling_price'];
-       $product->quantity = $validatedData['quantity'];
-       $product->trending = $request->trending == true ? '1':'0';
-       $product->status = $request->status == true ? '1':'0';
-       $product->meta_title = $validatedData['meta_title'];
-       $product->meta_keywords = $validatedData['meta_keywords'];
-       $product->meta_description = $validatedData['meta_description'];
+    //    check for product category id then add product
+        $category = ProductCategory::findOrFail($validatedData['product_category_id']);
+
+        $product =  $category->products()->create([
+            'product_category_id'  => $validatedData['product_category_id'],
+            'name'  => $validatedData['name'],
+            'slug'  =>  Str::slug($validatedData['slug']),
+            'brand_id'  => $validatedData['brand_id'],
+            'small_description'  => $validatedData['small_description'],
+            'description'  => $validatedData['description'],
+            'original_price'  => $validatedData['original_price'],
+            'selling_price'  => $validatedData['selling_price'],
+            'quantity'  => $validatedData['quantity'],
+            'trending'  => $request->trending == true ? '1':'0',
+            'status'  => $request->status == true ? '1':'0',
+            'meta_title'  => $validatedData['meta_title'],
+            'meta_keywords'  => $validatedData['meta_keywords'],
+            'meta_description'  => $validatedData['meta_description'],
+
+
+        ]);
+
+        // dd($product->id);
+
+
+
+
        // image
-       if($request->hasFile('image')){
-        // delete oldpath on update
-        $path = 'uploads/products/'.$product->image;
-        if(File::exists($path)){
-            File::delete($path);
+    //    if($request->hasFile('image')){
+    //     // delete oldpath on update
+    //     $path = 'uploads/products/'.$product->image;
+    //     if(File::exists($path)){
+    //         File::delete($path);
+    //     }
+
+    //     $file = $request->file('image');
+    //     $ext = $file->getClientOriginalExtension();
+    //     $filename = time().'.'.$ext;
+    //     $file->move('uploads/products/', $filename);
+    //     $product->image = $filename;
+
+    // }
+
+    // add multiple product images with relationship
+
+    // create a unique name for image in loop
+    $i = 1;
+    if($request->hasFile('image')){
+        $uploadPath = 'uploads/products/';
+        // loop
+        foreach($request->file('image') as $imageFile){
+            $extension = $imageFile->getClientOriginalExtension();
+            $filename = time().$i++.'.'.$extension;
+            $imageFile->move($uploadPath, $filename); //
+            $finalImagePathName = $uploadPath.$filename;
+
+            // relationship with product image table
+            $product->product_images()->create([
+                'product_id' => $product->id,
+                'image'      =>  $finalImagePathName
+            ]);
+
         }
 
-        $file = $request->file('image');
-        $ext = $file->getClientOriginalExtension();
-        $filename = time().'.'.$ext;
-        $file->move('uploads/products/', $filename);
-        $product->image = $filename;
-
     }
+
+
 
     // multiple images
     // https://www.itsolutionstuff.com/post/laravel-9-multiple-image-upload-tutorialexample.html
@@ -92,7 +129,7 @@ class ProductController extends Controller
 
 
 
-    //   dd($brand_id);
+    //   dd($product->id);
        $product->save();
        return redirect('/products')->with('messagesave','Product added successfuly');
     }

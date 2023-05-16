@@ -266,7 +266,7 @@
                                                         <div class="col-md-12">
                                                             <div class="mb-3">
                                                                 <label class="form-label" for="validationCustom05">Upload Product Images</label>
-                                                                <input type="file" multiple class="form-control" name="image" id="validationCustom05" placeholder="" >
+                                                                <input type="file" multiple class="form-control" name="image[]" id="validationCustom05" placeholder="" >
 
                                                             </div>
                                                         </div>
