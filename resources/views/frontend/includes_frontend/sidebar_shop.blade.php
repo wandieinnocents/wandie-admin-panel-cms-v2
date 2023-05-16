@@ -45,7 +45,7 @@
 
             @empty
                 <div class="col-md-12 text-center">
-                    <h3>No Categories</h3>
+                    <h3>No Brands</h3>
                 </div>
             @endforelse
 

@@ -280,7 +280,7 @@ Products
                                                                                             <label class="form-label" for="validationCustom01">Select Product Category</label>
                                                                                             <select name="product_category_id" class="form-select">
                                                                                                 @foreach ($product_categories as $product_category)
-                                                                                                    <option value="{{ $product_category->id }}">
+                                                                                                    <option value="{{ $product_category->id }} ">
                                                                                                         {{ $product_category->name }}
 
                                                                                                     </option>
@@ -453,8 +453,14 @@ Products
                                                                                         <div class="mb-3">
                                                                                                 <label class="form-label" for="validationCustom01">image</label>
                                                                                                 <input type="file" class="form-control" id="validationCustom01"  name="image"  value="" >
-                                                                                                @if ($product->image)
-                                                                                                    <img src={{ asset('uploads/products/'.$product->image) }}   width="60px" height="60px" />
+
+                                                                                                @if ($product->product_images)
+                                                                                                    @foreach($product->product_images as $image)
+                                                                                                    <img src={{ asset($image->image) }}  class="me-4 border" style="width:100px; height:100px; object-fit:cover;" />
+                                                                                                    @endforeach
+
+
+
                                                                                                 @else
                                                                                                     <span class="badge bg-soft-danger text-danger" style="padding:10px;">No Photo</span>
                                                                                                 @endif

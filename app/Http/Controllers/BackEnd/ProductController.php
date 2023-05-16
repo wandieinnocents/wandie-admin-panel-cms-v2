@@ -27,6 +27,9 @@ class ProductController extends Controller
         $product_categories = ProductCategory::all();
         $product_brands = ProductBrands::all();
         $count_products = Product::all()->count();
+
+
+
         return view('backend.pages_backend.products.index',compact('products','product_categories','product_brands','count_products'));
 
     }

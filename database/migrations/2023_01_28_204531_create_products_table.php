@@ -29,7 +29,7 @@ class CreateProductsTable extends Migration
             $table->string('meta_title')->nullable();
             $table->mediumText('meta_keywords')->nullable();
             $table->longText('meta_description')->nullable();
-            $table->text('image')->nullable();
+            // $table->text('image')->nullable();
             $table->foreign('product_category_id')->references('id')->on('product_categories')->onDelete('cascade');
             $table->foreign('brand_id')->references('id')->on('product_brands')->onDelete('cascade');
 
