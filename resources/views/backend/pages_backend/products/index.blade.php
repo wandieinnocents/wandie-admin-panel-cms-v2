@@ -452,7 +452,7 @@ Products
                                                                                     <div class="col-md-12">
                                                                                         <div class="mb-3">
                                                                                                 <label class="form-label" for="validationCustom01">image</label>
-                                                                                                <input type="file" class="form-control" id="validationCustom01"  name="image"  value="" >
+                                                                                                <input type="file" multiple class="form-control" id="validationCustom01"  name="image[]"  value="" >
 
                                                                                                 @if ($product->product_images)
                                                                                                     @foreach($product->product_images as $image)
