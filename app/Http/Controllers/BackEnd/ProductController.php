@@ -276,6 +276,7 @@ class ProductController extends Controller
         // delete product
         $product->delete();
 
+        // redirect to products
         return redirect('/products')->with('messagedelete', 'Product   is successfully deleted with its images');
     }
 }
