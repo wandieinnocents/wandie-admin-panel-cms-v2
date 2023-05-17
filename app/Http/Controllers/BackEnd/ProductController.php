@@ -259,9 +259,23 @@ class ProductController extends Controller
 
     public function destroy($id)
     {
+        // $product = Product::findOrFail($id);
+        // $product->delete();
+
+        // delete all images in product
         $product = Product::findOrFail($id);
+        if($product->product_images){
+            foreach($product->product_images as $image){
+                if(File::exists($image->image)){
+                    File::delete($image->image);
+                }
+
+            }
+
+        }
+        // delete product
         $product->delete();
 
-        return redirect('/products')->with('messagedelete', 'Product  is successfully deleted');
+        return redirect('/products')->with('messagedelete', 'Product   is successfully deleted with its images');
     }
 }
