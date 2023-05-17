@@ -254,7 +254,7 @@ class ProductController extends Controller
 
         $productImage->delete();
 
-        return redirect('/products')->with('messagedelete', 'Image  is successfully deleted');
+        return redirect('/products')->with('messagedelete', 'Product Image  is successfully deleted');
     }
 
     public function destroy($id)
