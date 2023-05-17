@@ -458,7 +458,7 @@ Products
                                                                                                     @foreach($product->product_images as $image)
                                                                                                     <img src={{ asset($image->image) }}  class="me-4 border" style="width:100px; height:100px; object-fit:cover;" />
                                                                                                     {{-- <a href="">Remove</a> --}}
-                                                                                                    <a href=""><span class="badge bg-soft-danger text-danger" style="padding:10px;">Remove</span></a>
+                                                                                                    <a href="{{ url('/products/'.$image->id.'/delete') }}"><span class="badge bg-soft-danger text-danger" style="padding:10px;">Remove</span></a>
 
                                                                                                     @endforeach
 

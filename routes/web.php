@@ -193,6 +193,10 @@ Route::resource('/product_categories', 'App\Http\Controllers\BackEnd\ProductCate
 Route::resource('/product_brands', 'App\Http\Controllers\BackEnd\ProductBrandsController');
 // products
 Route::resource('/products', 'App\Http\Controllers\BackEnd\ProductController');
+// delete product image
+// /products/'.$image->id.'/delete
+Route::get('/products/{product_image_id}/delete', 'App\Http\Controllers\BackEnd\ProductController@deleteProductImage');
+
 
 // product colors
 Route::resource('/product_colors', 'App\Http\Controllers\BackEnd\ProductColorController');

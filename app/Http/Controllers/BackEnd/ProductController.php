@@ -9,7 +9,7 @@ use App\Models\ProductBrands;
 use App\Models\Product;
 use App\Http\Requests\ProductFormRequest;
 use Illuminate\Support\Str;
-use App\Models\productImage;
+use App\Models\ProductImage;
 use Illuminate\Support\Facades\File;
 
 
@@ -240,6 +240,23 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    //  delete product image
+
+    public function deleteProductImage(int $product_image_id)
+    {
+        $productImage = ProductImage::findOrFail($product_image_id);
+
+        if(File::exists($productImage->image)){
+            File::delete($productImage->image);
+
+        }
+
+        $productImage->delete();
+
+        return redirect('/products')->with('messagedelete', 'Image  is successfully deleted');
+    }
+
     public function destroy($id)
     {
         $product = Product::findOrFail($id);
