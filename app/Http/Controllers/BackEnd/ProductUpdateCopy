@@ -171,43 +171,81 @@ class ProductController extends Controller
           // pick validations
        $validatedData = $request->validated();
 
-       $product = Product::findOrFail($id);
-       $product->product_category_id = $validatedData['product_category_id'];
-       $product->name = $validatedData['name'];
-       $product->slug = Str::slug($validatedData['slug']);
-       $product->brand_id = $validatedData['brand_id'];
-       $product->small_description = $validatedData['small_description'];
-       $product->description = $validatedData['description'];
-       $product->original_price = $validatedData['original_price'];
-       $product->selling_price = $validatedData['selling_price'];
-       $product->quantity = $validatedData['quantity'];
-       $product->trending = $request->trending == true ? '1':'0';
-       $product->status = $request->status == true ? '1':'0';
-       $product->meta_title = $validatedData['meta_title'];
-       $product->meta_keywords = $validatedData['meta_keywords'];
-       $product->meta_description = $validatedData['meta_description'];
+     $product = ProductCategory::findOrFail($validatedData['product_category_id'])
+     ->products()->where('id',$id)->first();
+
+     if($product){
+        $product->update([
+            'product_category_id'  => $validatedData['product_category_id'],
+            'name'  => $validatedData['name'],
+            'slug'  =>  Str::slug($validatedData['slug']),
+            'brand_id'  => $validatedData['brand_id'],
+            'small_description'  => $validatedData['small_description'],
+            'description'  => $validatedData['description'],
+            'original_price'  => $validatedData['original_price'],
+            'selling_price'  => $validatedData['selling_price'],
+            'quantity'  => $validatedData['quantity'],
+            'trending'  => $request->trending == true ? '1':'0',
+            'status'  => $request->status == true ? '1':'0',
+            'meta_title'  => $validatedData['meta_title'],
+            'meta_keywords'  => $validatedData['meta_keywords'],
+            'meta_description'  => $validatedData['meta_description'],
 
 
-        // create a unique name for image in loop
-    $i = 1;
-    if($request->hasFile('image')){
-        $uploadPath = 'uploads/products/';
-        // loop
-        foreach($request->file('image') as $imageFile){
-            $extension = $imageFile->getClientOriginalExtension();
-            $filename = time().$i++.'.'.$extension;
-            $imageFile->move($uploadPath, $filename); //
-            $finalImagePathName = $uploadPath.$filename;
+        ]);
 
-            // relationship with product image table
-            $product->product_images()->create([
-                'product_id' => $product->id,
-                'image'      =>  $finalImagePathName
-            ]);
+        // images
+
+        if($request->hasFile('image')){
+            $uploadPath = 'uploads/products/';
+            // loop
+            $i = 1;
+            foreach($request->file('image') as $imageFile){
+                $extension = $imageFile->getClientOriginalExtension();
+                $filename = time().$i++.'.'.$extension;
+                $imageFile->move($uploadPath, $filename); //
+                $finalImagePathName = $uploadPath.$filename;
+
+                // relationship with product image table
+                $product->product_images()->create([
+                    'product_id' => $product->id,
+                    'image'      =>  $finalImagePathName
+                ]);
+
+            }
 
         }
 
-    }
+        // redirect
+
+    //   dd("image");
+    //    $product->update();
+       return redirect('/products')->with('messageupdate','Product Updated successfuly');
+
+
+
+     }else {
+
+        // dd("No product found");
+        return redirect('/products')->with('messagedelete','No product Found');
+
+     }
+
+    //    $product = Product::findOrFail($id);`
+    //    $product->product_category_id = $validatedData['product_category_id'];
+    //    $product->name = $validatedData['name'];
+    //    $product->slug = Str::slug($validatedData['slug']);
+    //    $product->brand_id = $validatedData['brand_id'];
+    //    $product->small_description = $validatedData['small_description'];
+    //    $product->description = $validatedData['description'];
+    //    $product->original_price = $validatedData['original_price'];
+    //    $product->selling_price = $validatedData['selling_price'];
+    //    $product->quantity = $validatedData['quantity'];
+    //    $product->trending = $request->trending == true ? '1':'0';
+    //    $product->status = $request->status == true ? '1':'0';
+    //    $product->meta_title = $validatedData['meta_title'];
+    //    $product->meta_keywords = $validatedData['meta_keywords'];
+    //    $product->meta_description = $validatedData['meta_description'];
 
 
     //    // image
@@ -229,9 +267,6 @@ class ProductController extends Controller
 
 
 
-    //   dd("image");
-       $product->update();
-       return redirect('/products')->with('messageupdate','Product Updated successfuly');
     }
 
     /**
