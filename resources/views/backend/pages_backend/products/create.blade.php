@@ -280,7 +280,8 @@ Add Products
                                     </div>
                                 </div>
                                 <!-- end card -->
-                            </div> <!-- end col -->
+                            </div>
+                            <!-- end col -->
 
                         </div>
                         <!-- end row -->
