@@ -30,6 +30,7 @@ class ProductController extends Controller
 
 
 
+        // return view
         return view('backend.pages_backend.products.index',compact('products','product_categories','product_brands','count_products'));
 
     }
