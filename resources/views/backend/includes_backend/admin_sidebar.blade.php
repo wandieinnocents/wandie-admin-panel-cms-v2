@@ -315,39 +315,7 @@
                     </ul>
                 </li>
                 {{-- Posts --}}
-                <!-- Posts -->
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow">
-                        <i data-feather="grid"></i>
-                        <span data-key="t-apps">Blog</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <!-- Post categories create -->
-                        <li>
-                            <a href="/post_categories/create">
-                                <span data-key="t-calendar">Add Category</span>
-                            </a>
-                        </li>
-                        <!-- Post categories list -->
-                        <li>
-                            <a href="/post_categories">
-                                <span data-key="t-calendar">View Categories</span>
-                            </a>
-                        </li>
-                        <!-- Create post -->
-                        <li>
-                            <a href="{{ route('posts.create') }}">
-                                <span data-key="t-chat">Add Post</span>
-                            </a>
-                        </li>
-                        <!-- List posts -->
-                        <li>
-                            <a href="{{ route('posts.index') }}">
-                                <span data-key="t-chat">View Posts</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+
                 {{-- Team --}}
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
@@ -430,6 +398,8 @@
                         </li>
                     @endcan
                     <!-- Roles -->
+
+
                     @can('role-list')
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">
