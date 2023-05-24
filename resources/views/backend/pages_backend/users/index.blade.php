@@ -41,16 +41,16 @@ All Users
 
         <!-- Page content starts here -->
 
-                
-        
+
+
 
                 @if (\Session::has('success'))
                 <div class="alert alert-success">
                     <p>{{ \Session::get('success') }}</p>
                 </div>
                 @endif
-               
-                    
+
+
                     <div class="card-body">
                         <table class="table table-stripped">
                             <thead class="thead-dark">
@@ -87,6 +87,7 @@ All Users
                                                             class=" far fa-eye  "></i></button>
                                                 </a>
                                             </div>
+
                                             @can('user-edit')
                                             <div class="col-md-4 col-sm-12 col-xs-12">
 
@@ -111,6 +112,8 @@ All Users
                                                 </form>
                                             </div>
                                             @endcan
+
+                                            
                                     </td>
                                 </tr>
                                 @endforeach
@@ -118,8 +121,8 @@ All Users
                         </table>
                         {{ $data->render() }}
                     </div>
-               
-         
+
+
 
 
     </div>

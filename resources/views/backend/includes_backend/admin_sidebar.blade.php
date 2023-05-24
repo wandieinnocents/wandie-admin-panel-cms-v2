@@ -314,7 +314,6 @@
                         </li>
                     </ul>
                 </li>
-                {{-- Posts --}}
 
                 {{-- Team --}}
                 <li>
@@ -448,6 +447,8 @@
                         </a>
                     </li>
                 @endguest
+
+
             </ul>
             <div class="card sidebar-alert border-5 text-center mx-4 mb-0 mt-5"
                 style="border-radius: 100px 100px 0px 0px">
