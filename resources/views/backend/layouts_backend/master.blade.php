@@ -37,7 +37,7 @@
         <!-- App Css-->
         <link href="{{ asset('assets/backend_assets/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
        
-        <!-- @notifyCss -->
+        {{-- <!-- @notifyCss --> --}}
 
     </head>
     
@@ -119,8 +119,8 @@
         <!-- init js -->
         <script src="{{ asset('assets/backend_assets/assets/js/pages/form-editor.init.js') }}"></script>
 
-        <!-- @notifyJs
-        <x:notify-messages /> -->
+        {{-- <!-- @notifyJs --}}
+        {{-- <x:notify-messages /> --> --}}
 
 
     </body>
